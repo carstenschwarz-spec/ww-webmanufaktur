@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz | WW Webmanufaktur</title>
+    <meta name="description" content="Datenschutzerklärung der WW Webmanufaktur – Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß DSGVO.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #A67C52;
+            --bg-dark: #0F0D0B;
+            --text-light: #F7F4F0;
+            --text-muted: #9B9088;
+            --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* Page header */
+        .page-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(166, 124, 82, 0.15);
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .page-header .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Table of contents */
+        .toc {
+            background: rgba(166, 124, 82, 0.06);
+            border: 1px solid rgba(166, 124, 82, 0.12);
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc h2 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            padding: 0;
+        }
+
+        .toc ol li {
+            counter-increment: toc-counter;
+            margin-bottom: 0.4rem;
+        }
+
+        .toc ol li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .toc ol li a::before {
+            content: counter(toc-counter) ".";
+            color: var(--primary);
+            font-weight: 600;
+            min-width: 1.5rem;
+        }
+
+        .toc ol li a:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Sections */
+        .legal-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .legal-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-top: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .legal-section h3 {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .legal-section p {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .legal-section ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-section ul li {
+            margin-bottom: 0.35rem;
+        }
+
+        .legal-section strong {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .contact-block {
+            background: rgba(166, 124, 82, 0.06);
+            border-left: 3px solid var(--primary);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+
+        .contact-block p {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Divider */
+        .section-divider {
+            border: none;
+            border-top: 1px solid rgba(166, 124, 82, 0.1);
+            margin: 2.5rem 0;
+        }
+
+        /* Footer */
+        .page-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(166, 124, 82, 0.15);
+            text-align: center;
+        }
+
+        .page-footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-footer a {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.25rem 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .legal-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .toc {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="/" class="back-link">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Zurück zur Startseite
+    </a>
+
+    <header class="page-header">
+        <h1>Datenschutzerklärung</h1>
+        <p class="subtitle">Stand: Februar 2026</p>
+    </header>
+
+    <!-- 1. Verantwortlicher -->
+    <section class="legal-section" id="verantwortlicher">
+        <h2>1. Verantwortlicher</h2>
+        <div class="contact-block">
+            <p><strong>WW Webmanufaktur</strong></p>
+            <p>Carsten Schwarz</p>
+            <p>Steinweg 28</p>
+            <p>56412 Görgeshausen, Deutschland</p>
+            <p>Telefon: <a href="tel:+4915759617436">+49 157 59617436</a></p>
+            <p>E-Mail: <a href="mailto:c.schwarz@ww-webagentur.de">c.schwarz@ww-webagentur.de</a></p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 2. Auf einen Blick -->
+    <section class="legal-section" id="ueberblick">
+        <h2>2. Datenschutz auf einen Blick</h2>
+        <p>Ihre Daten sind uns wichtig. Deshalb halten wir es einfach:</p>
+        <ul>
+            <li><strong>Keine Tracking-Cookies</strong> – Wir setzen weder Analyse- noch Marketing-Cookies ein.</li>
+            <li><strong>Keine Weitergabe an Dritte zu Werbezwecken</strong> – Ihre Daten werden nicht verkauft oder für fremde Werbung genutzt.</li>
+            <li><strong>EU-Datenschutzstandards</strong> – Alle eingesetzten Dienste sind nach dem EU-US Data Privacy Framework zertifiziert.</li>
+            <li><strong>SSL-verschlüsselt</strong> – Sämtliche Datenübertragungen sind durch TLS-Verschlüsselung geschützt.</li>
+        </ul>
+        <p>Wir verarbeiten personenbezogene Daten nur, wenn es dafür eine Rechtsgrundlage gibt: Ihre <strong>Einwilligung</strong> (Art. 6 Abs. 1 lit. a DSGVO), die Durchführung <strong>vorvertraglicher Maßnahmen</strong> (Art. 6 Abs. 1 lit. b DSGVO) oder unser <strong>berechtigtes Interesse</strong> an einer sicheren, funktionalen Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 3. Hosting & Zugriffsdaten -->
+    <section class="legal-section" id="hosting">
+        <h2>3. Hosting & Zugriffsdaten</h2>
+        <p>Unsere Website wird von <strong>Netlify</strong> gehostet, einem Anbieter mit europäischen Serverstandorten und Zertifizierung nach dem EU-US Data Privacy Framework. Beim Besuch werden technische Zugriffsdaten (IP-Adresse, Zeitpunkt, Browser) automatisch erfasst. Dies dient der sicheren Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+        <p>Unsere Website lädt Schriftarten von <strong>Google Fonts</strong>, wobei Ihr Browser eine Verbindung zu Google-Servern herstellt. Dabei wird Ihre IP-Adresse an Google Ireland Limited übermittelt (<a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener">Google Fonts Datenschutz-FAQ</a>).</p>
+        <p>Weitere Informationen: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Datenschutzerklärung von Netlify</a></p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 4. Kontaktformular -->
+    <section class="legal-section" id="kontaktformular">
+        <h2>4. Kontaktformular</h2>
+        <p>Anfragen über unser Kontaktformular oder den Angebots-Assistenten werden über <strong>Formspree</strong> verarbeitet. Dabei werden Ihr Name, Ihre E-Mail-Adresse, ggf. Telefonnummer sowie der Inhalt Ihrer Nachricht übermittelt. Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO). Formspree ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
+        <p>Ihre Daten werden nach Abschluss der Bearbeitung gelöscht, spätestens nach 6 Monaten.</p>
+        <p>Weitere Informationen: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">Datenschutzerklärung von Formspree</a></p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 5. Terminbuchung -->
+    <section class="legal-section" id="terminbuchung">
+        <h2>5. Terminbuchung</h2>
+        <p>Für die Online-Terminvereinbarung nutzen wir <strong>Cal.com</strong>, eingebettet als Widget auf unserer Website. Bei der Buchung werden Ihr Name, Ihre E-Mail-Adresse und der gewünschte Termin verarbeitet (Art. 6 Abs. 1 lit. b DSGVO). Cal.com setzt ausschließlich technisch notwendige Cookies -- keine Tracking-Cookies.</p>
+        <p>Weitere Informationen: <a href="https://cal.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Cal.com</a></p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 6. WhatsApp -->
+    <section class="legal-section" id="whatsapp">
+        <h2>6. WhatsApp</h2>
+        <p>Über den WhatsApp-Button auf unserer Website können Sie uns direkt kontaktieren. Beim Klick werden Sie zu WhatsApp (Meta Platforms Ireland Limited) weitergeleitet. Von uns werden dabei keine Daten erhoben -- erst wenn Sie uns aktiv eine Nachricht senden, gelten die <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener">Datenschutzbestimmungen von WhatsApp</a>.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 7. Cookies & Verschlüsselung -->
+    <section class="legal-section" id="cookies">
+        <h2>7. Cookies & Verschlüsselung</h2>
+        <p>Unsere Website verwendet <strong>keine</strong> Tracking-, Analyse- oder Marketing-Cookies. Es werden ausschließlich technisch notwendige Cookies eingesetzt (Terminbuchung, Hosting), weshalb kein Cookie-Consent-Banner erforderlich ist.</p>
+        <p>Alle Datenübertragungen sind durch <strong>SSL/TLS-Verschlüsselung</strong> geschützt. Sie erkennen dies am Schloss-Symbol und „https://" in Ihrer Browserzeile.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 8. Ihre Rechte -->
+    <section class="legal-section" id="betroffenenrechte">
+        <h2>8. Ihre Rechte</h2>
+        <p>Nach der DSGVO stehen Ihnen folgende Rechte zu: <strong>Auskunft</strong> (Art. 15) über Ihre gespeicherten Daten, <strong>Berichtigung</strong> (Art. 16) unrichtiger Daten, <strong>Löschung</strong> (Art. 17) Ihrer Daten, <strong>Einschränkung der Verarbeitung</strong> (Art. 18), <strong>Datenübertragbarkeit</strong> (Art. 20) in einem gängigen Format, <strong>Widerspruch</strong> (Art. 21) gegen die Verarbeitung sowie <strong>Widerruf einer erteilten Einwilligung</strong> (Art. 7 Abs. 3) jederzeit und ohne Angabe von Gründen.</p>
+        <p>Zur Ausübung Ihrer Rechte genügt eine E-Mail an: <a href="mailto:c.schwarz@ww-webagentur.de">c.schwarz@ww-webagentur.de</a></p>
+        <p>Sie haben außerdem das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren:</p>
+        <div class="contact-block">
+            <p><strong>LfDI Rheinland-Pfalz</strong></p>
+            <p>Postfach 30 40, 55020 Mainz</p>
+            <p>Telefon: <a href="tel:+496131208-2449">+49 6131 208-2449</a></p>
+            <p>Website: <a href="https://www.datenschutz.rlp.de" target="_blank" rel="noopener">www.datenschutz.rlp.de</a></p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- 9. Aktualität -->
+    <section class="legal-section" id="aenderungen">
+        <h2>9. Aktualität</h2>
+        <p>Diese Datenschutzerklärung hat den Stand Februar 2026. Bei Änderungen an unserer Website oder den gesetzlichen Vorgaben wird sie entsprechend aktualisiert. Die aktuelle Version finden Sie stets auf dieser Seite.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="footer-links">
+            <a href="/">Startseite</a>
+            <a href="impressum.html">Impressum</a>
+        </div>
+        <p>&copy; 2026 WW Webmanufaktur. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

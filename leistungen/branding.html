@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo & Branding | WW Webmanufaktur Westerwald</title>
+    <meta name="description" content="Individuelles Logo-Design und Corporate Identity für lokale Unternehmen. Farbpalette, Typografie, Styleguide — alles aus einer Hand.">
+    <meta property="og:title" content="Logo & Branding | WW Webmanufaktur Westerwald">
+    <meta property="og:description" content="Individuelles Logo-Design und Corporate Identity für lokale Unternehmen. Farbpalette, Typografie, Styleguide — alles aus einer Hand.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="https://ww-webagentur.de/leistungen/branding.html">
+    <link rel="canonical" href="https://ww-webagentur.de/leistungen/branding.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 56'%3E%3Cpolyline points='4,6 18,50 32,10 46,50 60,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='40,6 54,50 68,10 82,50 96,6' fill='none' stroke='%233B82F6' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='76,6 90,50 104,10 118,50 132,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300 900;
+            font-display: swap;
+            src: url(../fonts/inter-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300 900;
+            font-display: swap;
+            src: url(../fonts/inter-latin-ext.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        :root {
+            --primary: #A67C52;
+            --primary-dark: #8B6541;
+            --primary-light: rgba(166,124,82,0.08);
+            --secondary: #1A1614;
+            --gray-50: #F7F4F0;
+            --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --gray-100: #F4F4F5;
+            --gray-200: #E4E4E7;
+            --gray-300: #D4D4D8;
+            --gray-400: #A1A1AA;
+            --gray-500: #71717A;
+            --gray-600: #52525B;
+            --gray-700: #3F3F46;
+            --gray-800: #27272A;
+            --gray-900: #18181B;
+            --white: #fff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--secondary);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .site-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--secondary);
+        }
+        .nav-logo svg {
+            width: 48px;
+            height: 20px;
+        }
+        .nav-logo span {
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+        }
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .nav-back:hover {
+            background: var(--primary-light);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(160deg, #0F0D0B 0%, #0f172a 40%, #1e3a5f 100%);
+            overflow: hidden;
+            padding: 5rem 2rem 4.5rem;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 700px 500px at 25% 80%, rgba(166,124,82,0.2), transparent),
+                radial-gradient(ellipse 600px 400px at 75% 20%, rgba(96,165,250,0.15), transparent),
+                radial-gradient(ellipse 400px 300px at 50% 50%, rgba(37,99,235,0.1), transparent);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+        }
+        .hero-icon-ring {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(166,124,82,0.2), rgba(96,165,250,0.1));
+            border: 1px solid rgba(166,124,82,0.25);
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+        .hero-icon-ring::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(166,124,82,0.1);
+        }
+        .hero-icon-ring i {
+            font-size: 2rem;
+            color: #93C5FD;
+        }
+        .hero-trust {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(147,197,253,0.7);
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+            max-width: 580px;
+            margin: 0 auto 1.5rem;
+        }
+        .hero-trust-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 400;
+        }
+        .hero-trust-line i {
+            color: rgba(147,197,253,0.6);
+            font-size: 0.75rem;
+        }
+
+        /* ── Section Divider ── */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-200) 20%, var(--gray-200) 80%, transparent);
+        }
+
+        /* ── Sections shared ── */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-size: 2.125rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 560px;
+            line-height: 1.65;
+            margin-bottom: 3rem;
+        }
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        /* ── Benefits ── */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+        }
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 2.25rem;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 32px rgba(166,124,82,0.1);
+            transform: translateY(-3px);
+        }
+        .benefit-icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .benefit-card:hover .benefit-icon-circle {
+            transform: scale(1.08);
+        }
+        .benefit-stat {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(166,124,82,0.08);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 0.75rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            font-weight: 650;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+        }
+
+        /* ── Process (Timeline) ── */
+        .process-timeline {
+            position: relative;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 27px;
+            top: 32px;
+            bottom: 32px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--gray-200));
+            border-radius: 2px;
+        }
+        .process-step {
+            position: relative;
+            display: flex;
+            gap: 2rem;
+            padding-bottom: 2.5rem;
+        }
+        .process-step:last-child {
+            padding-bottom: 0;
+        }
+        .process-number-wrap {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+        .process-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background 0.3s, color 0.3s;
+        }
+        .process-step:hover .process-number {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .process-body {
+            padding-top: 0.5rem;
+            flex: 1;
+        }
+        .process-body h3 {
+            font-size: 1.1rem;
+            font-weight: 650;
+            color: var(--secondary);
+            margin-bottom: 0.4rem;
+        }
+        .process-body p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+        }
+
+        /* ── Included / Checklist ── */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem 3rem;
+            max-width: 740px;
+        }
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.875rem;
+            font-size: 1rem;
+            color: var(--secondary);
+            line-height: 1.5;
+        }
+        .included-item i {
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-top: 0.2rem;
+        }
+
+        /* ── FAQ ── */
+        .faq-list {
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .faq-item:first-child {
+            border-top: 1px solid var(--gray-200);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.375rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--secondary);
+            line-height: 1.4;
+            gap: 1rem;
+            transition: color 0.2s;
+        }
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-question i {
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            transition: transform 0.3s, color 0.3s;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+        .faq-answer-inner {
+            padding-bottom: 1.375rem;
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-section {
+            padding: 1rem 2rem 5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .cta-banner {
+            position: relative;
+            background: linear-gradient(135deg, #1E40AF 0%, #A67C52 50%, #60A5FA 100%);
+            border-radius: 18px;
+            padding: 4rem 3.5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 500px 300px at 20% 80%, rgba(255,255,255,0.08), transparent),
+                radial-gradient(ellipse 400px 250px at 80% 20%, rgba(255,255,255,0.06), transparent);
+            pointer-events: none;
+        }
+        .cta-banner > * {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .cta-stars i {
+            font-size: 1rem;
+            color: #FCD34D;
+        }
+        .cta-banner h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .cta-banner p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            line-height: 1.65;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.95rem 2.25rem;
+            background: var(--white);
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+        }
+        .cta-trust {
+            margin-top: 1.25rem;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+        }
+        .cta-trust i {
+            margin-right: 0.3rem;
+        }
+
+        /* ── Related Services ── */
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .related-card {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            border-top: 3px solid transparent;
+        }
+        .related-card:nth-child(1) {
+            border-top-color: #A67C52;
+        }
+        .related-card:nth-child(2) {
+            border-top-color: #8B5CF6;
+        }
+        .related-card:nth-child(3) {
+            border-top-color: #10B981;
+        }
+        .related-card:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
+        }
+        .related-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 11px;
+            font-size: 1.15rem;
+            margin-bottom: 1.125rem;
+        }
+        .related-card:nth-child(1) .related-icon {
+            background: rgba(166,124,82,0.08);
+            color: #A67C52;
+        }
+        .related-card:nth-child(2) .related-icon {
+            background: rgba(139,92,246,0.08);
+            color: #8B5CF6;
+        }
+        .related-card:nth-child(3) .related-icon {
+            background: rgba(16,185,129,0.08);
+            color: #10B981;
+        }
+        .related-card h3 {
+            font-size: 1.05rem;
+            font-weight: 650;
+            color: var(--secondary);
+            margin-bottom: 0.4rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            flex: 1;
+        }
+        .related-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            transition: gap 0.25s;
+        }
+        .related-card:hover .related-arrow {
+            gap: 0.65rem;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .footer-copy {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 320px;
+                padding: 3.5rem 1.5rem 3rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .hero-icon-ring {
+                width: 72px;
+                height: 72px;
+            }
+            .hero-icon-ring i {
+                font-size: 1.65rem;
+            }
+            .section-title {
+                font-size: 1.625rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-timeline::before {
+                left: 23px;
+            }
+            .process-number {
+                width: 48px;
+                height: 48px;
+                font-size: 1rem;
+            }
+            .process-step {
+                gap: 1.5rem;
+            }
+            .cta-banner {
+                padding: 2.75rem 1.5rem;
+                border-radius: 14px;
+            }
+            .cta-banner h2 {
+                font-size: 1.5rem;
+            }
+            .cta-section {
+                padding: 1rem 1.25rem 4rem;
+            }
+            .section {
+                padding: 3.5rem 1.25rem;
+            }
+            .site-nav {
+                padding: 0.75rem 1.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 280px;
+                padding: 2.75rem 1.25rem 2.25rem;
+            }
+            .hero h1 {
+                font-size: 1.625rem;
+            }
+            .nav-logo span {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ── Reduced Motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-logo">
+                <svg viewBox="0 0 140 56" fill="none">
+                    <polyline points="4,6 18,50 32,10 46,50 60,6" fill="none" stroke="#ddd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="40,6 54,50 68,10 82,50 96,6" fill="none" stroke="#A67C52" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="76,6 90,50 104,10 118,50 132,6" fill="none" stroke="#ddd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>WW Webmanufaktur</span>
+            </a>
+            <a href="/#leistungen" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Alle Leistungen
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon-ring">
+                <i class="fas fa-palette"></i>
+            </div>
+            <div class="hero-trust">Branding & Corporate Identity</div>
+            <h1>Logo & Branding</h1>
+            <p class="hero-subtitle">Ein starkes Logo ist kein Zufall. Wir entwickeln Ihre visuelle Identit&#228;t von der Farbpalette bis zum Styleguide &#8212; damit Ihre Marke im Kopf bleibt.</p>
+            <div class="hero-trust-line">
+                <i class="fas fa-shield-halved"></i>
+                Marken, die im Kopf bleiben
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <span class="section-label">Vorteile</span>
+        <h2 class="section-title">Warum professionelles Branding entscheidet</h2>
+        <p class="section-desc">Ihre Marke ist das Erste, was Kunden wahrnehmen &#8212; und das Letzte, was sie vergessen. Gutes Branding ist keine Ausgabe, sondern eine Investition.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-bolt"></i></div>
+                <div class="benefit-stat">7 Sekunden f&#252;r den ersten Eindruck</div>
+                <h3>Sofortige Wirkung</h3>
+                <p>Kunden entscheiden in Sekundenbruchteilen, ob ein Unternehmen professionell wirkt. Ein starkes Logo macht den Unterschied zwischen Klick und Weiterscrollen.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-chart-line"></i></div>
+                <div class="benefit-stat">Wiedererkennung steigert Umsatz um 23%</div>
+                <h3>Messbare Ergebnisse</h3>
+                <p>Konsistentes Branding &#252;ber alle Kan&#228;le erh&#246;ht den Wiedererkennungswert und steigert nachweislich den Umsatz. Ihre Marke arbeitet f&#252;r Sie &#8212; rund um die Uhr.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-handshake"></i></div>
+                <div class="benefit-stat">81% vertrauen bekannten Marken</div>
+                <h3>Vertrauen auf den ersten Blick</h3>
+                <p>Professionelles Design signalisiert Kompetenz und Zuverl&#228;ssigkeit. Kunden w&#228;hlen intuitiv das Unternehmen, das seri&#246;ser und hochwertiger wirkt.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-layer-group"></i></div>
+                <div class="benefit-stat">1 Marke, alle Kan&#228;le</div>
+                <h3>Konsistenter Auftritt</h3>
+                <p>Von der Visitenkarte &#252;ber die Website bis zum Social-Media-Profil: Ein einheitliches Erscheinungsbild sorgt daf&#252;r, dass Kunden Sie &#252;berall wiedererkennen.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Process Section -->
+    <section class="section section-alt">
+        <span class="section-label">Ablauf</span>
+        <h2 class="section-title">So entsteht Ihre Marke</h2>
+        <p class="section-desc">Vom ersten Gespr&#228;ch bis zur fertigen Markenidentit&#228;t &#8212; in vier klaren Schritten.</p>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number-wrap">
+                    <div class="process-number">01</div>
+                </div>
+                <div class="process-body">
+                    <h3>Markenkern definieren</h3>
+                    <p>Wir analysieren gemeinsam Ihre Werte, Ihre Zielgruppe und Ihren Wettbewerb. Was macht Sie besonders? Welches Gef&#252;hl soll Ihre Marke vermitteln? Dieses Fundament bestimmt alle weiteren Designentscheidungen.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrap">
+                    <div class="process-number">02</div>
+                </div>
+                <div class="process-body">
+                    <h3>Konzepte entwickeln</h3>
+                    <p>Sie erhalten 2&#8211;3 durchdachte Logo-Entw&#252;rfe &#8212; jeweils mit passender Farbpalette und Schriftkombination. Keine Massenware, sondern individuelle Konzepte auf Basis Ihres Briefings.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrap">
+                    <div class="process-number">03</div>
+                </div>
+                <div class="process-body">
+                    <h3>Feinschliff &amp; Perfektion</h3>
+                    <p>Ihr Favorit wird ausgearbeitet und f&#252;r alle Anwendungen optimiert: hell, dunkel, klein, gro&#223;. Bis zu 2 Korrekturschleifen inklusive, damit jedes Detail stimmt.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrap">
+                    <div class="process-number">04</div>
+                </div>
+                <div class="process-body">
+                    <h3>&#220;bergabe &amp; Styleguide</h3>
+                    <p>Sie erhalten alle Dateien in professionellen Formaten (SVG, PNG, PDF) plus einen kompakten Brand-Styleguide mit Farbcodes, Schriften und Anwendungsbeispielen. Sofort einsatzbereit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Included Section -->
+    <section class="section">
+        <span class="section-label">Leistungen</span>
+        <h2 class="section-title">Was Sie bekommen</h2>
+        <p class="section-desc">Alles f&#252;r einen professionellen Markenauftritt &#8212; komplett und sofort einsetzbar.</p>
+
+        <div class="included-grid">
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Individuelles Logo-Design</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>2&#8211;3 Entwurfsvarianten zur Auswahl</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Professionelle Farbpalette mit HEX/RGB-Codes</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Abgestimmte Schriftkombination</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Logo in allen Formaten (SVG, PNG, PDF)</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Logo-Varianten (hell, dunkel, Icon)</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Favicon &amp; Social-Media-Profilbild</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Kompakter Brand-Styleguide</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Bis zu 2 Korrekturschleifen</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Visitenkarten-Layout (optional)</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <span class="section-label">H&#228;ufige Fragen</span>
+        <h2 class="section-title">Fragen zum Branding-Prozess</h2>
+        <p class="section-desc">Die wichtigsten Antworten auf einen Blick.</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Bekomme ich mehrere Logo-Entw&#252;rfe?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Ja, Sie erhalten 2&#8211;3 eigenst&#228;ndige Konzepte, die auf Ihrem Briefing basieren. Jeder Entwurf beinhaltet eine passende Farbpalette und Schriftkombination. Sie w&#228;hlen Ihren Favoriten, den wir dann gemeinsam perfektionieren.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    In welchen Formaten erhalte ich das Logo?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Sie bekommen Ihr Logo in allen g&#228;ngigen Formaten: SVG (skalierbar f&#252;r Web und Druck), PNG (transparent, in mehreren Gr&#246;&#223;en), und PDF (f&#252;r Druckereien). Dazu erhalten Sie Varianten f&#252;r helle und dunkle Hintergr&#252;nde sowie eine Icon-Version f&#252;r Profilbilder.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Was wenn mir keiner der Entw&#252;rfe gef&#228;llt?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Das kommt praktisch nicht vor, weil wir im ersten Schritt ausf&#252;hrlich Ihren Markenkern besprechen. Sollte trotzdem kein Entwurf passen, erarbeiten wir auf Basis Ihres Feedbacks eine neue Runde &#8212; bis Sie wirklich zufrieden sind. Bis zu 2 Korrekturschleifen sind inklusive.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Brauche ich ein neues Logo wenn ich schon eins habe?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Nicht zwingend. Wenn Ihr bestehendes Logo gut funktioniert, k&#246;nnen wir es als Ausgangspunkt nehmen und drumherum eine konsistente Markenidentit&#228;t aufbauen &#8212; Farbpalette, Schriften, Styleguide. Ein Rebranding empfehlen wir nur, wenn das bestehende Logo nicht mehr zeitgem&#228;&#223; ist oder Ihre Positionierung nicht widerspiegelt.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-section">
+        <div class="cta-banner">
+            <div class="cta-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h2>Bereit f&#252;r Ihre Marke?</h2>
+            <p>Starten Sie mit unserem kostenlosen Angebots-Assistenten &#8212; in 2 Minuten zu Ihrem individuellen Angebot.</p>
+            <a href="../website-anfrage.html" class="cta-btn">Angebot erstellen <i class="fas fa-arrow-right"></i></a>
+            <div class="cta-trust"><i class="fas fa-lock"></i> 100% unverbindlich &#8212; keine Zahlungsdaten erforderlich</div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="section section-alt">
+        <span class="section-label">Mehr entdecken</span>
+        <h2 class="section-title">Verwandte Leistungen</h2>
+        <p class="section-desc">Erg&#228;nzende Services, die Ihre Marke komplett machen.</p>
+
+        <div class="related-grid">
+            <a href="webdesign.html" class="related-card">
+                <div class="related-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Webdesign &amp; Entwicklung</h3>
+                <p>Individuelle, responsive Websites &#8212; ma&#223;geschneidert f&#252;r Ihre Branche. Kein Baukastensystem.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="content.html" class="related-card">
+                <div class="related-icon"><i class="fas fa-pen-nib"></i></div>
+                <h3>Content &amp; Texte</h3>
+                <p>Professionelle Texte und KI-optimierte Bilder, die Ihre Zielgruppe ansprechen und &#252;berzeugen.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="wartung.html" class="related-card">
+                <div class="related-icon"><i class="fas fa-wrench"></i></div>
+                <h3>Wartung &amp; Support</h3>
+                <p>Hosting, Updates, Backups und technischer Support &#8212; damit Ihre Website immer l&#228;uft.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="/#blog">Blog</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 WW Webmanufaktur. Alle Rechte vorbehalten.</div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var answer = item.querySelector('.faq-answer');
+                var isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item.active').forEach(function(openItem) {
+                    openItem.classList.remove('active');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    openItem.querySelector('.faq-answer').style.maxHeight = '0';
+                });
+
+                // Open clicked (if it was closed)
+                if (!isActive) {
+                    item.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angebots-Assistent | WW Webmanufaktur</title>
+    <meta name="description" content="Finden Sie heraus, welche Website zu Ihrem Unternehmen passt — in 2 Minuten, unverbindlich. Websites ab 699 € oder bequem in Monatsraten.">
+    <style>
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300 900;
+        font-display: swap;
+        src: url(fonts/inter-latin-ext.woff2) format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300 900;
+        font-display: swap;
+        src: url(fonts/inter-latin.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #A67C52;
+            --primary-light: rgba(166,124,82,0.08);
+            --primary-dark: #8B6541;
+            --secondary: #1A1614;
+            --white: #ffffff;
+            --gray-50: #F7F4F0;
+            --gray-100: #EDE8E2;
+            --gray-200: #DDD6CC;
+            --gray-300: #C4BAB0;
+            --gray-400: #9B9088;
+            --gray-500: #6B6058;
+            --gray-600: #4A4038;
+            --gray-700: #362E28;
+            --gray-800: #241F1B;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --shadow-sm: 0 1px 3px rgba(15,13,11,0.06);
+            --shadow-md: 0 4px 14px rgba(15,13,11,0.08);
+            --shadow-lg: 0 12px 40px rgba(15,13,11,0.10);
+            --danger: #dc3545;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font);
+            color: var(--secondary);
+            background: var(--gray-50);
+            line-height: 1.5;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Header ── */
+        .konfig-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            padding: 16px 24px;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .konfig-header-inner {
+            max-width: 960px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .konfig-logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: var(--secondary);
+            font-weight: 600; font-size: 0.95rem;
+        }
+        .konfig-logo .ww-mark { width: 36px; height: auto; }
+        .konfig-logo .ww-mark .ww-w { fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+        .konfig-logo .ww-w-l, .konfig-logo .ww-w-r { stroke: rgba(26,22,20,0.10); }
+        .konfig-logo .ww-w-c { stroke: var(--primary); }
+        .konfig-back {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.85rem; color: var(--gray-500);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .konfig-back:hover { color: var(--primary); }
+
+        .konfig-main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+
+        /* ── Progress ── */
+        .progress-bar { display: flex; gap: 4px; margin-bottom: 12px; }
+        .progress-step {
+            flex: 1; height: 4px; background: var(--gray-200);
+            border-radius: 2px; transition: background 0.4s ease;
+        }
+        .progress-step.active { background: var(--primary); }
+        .progress-labels {
+            display: flex; justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .progress-label {
+            font-size: 0.68rem; color: var(--gray-400);
+            font-weight: 500; text-align: center; flex: 1;
+            transition: color 0.3s;
+        }
+        .progress-label.active { color: var(--primary); font-weight: 600; }
+
+        /* ── Steps ── */
+        .step { display: none; animation: fadeIn 0.4s ease; }
+        .step.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .step-header { margin-bottom: 32px; }
+        .step-number {
+            font-size: 0.75rem; font-weight: 600; color: var(--primary);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
+        }
+        .step-title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+        .step-subtitle { font-size: 0.92rem; color: var(--gray-500); line-height: 1.5; }
+
+        /* ── Form Elements ── */
+        .form-group { margin-bottom: 24px; }
+        .form-label {
+            display: block; font-size: 0.85rem; font-weight: 600;
+            color: var(--gray-700); margin-bottom: 8px;
+        }
+        .form-input, .form-select {
+            width: 100%; padding: 12px 16px;
+            border: 1px solid var(--gray-200); border-radius: var(--radius-md);
+            font-family: var(--font); font-size: 0.92rem;
+            color: var(--secondary); background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+        }
+        .form-input:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(166,124,82,0.1);
+        }
+        .form-input::placeholder { color: var(--gray-300); }
+        .form-select {
+            cursor: pointer; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%2386868b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 16px center;
+            padding-right: 40px;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-textarea {
+            width: 100%; padding: 12px 16px;
+            border: 1px solid var(--gray-200); border-radius: var(--radius-md);
+            font-family: var(--font); font-size: 0.92rem;
+            color: var(--secondary); background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none; resize: vertical; min-height: 100px;
+        }
+        .form-textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(166,124,82,0.1); }
+        .form-error { font-size: 0.78rem; color: var(--danger); margin-top: 4px; display: none; }
+        .form-group.has-error .form-input,
+        .form-group.has-error .form-select { border-color: var(--danger); }
+        .form-group.has-error .form-error { display: block; }
+
+        /* ── Toggle Buttons (Yes/No) ── */
+        .toggle-group { display: flex; gap: 12px; margin-bottom: 24px; }
+        .toggle-btn {
+            flex: 1; padding: 14px 20px;
+            border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+            background: var(--white); cursor: pointer; text-align: center;
+            transition: all 0.25s ease;
+        }
+        .toggle-btn:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); }
+        .toggle-btn.selected {
+            border-color: var(--primary); background: rgba(166,124,82,0.04);
+            box-shadow: 0 0 0 2px rgba(166,124,82,0.15);
+        }
+        .toggle-btn-icon { font-size: 1.5rem; margin-bottom: 8px; color: var(--gray-400); transition: color 0.25s; }
+        .toggle-btn.selected .toggle-btn-icon { color: var(--primary); }
+        .toggle-btn-title { font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+        .toggle-btn-desc { font-size: 0.78rem; color: var(--gray-500); line-height: 1.4; }
+
+        /* ── Needs Cards (Step 2) ── */
+        .needs-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        }
+        .needs-card {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 16px;
+            border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+            background: var(--white); cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .needs-card:hover { border-color: var(--gray-300); box-shadow: var(--shadow-sm); }
+        .needs-card.selected {
+            border-color: var(--primary); background: rgba(166,124,82,0.04);
+            box-shadow: 0 0 0 2px rgba(166,124,82,0.15);
+        }
+        .needs-card-icon {
+            width: 38px; height: 38px; border-radius: 10px;
+            background: var(--gray-50);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; color: var(--gray-400); font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+        .needs-card.selected .needs-card-icon { background: var(--primary-light); color: var(--primary); }
+        .needs-card-text { flex: 1; min-width: 0; }
+        .needs-card-title { font-size: 0.85rem; font-weight: 600; line-height: 1.3; }
+        .needs-card-check {
+            width: 20px; height: 20px; border: 2px solid var(--gray-200);
+            border-radius: 5px; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0;
+            transition: all 0.25s ease; font-size: 0.65rem; color: transparent;
+        }
+        .needs-card.selected .needs-card-check {
+            background: var(--primary); border-color: var(--primary); color: var(--white);
+        }
+
+        /* ── Inklusive Needs Cards ── */
+        .needs-card.inklusive {
+            opacity: 0.7; cursor: default;
+            border-color: var(--gray-100); background: var(--gray-50);
+        }
+        .needs-card.inklusive:hover { border-color: var(--gray-100); box-shadow: none; }
+        .needs-card.inklusive .needs-card-icon { background: rgba(37,179,85,0.08); color: #25b355; }
+        .needs-card.inklusive .needs-card-check { display: none; }
+        .inklusive-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-size: 0.62rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.04em; color: #25b355; background: rgba(37,179,85,0.08);
+            padding: 2px 8px; border-radius: 6px; white-space: nowrap;
+        }
+        .inklusive-badge i { font-size: 0.55rem; }
+
+        /* ── Payment Toggle ── */
+        .payment-toggle {
+            display: flex; background: var(--gray-50); border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md); padding: 3px; margin-bottom: 24px;
+        }
+        .payment-toggle-btn {
+            flex: 1; padding: 10px 16px; border: none; border-radius: calc(var(--radius-md) - 2px);
+            font-family: var(--font); font-size: 0.85rem; font-weight: 600;
+            background: transparent; color: var(--gray-500); cursor: pointer;
+            transition: all 0.25s ease; text-align: center;
+        }
+        .payment-toggle-btn.active {
+            background: var(--white); color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        .payment-toggle-btn:hover:not(.active) { color: var(--gray-700); }
+        .result-monthly-note {
+            font-size: 0.78rem; color: var(--gray-400); margin-top: 4px; text-align: right;
+        }
+
+        /* ── Result Card ── */
+        .result-card {
+            background: var(--white); border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl); padding: 36px 32px; margin-bottom: 24px;
+        }
+        .result-paket-label {
+            font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--primary); margin-bottom: 4px;
+        }
+        .result-paket-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
+        .result-paket-desc { font-size: 0.88rem; color: var(--gray-500); margin-bottom: 24px; line-height: 1.5; }
+        .result-features {
+            display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+            padding-bottom: 20px; border-bottom: 1px solid var(--gray-100);
+        }
+        .result-feature-tag {
+            font-size: 0.72rem; padding: 4px 10px; border-radius: 10px;
+            background: var(--primary-light); color: var(--primary-dark); font-weight: 500;
+        }
+        .result-line {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid var(--gray-100); font-size: 0.9rem;
+        }
+        .result-line:last-child { border-bottom: none; }
+        .result-line-label { color: var(--gray-600); }
+        .result-line-value { font-weight: 600; }
+        .result-line-sub { font-size: 0.78rem; color: var(--gray-400); font-weight: 400; }
+        .result-total {
+            display: flex; justify-content: space-between; align-items: baseline;
+            padding: 20px 0 0; margin-top: 8px; border-top: 2px solid var(--secondary);
+        }
+        .result-total-label { font-size: 1rem; font-weight: 600; }
+        .result-total-amount { font-size: 1.8rem; font-weight: 700; }
+        .result-total-note { font-size: 0.78rem; color: var(--gray-500); font-weight: 400; }
+        .result-hosting {
+            text-align: right; font-size: 0.85rem; color: var(--primary-dark);
+            font-weight: 500; margin-top: 6px;
+        }
+        .result-hosting i { margin-right: 4px; }
+
+        /* ── Referenz Toggle ── */
+        .referenz-toggle {
+            display: flex; align-items: center; gap: 16px;
+            padding: 20px 24px; background: rgba(166,124,82,0.04);
+            border: 1px solid rgba(166,124,82,0.12);
+            border-radius: var(--radius-lg); margin-bottom: 24px;
+            cursor: pointer; transition: all 0.25s ease;
+        }
+        .referenz-toggle:hover { background: rgba(166,124,82,0.06); }
+        .referenz-toggle-switch {
+            width: 44px; height: 24px; border-radius: 12px;
+            background: var(--gray-300); position: relative;
+            flex-shrink: 0; transition: background 0.3s ease;
+        }
+        .referenz-toggle-switch::after {
+            content: ''; position: absolute; top: 2px; left: 2px;
+            width: 20px; height: 20px; border-radius: 50%;
+            background: var(--white); transition: transform 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+        .referenz-toggle.active .referenz-toggle-switch { background: var(--primary); }
+        .referenz-toggle.active .referenz-toggle-switch::after { transform: translateX(20px); }
+        .referenz-toggle-text { flex: 1; }
+        .referenz-toggle-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+        .referenz-toggle-desc { font-size: 0.78rem; color: var(--gray-500); line-height: 1.4; }
+        .referenz-toggle-saving { font-size: 0.85rem; font-weight: 700; color: var(--primary); white-space: nowrap; }
+
+        /* ── Addon Cards ── */
+        .addon-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .option-card {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 16px;
+            border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+            background: var(--white); cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .option-card:hover { border-color: var(--gray-300); }
+        .option-card.selected { border-color: var(--primary); background: rgba(166,124,82,0.04); }
+        .option-card-check {
+            width: 20px; height: 20px; border: 2px solid var(--gray-300);
+            border-radius: 5px; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0;
+            transition: all 0.25s ease; font-size: 0.65rem; color: transparent;
+        }
+        .option-card.selected .option-card-check {
+            background: var(--primary); border-color: var(--primary); color: var(--white);
+        }
+        .option-card-icon {
+            width: 34px; height: 34px; border-radius: 9px;
+            background: var(--gray-50);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; color: var(--gray-500); font-size: 0.88rem;
+            transition: all 0.25s ease;
+        }
+        .option-card.selected .option-card-icon { background: var(--primary-light); color: var(--primary); }
+        .option-card-text { flex: 1; min-width: 0; }
+        .option-card-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 1px; }
+        .option-card-detail { font-size: 0.72rem; color: var(--gray-500); }
+        .addon-info {
+            display: flex; align-items: flex-start; gap: 8px;
+            padding: 8px 12px; margin: -2px 0 10px;
+            font-size: 0.73rem; color: var(--gray-500); line-height: 1.45;
+        }
+        .addon-info i { color: var(--gray-300); flex-shrink: 0; margin-top: 1px; font-size: 0.7rem; }
+
+        /* ── Nav Buttons ── */
+        .step-nav {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--gray-100);
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; border: none; border-radius: var(--radius-md);
+            font-family: var(--font); font-size: 0.92rem; font-weight: 600;
+            cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+        }
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--primary-dark); transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(166,124,82,0.2);
+        }
+        .btn-secondary { background: transparent; color: var(--gray-600); border: 1px solid var(--gray-200); }
+        .btn-secondary:hover { border-color: var(--gray-300); background: var(--gray-50); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+        .btn i { transition: transform 0.2s; }
+        .btn-primary:hover i { transform: translateX(3px); }
+        .btn-secondary:hover i { transform: translateX(-3px); }
+        .btn-submit {
+            width: 100%; justify-content: center; padding: 16px 32px;
+            font-size: 1rem; position: relative;
+        }
+        .btn-submit.loading .btn-text { opacity: 0; }
+        .btn-submit .spinner {
+            display: none; position: absolute;
+            width: 20px; height: 20px;
+            border: 2px solid rgba(255,255,255,0.3); border-top-color: var(--white);
+            border-radius: 50%; animation: spin 0.6s linear infinite;
+        }
+        .btn-submit.loading .spinner { display: block; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .submit-error {
+            margin-top: 12px; padding: 12px 16px; border-radius: var(--radius-md);
+            background: rgba(220,38,38,0.06); color: #b91c1c;
+            font-size: 0.85rem; line-height: 1.5; text-align: center;
+        }
+
+        /* ── Checkbox ── */
+        .form-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; cursor: pointer; }
+        .form-check input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+        .form-check-label { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
+        .form-check-label a { color: var(--primary); text-decoration: underline; }
+
+        /* ── Design Cards ── */
+        .design-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .design-card {
+            padding: 20px; border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg); background: var(--white);
+            cursor: pointer; text-align: center; transition: all 0.25s ease;
+        }
+        .design-card:hover { border-color: var(--gray-300); }
+        .design-card.selected { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(166,124,82,0.12); }
+        .design-card-preview { height: 60px; border-radius: 8px; margin-bottom: 12px; }
+        .design-card-name { font-size: 0.88rem; font-weight: 600; }
+        .design-card-desc { font-size: 0.75rem; color: var(--gray-500); margin-top: 2px; }
+
+        /* ── Info Hint ── */
+        .info-hint {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 14px 16px; background: rgba(166,124,82,0.04);
+            border-radius: var(--radius-md); margin-top: 16px;
+            font-size: 0.8rem; color: var(--gray-600); line-height: 1.5;
+        }
+        .info-hint i { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+
+        /* ── Section Divider ── */
+        .section-divider {
+            border: none; border-top: 1px solid var(--gray-100);
+            margin: 32px 0;
+        }
+
+        /* ── Cal Booking Summary ── */
+        .cal-booking-summary {
+            background: var(--gray-50);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            font-size: 0.78rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            max-height: 160px;
+            overflow-y: auto;
+        }
+        .cal-booking-summary strong {
+            color: var(--secondary);
+        }
+        /* ── Direct Contact Alternatives ── */
+        .contact-alt {
+            text-align: center; margin-top: 32px;
+            padding-top: 28px; border-top: 1px solid var(--gray-100);
+            position: relative;
+        }
+        .contact-alt::before {
+            content: 'oder'; position: absolute; top: -10px; left: 50%;
+            transform: translateX(-50%); background: var(--gray-50);
+            padding: 0 16px; font-size: 0.78rem; color: var(--gray-400);
+            font-weight: 500;
+        }
+        .contact-alt-title {
+            font-size: 0.9rem; font-weight: 600; margin-bottom: 14px;
+        }
+        .contact-alt-btns {
+            display: flex; justify-content: center; gap: 12px;
+        }
+        .btn-wa {
+            background: #25D366; color: var(--white);
+        }
+        .btn-wa:hover {
+            background: #1da851; transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.25);
+        }
+        .btn-phone {
+            background: var(--secondary); color: var(--white);
+        }
+        .btn-phone:hover {
+            background: var(--gray-700); transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* ── Success ── */
+        .success-screen { display: none; text-align: center; padding: 80px 24px; }
+        .success-screen.visible { display: block; }
+        .success-icon {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: var(--primary-light); color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px; font-size: 2rem;
+        }
+        .success-title { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+        .success-text {
+            font-size: 0.95rem; color: var(--gray-500);
+            max-width: 440px; margin: 0 auto 24px; line-height: 1.6;
+        }
+        .success-summary {
+            text-align: left; max-width: 400px; margin: 0 auto 32px;
+            background: var(--gray-50); border-radius: var(--radius-lg); padding: 20px 24px;
+        }
+        .success-summary-title {
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--gray-400); margin-bottom: 12px;
+        }
+        .success-summary-line {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 6px 0; font-size: 0.85rem;
+        }
+        .success-summary-line span:first-child { color: var(--gray-500); }
+        .success-summary-line span:last-child { font-weight: 600; }
+        .success-summary-divider { border: none; border-top: 1px solid var(--gray-200); margin: 10px 0; }
+
+        /* ── Floating WhatsApp ── */
+        .wa-float {
+            position: fixed; bottom: 24px; right: 24px;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #25D366; color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            z-index: 1000; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .wa-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .konfig-main { padding: 28px 16px 60px; }
+            .step-title { font-size: 1.3rem; }
+            .needs-grid { grid-template-columns: 1fr; }
+            .toggle-group { flex-direction: column; }
+            .design-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .result-card { padding: 24px 20px; }
+            .result-total-amount { font-size: 1.4rem; }
+            .step-nav { gap: 12px; }
+            .btn { padding: 12px 20px; font-size: 0.85rem; }
+            .progress-labels { display: none; }
+            .contact-alt-btns { flex-direction: column; }
+        }
+        /* ── Accessibility ── */
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        .btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 4px rgba(166,124,82,0.15);
+        }
+        .needs-card:focus-visible, .option-card:focus-visible, .design-card:focus-visible, .toggle-btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="konfig-header">
+        <div class="konfig-header-inner">
+            <a href="/" class="konfig-logo">
+                <svg class="ww-mark" viewBox="0 0 140 56" aria-hidden="true">
+                    <polyline class="ww-w ww-w-l" points="4,6 18,50 32,10 46,50 60,6"/>
+                    <polyline class="ww-w ww-w-c" points="40,6 54,50 68,10 82,50 96,6"/>
+                    <polyline class="ww-w ww-w-r" points="76,6 90,50 104,10 118,50 132,6"/>
+                </svg>
+                Webmanufaktur
+            </a>
+            <a href="/" class="konfig-back"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+        </div>
+    </header>
+
+    <main class="konfig-main" id="wizard">
+        <div class="progress-bar" id="progressBar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <div class="progress-labels" id="progressLabels">
+            <span class="progress-label active">Über Sie</span>
+            <span class="progress-label">Wünsche</span>
+            <span class="progress-label">Ihr Angebot</span>
+            <span class="progress-label">Kontakt</span>
+        </div>
+
+        <!-- ═══════ STEP 1: ÜBER SIE ═══════ -->
+        <div class="step active" id="step1">
+            <div class="step-header">
+                <div class="step-number">Schritt 1 von 4</div>
+                <h1 class="step-title">Erzählen Sie uns von Ihrem Unternehmen</h1>
+                <p class="step-subtitle">Damit wir die richtigen Vorschläge für Sie vorbereiten — unverbindlich, dauert nur 2 Minuten.</p>
+            </div>
+            <div class="form-group">
+                <label class="form-label">In welcher Branche sind Sie tätig?</label>
+                <select class="form-select" id="branche">
+                    <option value="">Bitte wählen...</option>
+                    <option value="friseur">Friseur & Beauty</option>
+                    <option value="arzt">Arzt & Praxis</option>
+                    <option value="handwerk">Handwerk & Bau</option>
+                    <option value="gastro">Gastronomie</option>
+                    <option value="fitness">Fitness & Sport</option>
+                    <option value="einzelhandel">Einzelhandel</option>
+                    <option value="dienstleistung">Dienstleistung</option>
+                    <option value="sonstiges">Sonstiges</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Firmenname</label>
+                <input type="text" class="form-input" id="firmenname" placeholder="z.B. Salon Müller, Praxis Dr. Weber..." required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Haben Sie bereits eine Website?</label>
+                <div class="toggle-group" id="hasWebsite">
+                    <div class="toggle-btn" data-value="ja">
+                        <div class="toggle-btn-icon"><i class="fas fa-globe"></i></div>
+                        <div class="toggle-btn-title">Ja</div>
+                        <div class="toggle-btn-desc">Soll ersetzt oder überarbeitet werden</div>
+                    </div>
+                    <div class="toggle-btn" data-value="nein">
+                        <div class="toggle-btn-icon"><i class="fas fa-plus-circle"></i></div>
+                        <div class="toggle-btn-title">Nein</div>
+                        <div class="toggle-btn-desc">Erste Website für mein Unternehmen</div>
+                    </div>
+                </div>
+            </div>
+            <div class="step-nav">
+                <div></div>
+                <button class="btn btn-primary" id="next1">Weiter <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- ═══════ STEP 2: WÜNSCHE ═══════ -->
+        <div class="step" id="step2">
+            <div class="step-header">
+                <div class="step-number">Schritt 2 von 4</div>
+                <h1 class="step-title">Was ist Ihnen wichtig?</h1>
+                <p class="step-subtitle">Wählen Sie alles aus, was Ihre Website können soll. Wir haben basierend auf Ihrer Branche schon Vorschläge gemacht.</p>
+            </div>
+
+            <div class="needs-grid" id="needsGrid">
+                <!-- Inklusive (immer dabei, nicht abwählbar) -->
+                <div class="needs-card inklusive" data-need="gmb">
+                    <div class="needs-card-icon"><i class="fab fa-google"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Bei Google besser gefunden werden</div>
+                        <span class="inklusive-badge"><i class="fas fa-check"></i> Inklusive</span>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card inklusive" data-need="bewertungen">
+                    <div class="needs-card-icon"><i class="fas fa-star"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Kundenbewertungen zeigen</div>
+                        <span class="inklusive-badge"><i class="fas fa-check"></i> Inklusive</span>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card inklusive" data-need="socialmedia">
+                    <div class="needs-card-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Instagram & Social Media einbinden</div>
+                        <span class="inklusive-badge"><i class="fas fa-check"></i> Inklusive</span>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <!-- Wählbare Features -->
+                <div class="needs-card" data-need="buchung">
+                    <div class="needs-card-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Kunden sollen online Termine buchen</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="logo">
+                    <div class="needs-card-icon"><i class="fas fa-pen-nib"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Professionelles Logo-Design</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="ki-bilder">
+                    <div class="needs-card-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">KI-Bildoptimierung für Ihre Fotos</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="shop">
+                    <div class="needs-card-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Produkte online verkaufen</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="blog">
+                    <div class="needs-card-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Neuigkeiten & Artikel veröffentlichen</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="newsletter">
+                    <div class="needs-card-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Newsletter an Kunden versenden</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="gutscheine">
+                    <div class="needs-card-icon"><i class="fas fa-gift"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Gutscheine online verkaufen</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="needs-card" data-need="galerie">
+                    <div class="needs-card-icon"><i class="fas fa-images"></i></div>
+                    <div class="needs-card-text">
+                        <div class="needs-card-title">Foto-Galerie / Portfolio zeigen</div>
+                    </div>
+                    <div class="needs-card-check"><i class="fas fa-check"></i></div>
+                </div>
+            </div>
+
+            <div class="info-hint" style="margin-top: 20px;">
+                <i class="fas fa-info-circle"></i>
+                <span>Nicht sicher? Kein Problem — wir beraten Sie gerne persönlich. Wählen Sie einfach aus, was Ihnen spontan wichtig erscheint.</span>
+            </div>
+            <div class="step-nav">
+                <button class="btn btn-secondary" id="prev2"><i class="fas fa-arrow-left"></i> Zurück</button>
+                <button class="btn btn-primary" id="next2">Weiter <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- ═══════ STEP 3: EMPFEHLUNG ═══════ -->
+        <div class="step" id="step3">
+            <div class="step-header">
+                <div class="step-number">Schritt 3 von 4</div>
+                <h1 class="step-title">Unsere Empfehlung für Sie</h1>
+                <p class="step-subtitle">Basierend auf Ihren Wünschen — unverbindlich und kostenlos.</p>
+            </div>
+
+            <!-- Referenz Toggle -->
+            <div class="referenz-toggle" id="referenzToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Referenzkunde werden und 15% sparen">
+                <div class="referenz-toggle-switch"></div>
+                <div class="referenz-toggle-text">
+                    <div class="referenz-toggle-title">Referenzkunde werden & sparen</div>
+                    <div class="referenz-toggle-desc">Wir dürfen Ihre Website als Referenz zeigen — Sie erhalten 15% Rabatt auf den Gesamtpreis.</div>
+                </div>
+                <div class="referenz-toggle-saving" id="referenzSaving"></div>
+            </div>
+
+            <!-- Payment Toggle -->
+            <div class="payment-toggle" id="paymentToggle">
+                <button type="button" class="payment-toggle-btn active" data-mode="einmalig">Einmalzahlung</button>
+                <button type="button" class="payment-toggle-btn" data-mode="monatlich">Monatsrate</button>
+            </div>
+
+            <!-- Result Card -->
+            <div class="result-card" id="resultCard">
+                <div class="result-paket-label">Unverbindliche Empfehlung</div>
+                <div class="result-paket-name" id="resultPaketName"></div>
+                <div class="result-paket-desc" id="resultPaketDesc"></div>
+                <div class="result-features" id="resultFeatures"></div>
+                <div id="resultLines"></div>
+                <div class="result-total">
+                    <div class="result-total-label">Geschätzter Preis <span class="result-total-note">(einmalig)</span></div>
+                    <div class="result-total-amount" id="resultTotal"></div>
+                </div>
+                <div class="result-hosting" id="resultHosting"></div>
+                <div id="resultAfter" style="text-align:center;font-size:0.78rem;color:var(--gray-400);margin-top:6px;"></div>
+            </div>
+
+            <!-- Trust / Social Proof -->
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+                <div style="flex:1;min-width:140px;display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+                    <i class="fas fa-clock" style="color:var(--primary);font-size:1rem;"></i>
+                    <div><div style="font-size:0.82rem;font-weight:600;">14 Werktage</div><div style="font-size:0.72rem;color:var(--gray-400);">oder 10% Rabatt</div></div>
+                </div>
+                <div style="flex:1;min-width:140px;display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+                    <i class="fas fa-shield-halved" style="color:var(--primary);font-size:1rem;"></i>
+                    <div><div style="font-size:0.82rem;font-weight:600;">Festpreis-Garantie</div><div style="font-size:0.72rem;color:var(--gray-400);">keine versteckten Kosten</div></div>
+                </div>
+                <div style="flex:1;min-width:140px;display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
+                    <i class="fas fa-key" style="color:var(--primary);font-size:1rem;"></i>
+                    <div><div style="font-size:0.82rem;font-weight:600;">100% Eigentum</div><div style="font-size:0.72rem;color:var(--gray-400);">keine Knebelverträge</div></div>
+                </div>
+            </div>
+
+            <!-- Add-ons -->
+            <div class="form-group">
+                <label class="form-label">Optionale Extras</label>
+                <div class="addon-grid" id="addons">
+                    <div class="option-card" data-addon="vor-ort-fotos">
+                        <div class="option-card-icon"><i class="fas fa-camera-retro"></i></div>
+                        <div class="option-card-text">
+                            <div class="option-card-name">Vor-Ort Fotos <span style="color:var(--gray-400);font-weight:400;font-size:0.8rem;">— 299 €</span></div>
+                            <div class="option-card-detail">Professionelles Fotoshooting — Geschäft, Team & Produkte</div>
+                        </div>
+                        <div class="option-card-check"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="option-card" data-addon="vor-ort-fotos-video">
+                        <div class="option-card-icon"><i class="fas fa-video"></i></div>
+                        <div class="option-card-text">
+                            <div class="option-card-name">Vor-Ort Fotos + Video <span style="color:var(--gray-400);font-weight:400;font-size:0.8rem;">— 499 €</span></div>
+                            <div class="option-card-detail">Fotoshooting + 30-60s Promo-Video für Website & Social Media</div>
+                        </div>
+                        <div class="option-card-check"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="option-card" data-addon="google-ads">
+                        <div class="option-card-icon"><i class="fab fa-google"></i></div>
+                        <div class="option-card-text">
+                            <div class="option-card-name">Google Ads Setup <span style="color:var(--gray-400);font-weight:400;font-size:0.8rem;">— 199 €</span></div>
+                            <div class="option-card-detail">Lokale Google-Werbekampagne — sofort von Kunden gefunden werden</div>
+                        </div>
+                        <div class="option-card-check"><i class="fas fa-check"></i></div>
+                    </div>
+                </div>
+                <div class="addon-info"><i class="fas fa-info-circle"></i> Alle Pakete enthalten bereits KI-generierte Fotos. Foto- und Video-Pakete sind nicht kombinierbar.</div>
+            </div>
+
+            <div class="info-hint">
+                <i class="fas fa-handshake"></i>
+                <span><strong>Unverbindlich:</strong> Dies ist eine erste Einschätzung. Im persönlichen Gespräch stimmen wir alles genau auf Ihre Wünsche ab — der finale Preis kann abweichen.</span>
+            </div>
+            <div class="step-nav">
+                <button class="btn btn-secondary" id="prev3"><i class="fas fa-arrow-left"></i> Zurück</button>
+                <button class="btn btn-primary" id="next3">Weiter zur Anfrage <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- ═══════ STEP 4: TERMIN ═══════ -->
+        <div class="step" id="step4">
+            <div class="step-header">
+                <div class="step-number">Schritt 4 von 4</div>
+                <h1 class="step-title">Lassen Sie uns persönlich sprechen</h1>
+                <p class="step-subtitle">Buchen Sie ein kostenloses Erstgespräch — wir gehen Ihr Angebot gemeinsam durch.</p>
+            </div>
+
+            <!-- Configuration summary -->
+            <div class="cal-booking-summary" id="calSummary"></div>
+
+            <!-- Design + Anmerkungen -->
+            <div class="form-group">
+                <label class="form-label">Design-Stil (optional)</label>
+                <div class="design-grid" id="designStyle">
+                    <div class="design-card" data-style="modern">
+                        <div class="design-card-preview" style="background:linear-gradient(135deg,#f8f9fa,#e8e8ed);"></div>
+                        <div class="design-card-name">Modern & Clean</div>
+                        <div class="design-card-desc">Viel Weißraum, klare Linien</div>
+                    </div>
+                    <div class="design-card" data-style="warm">
+                        <div class="design-card-preview" style="background:linear-gradient(135deg,#fef3c7,#f59e0b);"></div>
+                        <div class="design-card-name">Warm & Einladend</div>
+                        <div class="design-card-desc">Warme Farben, freundlich</div>
+                    </div>
+                    <div class="design-card" data-style="elegant">
+                        <div class="design-card-preview" style="background:linear-gradient(135deg,#1d1d1f,#424245);"></div>
+                        <div class="design-card-name">Elegant & Dunkel</div>
+                        <div class="design-card-desc">Dunkler Look, Premium-Gefühl</div>
+                    </div>
+                    <div class="design-card" data-style="bunt">
+                        <div class="design-card-preview" style="background:linear-gradient(135deg,#06b6d4,#8b5cf6 50%,#ec4899);"></div>
+                        <div class="design-card-name">Bunt & Auffällig</div>
+                        <div class="design-card-desc">Kräftige Farben, dynamisch</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="anmerkungen">Anmerkungen (optional)</label>
+                <textarea class="form-textarea" id="anmerkungen" name="anmerkungen" placeholder="Besondere Wünsche, Vorbilder, Farbwünsche..."></textarea>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Name + Email for Cal.com -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label" for="calName">Ihr Name</label>
+                    <input type="text" class="form-input" id="calName" placeholder="Vor- und Nachname">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="calEmail">E-Mail</label>
+                    <input type="email" class="form-input" id="calEmail" placeholder="ihre@email.de">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-submit" id="calBookBtn" style="width:100%;">
+                <i class="fas fa-calendar-check"></i> Kostenloses Erstgespräch buchen
+            </button>
+            <p style="text-align:center;margin-top:10px;font-size:0.78rem;color:var(--gray-400);">Ihre Anfrage wird automatisch als Gesprächsnotiz übermittelt — so können wir direkt loslegen.</p>
+
+            <!-- Fallback: WhatsApp + Phone -->
+            <div class="contact-alt">
+                <div class="contact-alt-title">Lieber direkt?</div>
+                <div class="contact-alt-btns">
+                    <a href="#" id="waContactBtn" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp schreiben</a>
+                    <a href="tel:+4915759617436" class="btn btn-phone" id="phoneBtn"><i class="fas fa-phone"></i> Anrufen</a>
+                </div>
+            </div>
+
+            <div class="step-nav" style="border:none;padding-top:12px;">
+                <button class="btn btn-secondary" id="prev4"><i class="fas fa-arrow-left"></i> Zurück</button>
+                <div></div>
+            </div>
+        </div>
+
+        <!-- Success -->
+        <div class="success-screen" id="successScreen">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <h2 class="success-title">Anfrage gesendet!</h2>
+            <p class="success-text">Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 24 Stunden bei Ihnen — per E-Mail oder Telefon, wie Sie es bevorzugen.</p>
+            <div class="success-summary" id="successSummary"></div>
+            <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+                <a href="/" class="btn btn-primary">Zurück zur Startseite <i class="fas fa-arrow-right"></i></a>
+                <a href="#" id="waSuccessBtn" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Auf WhatsApp schreiben</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" id="waFloat" class="wa-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+    (function() {
+        'use strict';
+
+        var TOTAL_STEPS = 4;
+
+        // ─── KONTAKT (hier Ihre Daten eintragen) ───
+        var WA_NUMBER = '4915759617436';
+        var PHONE_NUMBER = '+4915759617436';
+        var WA_DEFAULT_MSG = 'Hallo! Ich interessiere mich für eine Website für mein Unternehmen. Können wir uns dazu austauschen?';
+
+        // ─── PRICING ───
+        var PAKET_PRICES = {
+            starter:  { full: 699,  ref: 595  },
+            business: { full: 990,  ref: 842  },
+            premium:  { full: 1790, ref: 1522 }
+        };
+        var MONTHLY_PRICES = {
+            starter:  { full: 49,  ref: 42  },
+            business: { full: 69,  ref: 59  },
+            premium:  { full: 119, ref: 99  }
+        };
+        var MONTHLY_MONTHS = 12;
+        var PAKET_DESCS = {
+            starter:  'Kompakte Website mit bis zu 5 Seiten — ideal zum Einstieg. Inklusive Google-Profil, Bewertungen & Social Media.',
+            business: 'Professionelle Website mit bis zu 10 Seiten — mit Terminbuchung, individuellem Logo & KI-Bildoptimierung.',
+            premium:  'Die Komplettlösung mit unbegrenzten Seiten — Online-Shop, Blog, Newsletter und mehr.'
+        };
+        var PAKET_HOSTING = {
+            starter:  '1 Jahr Hosting inklusive',
+            business: '1 Jahr Hosting + Basis-Wartung inklusive',
+            premium:  '1 Jahr Hosting + Komfort-Wartung inklusive'
+        };
+        var PAKET_AFTER = { starter: '19 €/Mo', business: '39 €/Mo', premium: '59 €/Mo' };
+        var ADDON_PRICES = { 'vor-ort-fotos': 299, 'vor-ort-fotos-video': 499, 'google-ads': 199 };
+        var ADDON_LABELS = { 'vor-ort-fotos': 'Vor-Ort Fotos', 'vor-ort-fotos-video': 'Vor-Ort Fotos + Video', 'google-ads': 'Google Ads Setup' };
+
+        // Needs that are always included (Starter baseline)
+        var INKLUSIVE_NEEDS = ['gmb', 'bewertungen', 'socialmedia'];
+
+        // ─── NEEDS → PACKAGE MAPPING ───
+        var PREMIUM_NEEDS = ['shop', 'blog', 'newsletter', 'gutscheine', 'galerie'];
+        var BUSINESS_NEEDS = ['buchung', 'logo', 'ki-bilder'];
+
+        // What each package includes for the result display
+        var ALWAYS_INCLUDED = ['Perfekt auf Handy & Tablet', 'Besser bei Google gefunden', 'Datenschutz inklusive', 'Sichere Verbindung (https)', 'Kontaktformular', 'Google Maps', 'WhatsApp-Button', 'Professionelle Bilder inklusive', 'Google-Profil', 'Kundenbewertungen', 'Social Media'];
+        var PAKET_FEATURES = {
+            starter: ['Text-Logo'],
+            business: ['Individuelles Logo', 'KI-Bildoptimierung', 'Online-Terminbuchung', 'FAQ-Bereich'],
+            premium: ['Online-Shop', 'Blog & Neuigkeiten', 'Newsletter-System', 'Online-Gutscheine', 'Foto-Galerie / Portfolio']
+        };
+
+        // ─── BRANCHE → NEED PRESELECTION ───
+        // Note: gmb, bewertungen, socialmedia are always included (inklusive)
+        // Only list selectable needs here for branche preselection
+        var BRANCHE_PRESELECT = {
+            friseur: ['buchung'],
+            arzt: ['buchung'],
+            gastro: ['buchung'],
+            fitness: ['buchung'],
+            handwerk: [],
+            einzelhandel: [],
+            dienstleistung: [],
+            sonstiges: []
+        };
+
+        // ─── STATE ───
+        var state = {
+            step: 1, branche: '', firmenname: '', hasWebsite: '',
+            needs: [], addons: [], referenz: false, designStyle: '',
+            needsPopulated: false, paymentMode: 'einmalig'
+        };
+
+        // ─── INIT ───
+        function init() {
+            bindNavigation();
+            bindInputs();
+            bindNeedsCards();
+            bindAddonCards();
+            bindReferenzToggle();
+            bindPaymentToggle();
+            bindDesignCards();
+            bindForm();
+            bindCalBooking();
+            setupWhatsApp();
+            handleUrlParams();
+        }
+
+        function handleUrlParams() {
+            var params = new URLSearchParams(window.location.search);
+            var paket = params.get('paket');
+            if (!paket) return;
+            paket = paket.toLowerCase();
+            // Pre-select needs based on the requested package tier
+            var preselect = [];
+            if (paket === 'business') {
+                preselect = ['buchung', 'logo', 'ki-bilder'];
+            } else if (paket === 'premium') {
+                preselect = ['buchung', 'logo', 'ki-bilder', 'shop'];
+            }
+            if (preselect.length > 0) {
+                state.needs = preselect.slice();
+                document.querySelectorAll('#needsGrid .needs-card').forEach(function(card) {
+                    if (preselect.indexOf(card.dataset.need) !== -1) {
+                        card.classList.add('selected');
+                    }
+                });
+                state.needsPopulated = true;
+            }
+        }
+
+        function setupWhatsApp() {
+            var waUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_DEFAULT_MSG);
+            var float = document.getElementById('waFloat');
+            var contact = document.getElementById('waContactBtn');
+            var success = document.getElementById('waSuccessBtn');
+            var phone = document.getElementById('phoneBtn');
+            if (float) float.href = waUrl;
+            if (contact) contact.href = waUrl;
+            if (success) success.href = waUrl;
+            if (phone) phone.href = 'tel:' + PHONE_NUMBER;
+        }
+
+        // ─── NAVIGATION ───
+        function bindNavigation() {
+            for (var i = 1; i <= TOTAL_STEPS; i++) {
+                (function(s) {
+                    var n = document.getElementById('next' + s);
+                    var p = document.getElementById('prev' + s);
+                    if (n) n.addEventListener('click', function() { goToStep(s + 1); });
+                    if (p) p.addEventListener('click', function() { goToStep(s - 1); });
+                })(i);
+            }
+        }
+
+        function goToStep(target) {
+            if (target < 1 || target > TOTAL_STEPS) return;
+            if (target > state.step && !validateStep(state.step)) return;
+            if (target === 2) populateNeeds();
+            if (target >= 3) updateResult();
+            if (target === 4) updateCalSummary();
+
+            document.getElementById('step' + state.step).classList.remove('active');
+            document.getElementById('step' + target).classList.add('active');
+            state.step = target;
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateProgress() {
+            var steps = document.querySelectorAll('.progress-step');
+            var labels = document.querySelectorAll('.progress-label');
+            for (var i = 0; i < steps.length; i++) steps[i].classList.toggle('active', i < state.step);
+            for (var j = 0; j < labels.length; j++) labels[j].classList.toggle('active', j === state.step - 1);
+        }
+
+        function validateStep(step) {
+            if (step === 1 && !state.branche) { shakeElement(document.getElementById('branche')); return false; }
+            if (step === 1 && !state.firmenname.trim()) { shakeElement(document.getElementById('firmenname')); return false; }
+            if (step === 1 && !state.hasWebsite) {
+                document.querySelectorAll('#hasWebsite .toggle-btn').forEach(function(b) { shakeElement(b); });
+                return false;
+            }
+            return true;
+        }
+
+        function shakeElement(el) {
+            el.style.animation = 'none';
+            el.offsetHeight;
+            el.style.animation = 'shake 0.5s ease';
+            setTimeout(function() { el.style.animation = ''; }, 500);
+        }
+
+        // ─── INPUTS ───
+        function bindInputs() {
+            document.getElementById('branche').addEventListener('change', function() {
+                state.branche = this.value;
+                state.needsPopulated = false;
+            });
+            document.getElementById('firmenname').addEventListener('input', function() { state.firmenname = this.value; });
+            document.querySelectorAll('.toggle-group').forEach(function(group) {
+                group.querySelectorAll('.toggle-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        group.querySelectorAll('.toggle-btn').forEach(function(b) { b.classList.remove('selected'); });
+                        btn.classList.add('selected');
+                        state[group.id] = btn.dataset.value;
+                    });
+                });
+            });
+        }
+
+        // ─── NEEDS CARDS ───
+        function populateNeeds() {
+            if (state.needsPopulated) return;
+            state.needsPopulated = true;
+            var preselect = BRANCHE_PRESELECT[state.branche] || [];
+            state.needs = [];
+            document.querySelectorAll('#needsGrid .needs-card').forEach(function(card) {
+                // Skip inklusive cards — they're always included
+                if (card.classList.contains('inklusive')) return;
+                var need = card.dataset.need;
+                if (preselect.indexOf(need) !== -1) {
+                    card.classList.add('selected');
+                    state.needs.push(need);
+                } else {
+                    card.classList.remove('selected');
+                }
+            });
+        }
+
+        function bindNeedsCards() {
+            document.querySelectorAll('#needsGrid .needs-card').forEach(function(card) {
+                // Inklusive cards are not interactive
+                if (card.classList.contains('inklusive')) return;
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'checkbox');
+                card.setAttribute('aria-checked', card.classList.contains('selected') ? 'true' : 'false');
+                card.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
+                card.addEventListener('click', function() {
+                    card.classList.toggle('selected');
+                    card.setAttribute('aria-checked', card.classList.contains('selected') ? 'true' : 'false');
+                    var need = card.dataset.need;
+                    if (card.classList.contains('selected')) {
+                        if (state.needs.indexOf(need) === -1) state.needs.push(need);
+                    } else {
+                        state.needs = state.needs.filter(function(n) { return n !== need; });
+                    }
+                });
+            });
+        }
+
+        // ─── ADDON CARDS ───
+        var FOTO_EXCLUSION = ['vor-ort-fotos', 'vor-ort-fotos-video'];
+
+        function deselectAddon(name) {
+            var el = document.querySelector('#addons [data-addon="' + name + '"]');
+            if (el) el.classList.remove('selected');
+            state.addons = state.addons.filter(function(a) { return a !== name; });
+        }
+
+        function bindAddonCards() {
+            document.querySelectorAll('#addons .option-card').forEach(function(card) {
+                card.addEventListener('click', function() {
+                    var addon = card.dataset.addon;
+                    if (FOTO_EXCLUSION.indexOf(addon) !== -1) {
+                        FOTO_EXCLUSION.forEach(function(other) {
+                            if (other !== addon) deselectAddon(other);
+                        });
+                    }
+                    card.classList.toggle('selected');
+                    if (card.classList.contains('selected')) {
+                        if (state.addons.indexOf(addon) === -1) state.addons.push(addon);
+                    } else {
+                        state.addons = state.addons.filter(function(a) { return a !== addon; });
+                    }
+                    updateResult();
+                });
+            });
+        }
+
+        // ─── REFERENZ ───
+        function bindReferenzToggle() {
+            var toggle = document.getElementById('referenzToggle');
+            function flipReferenz() {
+                state.referenz = !state.referenz;
+                toggle.classList.toggle('active', state.referenz);
+                toggle.setAttribute('aria-checked', String(state.referenz));
+                updateResult();
+            }
+            toggle.addEventListener('click', flipReferenz);
+            toggle.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipReferenz(); }
+            });
+        }
+
+        // ─── PAYMENT TOGGLE ───
+        function bindPaymentToggle() {
+            document.querySelectorAll('#paymentToggle .payment-toggle-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('#paymentToggle .payment-toggle-btn').forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    state.paymentMode = btn.dataset.mode;
+                    updateResult();
+                });
+            });
+        }
+
+        // ─── DESIGN ───
+        function bindDesignCards() {
+            document.querySelectorAll('#designStyle .design-card').forEach(function(card) {
+                card.addEventListener('click', function() {
+                    document.querySelectorAll('#designStyle .design-card').forEach(function(c) { c.classList.remove('selected'); });
+                    card.classList.add('selected');
+                    state.designStyle = card.dataset.style;
+                });
+            });
+        }
+
+        // ─── DETERMINE PACKAGE FROM NEEDS ───
+        function getRecommendedPaket() {
+            var hasPremium = state.needs.some(function(n) { return PREMIUM_NEEDS.indexOf(n) !== -1; });
+            if (hasPremium) return 'premium';
+            var hasBusiness = state.needs.some(function(n) { return BUSINESS_NEEDS.indexOf(n) !== -1; });
+            if (hasBusiness) return 'business';
+            return 'starter';
+        }
+
+        // ─── UPDATE RESULT ───
+        function updateResult() {
+            var paket = getRecommendedPaket();
+            var isMonthly = state.paymentMode === 'monatlich';
+            var baseFull = PAKET_PRICES[paket].full;
+            var addonFull = 0;
+            state.addons.forEach(function(a) { addonFull += ADDON_PRICES[a] || 0; });
+            var totalFull = baseFull + addonFull;
+
+            // 15% Rabatt auf ALLES (Paket + Addons)
+            var discount = state.referenz ? 0.85 : 1;
+            var basePrice = Math.round(baseFull * discount);
+            var addonTotal = Math.round(addonFull * discount);
+            var total = basePrice + addonTotal;
+
+            // Monthly rate (only applies to base package price)
+            var monthlyRate = state.referenz ? MONTHLY_PRICES[paket].ref : MONTHLY_PRICES[paket].full;
+
+            document.getElementById('resultPaketName').textContent = capitalize(paket) + '-Paket';
+            document.getElementById('resultPaketDesc').textContent = PAKET_DESCS[paket];
+
+            // Features tags
+            var featsHtml = '';
+            ALWAYS_INCLUDED.forEach(function(f) { featsHtml += '<span class="result-feature-tag">' + f + '</span>'; });
+            // Add package-level features
+            var levels = ['starter'];
+            if (paket === 'business' || paket === 'premium') levels.push('business');
+            if (paket === 'premium') levels.push('premium');
+            levels.forEach(function(lvl) {
+                PAKET_FEATURES[lvl].forEach(function(f) { featsHtml += '<span class="result-feature-tag">' + f + '</span>'; });
+            });
+            document.getElementById('resultFeatures').innerHTML = featsHtml;
+
+            // Price lines
+            var html = '';
+            if (isMonthly) {
+                html += '<div class="result-line"><span class="result-line-label">' + capitalize(paket) + '-Paket';
+                if (state.referenz) html += ' <span class="result-line-sub">(Referenzpreis)</span>';
+                html += '</span><span class="result-line-value">' + monthlyRate + ' €/Mo <span class="result-line-sub">&times; ' + MONTHLY_MONTHS + '</span></span></div>';
+                if (addonTotal > 0) {
+                    var addonNames = state.addons.map(function(a) { return ADDON_LABELS[a] || a; }).join(', ');
+                    html += '<div class="result-line"><span class="result-line-label">Extras <span class="result-line-sub">(' + addonNames + ')</span></span><span class="result-line-value">+ ' + fmt(addonTotal) + ' <span class="result-line-sub">(einmalig)</span></span></div>';
+                }
+            } else {
+                html += '<div class="result-line"><span class="result-line-label">' + capitalize(paket) + '-Paket';
+                if (state.referenz) html += ' <span class="result-line-sub">(Referenzpreis)</span>';
+                html += '</span><span class="result-line-value">' + fmt(basePrice) + '</span></div>';
+                if (addonTotal > 0) {
+                    var addonNames = state.addons.map(function(a) { return ADDON_LABELS[a] || a; }).join(', ');
+                    html += '<div class="result-line"><span class="result-line-label">Extras <span class="result-line-sub">(' + addonNames + ')</span></span><span class="result-line-value">+ ' + fmt(addonTotal) + '</span></div>';
+                }
+            }
+            document.getElementById('resultLines').innerHTML = html;
+
+            // Total display
+            var totalLabel = document.querySelector('.result-total-label');
+            if (isMonthly) {
+                var monthlyTotal = monthlyRate * MONTHLY_MONTHS + addonTotal;
+                document.getElementById('resultTotal').textContent = monthlyRate + ' €/Mo';
+                if (totalLabel) totalLabel.innerHTML = 'Monatliche Rate <span class="result-total-note">(&times; ' + MONTHLY_MONTHS + ' Monate)</span>';
+                // Show comparison to one-time price
+                var afterEl = document.getElementById('resultAfter');
+                if (afterEl) afterEl.innerHTML = 'Gesamtkosten: ' + fmt(monthlyTotal) + ' · Danach optional: ' + PAKET_AFTER[paket];
+            } else {
+                document.getElementById('resultTotal').textContent = fmt(total);
+                if (totalLabel) totalLabel.innerHTML = 'Geschätzter Preis <span class="result-total-note">(einmalig)</span>';
+                var afterEl = document.getElementById('resultAfter');
+                if (afterEl) afterEl.innerHTML = 'Danach optional: ' + PAKET_AFTER[paket];
+            }
+
+            document.getElementById('resultHosting').innerHTML = '<i class="fas fa-gift"></i> ' + PAKET_HOSTING[paket];
+
+            // Monthly note
+            var monthlyNoteEl = document.getElementById('resultMonthlyNote');
+            if (!monthlyNoteEl) {
+                monthlyNoteEl = document.createElement('div');
+                monthlyNoteEl.id = 'resultMonthlyNote';
+                monthlyNoteEl.className = 'result-monthly-note';
+                document.getElementById('resultAfter').parentNode.insertBefore(monthlyNoteEl, document.getElementById('resultAfter').nextSibling);
+            }
+            if (!isMonthly) {
+                monthlyNoteEl.innerHTML = 'Oder bequem ab ' + MONTHLY_PRICES[paket].full + ' €/Mo in Monatsraten';
+            } else {
+                monthlyNoteEl.innerHTML = 'Alternativ einmalig: ' + fmt(total);
+            }
+
+            // Referenz saving
+            var saving = totalFull - total;
+            if (state.referenz) {
+                document.getElementById('referenzSaving').textContent = 'Sie sparen ' + fmt(saving);
+            } else {
+                saving = Math.round(totalFull * 0.15);
+                document.getElementById('referenzSaving').textContent = 'Bis zu ' + fmt(saving) + ' sparen';
+            }
+        }
+
+        function fmt(p) { return p.toLocaleString('de-DE') + ' €'; }
+        function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+        // ─── SUCCESS SUMMARY ───
+        function buildSuccessSummary(paket, basePrice, addonTotal) {
+            var isMonthly = state.paymentMode === 'monatlich';
+            var monthlyRate = state.referenz ? MONTHLY_PRICES[paket].ref : MONTHLY_PRICES[paket].full;
+            var html = '<div class="success-summary-title">Ihre Anfrage</div>';
+            html += '<div class="success-summary-line"><span>Empfehlung</span><span>' + capitalize(paket) + (state.referenz ? ' (Referenz)' : '') + '</span></div>';
+            if (isMonthly) {
+                html += '<div class="success-summary-line"><span>Monatsrate</span><span>' + monthlyRate + ' €/Mo &times; ' + MONTHLY_MONTHS + '</span></div>';
+            } else {
+                html += '<div class="success-summary-line"><span>Paketpreis</span><span>' + fmt(basePrice) + '</span></div>';
+            }
+            if (state.addons.length > 0) {
+                var names = state.addons.map(function(a) { return ADDON_LABELS[a] || a; }).join(', ');
+                html += '<div class="success-summary-line"><span>Extras</span><span>+ ' + fmt(addonTotal) + '</span></div>';
+                html += '<div class="success-summary-line"><span style="font-size:0.78rem;color:var(--gray-400)">' + names + '</span><span></span></div>';
+            }
+            html += '<hr class="success-summary-divider">';
+            if (isMonthly) {
+                html += '<div class="success-summary-line"><span>Gesamtkosten</span><span>' + fmt(monthlyRate * MONTHLY_MONTHS + addonTotal) + '</span></div>';
+            } else {
+                html += '<div class="success-summary-line"><span>Geschätzter Preis</span><span>' + fmt(basePrice + addonTotal) + '</span></div>';
+            }
+            html += '<div class="success-summary-line"><span>Inklusive</span><span>' + PAKET_HOSTING[paket] + '</span></div>';
+            html += '<div class="success-summary-line"><span>Danach optional</span><span>' + PAKET_AFTER[paket] + '</span></div>';
+            document.getElementById('successSummary').innerHTML = html;
+        }
+
+        // ─── CAL.COM BOOKING WITH NOTES ───
+        function buildCalNotes() {
+            var needLabels = {
+                buchung: 'Online-Terminbuchung', gmb: 'Google-Profil', bewertungen: 'Kundenbewertungen',
+                socialmedia: 'Social Media', logo: 'Logo-Design', 'ki-bilder': 'KI-Bildoptimierung',
+                shop: 'Online-Shop', blog: 'Blog & News', newsletter: 'Newsletter',
+                gutscheine: 'Online-Gutscheine', galerie: 'Foto-Galerie'
+            };
+            var paket = getRecommendedPaket();
+            var discount = state.referenz ? 0.85 : 1;
+            var basePrice = Math.round(PAKET_PRICES[paket].full * discount);
+            var addonTotal = 0;
+            state.addons.forEach(function(a) { addonTotal += Math.round((ADDON_PRICES[a] || 0) * discount); });
+            var total = basePrice + addonTotal;
+            var isMonthly = state.paymentMode === 'monatlich';
+            var monthlyRate = state.referenz ? MONTHLY_PRICES[paket].ref : MONTHLY_PRICES[paket].full;
+
+            var lines = [];
+            lines.push('ANGEBOTS-ZUSAMMENFASSUNG');
+            lines.push('========================');
+            if (state.branche) lines.push('Branche: ' + state.branche);
+            if (state.firmenname) lines.push('Firmenname: ' + state.firmenname);
+            if (state.hasWebsite) lines.push('Bestehende Website: ' + state.hasWebsite);
+            lines.push('');
+            lines.push('Empfohlenes Paket: ' + capitalize(paket) + (state.referenz ? ' (Referenzkunde)' : ''));
+            if (isMonthly) {
+                lines.push('Zahlungsart: Monatsrate — ' + monthlyRate + ' €/Mo × ' + MONTHLY_MONTHS + ' Monate');
+            } else {
+                lines.push('Paketpreis: ' + fmt(basePrice) + ' (einmalig)');
+            }
+            // Always include inklusive features
+            lines.push('Inklusive: Google-Profil, Kundenbewertungen, Social Media');
+            if (state.needs.length > 0) {
+                lines.push('Zusätzliche Features: ' + state.needs.map(function(n) { return needLabels[n] || n; }).join(', '));
+            }
+            if (state.addons.length > 0) {
+                lines.push('Extras: ' + state.addons.map(function(a) { return ADDON_LABELS[a] || a; }).join(', ') + ' (+' + fmt(addonTotal) + ')');
+            }
+            if (isMonthly) {
+                lines.push('Gesamtkosten: ' + fmt(monthlyRate * MONTHLY_MONTHS + addonTotal) + ' (unverbindlich)');
+            } else {
+                lines.push('Geschätzter Gesamtpreis: ' + fmt(total) + ' (unverbindlich)');
+            }
+            lines.push('Inklusive: ' + PAKET_HOSTING[paket]);
+            lines.push('Danach optional: ' + PAKET_AFTER[paket]);
+            if (state.designStyle) lines.push('Design-Stil: ' + state.designStyle);
+            var anmerkungen = document.getElementById('anmerkungen');
+            if (anmerkungen && anmerkungen.value.trim()) lines.push('Anmerkungen: ' + anmerkungen.value.trim());
+            return lines.join('\n');
+        }
+
+        function updateCalSummary() {
+            var el = document.getElementById('calSummary');
+            if (!el) return;
+            var paket = getRecommendedPaket();
+            var isMonthly = state.paymentMode === 'monatlich';
+            var discount = state.referenz ? 0.85 : 1;
+            var basePrice = Math.round(PAKET_PRICES[paket].full * discount);
+            var monthlyRate = state.referenz ? MONTHLY_PRICES[paket].ref : MONTHLY_PRICES[paket].full;
+            var addonTotal = 0;
+            state.addons.forEach(function(a) { addonTotal += Math.round((ADDON_PRICES[a] || 0) * discount); });
+            var html = '<strong>Ihre Anfrage:</strong><br>';
+            if (isMonthly) {
+                html += capitalize(paket) + '-Paket — ' + monthlyRate + ' €/Mo &times; ' + MONTHLY_MONTHS;
+            } else {
+                html += capitalize(paket) + '-Paket — ' + fmt(basePrice);
+            }
+            if (state.addons.length > 0) {
+                html += '<br>Extras: ' + state.addons.map(function(a) { return ADDON_LABELS[a]; }).join(', ') + ' (+' + fmt(addonTotal) + ')';
+            }
+            if (isMonthly) {
+                html += '<br><strong>Gesamt: ' + fmt(monthlyRate * MONTHLY_MONTHS + addonTotal) + '</strong>';
+            } else {
+                html += '<br><strong>Gesamt: ' + fmt(basePrice + addonTotal) + '</strong>';
+            }
+            if (state.branche) html += '<br>Branche: ' + state.branche;
+            if (state.firmenname) html += ' · ' + state.firmenname;
+            el.innerHTML = html;
+        }
+
+        function bindCalBooking() {
+            document.getElementById('calBookBtn').addEventListener('click', function() {
+                var nameEl = document.getElementById('calName');
+                var emailEl = document.getElementById('calEmail');
+                var name = nameEl.value.trim();
+                var email = emailEl.value.trim();
+                var valid = true;
+
+                nameEl.parentElement.classList.remove('has-error');
+                emailEl.parentElement.classList.remove('has-error');
+
+                if (!name) { nameEl.parentElement.classList.add('has-error'); shakeElement(nameEl); valid = false; }
+                if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { emailEl.parentElement.classList.add('has-error'); shakeElement(emailEl); valid = false; }
+                if (!valid) return;
+
+                var notes = buildCalNotes();
+                var calUrl = 'https://cal.com/ww-webagentur/kostenloses-erstgesprach?layout=month_view';
+                calUrl += '&name=' + encodeURIComponent(name);
+                calUrl += '&email=' + encodeURIComponent(email);
+                calUrl += '&notes=' + encodeURIComponent(notes);
+
+                window.open(calUrl, '_blank');
+            });
+        }
+
+        function bindForm() {
+            // Form submission handled via Cal.com booking
+        }
+
+        // Shake keyframe
+        var s = document.createElement('style');
+        s.textContent = '@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}';
+        document.head.appendChild(s);
+
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+        else init();
+    })();
+    </script>
+    <footer style="background:var(--gray-50);border-top:1px solid var(--gray-100);padding:24px 16px;text-align:center;font-size:0.8rem;color:var(--gray-500);font-family:var(--font);">
+        <a href="impressum.html" style="color:var(--gray-500);text-decoration:none;margin-right:16px;">Impressum</a>
+        <a href="datenschutz.html" style="color:var(--gray-500);text-decoration:none;">Datenschutz</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webdesign & Entwicklung | WW Webmanufaktur Westerwald</title>
+    <meta name="description" content="Individuelle, responsive Websites für lokale Unternehmen im Westerwald. Kein Baukastensystem — handgeschriebener Code, SEO-optimiert, DSGVO-konform.">
+    <meta property="og:title" content="Webdesign & Entwicklung | WW Webmanufaktur Westerwald">
+    <meta property="og:description" content="Individuelle, responsive Websites für lokale Unternehmen im Westerwald. Kein Baukastensystem — handgeschriebener Code, SEO-optimiert, DSGVO-konform.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="https://ww-webagentur.de/leistungen/webdesign.html">
+    <link rel="canonical" href="https://ww-webagentur.de/leistungen/webdesign.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 56'%3E%3Cpolyline points='4,6 18,50 32,10 46,50 60,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='40,6 54,50 68,10 82,50 96,6' fill='none' stroke='%233B82F6' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='76,6 90,50 104,10 118,50 132,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300 900;
+            font-display: swap;
+            src: url(../fonts/inter-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300 900;
+            font-display: swap;
+            src: url(../fonts/inter-latin-ext.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        :root {
+            --primary: #A67C52;
+            --primary-dark: #8B6541;
+            --primary-light: rgba(166,124,82,0.08);
+            --primary-glow: rgba(166,124,82,0.15);
+            --secondary: #1A1614;
+            --gray-50: #F7F4F0;
+            --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --gray-100: #F4F4F5;
+            --gray-200: #E4E4E7;
+            --gray-300: #D4D4D8;
+            --gray-400: #A1A1AA;
+            --gray-500: #71717A;
+            --gray-600: #52525B;
+            --gray-700: #3F3F46;
+            --gray-800: #27272A;
+            --gray-900: #18181B;
+            --white: #fff;
+            --green: #22C55E;
+            --amber: #F59E0B;
+            --violet: #8B5CF6;
+            --rose: #F43F5E;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--secondary);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* ── Animations ── */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes draw-line {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid var(--gray-200);
+            transition: box-shadow 0.3s;
+        }
+        .site-header.scrolled {
+            box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+        }
+        .site-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--secondary);
+        }
+        .nav-logo svg {
+            width: 48px;
+            height: 20px;
+        }
+        .nav-logo span {
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+        }
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: background 0.2s, gap 0.2s;
+        }
+        .nav-back:hover {
+            background: var(--primary-light);
+            gap: 0.75rem;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0F0D0B 0%, #0F172A 25%, #1E3A5F 55%, #1E40AF 80%, #A67C52 100%);
+            overflow: hidden;
+            padding: 5rem 2rem 4rem;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 700px 500px at 15% 85%, rgba(166,124,82,0.3), transparent),
+                radial-gradient(ellipse 600px 400px at 85% 15%, rgba(96,165,250,0.2), transparent),
+                radial-gradient(ellipse 400px 300px at 50% 50%, rgba(139,92,246,0.1), transparent);
+            pointer-events: none;
+        }
+        /* Dot pattern overlay */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+        }
+        .hero-icon-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+        }
+        .hero-icon-ring {
+            position: absolute;
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            border: 2px solid rgba(166,124,82,0.3);
+            animation: pulse-ring 2.5s ease-out infinite;
+        }
+        .hero-icon-ring:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+        .hero-icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(166,124,82,0.2), rgba(139,92,246,0.15));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.12);
+            font-size: 2rem;
+            color: #93C5FD;
+            animation: float 4s ease-in-out infinite;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 750;
+            line-height: 1.1;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+        .hero h1 .text-gradient {
+            background: linear-gradient(135deg, #93C5FD, #A67C52, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.75);
+            max-width: 560px;
+            margin: 0 auto 2rem;
+        }
+        .hero-trust {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+        .hero-trust i {
+            color: var(--green);
+            font-size: 0.8rem;
+        }
+
+        /* ── Section Divider ── */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+        }
+
+        /* ── Sections shared ── */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem;
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 1px;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 750;
+            color: var(--secondary);
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.025em;
+        }
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 580px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+        .section-alt {
+            background: var(--gray-50);
+        }
+
+        /* ── Benefits ── */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .benefit-card {
+            position: relative;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2.25rem;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            overflow: hidden;
+        }
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #818CF8);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .benefit-card:hover {
+            border-color: rgba(166,124,82,0.3);
+            box-shadow: 0 8px 32px rgba(166,124,82,0.1);
+            transform: translateY(-3px);
+        }
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+        .benefit-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            transition: transform 0.3s;
+        }
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.08);
+        }
+        .benefit-icon.blue {
+            background: linear-gradient(135deg, rgba(166,124,82,0.1), rgba(166,124,82,0.05));
+            color: var(--primary);
+        }
+        .benefit-icon.green {
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(34,197,94,0.05));
+            color: var(--green);
+        }
+        .benefit-icon.violet {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(139,92,246,0.05));
+            color: var(--violet);
+        }
+        .benefit-icon.amber {
+            background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.05));
+            color: var(--amber);
+        }
+        .benefit-stat {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(166,124,82,0.06);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            font-weight: 680;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+        }
+
+        /* ── Process / Timeline ── */
+        .process-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+        /* Connecting line */
+        .process-line {
+            position: absolute;
+            top: 40px;
+            left: calc(12.5% + 24px);
+            right: calc(12.5% + 24px);
+            height: 2px;
+            background: var(--gray-200);
+            z-index: 0;
+        }
+        .process-line-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), #818CF8);
+            border-radius: 1px;
+            transition: width 1.2s ease;
+        }
+        .process-container.visible .process-line-fill {
+            width: 100%;
+        }
+        .process-step {
+            position: relative;
+            text-align: center;
+            padding: 0 1rem;
+            z-index: 1;
+        }
+        .process-number-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .process-number-bg {
+            position: absolute;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: rgba(166,124,82,0.05);
+            line-height: 1;
+            user-select: none;
+            letter-spacing: -0.04em;
+        }
+        .process-number {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.4s ease;
+        }
+        .process-container.visible .process-step .process-number {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(166,124,82,0.3);
+        }
+        .process-container.visible .process-step:nth-child(2) .process-number { transition-delay: 0.15s; }
+        .process-container.visible .process-step:nth-child(3) .process-number { transition-delay: 0.3s; }
+        .process-container.visible .process-step:nth-child(4) .process-number { transition-delay: 0.45s; }
+        .process-step h3 {
+            font-size: 1.1rem;
+            font-weight: 660;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        /* ── Included / Checklist ── */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem 3rem;
+            max-width: 800px;
+        }
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.875rem;
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+        .included-item:hover {
+            background: rgba(166,124,82,0.03);
+        }
+        .included-check {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(34,197,94,0.05));
+            color: var(--green);
+            font-size: 0.8rem;
+            margin-top: 1px;
+        }
+        .included-text {
+            font-size: 0.975rem;
+            color: var(--secondary);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .included-text small {
+            display: block;
+            font-size: 0.825rem;
+            color: var(--gray-400);
+            font-weight: 400;
+            margin-top: 0.125rem;
+        }
+
+        /* ── FAQ ── */
+        .faq-list {
+            max-width: 760px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .faq-item:first-child {
+            border-top: 1px solid var(--gray-200);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.075rem;
+            font-weight: 600;
+            color: var(--secondary);
+            line-height: 1.4;
+            transition: color 0.2s;
+        }
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-icon {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--gray-100);
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            transition: background 0.2s, color 0.2s, transform 0.3s;
+        }
+        .faq-item.open .faq-icon {
+            background: var(--primary-light);
+            color: var(--primary);
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-answer-inner {
+            padding-bottom: 1.5rem;
+            font-size: 0.975rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 640px;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-section {
+            padding: 0 2rem 5.5rem;
+        }
+        .cta-banner {
+            position: relative;
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 40%, #1E40AF 70%, #A67C52 100%);
+            border-radius: 20px;
+            padding: 4rem 3.5rem;
+            text-align: center;
+            max-width: 1060px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+        .cta-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(166,124,82,0.15);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+        }
+        .cta-badge i {
+            color: var(--green);
+        }
+        .cta-banner h2 {
+            font-size: 2.125rem;
+            font-weight: 750;
+            color: var(--white);
+            margin-bottom: 0.875rem;
+            letter-spacing: -0.02em;
+        }
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            line-height: 1.65;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 1rem 2.25rem;
+            background: var(--white);
+            color: var(--primary-dark);
+            font-weight: 650;
+            font-size: 1.025rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+            letter-spacing: -0.01em;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+        }
+        .cta-btn i {
+            transition: transform 0.25s;
+        }
+        .cta-btn:hover i {
+            transform: translateX(3px);
+        }
+        .cta-trust-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .cta-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.825rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+        }
+        .cta-trust-item i {
+            font-size: 0.75rem;
+        }
+        .cta-stars {
+            color: #FBBF24;
+            font-size: 0.7rem;
+            display: flex;
+            gap: 0.125rem;
+        }
+
+        /* ── Related Services ── */
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .related-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            overflow: hidden;
+        }
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            border-radius: 3px 0 0 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .related-card:hover {
+            border-color: rgba(166,124,82,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
+        }
+        .related-card:hover::before {
+            opacity: 1;
+        }
+        .related-card[data-accent="green"]::before { background: var(--green); }
+        .related-card[data-accent="violet"]::before { background: var(--violet); }
+        .related-card[data-accent="amber"]::before { background: var(--amber); }
+        .related-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            margin-bottom: 1.125rem;
+            transition: transform 0.3s;
+        }
+        .related-card:hover .related-icon {
+            transform: scale(1.08);
+        }
+        .related-icon.green {
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(34,197,94,0.05));
+            color: var(--green);
+        }
+        .related-icon.violet {
+            background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(139,92,246,0.05));
+            color: var(--violet);
+        }
+        .related-icon.amber {
+            background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.05));
+            color: var(--amber);
+        }
+        .related-card h3 {
+            font-size: 1.075rem;
+            font-weight: 660;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            flex: 1;
+        }
+        .related-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            transition: gap 0.25s;
+        }
+        .related-card:hover .related-arrow {
+            gap: 0.7rem;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            margin-top: 0;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .footer-copy {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .process-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem 1.5rem;
+            }
+            .process-line {
+                display: none;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 360px;
+                padding: 4rem 1.5rem 3rem;
+            }
+            .hero h1 {
+                font-size: 2.125rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-container {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .process-step {
+                text-align: left;
+                display: flex;
+                gap: 1.25rem;
+                align-items: flex-start;
+                padding: 1rem 0;
+            }
+            .process-number-wrapper {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            .process-number-bg {
+                display: none;
+            }
+            .process-step p {
+                max-width: none;
+                margin: 0;
+            }
+            .included-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            .cta-banner {
+                padding: 3rem 1.75rem;
+                border-radius: 14px;
+            }
+            .cta-banner h2 {
+                font-size: 1.625rem;
+            }
+            .cta-section {
+                padding: 0 1rem 4rem;
+            }
+            .section {
+                padding: 4rem 1.25rem;
+            }
+            .site-nav {
+                padding: 0.75rem 1.25rem;
+            }
+            .cta-trust-row {
+                gap: 1.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 320px;
+                padding: 3rem 1.25rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            .hero-trust {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+            .nav-logo span {
+                font-size: 0.95rem;
+            }
+            .process-step {
+                padding: 0.75rem 0;
+            }
+        }
+
+        /* ── Reduced Motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .animate-on-scroll {
+                opacity: 1;
+                transform: none;
+            }
+            .process-container .process-number {
+                background: var(--primary);
+                border-color: var(--primary);
+                color: var(--white);
+            }
+            .process-line-fill {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <nav class="site-nav">
+            <a href="/" class="nav-logo">
+                <svg viewBox="0 0 140 56" fill="none">
+                    <polyline points="4,6 18,50 32,10 46,50 60,6" fill="none" stroke="#ddd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="40,6 54,50 68,10 82,50 96,6" fill="none" stroke="#A67C52" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="76,6 90,50 104,10 118,50 132,6" fill="none" stroke="#ddd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>WW Webmanufaktur</span>
+            </a>
+            <a href="/#leistungen" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Alle Leistungen
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon-wrapper">
+                <div class="hero-icon-ring"></div>
+                <div class="hero-icon-ring"></div>
+                <div class="hero-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
+            <h1>Webdesign &<br><span class="text-gradient">Entwicklung</span></h1>
+            <p class="hero-subtitle">Keine Baukasten-Websites. Wir schreiben jede Zeile Code selbst — schnell, sicher und exakt auf Ihr Unternehmen zugeschnitten.</p>
+            <div class="hero-trust">
+                <i class="fas fa-circle-check"></i>
+                Bereits 50+ Websites für lokale Unternehmen
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="animate-on-scroll">
+            <span class="section-label">Vorteile</span>
+            <h2 class="section-title">Warum professionelles Webdesign?</h2>
+            <p class="section-desc">Ihre Website ist kein Nebenprojekt. Sie ist Ihr bester Mitarbeiter — 24 Stunden am Tag, 7 Tage die Woche, ohne Urlaub.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card animate-on-scroll">
+                <div class="benefit-icon blue"><i class="fas fa-eye"></i></div>
+                <div class="benefit-stat">94% designbedingt</div>
+                <h3>Der erste Eindruck entscheidet</h3>
+                <p>Besucher urteilen in 0,05 Sekunden. 94% dieses Urteils basieren auf dem Design. Eine amateurhafte Website kostet Sie Kunden, bevor sie auch nur eine Zeile gelesen haben.</p>
+            </div>
+            <div class="benefit-card animate-on-scroll">
+                <div class="benefit-icon green"><i class="fas fa-bolt"></i></div>
+                <div class="benefit-stat">Ladezeit unter 2s</div>
+                <h3>Schnelligkeit bringt Umsatz</h3>
+                <p>Jede Sekunde Ladezeit kostet 7% Conversion. Unsere Websites laden in unter 2 Sekunden und erreichen Google PageSpeed Scores von 90+ — ohne aufgeblähte Plugins.</p>
+            </div>
+            <div class="benefit-card animate-on-scroll">
+                <div class="benefit-icon violet"><i class="fas fa-mobile-screen"></i></div>
+                <div class="benefit-stat">68% mobil</div>
+                <h3>Mobile-First ist Pflicht</h3>
+                <p>Zwei Drittel Ihrer Kunden suchen Sie vom Handy aus. Unsere Websites sind nicht einfach nur "responsive" — sie sind von Grund auf für Mobile gebaut.</p>
+            </div>
+            <div class="benefit-card animate-on-scroll">
+                <div class="benefit-icon amber"><i class="fas fa-shield-halved"></i></div>
+                <div class="benefit-stat">0 Plugins</div>
+                <h3>Sicher und wartungsfrei</h3>
+                <p>WordPress bedeutet monatliche Updates, Plugin-Konflikte und Sicherheitslücken. Handgeschriebener Code hat keine dieser Probleme. Einmal gebaut, läuft stabil.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Process Section -->
+    <section class="section section-alt">
+        <div class="animate-on-scroll">
+            <span class="section-label">Ablauf</span>
+            <h2 class="section-title">In vier Schritten online</h2>
+            <p class="section-desc">Kein komplizierter Prozess. Kein wochen&shy;langes Warten. Sie sagen uns, was Sie brauchen — wir liefern.</p>
+        </div>
+
+        <div class="process-container animate-on-scroll" id="processTimeline">
+            <div class="process-line">
+                <div class="process-line-fill"></div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrapper">
+                    <div class="process-number-bg">01</div>
+                    <div class="process-number">01</div>
+                </div>
+                <div>
+                    <h3>Erstgespräch</h3>
+                    <p>15 Minuten reichen. Sie erzählen uns von Ihrem Unternehmen — wir zeigen Ihnen, was möglich ist. Unverbindlich.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrapper">
+                    <div class="process-number-bg">02</div>
+                    <div class="process-number">02</div>
+                </div>
+                <div>
+                    <h3>Konzept & Design</h3>
+                    <p>Wir erstellen Ihren individuellen Entwurf. Farben, Bilder, Texte — alles abgestimmt auf Ihre Branche und Zielgruppe.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrapper">
+                    <div class="process-number-bg">03</div>
+                    <div class="process-number">03</div>
+                </div>
+                <div>
+                    <h3>Entwicklung</h3>
+                    <p>Handgeschriebener Code, SEO-optimiert, blitzschnell. Wir programmieren — Sie geben Feedback. Typische Dauer: 5-10 Werktage.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number-wrapper">
+                    <div class="process-number-bg">04</div>
+                    <div class="process-number">04</div>
+                </div>
+                <div>
+                    <h3>Launch & Support</h3>
+                    <p>Domain, Hosting, SSL, Google-Eintrag — wir richten alles ein. Sie lehnen sich zurück. 1 Jahr Support inklusive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Included Section -->
+    <section class="section">
+        <div class="animate-on-scroll">
+            <span class="section-label">Inklusive</span>
+            <h2 class="section-title">Alles drin, keine versteckten Kosten</h2>
+            <p class="section-desc">Jede Website kommt mit allem, was ein professioneller Online-Auftritt braucht. Komplett-Paket ab 699 Euro.</p>
+        </div>
+
+        <div class="included-grid animate-on-scroll">
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">Individuelles Design<small>Kein Template, 100% maßgeschneidert</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">Responsive für alle Geräte<small>Desktop, Tablet, Smartphone</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">SEO-Grundoptimierung<small>Meta-Tags, Struktur, Ladezeit</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">Google My Business Eintrag<small>Sichtbar in der lokalen Suche</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">Kontaktformular & Google Maps<small>Kunden finden Sie sofort</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">WhatsApp-Button<small>Direkte Kommunikation</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">SSL-Zertifikat & DSGVO<small>Impressum, Datenschutz, Cookie-Hinweis</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">Hosting & Domain-Setup<small>1 Jahr komplett inklusive</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">KI-generierte Bilder<small>Professionelle Fotos ohne Shooting</small></div>
+            </div>
+            <div class="included-item">
+                <div class="included-check"><i class="fas fa-check"></i></div>
+                <div class="included-text">Bewertungs-Integration<small>Google-Bewertungen auf Ihrer Seite</small></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="animate-on-scroll">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Häufige Fragen</h2>
+            <p class="section-desc">Die wichtigsten Antworten — kurz und ehrlich.</p>
+        </div>
+
+        <div class="faq-list animate-on-scroll">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Was kostet eine Website bei Ihnen?
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Unsere Komplett-Pakete starten ab 699 Euro einmalig (oder 49 Euro/Monat). Der genaue Preis hängt davon ab, was Sie brauchen: eine einfache Visitenkarten-Website oder ein umfangreicher Auftritt mit Buchungssystem und Shop. Am besten nutzen Sie unseren <a href="../website-anfrage.html" style="color:var(--primary);font-weight:500">Angebots-Assistenten</a> — in 2 Minuten sehen Sie Ihr individuelles Angebot.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Wie lange dauert es, bis meine Website fertig ist?
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Typisch sind 5 bis 10 Werktage nach dem Erstgespräch. Einfachere Websites können auch in einer Woche live sein. Wir arbeiten schnell, weil wir keinen Baukasten zusammenklicken, sondern direkt programmieren. Sie bekommen zwischendurch einen Entwurf zum Feedback.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Muss ich Texte und Bilder selbst liefern?
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Nein. Wir erstellen professionelle Texte für Ihre Branche und generieren hochwertige KI-Bilder, die zu Ihrem Unternehmen passen. Wenn Sie eigene Fotos oder Texte haben, verwenden wir die natürlich gerne — aber es ist keine Voraussetzung.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Was passiert nach dem Launch? Brauche ich einen Vertrag?
+                    <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Im ersten Jahr ist Hosting und Basis-Support inklusive — ohne zusätzliche Kosten. Danach können Sie optional einen Wartungsvertrag ab 19 Euro/Monat buchen. Kein Zwang, keine Mindestlaufzeit. Die Website gehört Ihnen, und Sie können jederzeit wechseln.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-section">
+        <div class="cta-banner animate-on-scroll">
+            <div class="cta-content">
+                <div class="cta-badge">
+                    <i class="fas fa-circle-check"></i>
+                    100% unverbindlich
+                </div>
+                <h2>Bereit für Ihre neue Website?</h2>
+                <p>Starten Sie mit unserem kostenlosen Angebots-Assistenten. In 2 Minuten wissen Sie, was Ihre Wunsch-Website kostet — ohne Verpflichtung.</p>
+                <a href="../website-anfrage.html" class="cta-btn">
+                    Kostenloses Angebot erstellen <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="cta-trust-row">
+                    <div class="cta-trust-item">
+                        <div class="cta-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        5.0 Kundenbewertung
+                    </div>
+                    <div class="cta-trust-item">
+                        <i class="fas fa-shield-halved"></i>
+                        DSGVO-konform
+                    </div>
+                    <div class="cta-trust-item">
+                        <i class="fas fa-handshake"></i>
+                        Keine Vertragsbindung
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="section section-alt">
+        <div class="animate-on-scroll">
+            <span class="section-label">Mehr entdecken</span>
+            <h2 class="section-title">Verwandte Leistungen</h2>
+            <p class="section-desc">Ergänzende Services, die Ihre Website noch erfolgreicher machen.</p>
+        </div>
+
+        <div class="related-grid animate-on-scroll">
+            <a href="seo.html" class="related-card" data-accent="green">
+                <div class="related-icon green"><i class="fas fa-magnifying-glass-chart"></i></div>
+                <h3>SEO-Optimierung</h3>
+                <p>Damit Ihre Website bei Google auch gefunden wird. Lokale SEO, technische Optimierung und Content-Strategie für mehr Sichtbarkeit.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="content.html" class="related-card" data-accent="violet">
+                <div class="related-icon violet"><i class="fas fa-pen-nib"></i></div>
+                <h3>Content & Texte</h3>
+                <p>Professionelle Texte, die verkaufen, und KI-optimierte Bilder, die Ihre Marke visuell auf ein neues Level heben.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="wartung.html" class="related-card" data-accent="amber">
+                <div class="related-icon amber"><i class="fas fa-wrench"></i></div>
+                <h3>Wartung & Support</h3>
+                <p>Hosting, Updates, Backups und persönlicher Support — damit Ihre Website immer läuft und Sie sich auf Ihr Geschäft konzentrieren können.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="/#blog">Blog</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 WW Webmanufaktur. Alle Rechte vorbehalten.</div>
+        </div>
+    </footer>
+
+    <script>
+        /* ── Header scroll shadow ── */
+        const header = document.getElementById('siteHeader');
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            if (scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScroll = scrollY;
+        }, { passive: true });
+
+        /* ── Scroll animations (IntersectionObserver) ── */
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry, index) {
+                    if (entry.isIntersecting) {
+                        /* Stagger child animations */
+                        const delay = entry.target.closest('.benefits-grid, .related-grid, .included-grid')
+                            ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100
+                            : 0;
+                        setTimeout(function() {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+                observer.observe(el);
+            });
+
+            /* Process timeline special observer */
+            var processEl = document.getElementById('processTimeline');
+            if (processEl) {
+                var processObs = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            processObs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                processObs.observe(processEl);
+            }
+        }
+
+        /* ── FAQ Accordion ── */
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var isOpen = item.classList.contains('open');
+
+                /* Close all others */
+                document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+                    if (openItem !== item) {
+                        openItem.classList.remove('open');
+                        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                /* Toggle current */
+                item.classList.toggle('open', !isOpen);
+                this.setAttribute('aria-expanded', !isOpen);
+            });
+        });
+    </script>
+
+</body>
+</html>

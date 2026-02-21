@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce & Online-Shop | WW Webmanufaktur Westerwald</title>
+    <meta name="description" content="Professionellen Online-Shop erstellen lassen. Produktkatalog, Warenkorb, sichere Bezahlung — verkaufen Sie 24/7, ohne Provision an Dritte.">
+    <meta property="og:title" content="E-Commerce & Online-Shop | WW Webmanufaktur Westerwald">
+    <meta property="og:description" content="Professionellen Online-Shop erstellen lassen. Produktkatalog, Warenkorb, sichere Bezahlung — verkaufen Sie 24/7, ohne Provision an Dritte.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="https://ww-webagentur.de/leistungen/ecommerce.html">
+    <link rel="canonical" href="https://ww-webagentur.de/leistungen/ecommerce.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 56'%3E%3Cpolyline points='4,6 18,50 32,10 46,50 60,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='40,6 54,50 68,10 82,50 96,6' fill='none' stroke='%233B82F6' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='76,6 90,50 104,10 118,50 132,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300 900;
+            font-display: swap;
+            src: url(../fonts/inter-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300 900;
+            font-display: swap;
+            src: url(../fonts/inter-latin-ext.woff2) format('woff2');
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        :root {
+            --primary: #A67C52;
+            --primary-dark: #8B6541;
+            --primary-light: rgba(166,124,82,0.08);
+            --primary-glow: rgba(166,124,82,0.15);
+            --secondary: #1A1614;
+            --gray-50: #F7F4F0;
+            --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --gray-100: #F4F4F5;
+            --gray-200: #E4E4E7;
+            --gray-300: #D4D4D8;
+            --gray-400: #A1A1AA;
+            --gray-500: #71717A;
+            --gray-600: #52525B;
+            --gray-700: #3F3F46;
+            --gray-800: #27272A;
+            --gray-900: #18181B;
+            --white: #fff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--secondary);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .site-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.875rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--secondary);
+        }
+        .nav-logo svg {
+            width: 48px;
+            height: 20px;
+        }
+        .nav-logo span {
+            font-weight: 600;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+        }
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .nav-back:hover {
+            background: var(--primary-light);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 30%, #1E40AF 60%, #A67C52 100%);
+            overflow: hidden;
+            padding: 4rem 2rem 3.5rem;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 20% 80%, rgba(166,124,82,0.25), transparent),
+                radial-gradient(ellipse 500px 300px at 80% 20%, rgba(96,165,250,0.2), transparent),
+                radial-gradient(ellipse 400px 350px at 60% 60%, rgba(37,99,235,0.15), transparent);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+        }
+        .hero-icon-ring {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(166,124,82,0.3), rgba(96,165,250,0.15));
+            border: 2px solid rgba(147,197,253,0.3);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .hero-icon-ring::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1px solid rgba(147,197,253,0.12);
+        }
+        .hero-icon-ring i {
+            font-size: 1.75rem;
+            color: #93C5FD;
+        }
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.025em;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.8);
+            max-width: 580px;
+            margin: 0 auto 1.25rem;
+        }
+        .hero-trust {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(147,197,253,0.85);
+            letter-spacing: 0.02em;
+        }
+        .hero-trust i {
+            font-size: 0.75rem;
+        }
+
+        /* ── Sections shared ── */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 560px;
+            line-height: 1.65;
+            margin-bottom: 2.75rem;
+        }
+        .section-alt {
+            background: var(--gray-50);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-200) 20%, var(--gray-200) 80%, transparent);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ── Benefits ── */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 2.25rem 2rem;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+        }
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 24px rgba(166,124,82,0.08);
+            transform: translateY(-2px);
+        }
+        .benefit-icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(166,124,82,0.1), rgba(166,124,82,0.04));
+            border: 1px solid rgba(166,124,82,0.12);
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.15rem;
+            font-weight: 650;
+            color: var(--secondary);
+            margin-bottom: 0.35rem;
+        }
+        .benefit-stat {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            margin-bottom: 0.65rem;
+        }
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+        }
+
+        /* ── Process / Timeline ── */
+        .process-timeline {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: calc(12.5% + 1rem);
+            right: calc(12.5% + 1rem);
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), rgba(166,124,82,0.3));
+            border-radius: 1px;
+        }
+        .process-step {
+            position: relative;
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+            transition: background 0.25s, color 0.25s;
+        }
+        .process-step:hover .step-number {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .process-step h3 {
+            font-size: 1.05rem;
+            font-weight: 650;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .process-step p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ── Included / Checklist ── */
+        .included-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem 3rem;
+            max-width: 740px;
+        }
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            font-size: 1rem;
+            color: var(--secondary);
+            padding: 0.6rem 0;
+        }
+        .included-item i {
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-top: 0.2rem;
+        }
+        .included-item span {
+            line-height: 1.5;
+        }
+
+        /* ── FAQ ── */
+        .faq-list {
+            max-width: 740px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .faq-item:first-child {
+            border-top: 1px solid var(--gray-200);
+        }
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.35rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--secondary);
+            transition: color 0.2s;
+        }
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        .faq-question .faq-chevron {
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            transition: transform 0.3s ease, color 0.2s;
+        }
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-answer-inner {
+            padding: 0 0 1.35rem;
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-section {
+            padding: 0 2rem 5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .cta-banner {
+            background: linear-gradient(135deg, #1E40AF 0%, #A67C52 50%, #60A5FA 100%);
+            border-radius: 16px;
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 400px 250px at 20% 100%, rgba(255,255,255,0.08), transparent),
+                radial-gradient(ellipse 300px 200px at 90% 0%, rgba(255,255,255,0.06), transparent);
+            pointer-events: none;
+        }
+        .cta-banner > * {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-stars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .cta-stars i {
+            font-size: 1rem;
+            color: #FCD34D;
+        }
+        .cta-banner h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .cta-banner p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 520px;
+            margin: 0 auto 1.75rem;
+            line-height: 1.6;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 2.25rem;
+            background: var(--white);
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .cta-trust {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .cta-trust span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+        }
+        .cta-trust span i {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ── Related Services ── */
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .related-card {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+            border-top: 3px solid transparent;
+        }
+        .related-card:hover {
+            border-color: var(--primary);
+            border-top-color: var(--primary);
+            box-shadow: 0 4px 24px rgba(166,124,82,0.08);
+            transform: translateY(-2px);
+        }
+        .related-card[data-accent="blue"] { border-top-color: #A67C52; }
+        .related-card[data-accent="violet"] { border-top-color: #8B5CF6; }
+        .related-card[data-accent="emerald"] { border-top-color: #10B981; }
+        .related-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .related-card[data-accent="violet"] .related-icon {
+            background: rgba(139,92,246,0.06);
+            color: #8B5CF6;
+        }
+        .related-card[data-accent="emerald"] .related-icon {
+            background: rgba(16,185,129,0.06);
+            color: #10B981;
+        }
+        .related-card h3 {
+            font-size: 1.05rem;
+            font-weight: 650;
+            color: var(--secondary);
+            margin-bottom: 0.4rem;
+        }
+        .related-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.55;
+            flex: 1;
+        }
+        .related-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .related-card[data-accent="violet"] .related-arrow { color: #8B5CF6; }
+        .related-card[data-accent="emerald"] .related-arrow { color: #10B981; }
+
+        /* ── Footer ── */
+        .site-footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--gray-200);
+            background: var(--gray-50);
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .footer-copy {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .process-timeline {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .process-timeline::before {
+                display: none;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 280px;
+                padding: 3rem 1.5rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .hero-icon-ring {
+                width: 64px;
+                height: 64px;
+            }
+            .hero-icon-ring i {
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.625rem;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .included-list {
+                grid-template-columns: 1fr;
+            }
+            .cta-banner {
+                padding: 2.5rem 1.5rem;
+                border-radius: 12px;
+            }
+            .cta-banner h2 {
+                font-size: 1.5rem;
+            }
+            .cta-section {
+                padding: 0 1.25rem 3.5rem;
+            }
+            .section {
+                padding: 3.5rem 1.25rem;
+            }
+            .site-nav {
+                padding: 0.75rem 1.25rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 240px;
+                padding: 2.5rem 1.25rem 2rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .nav-logo span {
+                font-size: 0.95rem;
+            }
+            .cta-trust {
+                gap: 0.75rem;
+            }
+        }
+
+        /* ── Reduced Motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-logo">
+                <svg viewBox="0 0 140 56" fill="none">
+                    <polyline points="4,6 18,50 32,10 46,50 60,6" fill="none" stroke="#ddd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="40,6 54,50 68,10 82,50 96,6" fill="none" stroke="#A67C52" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="76,6 90,50 104,10 118,50 132,6" fill="none" stroke="#ddd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>WW Webmanufaktur</span>
+            </a>
+            <a href="/#leistungen" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Alle Leistungen
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-icon-ring">
+                <i class="fas fa-bag-shopping"></i>
+            </div>
+            <h1>E-Commerce &amp; Online-Shop</h1>
+            <p class="hero-subtitle">Produktkatalog, Warenkorb, sichere Bezahlung — verkaufen Sie Ihre Produkte direkt, ohne Provision an Drittanbieter.</p>
+            <div class="hero-trust">
+                <i class="fas fa-store"></i>
+                Vom lokalen Laden zum Online-Shop
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section">
+        <span class="section-label">Vorteile</span>
+        <h2 class="section-title">Warum ein eigener Online-Shop?</h2>
+        <p class="section-desc">Ein eigener Shop ist mehr als ein Vertriebskanal. Er macht Ihr Sortiment rund um die Uhr erreichbar — ohne Abhängigkeit von Marktplatz-Provisionen.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-clock"></i></div>
+                <h3>24/7 verkaufen</h3>
+                <span class="benefit-stat">365 Tage im Jahr</span>
+                <p>Ihr Shop ist immer geöffnet. Kunden bestellen auch nachts, am Wochenende und an Feiertagen — automatisch.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-hand-holding-dollar"></i></div>
+                <h3>0 % Provision</h3>
+                <span class="benefit-stat">Kein Mittelsmann</span>
+                <p>Kein Amazon, kein Etsy, keine Marktplatz-Gebühren. Jeder Euro Umsatz bleibt bei Ihnen.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-earth-europe"></i></div>
+                <h3>Grenzenlose Reichweite</h3>
+                <span class="benefit-stat">Regional bis deutschlandweit</span>
+                <p>Verkaufen Sie nicht nur an Laufkundschaft, sondern erreichen Sie Kunden in der ganzen Region oder bundesweit.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon-circle"><i class="fas fa-sliders"></i></div>
+                <h3>Volle Kontrolle</h3>
+                <span class="benefit-stat">Ihr Shop, Ihre Regeln</span>
+                <p>Produkte, Preise, Versandkosten, Rabattaktionen — Sie bestimmen alles selbst. Einfach und übersichtlich.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Process -->
+    <section class="section section-alt">
+        <span class="section-label">Ablauf</span>
+        <h2 class="section-title">So entsteht Ihr Online-Shop</h2>
+        <p class="section-desc">Von der Produktliste bis zum ersten Verkauf — in vier klaren Schritten.</p>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h3>Sortiment &amp; Struktur</h3>
+                <p>Wir besprechen Ihre Produkte, Kategorien und Besonderheiten wie Varianten oder Staffelpreise.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h3>Shop-Design</h3>
+                <p>Individuelles Layout mit Produktkarten, Filtern, Warenkorb und mobilem Checkout.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h3>Zahlung &amp; Versand</h3>
+                <p>Integration sicherer Zahlungsmethoden (PayPal, Kreditkarte, Rechnung) und Versandoptionen.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <h3>Launch &amp; Einweisung</h3>
+                <p>Shop geht online. Sie erhalten eine persönliche Schulung zur Produkt- und Bestellverwaltung.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Included -->
+    <section class="section">
+        <span class="section-label">Leistungsumfang</span>
+        <h2 class="section-title">Was in Ihrem Shop steckt</h2>
+        <p class="section-desc">Alles, was ein professioneller Online-Shop braucht — schlüsselfertig und ohne versteckte Kosten.</p>
+
+        <div class="included-list">
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Produktkatalog mit Kategorien &amp; Filtern</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Warenkorb &amp; mehrstufiger Checkout</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Sichere Zahlungsabwicklung (SSL)</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Produktsuche &amp; Schnellansicht</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Versandoptionen &amp; Kostenberechnung</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Bestell- &amp; Lagerverwaltung</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Mobile-optimiertes Design</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Produktbilder-Optimierung (KI)</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Gutschein- &amp; Rabattcodes</span>
+            </div>
+            <div class="included-item">
+                <i class="fas fa-check-circle"></i>
+                <span>DSGVO-konforme Rechtstexte</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FAQ -->
+    <section class="section section-alt">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Häufige Fragen</h2>
+        <p class="section-desc">Die wichtigsten Fragen zu Ihrem Online-Shop — kurz und ehrlich beantwortet.</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Welches Shopsystem nutzen Sie?
+                    <i class="fas fa-chevron-down faq-chevron"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Wir setzen auf maßgeschneiderte Lösungen mit bewährten E-Commerce-Technologien. Je nach Umfang Ihres Sortiments und Ihren Anforderungen empfehlen wir die passende Lösung im Erstgespräch — von schlanken Custom-Shops bis hin zu etablierten Systemen wie Snipcart oder WooCommerce.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Wie werden Zahlungen abgewickelt?
+                    <i class="fas fa-chevron-down faq-chevron"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Wir integrieren etablierte Zahlungsanbieter wie Stripe oder PayPal. Ihre Kunden können per Kreditkarte, PayPal, SEPA-Lastschrift oder auf Rechnung bezahlen. Alle Transaktionen laufen SSL-verschlüsselt und PCI-konform — das Geld geht direkt auf Ihr Konto.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Kann ich selbst Produkte verwalten?
+                    <i class="fas fa-chevron-down faq-chevron"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Ja, selbstverständlich. Nach dem Launch erhalten Sie eine persönliche Einweisung in die Produktverwaltung. Neue Artikel anlegen, Preise ändern, Bilder tauschen — das können Sie danach eigenständig. Bei Fragen sind wir natürlich weiterhin für Sie da.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    Was kostet ein Online-Shop?
+                    <i class="fas fa-chevron-down faq-chevron"></i>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">E-Commerce ist Teil unseres Premium-Pakets ab 1.790 € einmalig oder 119 €/Monat. Im Angebots-Assistenten können Sie Ihren genauen Umfang konfigurieren und erhalten ein transparentes Angebot — unverbindlich und ohne versteckte Kosten.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-section">
+        <div class="cta-banner">
+            <div class="cta-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h2>Bereit für Ihren Online-Shop?</h2>
+            <p>Starten Sie mit unserem kostenlosen Angebots-Assistenten — in 2 Minuten zu Ihrem individuellen Angebot.</p>
+            <a href="../website-anfrage.html?paket=premium" class="cta-btn">Angebot erstellen <i class="fas fa-arrow-right"></i></a>
+            <div class="cta-trust">
+                <span><i class="fas fa-shield-halved"></i> 100 % unverbindlich</span>
+                <span><i class="fas fa-clock"></i> In 2 Min. fertig</span>
+                <span><i class="fas fa-credit-card"></i> Keine Zahlungsdaten nötig</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Services -->
+    <section class="section section-alt">
+        <span class="section-label">Mehr entdecken</span>
+        <h2 class="section-title">Verwandte Leistungen</h2>
+        <p class="section-desc">Ergänzende Services, die Ihren Shop noch erfolgreicher machen.</p>
+
+        <div class="related-grid">
+            <a href="webdesign.html" class="related-card" data-accent="blue">
+                <div class="related-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Webdesign &amp; Entwicklung</h3>
+                <p>Moderne, schnelle Websites — individuell gestaltet und handgeschrieben, kein Baukastensystem.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="content.html" class="related-card" data-accent="violet">
+                <div class="related-icon"><i class="fas fa-pen-nib"></i></div>
+                <h3>Content &amp; Texte</h3>
+                <p>Produktbeschreibungen, Kategorie-Texte und KI-optimierte Bilder, die verkaufen.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="branding.html" class="related-card" data-accent="emerald">
+                <div class="related-icon"><i class="fas fa-palette"></i></div>
+                <h3>Branding &amp; Logo</h3>
+                <p>Logo, Farben und Schriften — ein einheitlicher Auftritt für Ihren Shop und Ihre Marke.</p>
+                <span class="related-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="/#blog">Blog</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 WW Webmanufaktur. Alle Rechte vorbehalten.</div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+                    openItem.classList.remove('open');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle clicked
+                if (!isOpen) {
+                    item.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
