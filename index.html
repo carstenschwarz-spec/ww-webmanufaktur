@@ -420,47 +420,93 @@
         .mobile-menu {
             position: fixed;
             inset: 0;
-            background: rgba(247,244,240,0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: var(--bg-dark);
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             justify-content: center;
-            gap: 28px;
+            padding: 100px 40px 60px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             z-index: 1000;
         }
         .mobile-menu.active { opacity: 1; visibility: visible; }
-        .mobile-menu a {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--secondary);
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            flex: 1;
+            justify-content: center;
         }
-        .mobile-menu.active a {
-            transform: translateY(0);
+        .mobile-menu-nav a {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text-on-dark);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transform: translateX(-20px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .mobile-menu-nav a::after {
+            content: '\2192';
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--primary);
+            opacity: 0.4;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .mobile-menu-nav a:active::after { opacity: 1; transform: translateX(4px); }
+        .mobile-menu.active .mobile-menu-nav a {
+            transform: translateX(0);
             opacity: 1;
         }
-        .mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.active a:nth-child(2) { transition-delay: 0.15s; }
-        .mobile-menu.active a:nth-child(3) { transition-delay: 0.2s; }
-        .mobile-menu.active a:nth-child(4) { transition-delay: 0.25s; }
-        .mobile-menu.active a:nth-child(5) { transition-delay: 0.3s; }
-        .mobile-menu.active a:nth-child(6) { transition-delay: 0.35s; }
+        .mobile-menu.active .mobile-menu-nav a:nth-child(1) { transition-delay: 0.08s; }
+        .mobile-menu.active .mobile-menu-nav a:nth-child(2) { transition-delay: 0.13s; }
+        .mobile-menu.active .mobile-menu-nav a:nth-child(3) { transition-delay: 0.18s; }
+        .mobile-menu.active .mobile-menu-nav a:nth-child(4) { transition-delay: 0.23s; }
+        .mobile-menu.active .mobile-menu-nav a:nth-child(5) { transition-delay: 0.28s; }
+        .mobile-menu-footer {
+            padding-top: 32px;
+            transform: translateY(16px);
+            opacity: 0;
+            transition: all 0.4s ease 0.3s;
+        }
+        .mobile-menu.active .mobile-menu-footer { transform: translateY(0); opacity: 1; }
         .mobile-menu-cta {
-            margin-top: 12px;
-            padding: 14px 28px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 28px !important;
             background: var(--primary) !important;
             color: var(--white) !important;
-            border-radius: 24px !important;
+            border-radius: var(--radius-lg) !important;
             font-weight: 600 !important;
-            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 1rem !important;
         }
+        .mobile-menu-contact {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .mobile-menu-contact a {
+            font-size: 0.82rem;
+            color: var(--text-muted-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .mobile-menu-contact a i { color: var(--primary); font-size: 0.9rem; }
+        /* Hamburger white when menu open */
+        .menu-toggle.active span { background: var(--white) !important; }
 
         /* ═══════════════════════════════════════════
            HERO — "Precision Architect" Design
@@ -3250,31 +3296,61 @@
            COOKIE BANNER
            ═══════════════════════════════════════════ */
         .cookie-banner {
-            position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-            background: #fff; border-top: 1px solid var(--gray-200);
-            padding: 16px 24px;
-            display: flex; align-items: center; justify-content: center; gap: 16px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-            font-size: 0.85rem;
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(calc(100% + 40px));
+            z-index: 9999;
+            background: var(--bg-dark);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            font-size: 0.82rem;
+            max-width: 560px;
+            width: calc(100% - 32px);
         }
-        .cookie-banner.visible { transform: translateY(0); }
-        .cookie-banner-text { max-width: 600px; color: var(--gray-600); }
-        .cookie-banner-text a { color: var(--primary); text-decoration: underline; }
+        .cookie-banner.visible { transform: translateX(-50%) translateY(0); }
+        .cookie-banner-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(166,124,82,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+        .cookie-banner-body { flex: 1; min-width: 0; }
+        .cookie-banner-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-on-dark);
+            margin-bottom: 4px;
+        }
+        .cookie-banner-text { color: var(--text-muted-dark); line-height: 1.4; }
+        .cookie-banner-text a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
         .cookie-banner-actions { display: flex; gap: 8px; flex-shrink: 0; }
         .cookie-btn {
-            padding: 8px 20px; border-radius: 8px; border: none; cursor: pointer;
-            font-size: 0.82rem; font-weight: 600; font-family: inherit;
+            padding: 9px 18px; border-radius: var(--radius-md); border: none; cursor: pointer;
+            font-size: 0.78rem; font-weight: 600; font-family: inherit;
+            transition: all 0.2s ease;
         }
         .cookie-btn-accept { background: var(--primary); color: #fff; }
         .cookie-btn-accept:hover { background: var(--primary-dark); }
-        .cookie-btn-decline { background: var(--gray-100); color: var(--gray-600); }
-        .cookie-btn-decline:hover { background: var(--gray-200); }
+        .cookie-btn-decline { background: rgba(255,255,255,0.06); color: var(--text-muted-dark); border: 1px solid rgba(255,255,255,0.1); }
+        .cookie-btn-decline:hover { background: rgba(255,255,255,0.1); color: var(--text-on-dark); }
         @media (max-width: 576px) {
-            .cookie-banner { flex-direction: column; text-align: center; padding: 16px; }
+            .cookie-banner { flex-direction: column; text-align: center; padding: 20px; gap: 16px; bottom: 16px; }
             .cookie-banner-actions { width: 100%; }
-            .cookie-btn { flex: 1; }
+            .cookie-btn { flex: 1; padding: 12px 16px; }
         }
 
         /* ═══════════════════════════════════════════
@@ -3484,12 +3560,20 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#branchen">Branchen</a>
-        <a href="#leistungen">Leistungen</a>
-        <a href="#konfigurator">Angebot</a>
-        <a href="#blog">Blog</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="website-anfrage.html" class="mobile-menu-cta"><i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen</a>
+        <div class="mobile-menu-nav">
+            <a href="#branchen">Branchen</a>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#konfigurator">Angebot</a>
+            <a href="#blog">Blog</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="website-anfrage.html" class="mobile-menu-cta"><i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen</a>
+            <div class="mobile-menu-contact">
+                <a href="tel:+4915759617436"><i class="fas fa-phone"></i> Anrufen</a>
+                <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
     </div>
 
     <!-- ═══════════════════════════════════════
@@ -5799,12 +5883,16 @@
 
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-banner-text">
-            Wir nutzen Cookies für die Terminbuchung (Cal.com). Mehr in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+        <div class="cookie-banner-icon"><i class="fas fa-cookie-bite"></i></div>
+        <div class="cookie-banner-body">
+            <div class="cookie-banner-title">Cookies & Terminbuchung</div>
+            <div class="cookie-banner-text">
+                Wir nutzen Cookies für die Terminbuchung via Cal.com. <a href="datenschutz.html">Datenschutz</a>
+            </div>
         </div>
         <div class="cookie-banner-actions">
             <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Akzeptieren</button>
-            <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Nur notwendige</button>
+            <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Ablehnen</button>
         </div>
     </div>
 
