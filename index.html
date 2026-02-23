@@ -3085,6 +3085,12 @@
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; text-align: center; }
 
+            /* Process features — hide videos on tablet, show fallback icons */
+            .process-feature-icon video { display: none; }
+            .process-feature-fallback { display: flex; }
+            .process-feature-icon { width: 52px; height: 52px; }
+            .process-feature-fallback { width: 52px; height: 52px; font-size: 1.2rem; }
+            .process-feature { padding: 24px 12px; }
             /* Process slideshow responsive */
             .process-slide { grid-template-columns: 1fr; gap: 28px; }
             .process-slide-image { max-height: 320px; }
@@ -3159,14 +3165,14 @@
             .stats-num { font-size: 2rem; }
             .stats-suffix { font-size: 1.2rem; }
             .stats-item::after { display: none !important; }
-            /* Process + About small */
-            .process-features { grid-template-columns: repeat(2, 1fr); max-width: 500px; }
-            .process-feature:nth-child(2)::after { display: none; }
-            .process-feature { padding: 20px 16px; }
-            .process-feature-icon { width: 48px; height: 48px; }
-            .process-feature-icon video { inset: -12px; width: calc(100% + 24px); height: calc(100% + 24px); }
-            .process-feature-title { font-size: 0.9rem; }
-            .process-feature-desc { font-size: 0.75rem; }
+            /* Process + About small — show fallback icons instead of videos */
+            .process-features { grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 500px; }
+            .process-feature { padding: 16px 8px; }
+            .process-feature-icon { width: 44px; height: 44px; }
+            .process-feature-icon video { display: none; }
+            .process-feature-fallback { display: flex; width: 44px; height: 44px; font-size: 1.1rem; }
+            .process-feature-title { font-size: 0.85rem; }
+            .process-feature-desc { font-size: 0.72rem; }
             .process-tab { font-size: 0.72rem; padding: 10px 12px 12px; flex: 0 0 auto; min-width: auto; }
             .process-slide-num { font-size: 3rem; }
             .process-slide-content h3 { font-size: 1.15rem; }
