@@ -3309,9 +3309,15 @@
         .fab-item--cal .fab-item-btn { background: var(--primary); }
         .fab-backdrop { display: none; }
 
+        @media (max-width: 768px) {
+            .fab-container { bottom: 24px; right: 16px; }
+            .fab-item--phone,
+            .fab-item--cal { display: none; }
+            .back-to-top { display: none !important; }
+        }
+
         @media (max-width: 576px) {
-            .fab-container { bottom: 80px; right: 16px; }
-            .fab-item-btn { width: 44px; height: 44px; font-size: 1.1rem; }
+            .fab-item-btn { width: 52px; height: 52px; font-size: 1.3rem; }
         }
 
         /* ═══════════════════════════════════════════
