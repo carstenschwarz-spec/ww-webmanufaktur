@@ -3207,7 +3207,8 @@
             .ueber-uns { padding: 80px 0; }
             .ueber-uns-grid { grid-template-columns: 1fr; gap: 20px; }
             .ansprechpartner { flex-direction: column; text-align: center; gap: 20px; padding: 28px 24px; }
-            .ansprechpartner-contact { justify-content: center; }
+            .ansprechpartner-contact { justify-content: center; flex-wrap: wrap; gap: 10px 16px; }
+            .ansprechpartner-contact a { font-size: 0.78rem; }
             /* Blog responsive */
             .blog { padding: 80px 0; }
             .blog-top { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
@@ -3489,6 +3490,31 @@
             0%   { opacity: 0; }
             30%  { opacity: 1; }
             100% { opacity: 0; }
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO FALLBACK (shows content if GSAP is slow/blocked)
+           ═══════════════════════════════════════════ */
+        @keyframes heroFallbackReveal {
+            from { opacity: 0; transform: translateY(12px); clip-path: none; }
+            to   { opacity: 1; transform: none; clip-path: none; }
+        }
+        html:not(.js-loaded) .hero-reveal,
+        html:not(.js-loaded) .hero-reveal-letter {
+            animation: heroFallbackReveal 0.6s ease 3.5s both;
+        }
+        html:not(.js-loaded) .hero-subtitle {
+            animation: heroFallbackReveal 0.6s ease 3.8s both;
+        }
+        html:not(.js-loaded) .hero-usp {
+            animation: heroFallbackReveal 0.5s ease 4s both;
+            clip-path: none;
+        }
+        html:not(.js-loaded) .hero-ctas {
+            animation: heroFallbackReveal 0.5s ease 4.2s both;
+        }
+        html:not(.js-loaded) .hero-trust {
+            animation: heroFallbackReveal 0.5s ease 4.4s both;
         }
 
         /* ═══════════════════════════════════════════
@@ -5011,6 +5037,7 @@
         // ─── Hero GSAP Entrance Timeline (Apple-style fade reveals) ───
         (function() {
             if (typeof gsap === 'undefined') return;
+            document.documentElement.classList.add('js-loaded');
             var heroTl = gsap.timeline({ delay: 0.15 });
 
             // WW Mark: draw-on stroke animation
