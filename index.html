@@ -1758,127 +1758,191 @@
            ÜBER UNS — Personal letter style
            ═══════════════════════════════════════════ */
         .ueber-uns {
-            padding: 140px 0;
-            background: var(--gray-50);
+            padding: 0;
+            background: var(--bg-dark, #0F0D0B);
             position: relative;
             overflow: hidden;
         }
+        /* Background logo watermark */
+        .ueber-uns-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .ueber-uns-bg svg {
+            position: absolute;
+            width: 700px;
+            height: auto;
+            left: 50%;
+            top: var(--logo-top, 50%);
+            transform: translate(-50%, -50%);
+        }
+        .ueber-uns-bg svg polyline:nth-child(1),
+        .ueber-uns-bg svg polyline:nth-child(3) {
+            opacity: 0.08;
+        }
+        .ueber-uns-bg svg polyline:nth-child(2) {
+            animation: cognacGlow 4s ease-in-out infinite;
+        }
+        /* Cognac radial glow behind logo */
+        .ueber-uns-glow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .ueber-uns-glow::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            left: 50%;
+            top: var(--logo-top, 50%);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(166,124,82,0.18) 0%, rgba(166,124,82,0.06) 40%, transparent 70%);
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+        /* Content overlay */
         .ueber-uns-inner {
-            max-width: 900px;
-            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding: 120px 0;
         }
-        .ueber-uns-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 48px;
+        /* Statement */
+        .ueber-uns-statement {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
         }
-        .ueber-uns-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 32px 28px;
-            border: 1px solid var(--gray-200);
-            transition: box-shadow 0.3s, transform 0.3s;
+        .ueber-uns-statement h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 600;
+            color: #F7F4F0;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
         }
-        .ueber-uns-card:hover {
-            box-shadow: 0 8px 32px rgba(166,124,82,0.08);
-            transform: translateY(-2px);
-        }
-        .ueber-uns-card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(166,124,82,0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .ueber-uns-card-icon i {
-            font-size: 1.15rem;
+        .ueber-uns-statement h2 .accent {
             color: var(--primary);
         }
-        .ueber-uns-card h4 {
+        .ueber-uns-tagline {
+            text-align: center;
             font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 10px;
+            color: rgba(247,244,240,0.5);
+            margin-bottom: 72px;
+            font-weight: 400;
         }
-        .ueber-uns-card p {
-            font-size: 0.92rem;
-            line-height: 1.7;
-            color: var(--gray-500);
+        /* Trust facts grid */
+        .ueber-uns-facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto 56px;
         }
-        /* Ansprechpartner card */
-        .ansprechpartner {
+        .ueber-uns-fact {
+            background: rgba(247,244,240,0.04);
+            border: 1px solid rgba(247,244,240,0.08);
+            border-radius: var(--radius-lg);
+            padding: 32px 20px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .ueber-uns-fact:hover {
+            border-color: rgba(166,124,82,0.25);
+            background: rgba(247,244,240,0.06);
+        }
+        .ueber-uns-fact-icon {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            opacity: 0.7;
+        }
+        .ueber-uns-fact-num {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .ueber-uns-fact-label {
+            font-size: 0.82rem;
+            color: rgba(247,244,240,0.45);
+            font-weight: 500;
+        }
+        /* Founder — centered between statement and facts */
+        .ueber-uns-founder {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 36px;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 20px;
-            padding: 36px 40px;
-            margin-top: 48px;
+            text-align: center;
+            margin-bottom: 56px;
         }
-        .ansprechpartner-img {
+        .ueber-uns-founder img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center top;
-            flex-shrink: 0;
-            border: 3px solid rgba(166,124,82,0.15);
+            border: 3px solid rgba(166,124,82,0.35);
+            box-shadow: 0 0 30px rgba(166,124,82,0.12), 0 4px 20px rgba(0,0,0,0.3);
+            margin-bottom: 14px;
         }
-        .ansprechpartner-text h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 2px;
-        }
-        .ansprechpartner-role {
-            font-size: 0.82rem;
+        .ueber-uns-founder-name {
             font-weight: 600;
+            font-size: 0.95rem;
+            color: #F7F4F0;
+        }
+        .ueber-uns-founder-role {
+            font-size: 0.8rem;
+            color: rgba(247,244,240,0.4);
+            margin-top: 2px;
+        }
+        .ueber-uns-founder-role i {
+            font-size: 0.7rem;
+            margin-right: 4px;
             color: var(--primary);
-            margin-bottom: 10px;
+            opacity: 0.6;
         }
-        .ansprechpartner-text p {
-            font-size: 0.92rem;
-            line-height: 1.7;
-            color: var(--gray-500);
+        /* Cognac W glow animation */
+        @keyframes cognacGlow {
+            0%, 100% { opacity: 0.25; filter: drop-shadow(0 0 60px rgba(166,124,82,0.6)) drop-shadow(0 0 120px rgba(166,124,82,0.4)) drop-shadow(0 0 200px rgba(166,124,82,0.2)); }
+            50% { opacity: 0.45; filter: drop-shadow(0 0 80px rgba(166,124,82,0.8)) drop-shadow(0 0 180px rgba(166,124,82,0.5)) drop-shadow(0 0 300px rgba(166,124,82,0.3)); }
         }
-        .ansprechpartner-contact {
+        /* Contact strip */
+        .ueber-uns-contact {
             display: flex;
-            gap: 12px;
-            margin-top: 14px;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            padding-top: 32px;
+            border-top: 1px solid rgba(247,244,240,0.08);
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .ansprechpartner-contact a {
+        .ueber-uns-contact a {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--gray-500);
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(247,244,240,0.5);
             text-decoration: none;
             transition: color 0.2s;
         }
-        .ansprechpartner-contact a:hover {
-            color: var(--primary);
-        }
-        .ueber-uns-bottom {
-            text-align: center;
-            margin-top: 48px;
-        }
-        .ueber-uns-bottom p {
-            font-size: 0.95rem;
-            color: var(--gray-500);
-            margin-bottom: 20px;
-        }
-        .ueber-uns-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-        }
+        .ueber-uns-contact a:hover { color: var(--primary); }
+        .ueber-uns-contact a i { font-size: 1rem; }
 
         /* ═══════════════════════════════════════════
            FAQ
@@ -3610,7 +3674,7 @@
             .blog-bottom { grid-template-columns: repeat(2, 1fr); }
 
             /* Über uns responsive */
-            .ueber-uns-grid { grid-template-columns: repeat(3, 1fr); }
+            .ueber-uns-facts { gap: 12px; }
         }
 
         @media (max-width: 768px) {
@@ -3678,11 +3742,11 @@
             .leistung-arrow-indicator { opacity: 0.5; transform: none; }
             .leistungen-nav { display: none; }
             /* Über uns responsive */
-            .ueber-uns { padding: 80px 0; }
-            .ueber-uns-grid { grid-template-columns: 1fr; gap: 20px; }
-            .ansprechpartner { flex-direction: column; text-align: center; gap: 20px; padding: 28px 24px; }
-            .ansprechpartner-contact { justify-content: center; flex-wrap: wrap; gap: 10px 16px; }
-            .ansprechpartner-contact a { font-size: 0.78rem; }
+            .ueber-uns-inner { padding: 100px 0 80px; }
+            .ueber-uns-facts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .ueber-uns-tagline { margin-bottom: 48px; }
+            .ueber-uns-founder img { width: 100px; height: 100px; }
+            .ueber-uns-contact { gap: 16px; }
             /* Blog responsive */
             .blog { padding: 80px 0; }
             .blog-top { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
@@ -3732,8 +3796,9 @@
             .branchen-results-pill { font-size: 0.7rem; padding: 5px 10px; }
             .branchen-cta .btn { width: 100%; justify-content: center; }
             /* Über uns small */
-            .ueber-uns-cta { flex-direction: column; align-items: stretch; gap: 8px; }
-            .ueber-uns-cta .btn { width: 100%; justify-content: center; }
+            .ueber-uns-facts { gap: 10px; }
+            .ueber-uns-fact { padding: 24px 16px; }
+            .ueber-uns-contact a { font-size: 0.78rem; }
             /* Blog small */
             .blog-card-body { padding: 20px 18px 16px; }
             .blog-card--featured .blog-card-body { padding: 22px 20px 18px; }
@@ -4695,45 +4760,58 @@
          ÜBER UNS
          ═══════════════════════════════════════ -->
     <section class="ueber-uns" id="ueber-uns">
-        <div class="section-glow-overlay"></div>
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Warum WW</span>
-                <h2 class="section-title">Websites für lokale Unternehmen — <span class="text-highlight">ohne Umwege</span></h2>
-                <p class="section-subtitle">Kein Agentur-Overhead, kein Baukastenfrustration. Alles aus einer Hand, zum Festpreis.</p>
-            </div>
-            <div class="ueber-uns-inner">
-                <div class="ueber-uns-grid" data-aos="fade-up">
-                    <div class="ueber-uns-card">
-                        <div class="ueber-uns-card-icon"><i class="fas fa-euro-sign"></i></div>
-                        <h4>Festpreis-Garantie</h4>
-                        <p>Sie wissen vorher, was es kostet. Keine Stundenabrechnungen, keine Nachzahlungen, keine Überraschungen.</p>
+        <div class="ueber-uns-glow" aria-hidden="true"></div>
+        <div class="ueber-uns-bg" aria-hidden="true">
+            <svg viewBox="1 0 136 56" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="4,6 18,50 32,10 46,50 60,6" fill="none" stroke="#F7F4F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="40,6 54,50 68,10 82,50 96,6" fill="none" stroke="#A67C52" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="76,6 90,50 104,10 118,50 132,6" fill="none" stroke="#F7F4F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="ueber-uns-inner">
+            <div class="container">
+                <div class="ueber-uns-statement" data-aos="fade-up">
+                    <span class="section-label" style="color: rgba(247,244,240,0.5); border-color: rgba(247,244,240,0.12);">Über uns</span>
+                    <h2>Ihr Projekt.<br><span class="accent">Mein Handwerk.</span></h2>
+                </div>
+                <p class="ueber-uns-tagline" data-aos="fade-up" data-aos-delay="50">Einzelfertigung statt Massenware — aus dem Westerwald, für lokale Unternehmen.</p>
+
+                <div class="ueber-uns-founder" data-aos="fade-up" data-aos-delay="80">
+                    <img src="../Bilder/Image.jpg" alt="Carsten Schwarz — Gründer WW Webmanufaktur" loading="lazy">
+                    <span class="ueber-uns-founder-name">Carsten Schwarz</span>
+                    <span class="ueber-uns-founder-role">Gründer & Webentwickler</span>
+                </div>
+
+                <div class="ueber-uns-facts" data-aos="fade-up" data-aos-delay="100">
+                    <div class="ueber-uns-fact">
+                        <div class="ueber-uns-fact-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="ueber-uns-fact-num">10+</div>
+                        <div class="ueber-uns-fact-label">Jahre IT-Erfahrung</div>
                     </div>
-                    <div class="ueber-uns-card">
-                        <div class="ueber-uns-card-icon"><i class="fas fa-clock"></i></div>
-                        <h4>Nur 30 Min. Ihrer Zeit</h4>
-                        <p>Ein kurzes Gespräch — den Rest übernehmen wir. Texte, Bilder, SEO, Technik. Komplett.</p>
+                    <div class="ueber-uns-fact">
+                        <div class="ueber-uns-fact-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="ueber-uns-fact-num">50+</div>
+                        <div class="ueber-uns-fact-label">Realisierte Projekte</div>
                     </div>
-                    <div class="ueber-uns-card">
-                        <div class="ueber-uns-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <h4>Vor Ort im Westerwald</h4>
-                        <p>Kein anonymes Callcenter. Direkter Ansprechpartner aus der Region, erreichbar per Telefon und WhatsApp.</p>
+                    <div class="ueber-uns-fact">
+                        <div class="ueber-uns-fact-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="ueber-uns-fact-num">100%</div>
+                        <div class="ueber-uns-fact-label">Festpreis-Garantie</div>
+                    </div>
+                    <div class="ueber-uns-fact">
+                        <div class="ueber-uns-fact-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="ueber-uns-fact-num">&lt;24h</div>
+                        <div class="ueber-uns-fact-label">Antwortzeit</div>
                     </div>
                 </div>
-                <div class="ansprechpartner" data-aos="fade-up">
-                    <img src="../Bilder/Image.jpg" alt="Carsten Schwarz — Gründer WW Webmanufaktur" class="ansprechpartner-img" loading="lazy">
-                    <div class="ansprechpartner-text">
-                        <h4>Carsten Schwarz</h4>
-                        <div class="ansprechpartner-role">Gründer & Ihr persönlicher Ansprechpartner</div>
-                        <p>Webdesign, SEO, Technik — alles aus einer Hand. Ich betreue jedes Projekt persönlich und bin jederzeit für Sie erreichbar. Keine Warteschleifen, kein Weiterleiten.</p>
-                        <div class="ansprechpartner-contact">
-                            <a href="tel:+4915759617436"><i class="fas fa-phone"></i> +49 157 5961 7436</a>
-                            <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                            <a href="mailto:c.schwarz@ww-webmanufaktur.de"><i class="fas fa-envelope"></i> E-Mail</a>
-                            <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                        </div>
-                    </div>
+
+                <div class="ueber-uns-contact" data-aos="fade-up" data-aos-delay="150">
+                    <a href="tel:+4915759617436"><i class="fas fa-phone"></i> +49 157 5961 7436</a>
+                    <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:c.schwarz@ww-webmanufaktur.de"><i class="fas fa-envelope"></i> E-Mail</a>
+                    <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -6909,6 +6987,22 @@
             isActive = true;
             requestAnimationFrame(animate);
         }
+    })();
+
+    // Align Über-uns background logo with founder photo
+    (function() {
+        function alignUeberUnsLogo() {
+            const section = document.querySelector('.ueber-uns');
+            const photo = document.querySelector('.ueber-uns-founder img');
+            if (!section || !photo) return;
+            const sectionRect = section.getBoundingClientRect();
+            const photoRect = photo.getBoundingClientRect();
+            const photoCenter = photoRect.top + photoRect.height / 2 - sectionRect.top;
+            const pct = (photoCenter / sectionRect.height * 100).toFixed(1);
+            section.style.setProperty('--logo-top', pct + '%');
+        }
+        window.addEventListener('load', function() { setTimeout(alignUeberUnsLogo, 200); });
+        window.addEventListener('resize', alignUeberUnsLogo);
     })();
 
     </script>
