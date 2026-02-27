@@ -780,7 +780,7 @@
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
                 <div style="flex:1;min-width:140px;display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
                     <i class="fas fa-clock" style="color:var(--primary);font-size:1rem;"></i>
-                    <div><div style="font-size:0.82rem;font-weight:600;">14 Werktage</div><div style="font-size:0.72rem;color:var(--gray-400);">oder 10% Rabatt</div></div>
+                    <div><div style="font-size:0.82rem;font-weight:600;">Fester Zeitplan</div><div style="font-size:0.72rem;color:var(--gray-400);">fertig in 2–6 Wochen</div></div>
                 </div>
                 <div style="flex:1;min-width:140px;display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);">
                     <i class="fas fa-shield-halved" style="color:var(--primary);font-size:1rem;"></i>
@@ -913,8 +913,8 @@
         <!-- Success -->
         <div class="success-screen" id="successScreen">
             <div class="success-icon"><i class="fas fa-check"></i></div>
-            <h2 class="success-title">Anfrage gesendet!</h2>
-            <p class="success-text">Vielen Dank für Ihr Interesse. Wir melden uns innerhalb von 24 Stunden bei Ihnen — per E-Mail oder Telefon, wie Sie es bevorzugen.</p>
+            <h2 class="success-title">Fast geschafft!</h2>
+            <p class="success-text">Ihr Erstgespräch wird in einem neuen Tab geöffnet — wählen Sie dort Ihren Wunschtermin. Falls sich der Tab nicht geöffnet hat, können Sie uns auch direkt kontaktieren:</p>
             <div class="success-summary" id="successSummary"></div>
             <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
                 <a href="/" class="btn btn-primary">Zurück zur Startseite <i class="fas fa-arrow-right"></i></a>
@@ -1037,6 +1037,42 @@
             }
         }
 
+        function buildWhatsAppSummary() {
+            var paket = getRecommendedPaket();
+            var discount = state.referenz ? 0.85 : 1;
+            var basePrice = Math.round(PAKET_PRICES[paket].full * discount);
+            var addonTotal = 0;
+            state.addons.forEach(function(a) { addonTotal += Math.round((ADDON_PRICES[a] || 0) * discount); });
+            var isMonthly = state.paymentMode === 'monatlich';
+            var monthlyRate = state.referenz ? MONTHLY_PRICES[paket].ref : MONTHLY_PRICES[paket].full;
+
+            var lines = ['Hallo! Hier meine Anfrage aus dem Angebots-Assistenten:', ''];
+            if (state.firmenname) lines.push('Firma: ' + state.firmenname);
+            if (state.branche) lines.push('Branche: ' + state.branche);
+            lines.push('Paket: ' + capitalize(paket) + (state.referenz ? ' (Referenz)' : ''));
+            if (isMonthly) {
+                lines.push('Zahlung: ' + monthlyRate + ' €/Mo × ' + MONTHLY_MONTHS);
+            } else {
+                lines.push('Preis: ' + fmt(basePrice));
+            }
+            if (state.addons.length > 0) {
+                lines.push('Extras: ' + state.addons.map(function(a) { return ADDON_LABELS[a]; }).join(', ') + ' (+' + fmt(addonTotal) + ')');
+            }
+            if (state.designStyle) lines.push('Design: ' + state.designStyle);
+            lines.push('', 'Können wir uns dazu austauschen?');
+            return lines.join('\n');
+        }
+
+        function updateWhatsAppLinks() {
+            var contact = document.getElementById('waContactBtn');
+            var success = document.getElementById('waSuccessBtn');
+            if (state.firmenname || state.branche) {
+                var summaryUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(buildWhatsAppSummary());
+                if (contact) contact.href = summaryUrl;
+                if (success) success.href = summaryUrl;
+            }
+        }
+
         function setupWhatsApp() {
             var waUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(WA_DEFAULT_MSG);
             var float = document.getElementById('waFloat');
@@ -1066,7 +1102,7 @@
             if (target > state.step && !validateStep(state.step)) return;
             if (target === 2) populateNeeds();
             if (target >= 3) updateResult();
-            if (target === 4) updateCalSummary();
+            if (target === 4) { updateCalSummary(); updateWhatsAppLinks(); }
 
             document.getElementById('step' + state.step).classList.remove('active');
             document.getElementById('step' + target).classList.add('active');
@@ -1461,6 +1497,18 @@
                 calUrl += '&notes=' + encodeURIComponent(notes);
 
                 window.open(calUrl, '_blank');
+
+                // Show success screen with summary
+                var paket = getRecommendedPaket();
+                var discount = state.referenz ? 0.85 : 1;
+                var basePrice = Math.round(PAKET_PRICES[paket].full * discount);
+                var addonTotal = 0;
+                state.addons.forEach(function(a) { addonTotal += Math.round((ADDON_PRICES[a] || 0) * discount); });
+                buildSuccessSummary(paket, basePrice, addonTotal);
+                updateWhatsAppLinks();
+                document.getElementById('step4').classList.remove('active');
+                document.getElementById('successScreen').classList.add('visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
 

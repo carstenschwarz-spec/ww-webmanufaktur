@@ -4285,7 +4285,7 @@
                 <div class="stats-item">
                     <div class="stats-value">
                         <span class="stats-num" data-target="2">2</span>
-                        <span class="stats-suffix">–4 Wo.</span>
+                        <span class="stats-suffix">–6 Wo.</span>
                     </div>
                     <span class="stats-label">Bis zum Launch</span>
                 </div>
@@ -4911,7 +4911,7 @@
                         <div class="inklusive-guarantee" id="inklusiveGuarantees">
                             <div class="inklusive-guarantee-icon"><i class="fas fa-clock"></i></div>
                             <div>
-                                <h4>2–4 Wochen</h4>
+                                <h4>2–6 Wochen</h4>
                                 <p>Schnelle Umsetzung, fester Zeitplan</p>
                             </div>
                         </div>
@@ -4979,7 +4979,7 @@
                         <span class="faq-toggle"></span>
                     </button>
                     <div class="faq-answer"><div><div class="faq-answer-inner">
-                        In der Regel 2–4 Wochen ab Bereitstellung Ihrer Inhalte. Einfache Starter-Websites sind oft schon in 1–2 Wochen online. Vor Projektstart erhalten Sie einen festen Zeitplan.
+                        In der Regel 2–6 Wochen ab Bereitstellung Ihrer Inhalte. Einfache Starter-Websites sind oft schon in 1–2 Wochen online, umfangreichere Projekte benötigen etwas mehr Zeit. Vor Projektstart erhalten Sie einen festen Zeitplan.
                     </div></div></div>
                 </div>
                 <div class="faq-item">
@@ -7051,6 +7051,16 @@
         document.getElementById('cookieDecline').addEventListener('click', function() {
             localStorage.setItem('cookieConsent', 'essential');
             banner.classList.remove('visible');
+        });
+
+        // Fallback: If Cal.com embed is not loaded (cookies declined), open Cal.com directly
+        document.addEventListener('click', function(e) {
+            var calEl = e.target.closest('[data-cal-link]');
+            if (!calEl) return;
+            if (window._calLoaded) return; // Embed handles it
+            e.preventDefault();
+            var link = calEl.getAttribute('data-cal-link');
+            window.open('https://cal.com/' + link, '_blank');
         });
     })();
     </script>
