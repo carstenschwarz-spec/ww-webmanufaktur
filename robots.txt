@@ -2,7 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ww-webmanufaktur.de/sitemap.xml
-
-# Legal pages
-Disallow: /impressum.html
-Disallow: /datenschutz.html

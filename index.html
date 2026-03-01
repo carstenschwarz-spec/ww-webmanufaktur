@@ -28,6 +28,7 @@
 
     <link rel="canonical" href="https://ww-webmanufaktur.de">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 56'%3E%3Cpolyline points='4,6 18,50 32,10 46,50 60,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='40,6 54,50 68,10 82,50 96,6' fill='none' stroke='%23A67C52' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='76,6 90,50 104,10 118,50 132,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230F0D0B'/%3E%3Cpolyline points='27,38 41,82 55,42 69,82 83,38' fill='none' stroke='%23888' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='63,38 77,82 91,42 105,82 119,38' fill='none' stroke='%23A67C52' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='99,38 113,82 127,42 141,82 155,38' fill='none' stroke='%23888' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ctext x='90' y='145' text-anchor='middle' font-family='serif' font-size='32' font-weight='700' fill='%23F7F4F0'%3EWebmanufaktur%3C/text%3E%3C/svg%3E">
 
     <!-- JSON-LD Structured Data: Organization + LocalBusiness -->
     <script type="application/ld+json">
@@ -234,10 +235,11 @@
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
     </style>
-    <!-- Preconnect hints -->
+    <!-- Preconnect + Preload hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -4495,6 +4497,7 @@
     <!-- ═══════════════════════════════════════
          NAVIGATION
          ═══════════════════════════════════════ -->
+    <header>
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
@@ -4536,6 +4539,7 @@
             </div>
         </div>
     </div>
+    </header>
 
     <main>
     <!-- ═══════════════════════════════════════
@@ -4583,11 +4587,11 @@
             </div>
 
             <div class="hero-showcase" id="heroShowcase">
-                <video class="hero-mockup-video" id="heroLaptopVideo" muted playsinline preload="auto">
+                <video class="hero-mockup-video" id="heroLaptopVideo" aria-label="Website-Demo auf einem Laptop" muted playsinline preload="auto">
                     <source src="../Videos/MockUp/Final/Laptop/hero-laptop.webm" type='video/webm; codecs="vp9"'>
                     <source src="../Videos/MockUp/Final/Laptop/hero-laptop.mp4" type="video/mp4">
                 </video>
-                <video class="hero-phone-video" id="heroPhoneVideo" muted playsinline preload="auto">
+                <video class="hero-phone-video" id="heroPhoneVideo" aria-label="Website-Demo auf einem Smartphone" muted playsinline preload="auto">
                     <source src="../Videos/MockUp/Final/Handy/hero-phone.webm" type='video/webm; codecs="vp9"'>
                     <source src="../Videos/MockUp/Final/Handy/hero-phone.mp4" type="video/mp4">
                 </video>
@@ -4699,12 +4703,12 @@
                         <div class="branchen-laptop-lid">
                             <div class="branchen-laptop-cam"></div>
                             <div class="branchen-laptop-screen" id="branchenLaptopScreen">
-                                <video class="active" muted loop playsinline autoplay src="branchen-showcase/output/macbook/friseure-macbook.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/aerzte-macbook.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/handwerk-macbook.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/gastronomie-macbook.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/fitness-macbook.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/einzelhandel-macbook.mp4"></video>
+                                <video class="active" muted loop playsinline autoplay src="branchen-showcase/output/macbook/friseure-macbook.mp4" aria-label="Friseur-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/aerzte-macbook.mp4" aria-label="Arztpraxis-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/handwerk-macbook.mp4" aria-label="Handwerker-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/gastronomie-macbook.mp4" aria-label="Restaurant-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/fitness-macbook.mp4" aria-label="Fitnessstudio-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/einzelhandel-macbook.mp4" aria-label="Einzelhandel-Website auf dem Laptop"></video>
                             </div>
                         </div>
                         <div class="branchen-laptop-base"></div>
@@ -4715,12 +4719,12 @@
                         <div class="branchen-phone-frame">
                             <div class="branchen-phone-notch"></div>
                             <div class="branchen-phone-screen" id="branchenPhoneScreen">
-                                <video class="active" muted loop playsinline autoplay src="branchen-showcase/output/iphone/friseure-iphone.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/aerzte-iphone.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/handwerk-iphone.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/gastronomie-iphone.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/fitness-iphone.mp4"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/einzelhandel-iphone.mp4"></video>
+                                <video class="active" muted loop playsinline autoplay src="branchen-showcase/output/iphone/friseure-iphone.mp4" aria-label="Friseur-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/aerzte-iphone.mp4" aria-label="Arztpraxis-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/handwerk-iphone.mp4" aria-label="Handwerker-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/gastronomie-iphone.mp4" aria-label="Restaurant-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/fitness-iphone.mp4" aria-label="Fitnessstudio-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/einzelhandel-iphone.mp4" aria-label="Einzelhandel-Website auf dem Smartphone"></video>
                             </div>
                         </div>
                     </div>
@@ -4847,7 +4851,7 @@
                         <div class="branchen-laptop-lid">
                             <div class="branchen-laptop-cam"></div>
                             <div class="branchen-laptop-screen">
-                                <video muted loop playsinline autoplay src="branchen-showcase/output/macbook/simplifyops-macbook.mp4"></video>
+                                <video muted loop playsinline autoplay src="branchen-showcase/output/macbook/simplifyops-macbook.mp4" aria-label="SimplifyOps Web-App Demo"></video>
                             </div>
                         </div>
                         <div class="branchen-laptop-base"></div>
@@ -5172,7 +5176,7 @@
                 <div class="ueber-uns-features" id="aboutStats">
                     <div class="ueber-uns-feature" data-anim="schnell">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Schnell-Animation" muted playsinline preload="metadata">
                                 <source src="../Videos/Animationen/schnell.webm" type="video/webm">
                                 <source src="../Videos/Animationen/schnell.mp4" type="video/mp4">
                             </video>
@@ -5183,7 +5187,7 @@
                     </div>
                     <div class="ueber-uns-feature" data-anim="regional">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Regional-Animation" muted playsinline preload="metadata">
                                 <source src="../Videos/Animationen/regional.webm" type="video/webm">
                                 <source src="../Videos/Animationen/regional.mp4" type="video/mp4">
                             </video>
@@ -5194,7 +5198,7 @@
                     </div>
                     <div class="ueber-uns-feature" data-anim="modern">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Modern-Animation" muted playsinline preload="metadata">
                                 <source src="../Videos/Animationen/modern.webm" type="video/webm">
                                 <source src="../Videos/Animationen/modern.mp4" type="video/mp4">
                             </video>
@@ -5205,7 +5209,7 @@
                     </div>
                     <div class="ueber-uns-feature" data-anim="fair">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Fair-Animation" muted playsinline preload="metadata">
                                 <source src="../Videos/Animationen/fair.webm" type="video/webm">
                                 <source src="../Videos/Animationen/fair.mp4" type="video/mp4">
                             </video>
@@ -5249,7 +5253,7 @@
                     <a href="tel:+4915759617436"><i class="fas fa-phone"></i> +49 157 5961 7436</a>
                     <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     <a href="mailto:c.schwarz@ww-webmanufaktur.de"><i class="fas fa-envelope"></i> E-Mail</a>
-                    <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
 
             </div>
@@ -5760,7 +5764,7 @@
                         <div class="form-group" style="margin-top:8px;">
                             <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.82rem;cursor:pointer;line-height:1.5;padding-right:60px;">
                                 <input type="checkbox" id="dsgvoCheck" required style="margin-top:3px;flex-shrink:0;width:18px;height:18px;accent-color:var(--primary);">
-                                <span>Ich habe die <a href="datenschutz.html" target="_blank" style="color:var(--primary);text-decoration:underline;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</span>
+                                <span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</span>
                             </label>
                         </div>
                         <div class="form-error" id="formError" role="alert" aria-live="assertive"></div>
@@ -5785,7 +5789,7 @@
                         </div>
                     </div>
                     <div class="contact-quick-actions">
-                        <a href="https://wa.me/4915759617436?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%20K%C3%B6nnen%20wir%20kurz%20sprechen%3F" target="_blank" rel="noopener" class="contact-quick-btn contact-quick-btn--whatsapp">
+                        <a href="https://wa.me/4915759617436?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%20K%C3%B6nnen%20wir%20kurz%20sprechen%3F" target="_blank" rel="noopener noreferrer" class="contact-quick-btn contact-quick-btn--whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
                         <a href="tel:+4915759617436" class="contact-quick-btn contact-quick-btn--phone">
@@ -5794,7 +5798,7 @@
                         <a href="mailto:c.schwarz@ww-webmanufaktur.de" class="contact-quick-btn contact-quick-btn--email">
                             <i class="fas fa-envelope"></i> E-Mail
                         </a>
-                        <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener" class="contact-quick-btn contact-quick-btn--email">
+                        <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener noreferrer" class="contact-quick-btn contact-quick-btn--email">
                             <i class="fab fa-instagram"></i> Instagram
                         </a>
                     </div>
@@ -5846,8 +5850,8 @@
                     <h4>Kontakt</h4>
                     <div class="footer-contact-item"><i class="fas fa-envelope"></i> <a href="mailto:c.schwarz@ww-webmanufaktur.de">c.schwarz@ww-webmanufaktur.de</a></div>
                     <div class="footer-contact-item"><i class="fas fa-phone"></i> <a href="tel:+4915759617436">+49 157 5961 7436</a></div>
-                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/4915759617436" target="_blank">WhatsApp</a></div>
-                    <div class="footer-contact-item"><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank">Instagram</a></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/4915759617436" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+                    <div class="footer-contact-item"><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -5863,7 +5867,7 @@
     <!-- Floating Action Button (FAB) -->
     <div class="fab-container" id="fabFloat">
         <div class="fab-menu">
-            <a href="https://wa.me/4915759617436?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%20K%C3%B6nnen%20wir%20kurz%20sprechen%3F" target="_blank" rel="noopener" class="fab-item fab-item--whatsapp">
+            <a href="https://wa.me/4915759617436?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%20K%C3%B6nnen%20wir%20kurz%20sprechen%3F" target="_blank" rel="noopener noreferrer" class="fab-item fab-item--whatsapp">
                 <span class="fab-item-label">WhatsApp</span>
                 <div class="fab-item-btn"><i class="fab fa-whatsapp"></i></div>
             </a>
@@ -7341,13 +7345,13 @@
                         contactForm.style.display = 'none';
                         formSuccess.style.display = 'block';
                     } else {
-                        formError.innerHTML = 'Fehler beim Senden. Bitte versuchen Sie es erneut oder <a href="https://wa.me/4915759617436" target="_blank" style="color:var(--primary);text-decoration:underline;">schreiben Sie uns per WhatsApp</a>.';
+                        formError.innerHTML = 'Fehler beim Senden. Bitte versuchen Sie es erneut oder <a href="https://wa.me/4915759617436" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;">schreiben Sie uns per WhatsApp</a>.';
                         formError.style.display = 'block';
                     }
                 }).catch(function() {
                     submitBtn.classList.remove('loading');
                     submitBtn.disabled = false;
-                    formError.innerHTML = 'Fehler beim Senden. Bitte versuchen Sie es erneut oder <a href="https://wa.me/4915759617436" target="_blank" style="color:var(--primary);text-decoration:underline;">schreiben Sie uns per WhatsApp</a>.';
+                    formError.innerHTML = 'Fehler beim Senden. Bitte versuchen Sie es erneut oder <a href="https://wa.me/4915759617436" target="_blank" rel="noopener noreferrer" style="color:var(--primary);text-decoration:underline;">schreiben Sie uns per WhatsApp</a>.';
                     formError.style.display = 'block';
                 });
             });
