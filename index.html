@@ -4078,12 +4078,14 @@
             .faq-grid { grid-template-columns: 1fr; }
             /* Branchen responsive */
             .branchen { padding: 80px 0 0; }
-            .branchen-theater { height: auto; min-height: auto; }
-            .branchen-theater-main { grid-template-columns: 1fr; gap: 32px; padding: 0 20px; }
-            .branchen-devices-stage { width: 85%; margin: 0 auto; }
-            .branchen-content-panel { position: relative; min-height: auto; }
-            .branchen-slide { position: relative !important; top: auto !important; transform: none !important; opacity: 1 !important; pointer-events: auto !important; margin-bottom: 40px; }
-            .branchen-progress { display: none; }
+            .branchen-theater-main { grid-template-columns: 1fr; gap: 20px; padding: 0 20px; }
+            .branchen-devices-stage { width: 75%; margin: 0 auto; }
+            .branchen-content-panel { min-height: 200px; }
+            .branchen-slide-desc { font-size: 0.82rem; margin-bottom: 14px; }
+            .branchen-slide-title { font-size: 1.3rem; }
+            .branchen-progress { right: 12px; }
+            .branchen-progress-label { display: none; }
+            .branchen-progress-item { padding: 8px 0; }
             .branchen-blueprint { display: none; }
             /* Leistungen responsive */
             .leistungen-grid { height: 400px; }
@@ -4147,7 +4149,11 @@
             /* Branchen small */
             .branchen-device-phone { width: 20%; }
             .branchen-cta .btn { width: 100%; justify-content: center; }
-            .branchen-devices-stage { width: 95%; }
+            .branchen-devices-stage { width: 85%; }
+            .branchen-theater-main { gap: 16px; padding: 0 16px; }
+            .branchen-slide-features { gap: 4px; }
+            .branchen-feature { font-size: 0.7rem; padding: 4px 10px; }
+            .branchen-progress { right: 8px; }
             /* Über uns small */
             .ueber-uns-facts { gap: 10px; }
             .ueber-uns-fact { padding: 24px 16px; }
@@ -6644,15 +6650,17 @@
                 gsap.set(stage, { opacity: 1 });
             }
 
-            // ── Desktop: ScrollTrigger Pin + Scrub ──
-            function initDesktop() {
+            // ── ScrollTrigger Pin + Scrub (Desktop + Mobile) ──
+            function initTheater() {
                 if (reducedMotion) return;
 
-                // Pin the theater section
+                // Shorter scroll distance on mobile for snappier feel
+                var scrollPerSlide = isMobile.matches ? 350 : 500;
+
                 var scrubST = ScrollTrigger.create({
                     trigger: theater,
                     start: 'top top',
-                    end: '+=' + (TOTAL * 500),
+                    end: '+=' + (TOTAL * scrollPerSlide),
                     pin: true,
                     scrub: 1,
                     onUpdate: function(self) {
@@ -6674,35 +6682,6 @@
                 return scrubST;
             }
 
-            // ── Mobile: No pin, stacked cards with fade-in ──
-            function initMobile() {
-                // Show all slides stacked
-                slides.forEach(function(slide) {
-                    slide.classList.add('active');
-                    slide.style.position = 'relative';
-                    slide.style.transform = 'none';
-                    slide.style.top = 'auto';
-                    slide.style.marginBottom = '40px';
-                });
-
-                // Hide progress indicator on mobile
-                if (progress) progress.style.display = 'none';
-
-                // Simple viewport observer for video play/pause
-                var observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            inView = true;
-                            playVideo(0);
-                        } else {
-                            inView = false;
-                            pauseAll();
-                        }
-                    });
-                }, { threshold: 0.2 });
-                observer.observe(theater);
-            }
-
             // ── Progress dot click ──
             progressItems.forEach(function(item, i) {
                 item.addEventListener('click', function() {
@@ -6719,15 +6698,9 @@
                 });
             });
 
-            // ── Init based on viewport ──
-            var desktopST = null;
+            // ── Init ──
             function setup() {
-                if (isMobile.matches) {
-                    if (desktopST) { desktopST.kill(); desktopST = null; }
-                    initMobile();
-                } else {
-                    desktopST = initDesktop();
-                }
+                initTheater();
             }
 
             // Reduced-motion fallback: show all slides, no animations
