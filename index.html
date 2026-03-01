@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WW Webmanufaktur | Webdesign aus dem Westerwald</title>
     <meta name="description" content="Professionelles Webdesign aus dem Westerwald. Websites, Buchungssysteme & Online-Shops zum Festpreis. Fertig in 2–6 Wochen.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#A67C52">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -13,6 +15,10 @@
     <meta property="og:locale" content="de_DE">
     <meta property="og:url" content="https://ww-webmanufaktur.de">
     <meta property="og:image" content="https://ww-webmanufaktur.de/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:site_name" content="WW Webmanufaktur">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -23,11 +29,12 @@
     <link rel="canonical" href="https://ww-webmanufaktur.de">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 56'%3E%3Cpolyline points='4,6 18,50 32,10 46,50 60,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='40,6 54,50 68,10 82,50 96,6' fill='none' stroke='%23A67C52' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolyline points='76,6 90,50 104,10 118,50 132,6' fill='none' stroke='%23ccc' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data: Organization + LocalBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": "https://ww-webmanufaktur.de/#organization",
         "name": "WW Webmanufaktur",
         "description": "Professionelles Webdesign aus dem Westerwald. Websites, Buchungssysteme & Online-Shops zum Festpreis.",
         "url": "https://ww-webmanufaktur.de",
@@ -37,22 +44,175 @@
             "@type": "PostalAddress",
             "streetAddress": "Steinweg 28",
             "addressLocality": "Gorgeshausen",
+            "addressRegion": "Rheinland-Pfalz",
             "postalCode": "56412",
             "addressCountry": "DE"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 50.52,
+            "longitude": 7.78
+        },
         "logo": "https://ww-webmanufaktur.de/og-image.jpg",
         "image": "https://ww-webmanufaktur.de/og-image.jpg",
-        "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 50.52, "longitude": 7.78 },
-            "geoRadius": "50000"
-        },
-        "serviceType": ["Webdesign", "Webentwicklung", "Online-Marketing"],
+        "areaServed": [
+            {
+                "@type": "GeoCircle",
+                "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 50.52, "longitude": 7.78 },
+                "geoRadius": "50000"
+            },
+            { "@type": "AdministrativeArea", "name": "Westerwaldkreis" },
+            { "@type": "AdministrativeArea", "name": "Rhein-Lahn-Kreis" },
+            { "@type": "AdministrativeArea", "name": "Limburg-Weilburg" }
+        ],
+        "serviceType": ["Webdesign", "Webentwicklung", "Suchmaschinenoptimierung", "Google My Business", "Online-Marketing"],
         "priceRange": "€€",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Überweisung, PayPal",
         "founder": {
             "@type": "Person",
-            "name": "Carsten Schwarz"
+            "name": "Carsten Schwarz",
+            "jobTitle": "Gründer & Webentwickler"
+        },
+        "sameAs": [
+            "https://www.instagram.com/wwwebmanufaktur/"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+4915759617436",
+            "contactType": "sales",
+            "availableLanguage": "German",
+            "areaServed": "DE"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Webdesign-Pakete",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Starter-Paket",
+                    "description": "Website mit bis zu 5 Seiten, KI-Fotos, SEO, Google My Business",
+                    "price": "699",
+                    "priceCurrency": "EUR"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Business-Paket",
+                    "description": "Website mit bis zu 10 Seiten, Terminbuchung, individuellem Logo",
+                    "price": "990",
+                    "priceCurrency": "EUR"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Premium-Paket",
+                    "description": "Unbegrenzte Seiten, Online-Shop, Blog, Newsletter, Galerie",
+                    "price": "1790",
+                    "priceCurrency": "EUR"
+                }
+            ]
         }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Was ist im Preis alles enthalten?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Jedes Paket enthält: Design, Entwicklung, KI-optimierte Bilder, SEO-Texte, DSGVO-Konformität, SSL, Kontaktformular, Google Maps, WhatsApp-Button, Google My Business Einrichtung, Bewertungseinbindung, Social-Media-Verknüpfung und ein Jahr Hosting. Sie zahlen einmal — fertig."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wie lange dauert es, bis meine Website fertig ist?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In der Regel 2–6 Wochen ab Bereitstellung Ihrer Inhalte. Einfache Starter-Websites sind oft schon in 1–2 Wochen online, umfangreichere Projekte benötigen etwas mehr Zeit. Vor Projektstart erhalten Sie einen festen Zeitplan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Gehört mir die Website?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja, zu 100 %. Code, Texte und Bilder gehören Ihnen. Keine Knebelverträge, keine Mindestlaufzeiten — jederzeit übertragbar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Brauche ich eigene Fotos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nicht zwingend. Einfache Handyfotos reichen — unsere KI optimiert Belichtung, Schärfe und Bildausschnitt automatisch. Auf Wunsch kommen wir auch vor Ort für professionelle Fotos und Videos (als Add-on buchbar)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Warum nicht Jimdo, Wix oder einen Baukasten?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Baukästen kosten 15–35 €/Monat — dauerhaft. Nach 2 Jahren haben Sie 360–840 € gezahlt und besitzen nichts. Bei uns zahlen Sie einmalig ab 699 €, das erste Jahr Hosting ist inklusive, und die Website gehört Ihnen. Dazu kommen persönlicher Service, SEO und Google My Business — Dinge, die im Baukasten Ihre eigene Zeit kosten."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was kostet mich die Website nach dem ersten Jahr?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Optional ab 19 €/Monat für Hosting, Updates, Backups und Support. Kein Muss — Sie können Ihre Website auch selbst hosten. Es gibt keine versteckten Kosten und keine Mindestlaufzeit."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ist SEO wirklich inklusive?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ja, in jedem Paket: Meta-Tags, strukturierte Daten, schnelle Ladezeiten, Mobile-First-Design und lokale Keywords. Dazu richten wir Ihr Google My Business Profil ein und verbinden es mit Ihrer Website — damit Sie bei lokalen Suchanfragen gefunden werden."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Kann ich die Website selbst bearbeiten?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Auf Wunsch richten wir ein einfaches CMS ein, mit dem Sie Texte und Bilder selbst ändern können. Alternativ übernehmen wir Änderungen für Sie — im Wartungspaket sind kleinere Anpassungen inklusive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Für welche Branchen ist das geeignet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Für alle lokalen Unternehmen: Friseure, Handwerker, Arztpraxen, Restaurants, Fitnessstudios, Einzelhändler und mehr. Terminbuchung, Online-Shop und individuelle Features sind branchenübergreifend verfügbar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was sind die Referenz-Konditionen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Als junge Agentur bieten wir Neukunden 15 % Rabatt, wenn wir Ihre Website als Referenz zeigen dürfen. Gleiche Qualität, gleicher Service — einfach günstiger."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "WW Webmanufaktur",
+        "url": "https://ww-webmanufaktur.de",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://ww-webmanufaktur.de/#organization" }
     }
     </script>
 
@@ -1716,7 +1876,7 @@
             color: var(--primary);
             font-size: 1.05rem;
         }
-        .inklusive-impact-card h4 {
+        .inklusive-impact-card h3 {
             font-family: var(--font-heading);
             font-size: 1rem;
             font-weight: 700;
@@ -1786,7 +1946,7 @@
             color: var(--primary);
             font-size: 1rem;
         }
-        .inklusive-feature-hl h4 {
+        .inklusive-feature-hl h3 {
             font-family: var(--font-heading);
             font-size: 0.95rem;
             font-weight: 700;
@@ -1849,7 +2009,7 @@
             color: var(--primary);
             font-size: 1rem;
         }
-        .inklusive-guarantee h4 {
+        .inklusive-guarantee h3 {
             font-family: var(--font-heading);
             font-size: 1rem;
             font-weight: 700;
@@ -3381,7 +3541,7 @@
             position: relative;
             z-index: 3;
         }
-        .leistung-bottom h4 {
+        .leistung-bottom h3 {
             font-family: var(--font-heading);
             font-size: 1rem;
             font-weight: 700;
@@ -4377,6 +4537,7 @@
         </div>
     </div>
 
+    <main>
     <!-- ═══════════════════════════════════════
          HERO
          ═══════════════════════════════════════ -->
@@ -4727,7 +4888,7 @@
                         <div class="leistung-icon"><i class="fas fa-laptop-code"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>Webdesign & Entwicklung</h4>
+                        <h3>Webdesign & Entwicklung</h3>
                         <p>Individuelle, responsive Websites — maßgeschneidert für Ihre Branche. Kein Baukastensystem, sondern echtes Handwerk.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4742,7 +4903,7 @@
                         <div class="leistung-icon"><i class="fas fa-arrow-trend-up"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>SEO-Optimierung</h4>
+                        <h3>SEO-Optimierung</h3>
                         <p>Lokale Suchmaschinenoptimierung, damit Ihre Kunden Sie finden. Meta-Tags, Schema-Markup und Content — inklusive.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4757,7 +4918,7 @@
                         <div class="leistung-icon"><i class="fab fa-google"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>Google My Business</h4>
+                        <h3>Google My Business</h3>
                         <p>Profil-Einrichtung und Optimierung für maximale lokale Sichtbarkeit. Bewertungen, Fotos und Beiträge — alles abgestimmt.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4772,7 +4933,7 @@
                         <div class="leistung-icon"><i class="fas fa-clock"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>Online-Terminbuchung</h4>
+                        <h3>Online-Terminbuchung</h3>
                         <p>Kunden buchen 24/7 direkt über Ihre Website. Automatische Bestätigungen und Kalender-Sync inklusive.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4787,7 +4948,7 @@
                         <div class="leistung-icon"><i class="fas fa-store"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>E-Commerce & Shop</h4>
+                        <h3>E-Commerce & Shop</h3>
                         <p>Produktkatalog, Warenkorb und Bezahlung — verkaufen Sie Ihre Produkte direkt online.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4802,7 +4963,7 @@
                         <div class="leistung-icon"><i class="fas fa-file-lines"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>Content & Texte</h4>
+                        <h3>Content & Texte</h3>
                         <p>SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google überzeugen. Professionell und wirkungsvoll.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4817,7 +4978,7 @@
                         <div class="leistung-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>Logo & Branding</h4>
+                        <h3>Logo & Branding</h3>
                         <p>Individuelles Logo-Design und Corporate Identity — von der Farbpalette bis zur Typografie. Ihr einheitlicher Markenauftritt.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -4832,7 +4993,7 @@
                         <div class="leistung-icon"><i class="fas fa-headset"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h4>Wartung & Support</h4>
+                        <h3>Wartung & Support</h3>
                         <p>Laufende Updates, Sicherheits-Patches, Backups und persönlicher Support. Wir kümmern uns um die Technik.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right"></i></span>
@@ -5113,21 +5274,21 @@
                 <div class="inklusive-impact-card">
                     <div class="inklusive-impact-icon"><i class="fas fa-bullseye"></i></div>
                     <div>
-                        <h4>Kunden überzeugen</h4>
+                        <h3>Kunden überzeugen</h3>
                         <p>Professionelle Präsenz, die Vertrauen schafft und Anfragen generiert</p>
                     </div>
                 </div>
                 <div class="inklusive-impact-card">
                     <div class="inklusive-impact-icon"><i class="fas fa-user-group"></i></div>
                     <div>
-                        <h4>Bewerber gewinnen</h4>
+                        <h3>Bewerber gewinnen</h3>
                         <p>Moderner Webauftritt zeigt: Hier will man arbeiten</p>
                     </div>
                 </div>
                 <div class="inklusive-impact-card">
                     <div class="inklusive-impact-icon"><i class="fas fa-handshake"></i></div>
                     <div>
-                        <h4>Professionell auftreten</h4>
+                        <h3>Professionell auftreten</h3>
                         <p>Gegenüber Partnern, Lieferanten und Banken — immer überzeugend</p>
                     </div>
                 </div>
@@ -5144,28 +5305,28 @@
                             <div class="inklusive-feature-hl">
                                 <div class="inklusive-feature-hl-icon"><i class="fas fa-pen-fancy"></i></div>
                                 <div>
-                                    <h4>Texte geschrieben</h4>
+                                    <h3>Texte geschrieben</h3>
                                     <p>SEO-optimierte Texte — Sie liefern Stichpunkte, wir machen den Rest</p>
                                 </div>
                             </div>
                             <div class="inklusive-feature-hl">
                                 <div class="inklusive-feature-hl-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
                                 <div>
-                                    <h4>Professionelle Bilder</h4>
+                                    <h3>Professionelle Bilder</h3>
                                     <p>KI-generierte Fotos passend zu Ihrer Branche — kein Fotoshooting nötig</p>
                                 </div>
                             </div>
                             <div class="inklusive-feature-hl">
                                 <div class="inklusive-feature-hl-icon"><i class="fas fa-magnifying-glass"></i></div>
                                 <div>
-                                    <h4>SEO-Optimierung</h4>
+                                    <h3>SEO-Optimierung</h3>
                                     <p>Meta-Tags, strukturierte Daten, lokale Keywords — nicht nur ein Plugin</p>
                                 </div>
                             </div>
                             <div class="inklusive-feature-hl">
                                 <div class="inklusive-feature-hl-icon"><i class="fas fa-server"></i></div>
                                 <div>
-                                    <h4>1 Jahr Hosting</h4>
+                                    <h3>1 Jahr Hosting</h3>
                                     <p>Hosting, Domain-Einrichtung und SSL — komplett inklusive</p>
                                 </div>
                             </div>
@@ -5190,21 +5351,21 @@
                         <div class="inklusive-guarantee" id="inklusiveGuarantees">
                             <div class="inklusive-guarantee-icon"><i class="fas fa-clock"></i></div>
                             <div>
-                                <h4>2–6 Wochen</h4>
+                                <h3>2–6 Wochen</h3>
                                 <p>Schnelle Umsetzung, fester Zeitplan</p>
                             </div>
                         </div>
                         <div class="inklusive-guarantee">
                             <div class="inklusive-guarantee-icon"><i class="fas fa-shield-halved"></i></div>
                             <div>
-                                <h4>Festpreis</h4>
+                                <h3>Festpreis</h3>
                                 <p>Keine versteckten Kosten</p>
                             </div>
                         </div>
                         <div class="inklusive-guarantee">
                             <div class="inklusive-guarantee-icon"><i class="fas fa-key"></i></div>
                             <div>
-                                <h4>100% Eigentum</h4>
+                                <h3>100% Eigentum</h3>
                                 <p>Keine Knebelverträge</p>
                             </div>
                         </div>
@@ -5651,6 +5812,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ═══════════════════════════════════════
          FOOTER
