@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friseur in der Goldschmiede - Ihr Friseursalon</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" width="120" height="50"><text x="60" y="22" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="18" font-weight="700" fill="#1a7a6f" letter-spacing="2">IDG</text><line x1="25" y1="28" x2="95" y2="28" stroke="#1a7a6f" stroke-width="0.5" opacity="0.5"/><text x="60" y="40" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" font-weight="400" fill="#1a1a1a" letter-spacing="0.5">in der Goldschmiede</text></svg>
+            </div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40" style="margin:8px 0;"><text x="50" y="18" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a7a6f" letter-spacing="2">IDG</text><line x1="15" y1="23" x2="85" y2="23" stroke="#1a7a6f" stroke-width="0.4" opacity="0.5"/><text x="50" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="7" font-weight="400" fill="#1a1a1a" letter-spacing="0.5">in der Goldschmiede</text></svg>
+            </a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">Über uns</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                <li><a href="booking.html" class="nav-btn">Termin buchen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero" id="home">
+        <!-- Video Background -->
+        <div class="hero-video-container">
+            <video class="hero-video active" id="heroVideo1" muted loop playsinline>
+                <source src="../../Videos/4178342-hd_1920_1080_30fps.mp4" type="video/mp4">
+            </video>
+            <video class="hero-video" id="heroVideo2" muted loop playsinline>
+                <source src="../../Bilder/Templatevideos/Frauen/7440088-hd.mp4" type="video/mp4">
+            </video>
+            <video class="hero-video" id="heroVideo3" muted loop playsinline>
+                <source src="../../Bilder/Templatevideos/Frauen/8830117-hd.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <!-- Logo -->
+            <div class="hero-logo-wrapper" data-aos="fade-down" data-aos-delay="100">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50" width="120" height="50"><text x="60" y="22" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="18" font-weight="700" fill="#fff" letter-spacing="2">IDG</text><line x1="25" y1="28" x2="95" y2="28" stroke="#fff" stroke-width="0.5" opacity="0.4"/><text x="60" y="40" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" font-weight="300" fill="#fff" letter-spacing="0.5">in der Goldschmiede</text></svg>
+            </div>
+
+            <!-- Titel -->
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                <span class="title-main">Friseur in der Goldschmiede</span>
+            </h1>
+
+            <!-- Slogan -->
+            <p class="hero-tagline" data-aos="fade-up" data-aos-delay="300">
+                Ihr Friseursalon in Hachenburg
+            </p>
+
+            <!-- Buttons -->
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="booking.html" class="btn btn-primary btn-lg hero-btn-primary">
+                    <span>Jetzt Termin buchen</span>
+                    <i class="fas fa-calendar-check"></i>
+                </a>
+                <a href="tel:+492662949200" class="btn btn-outline btn-lg hero-btn-secondary">
+                    <span>Jetzt anrufen</span>
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+
+            <!-- Info Bar -->
+            <div class="hero-info-bar" data-aos="fade-up" data-aos-delay="500">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Wilhelmstraße 37, Hachenburg</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mo-Fr 11:00-18:00</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <span>4.6 Sterne (69 Bewertungen)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span class="scroll-text">Mehr entdecken</span>
+                <div class="scroll-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="hero-social">
+            <a href="tel:+492662949200" class="social-link" title="Anrufen">
+                <i class="fas fa-phone"></i>
+            </a>
+            <a href="https://wa.me/492662949200" target="_blank" class="social-link" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <!-- Header -->
+            <div class="about-header" data-aos="fade-up">
+                <span class="about-label">Über uns</span>
+                <h2 class="about-title">Willkommen bei <span class="text-highlight">Friseur in der Goldschmiede</span></h2>
+            </div>
+
+            <!-- Content -->
+            <div class="about-layout">
+                <!-- Team Image -->
+                <div class="about-visual" data-aos="fade-up">
+                    <img src="../../Bilder/Templatebilder/Teambild/Teambild.png" alt="Das Team von Friseur in der Goldschmiede" class="about-team-img">
+                </div>
+
+                <!-- Info -->
+                <div class="about-info" data-aos="fade-up" data-aos-delay="100">
+                    <div class="about-text-content">
+                        <h3 class="about-headline">Wo Tradition auf <span class="text-highlight">Moderne</span> trifft</h3>
+                        <p class="about-text">
+                            Bei Friseur in der Goldschmiede in Hachenburg verbinden wir traditionelle Handwerkskunst mit
+                            zeitlosem Design. Als Team mit Leidenschaft schaffen wir individuelle
+                            Looks, die Ihre Persönlichkeit unterstreichen.
+                        </p>
+                        <p class="about-text">
+                            Ob mit oder ohne Termin - wir freuen uns auf Ihren Besuch!
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4.6</span>
+                            <span class="stat-label">Google Bewertung</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">69+</span>
+                            <span class="stat-label">Bewertungen</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Leidenschaft</span>
+                        </div>
+                    </div>
+
+                    <a href="booking.html" class="btn btn-primary">
+                        Termin vereinbaren
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <!-- Header -->
+            <div class="services-header" data-aos="fade-up">
+                <span class="services-label">Services</span>
+                <h2 class="services-title">Unsere <span class="text-highlight">Dienstleistungen</span></h2>
+            </div>
+
+            <!-- Main Content -->
+            <div class="services-layout">
+                <!-- Tools Image -->
+                <div class="services-visual" data-aos="fade-right">
+                    <img src="../../Bilder/Werkzeugbilder/ChatGPT Image 6. Feb. 2026, 17_21_02 (1).png" alt="Friseurwerkzeug" class="services-tools-img">
+                </div>
+
+                <!-- Services Lists -->
+                <div class="services-content" data-aos="fade-left">
+                    <!-- Herren -->
+                    <div class="services-group">
+                        <h3 class="services-group-title">Herren</h3>
+                        <ul class="services-list">
+                            <li class="services-item">
+                                <span class="item-name">Maschinenschnitt</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">18 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Klassischer Haarschnitt</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">25 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Waschen, Schneiden, Föhnen</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">32 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Bartpflege</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">18 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Rasur klassisch</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">22 €</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Damen -->
+                    <div class="services-group">
+                        <h3 class="services-group-title">Damen</h3>
+                        <ul class="services-list">
+                            <li class="services-item">
+                                <span class="item-name">Waschen & Schneiden</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">ab 38 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Waschen & Föhnen</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">ab 25 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Färben komplett</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">ab 65 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Strähnen / Balayage</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">ab 85 €</span>
+                            </li>
+                            <li class="services-item">
+                                <span class="item-name">Hochsteckfrisur</span>
+                                <span class="item-dots"></span>
+                                <span class="item-price">ab 55 €</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="services-cta">
+                        <a href="booking.html" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Termin buchen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team section" id="team">
+        <div class="team-bg"></div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Unser Team</span>
+                <h2 class="section-title">Die <span class="title-highlight">Experten</span> von Friseur in der Goldschmiede</h2>
+                <p class="section-description">
+                    Leidenschaft, Erfahrung und Kreativität - das zeichnet unser Team aus.
+                </p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-image">
+                        <img src="../../Bilder/Mitarbeiterfotos/ChatGPT Image 6. Feb. 2026, 17_29_14.png" alt="Stylist" class="team-photo">
+                        <div class="team-overlay">
+                            <a href="tel:+492662949200" class="team-social-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Senior Stylist</h3>
+                        <span class="team-role">Inhaber & Stylist</span>
+                        <p class="team-bio">Langjährige Erfahrung. Spezialist für klassische Schnitte und moderne Trends.</p>
+                        <div class="team-expertise">
+                            <span class="expertise-tag">Herrenschnitte</span>
+                            <span class="expertise-tag">Styling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-image">
+                        <img src="../../Bilder/Mitarbeiterfotos/ChatGPT Image 6. Feb. 2026, 17_31_24.png" alt="Stylistin" class="team-photo">
+                        <div class="team-overlay">
+                            <a href="tel:+492662949200" class="team-social-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Color Specialist</h3>
+                        <span class="team-role">Farbexpertin</span>
+                        <p class="team-bio">Meisterin der Farben. Balayage, Highlights und kreative Colorationen.</p>
+                        <div class="team-expertise">
+                            <span class="expertise-tag">Balayage</span>
+                            <span class="expertise-tag">Coloration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-image">
+                        <img src="../../Bilder/Mitarbeiterfotos/ChatGPT Image 6. Feb. 2026, 17_33_59.png" alt="Barber" class="team-photo">
+                        <div class="team-overlay">
+                            <a href="tel:+492662949200" class="team-social-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Barber</h3>
+                        <span class="team-role">Bart-Experte</span>
+                        <p class="team-bio">Präzision und Stil. Traditionelle Rasuren und moderne Bart-Styles.</p>
+                        <div class="team-expertise">
+                            <span class="expertise-tag">Rasur</span>
+                            <span class="expertise-tag">Bart-Styling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview Section -->
+    <section class="products-preview section">
+        <div class="products-preview-bg"></div>
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header products-header" data-aos="fade-up">
+                <span class="section-subtitle">Exklusiv bei Friseur in der Goldschmiede</span>
+                <h2 class="section-title">Premium <span class="title-highlight">Pflegeprodukte</span></h2>
+                <p class="section-description">
+                    Professionelle Styling- und Pflegeprodukte für den perfekten Look zu Hause.
+                </p>
+            </div>
+
+            <!-- Interactive Product Showcase -->
+            <div class="products-interactive" data-aos="fade-up">
+                <!-- Large Featured Product Display -->
+                <div class="product-featured">
+                    <div class="featured-image">
+                        <img id="featuredImg" src="../../Bilder/Templatebilder/Haarwachs.png" alt="Haarwachs">
+                        <div class="featured-badge" id="featuredBadge">Bestseller</div>
+                    </div>
+                    <div class="featured-info">
+                        <span class="featured-category" id="featuredCategory">Styling</span>
+                        <h3 class="featured-title" id="featuredTitle">Haarwachs</h3>
+                        <p class="featured-desc" id="featuredDesc">Maximaler Halt mit mattem Finish. Ideal für strukturierte, moderne Looks mit natürlichem Griff.</p>
+                        <div class="featured-price" id="featuredPrice">18,90 €</div>
+                        <a href="shop.html" class="btn btn-primary">
+                            <span>Im Shop ansehen</span>
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Categories & Thumbnails -->
+                <div class="products-categories">
+                    <div class="product-category">
+                        <h4 class="category-label"><i class="fas fa-jar"></i> Styling</h4>
+                        <div class="category-products">
+                            <div class="product-thumb active"
+                                 data-img="../../Bilder/Templatebilder/Haarwachs.png"
+                                 data-title="Haarwachs"
+                                 data-category="Styling"
+                                 data-desc="Maximaler Halt mit mattem Finish. Ideal für strukturierte, moderne Looks mit natürlichem Griff."
+                                 data-price="18,90 €"
+                                 data-badge="Bestseller">
+                                <img src="../../Bilder/Templatebilder/Haarwachs.png" alt="Haarwachs">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Haargel.png"
+                                 data-title="Haargel"
+                                 data-category="Styling"
+                                 data-desc="Flexibler Halt mit natürlichem Glanz. Für alle Haartypen geeignet."
+                                 data-price="17,90 €"
+                                 data-badge="">
+                                <img src="../../Bilder/Templatebilder/Haargel.png" alt="Haargel">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Haarspray.png"
+                                 data-title="Haarspray"
+                                 data-category="Styling"
+                                 data-desc="Starker Halt ohne Verkleben. Schützt und fixiert den ganzen Tag."
+                                 data-price="16,90 €"
+                                 data-badge="">
+                                <img src="../../Bilder/Templatebilder/Haarspray.png" alt="Haarspray">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Styling Puder.png"
+                                 data-title="Styling Puder"
+                                 data-category="Styling"
+                                 data-desc="Volumen und Textur pur. Unsichtbare Anwendung für maximalen Lift an der Wurzel."
+                                 data-price="14,90 €"
+                                 data-badge="Beliebt">
+                                <img src="../../Bilder/Templatebilder/Styling Puder.png" alt="Styling Puder">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-category">
+                        <h4 class="category-label"><i class="fas fa-pump-soap"></i> Pflege</h4>
+                        <div class="category-products">
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Schampoo.png"
+                                 data-title="Shampoo"
+                                 data-category="Pflege"
+                                 data-desc="Sanfte Reinigung mit natürlichen Inhaltsstoffen. Für gesundes, glänzendes Haar."
+                                 data-price="12,90 €"
+                                 data-badge="Neu">
+                                <img src="../../Bilder/Templatebilder/Schampoo.png" alt="Shampoo">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Conditioner.png"
+                                 data-title="Conditioner"
+                                 data-category="Pflege"
+                                 data-desc="Intensive Feuchtigkeitspflege für geschmeidiges, leicht kämmbares Haar."
+                                 data-price="13,90 €"
+                                 data-badge="">
+                                <img src="../../Bilder/Templatebilder/Conditioner.png" alt="Conditioner">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Haaröl.png"
+                                 data-title="Haaröl"
+                                 data-category="Pflege"
+                                 data-desc="Nährendes Öl für seidigen Glanz und Geschmeidigkeit. Schützt vor Hitze und Spliss."
+                                 data-price="19,90 €"
+                                 data-badge="Premium">
+                                <img src="../../Bilder/Templatebilder/Haaröl.png" alt="Haaröl">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Bartöl.png"
+                                 data-title="Bartöl"
+                                 data-category="Pflege"
+                                 data-desc="Pflegt und bändigt den Bart. Natürliche Öle für weichen Griff und gesunden Glanz."
+                                 data-price="22,90 €"
+                                 data-badge="">
+                                <img src="../../Bilder/Templatebilder/Bartöl.png" alt="Bartöl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-category">
+                        <h4 class="category-label"><i class="fas fa-gift"></i> Sets</h4>
+                        <div class="category-products">
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Kombi - Haarspray, Haarwachs, Bartöl.png"
+                                 data-title="Styling Set"
+                                 data-category="Sets"
+                                 data-desc="Haarspray, Haarwachs & Bartöl im Set. Alles für den perfekten Look — und Sie sparen 15%."
+                                 data-price="44,90 €"
+                                 data-badge="Sparset">
+                                <img src="../../Bilder/Templatebilder/Kombi - Haarspray, Haarwachs, Bartöl.png" alt="Styling Set">
+                            </div>
+                            <div class="product-thumb"
+                                 data-img="../../Bilder/Templatebilder/Kombi - Schampoo, Conditioner, Haaröl.png"
+                                 data-title="Pflege Set"
+                                 data-category="Sets"
+                                 data-desc="Shampoo, Conditioner & Haaröl im Set. Komplette Pflege-Routine — und Sie sparen 15%."
+                                 data-price="39,90 €"
+                                 data-badge="Sparset">
+                                <img src="../../Bilder/Templatebilder/Kombi - Schampoo, Conditioner, Haaröl.png" alt="Pflege Set">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USP Bar -->
+            <div class="products-usp" data-aos="fade-up">
+                <div class="usp-item">
+                    <div class="usp-icon"><i class="fas fa-award"></i></div>
+                    <span>Profi-Qualität</span>
+                </div>
+                <div class="usp-divider"></div>
+                <div class="usp-item">
+                    <div class="usp-icon"><i class="fas fa-leaf"></i></div>
+                    <span>Dermatologisch getestet</span>
+                </div>
+                <div class="usp-divider"></div>
+                <div class="usp-item">
+                    <div class="usp-icon"><i class="fas fa-truck"></i></div>
+                    <span>Schneller Versand</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="products-cta" data-aos="fade-up">
+                <a href="shop.html" class="btn btn-primary btn-lg">
+                    <span>Alle Produkte im Shop</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="testimonials-bg"></div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Kundenstimmen</span>
+                <h2 class="section-title">Das sagen unsere <span class="title-highlight">Kunden</span></h2>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="testimonials-stats" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-content">
+                        <span class="stat-number">4.6</span>
+                        <span class="stat-label">Google Bewertung</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-content">
+                        <span class="stat-number">69</span>
+                        <span class="stat-label">Bewertungen</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                    <div class="stat-content">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Weiterempfehlung</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Bin seit Jahren hier und jedes Mal zufrieden. Man merkt einfach, dass das Team mit Leidenschaft arbeitet."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><span>TM</span></div>
+                            <div class="author-info"><h4>Thomas M.</h4><span>Stammkunde</span></div>
+                        </div>
+                        <div class="testimonial-service"><i class="fas fa-cut"></i> Schnitt & Styling</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Tolle Atmosphäre, super Beratung und das Ergebnis ist immer genau so wie ich es mir vorstelle. Absolute Empfehlung!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><span>SK</span></div>
+                            <div class="author-info"><h4>Sarah K.</h4><span>Stammkundin</span></div>
+                        </div>
+                        <div class="testimonial-service"><i class="fas fa-palette"></i> Färben & Styling</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Endlich ein Friseur, der zuhört und versteht was man möchte. Sehr professionell und freundlich."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><span>MR</span></div>
+                            <div class="author-info"><h4>Michael R.</h4><span>Stammkunde</span></div>
+                        </div>
+                        <div class="testimonial-service"><i class="fas fa-cut"></i> Haarschnitt</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Fühle mich hier immer gut aufgehoben. Nehmen sich Zeit, beraten ehrlich und das Ergebnis spricht für sich."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><span>LB</span></div>
+                            <div class="author-info"><h4>Lisa B.</h4><span>Stammkundin</span></div>
+                        </div>
+                        <div class="testimonial-service"><i class="fas fa-spa"></i> Pflege & Styling</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Komme immer gerne her. Freundliches Team, faire Preise und man geht jedes Mal mit einem guten Gefühl raus."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><span>AH</span></div>
+                            <div class="author-info"><h4>Andreas H.</h4><span>Stammkunde</span></div>
+                        </div>
+                        <div class="testimonial-service"><i class="fas fa-cut"></i> Schnitt & Beratung</div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots"></div>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Google Review CTA -->
+            <div class="testimonials-cta" data-aos="fade-up" data-aos-delay="300">
+                <p>Waren Sie bei uns? Teilen Sie Ihre Erfahrung!</p>
+                <a href="https://maps.google.com/?cid=3075233224881590760&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" class="google-review-btn">
+                    <i class="fab fa-google"></i>
+                    <span>Google Bewertung schreiben</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2 class="cta-title">Bereit für Ihren neuen Look?</h2>
+                <p class="cta-text">
+                    Rufen Sie uns an und lassen Sie sich von unserem Team beraten.
+                </p>
+                <a href="booking.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Termin buchen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="contact-bg"></div>
+        <div class="contact-decoration"></div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Kontakt</span>
+                <h2 class="section-title">Besuchen Sie <span class="title-highlight">uns</span></h2>
+                <p class="section-description">
+                    Mit oder ohne Termin - wir freuen uns auf Sie!
+                </p>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-main" data-aos="fade-up">
+                    <div class="contact-map-container">
+                        <div class="contact-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Wilhelmstra%C3%9Fe%2037%2C%2057627%20Hachenburg"
+                                width="100%" height="100%" style="border:0;"
+                                allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="map-overlay-card">
+                            <div class="map-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="map-card-content">
+                                <h4>Friseur in der Goldschmiede</h4>
+                                <p>Wilhelmstraße 37, 57627 Hachenburg</p>
+                                <a href="https://maps.google.com/?cid=3075233224881590760&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" class="directions-link">
+                                    <i class="fas fa-directions"></i> Route planen
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info-section" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-grid">
+                        <div class="contact-info-card primary">
+                            <div class="info-card-header">
+                                <div class="info-card-icon"><i class="fas fa-clock"></i></div>
+                                <h4>Öffnungszeiten</h4>
+                            </div>
+                            <div class="info-card-body">
+                                <div class="hours-row"><span class="day">Montag</span><span class="time">11:00–18:00</span></div>
+                                <div class="hours-row"><span class="day">Dienstag</span><span class="time">10:00–18:00</span></div>
+                                <div class="hours-row closed"><span class="day">Mittwoch</span><span class="time">Geschlossen</span></div>
+                                <div class="hours-row"><span class="day">Donnerstag - Freitag</span><span class="time">10:00–18:00</span></div>
+                                <div class="hours-row"><span class="day">Samstag</span><span class="time">10:00–14:00</span></div>
+                                <div class="hours-row closed"><span class="day">Sonntag</span><span class="time">Geschlossen</span></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-quick-actions">
+                            <a href="tel:+492662949200" class="quick-action-btn phone">
+                                <div class="action-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="action-text">
+                                    <span class="action-label">Telefon</span>
+                                    <span class="action-value">02662 949200</span>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/492662949200" target="_blank" class="quick-action-btn whatsapp">
+                                <div class="action-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="action-text">
+                                    <span class="action-label">WhatsApp</span>
+                                    <span class="action-value">Nachricht senden</span>
+                                </div>
+                            </a>
+                            <a href="https://www.indergoldschmiede.de/" target="_blank" class="quick-action-btn website">
+                                <div class="action-icon"><i class="fas fa-globe"></i></div>
+                                <div class="action-text">
+                                    <span class="action-label">Website</span>
+                                    <span class="action-value">indergoldschmiede.de</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="quick-action-btn instagram">
+                                <div class="action-icon"><i class="fab fa-instagram"></i></div>
+                                <div class="action-text">
+                                    <span class="action-label">Instagram</span>
+                                    <span class="action-value">Folgen Sie uns</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="quick-action-btn facebook">
+                                <div class="action-icon"><i class="fab fa-facebook-f"></i></div>
+                                <div class="action-text">
+                                    <span class="action-label">Facebook</span>
+                                    <span class="action-value">Besuchen Sie uns</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-cta-section">
+                        <a href="tel:+492662949200" class="btn btn-primary btn-lg contact-btn-main">
+                            <i class="fas fa-phone"></i>
+                            <span>Jetzt anrufen</span>
+                        </a>
+                        <p class="cta-note">
+                            <i class="fas fa-check-circle"></i>
+                            Kostenlose Beratung bei jedem Termin
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="140" height="50" style="margin-bottom:18px;"><text x="70" y="20" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="18" font-weight="700" fill="#1a7a6f" letter-spacing="2">IDG</text><line x1="30" y1="26" x2="110" y2="26" stroke="#1a7a6f" stroke-width="0.4" opacity="0.5"/><text x="70" y="40" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" font-weight="300" fill="#ffffff" letter-spacing="0.5">in der Goldschmiede</text></svg>
+                        <p>Friseur in der Goldschmiede - Ihr Friseursalon in Hachenburg. Wir freuen uns auf Ihren Besuch!</p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="tel:+492662949200"><i class="fas fa-phone"></i></a>
+                            <a href="https://wa.me/492662949200" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">Über uns</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Herrenschnitte</a></li>
+                            <li><a href="#services">Damenschnitte</a></li>
+                            <li><a href="#services">Bartpflege</a></li>
+                            <li><a href="#services">Coloration</a></li>
+                            <li><a href="#services">Braut-Styling</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Kontakt</h4>
+                        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Wilhelmstraße 37, 57627 Hachenburg</span></div>
+                        <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+492662949200">02662 949200</a></div>
+                        <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mo-Fr 11:00-18:00</span></div>
+                        <a href="booking.html" class="footer-booking-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Termin buchen</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Friseur in der Goldschmiede. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

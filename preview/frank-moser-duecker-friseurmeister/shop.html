@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Frank Moser-Dücker Friseurmeister | Premium Haarpflege</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40" style="margin:8px 0;"><text x="50" y="18" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a7a6f" letter-spacing="2">FMD</text><line x1="15" y1="23" x2="85" y2="23" stroke="#1a7a6f" stroke-width="0.4" opacity="0.5"/><text x="50" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="7" font-weight="400" fill="#1a1a1a" letter-spacing="0.5">Frank Moser-Dücker Friseurmeister</text></svg>
+            </a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">Über uns</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#team" class="nav-link">Team</a></li>
+                <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+                <li><a href="booking.html" class="nav-btn">Termin buchen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="shop-header-bg"></div>
+        <div class="shop-header-decoration"></div>
+        <div class="container">
+            <div class="shop-header-content" data-aos="fade-up">
+                <span class="section-subtitle">Premium Haarpflege</span>
+                <h1 class="shop-title">Salon-Qualität <span class="title-accent">für Zuhause</span></h1>
+                <p class="shop-description">
+                    Entdecken Sie unsere exklusiven Produkte - dieselbe Qualität, die wir im Salon verwenden.
+                </p>
+                <!-- Trust Badges -->
+                <div class="shop-trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Profi-Qualität</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-leaf"></i>
+                        <span>Pflegende Formel</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Sofort verfügbar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-content section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Sidebar / Filter -->
+                <aside class="shop-sidebar" data-aos="fade-right">
+                    <div class="sidebar-widget categories-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-layer-group"></i>
+                            Kategorien
+                        </h3>
+                        <ul class="category-list">
+                            <li>
+                                <button class="category-btn active" data-category="all">
+                                    <span class="cat-icon"><i class="fas fa-th-large"></i></span>
+                                    <span class="cat-name">Alle Produkte</span>
+                                    <span class="count">10</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-btn" data-category="styling">
+                                    <span class="cat-icon"><i class="fas fa-magic"></i></span>
+                                    <span class="cat-name">Styling</span>
+                                    <span class="count">4</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-btn" data-category="pflege">
+                                    <span class="cat-icon"><i class="fas fa-spa"></i></span>
+                                    <span class="cat-name">Pflege</span>
+                                    <span class="count">4</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="category-btn" data-category="sets">
+                                    <span class="cat-icon"><i class="fas fa-gift"></i></span>
+                                    <span class="cat-name">Sets</span>
+                                    <span class="count">2</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget quality-widget">
+                        <div class="quality-header">
+                            <div class="quality-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3>Qualitätsversprechen</h3>
+                        </div>
+                        <ul class="quality-list">
+                            <li>
+                                <div class="quality-check"><i class="fas fa-check"></i></div>
+                                <div class="quality-text">
+                                    <strong>Salon-Qualität</strong>
+                                    <span>Dieselben Produkte wie im Salon</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="quality-check"><i class="fas fa-check"></i></div>
+                                <div class="quality-text">
+                                    <strong>Langanhaltend</strong>
+                                    <span>Starker Halt den ganzen Tag</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="quality-check"><i class="fas fa-check"></i></div>
+                                <div class="quality-text">
+                                    <strong>Pflegende Formel</strong>
+                                    <span>Schonend für Haar & Kopfhaut</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-cta">
+                        <div class="cta-badge">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <div class="cta-content">
+                            <h4>Salon-Kunden Rabatt</h4>
+                            <p class="cta-discount">10% Rabatt</p>
+                            <p class="cta-desc">auf alle Produkte bei Ihrem nächsten Besuch im Salon</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="shop-main">
+                    <div class="shop-toolbar">
+                        <div class="toolbar-info">
+                            <span class="product-count-icon"><i class="fas fa-box-open"></i></span>
+                            <span id="productCount">10 Produkte</span>
+                        </div>
+                        <div class="toolbar-actions">
+                            <div class="sort-select">
+                                <i class="fas fa-sort-amount-down"></i>
+                                <select id="sortProducts">
+                                    <option value="default">Sortierung</option>
+                                    <option value="price-low">Preis: Niedrig - Hoch</option>
+                                    <option value="price-high">Preis: Hoch - Niedrig</option>
+                                    <option value="name">Name A-Z</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid" title="Rasteransicht">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list" title="Listenansicht">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Product 1: Haarwachs -->
+                        <div class="product-card" data-category="styling" data-price="18.90" data-aos="fade-up">
+                            <div class="product-badge">Bestseller</div>
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Haarwachs.png" alt="Haarwachs">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="haarwax">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Styling</span>
+                                <h3 class="product-name">Haarwachs</h3>
+                                <p class="product-description">Maximaler Halt mit mattem Finish. Perfekt für strukturierte Styles.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(42)</span>
+                                    </div>
+                                    <span class="product-size">100ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">18,90€</span>
+                                    <button class="add-to-cart-btn" data-product="haarwax">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2: Haargel -->
+                        <div class="product-card" data-category="styling" data-price="17.90" data-aos="fade-up" data-aos-delay="100">
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Haargel.png" alt="Haargel">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="haargel">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Styling</span>
+                                <h3 class="product-name">Haargel</h3>
+                                <p class="product-description">Flexibler Halt mit natürlichem Glanz. Für alle Haartypen geeignet.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(31)</span>
+                                    </div>
+                                    <span class="product-size">150ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">17,90€</span>
+                                    <button class="add-to-cart-btn" data-product="haargel">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3: Haarspray -->
+                        <div class="product-card" data-category="styling" data-price="16.90" data-aos="fade-up" data-aos-delay="200">
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Haarspray.png" alt="Haarspray">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="haarspray">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Styling</span>
+                                <h3 class="product-name">Haarspray</h3>
+                                <p class="product-description">Starker Halt ohne Verkleben. Schützt und fixiert den ganzen Tag.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(36)</span>
+                                    </div>
+                                    <span class="product-size">400ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">16,90€</span>
+                                    <button class="add-to-cart-btn" data-product="haarspray">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4: Styling Puder -->
+                        <div class="product-card" data-category="styling" data-price="14.90" data-aos="fade-up" data-aos-delay="300">
+                            <div class="product-badge">Beliebt</div>
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Styling Puder.png" alt="Styling Puder">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="styling-puder">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Styling</span>
+                                <h3 class="product-name">Styling Puder</h3>
+                                <p class="product-description">Volumen & Textur mit mattierendem Finish. Leicht zu verteilen.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(27)</span>
+                                    </div>
+                                    <span class="product-size">20g</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">14,90€</span>
+                                    <button class="add-to-cart-btn" data-product="styling-puder">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5: Shampoo -->
+                        <div class="product-card" data-category="pflege" data-price="12.90" data-aos="fade-up" data-aos-delay="400">
+                            <div class="product-badge new">Neu</div>
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Schampoo.png" alt="Shampoo">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="shampoo">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pflege</span>
+                                <h3 class="product-name">Shampoo</h3>
+                                <p class="product-description">Sanfte Reinigung mit natürlichen Inhaltsstoffen. Für gesundes, glänzendes Haar.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(48)</span>
+                                    </div>
+                                    <span class="product-size">250ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">12,90€</span>
+                                    <button class="add-to-cart-btn" data-product="shampoo">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6: Conditioner -->
+                        <div class="product-card" data-category="pflege" data-price="13.90" data-aos="fade-up" data-aos-delay="500">
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Conditioner.png" alt="Conditioner">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="conditioner">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pflege</span>
+                                <h3 class="product-name">Conditioner</h3>
+                                <p class="product-description">Intensive Feuchtigkeitspflege für geschmeidiges, leicht kämmbares Haar.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(35)</span>
+                                    </div>
+                                    <span class="product-size">250ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">13,90€</span>
+                                    <button class="add-to-cart-btn" data-product="conditioner">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 7: Haaröl -->
+                        <div class="product-card" data-category="pflege" data-price="19.90" data-aos="fade-up" data-aos-delay="600">
+                            <div class="product-badge premium">Premium</div>
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Haaröl.png" alt="Haaröl">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="haaroel">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pflege</span>
+                                <h3 class="product-name">Haaröl</h3>
+                                <p class="product-description">Nährendes Öl für seidigen Glanz und Geschmeidigkeit. Schützt vor Hitze und Spliss.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(53)</span>
+                                    </div>
+                                    <span class="product-size">100ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">19,90€</span>
+                                    <button class="add-to-cart-btn" data-product="haaroel">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 8: Bartöl -->
+                        <div class="product-card" data-category="pflege" data-price="22.90" data-aos="fade-up" data-aos-delay="700">
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Bartöl.png" alt="Bartöl">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="bartoel">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pflege</span>
+                                <h3 class="product-name">Bartöl</h3>
+                                <p class="product-description">Pflegt und bändigt den Bart. Natürliche Öle für weichen Griff und gesunden Glanz.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(29)</span>
+                                    </div>
+                                    <span class="product-size">50ml</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">22,90€</span>
+                                    <button class="add-to-cart-btn" data-product="bartoel">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 9: Styling Set -->
+                        <div class="product-card" data-category="sets" data-price="44.90" data-aos="fade-up" data-aos-delay="800">
+                            <div class="product-badge">Sparset</div>
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Kombi - Haarspray, Haarwachs, Bartöl.png" alt="Styling Set">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="styling-set">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Sets</span>
+                                <h3 class="product-name">Styling Set</h3>
+                                <p class="product-description">Haarspray, Haarwachs & Bartöl im Set. Alles für den perfekten Look — und Sie sparen 15%.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(18)</span>
+                                    </div>
+                                    <span class="product-size">3-teilig</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">44,90€</span>
+                                    <button class="add-to-cart-btn" data-product="styling-set">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 10: Pflege Set -->
+                        <div class="product-card" data-category="sets" data-price="39.90" data-aos="fade-up" data-aos-delay="900">
+                            <div class="product-badge">Sparset</div>
+                            <div class="product-image">
+                                <img src="../../Bilder/Templatebilder/Kombi - Schampoo, Conditioner, Haaröl.png" alt="Pflege Set">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn" data-product="pflege-set">
+                                        <i class="fas fa-eye"></i>
+                                        Quick View
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Sets</span>
+                                <h3 class="product-name">Pflege Set</h3>
+                                <p class="product-description">Shampoo, Conditioner & Haaröl im Set. Komplette Pflege-Routine — und Sie sparen 15%.</p>
+                                <div class="product-meta">
+                                    <div class="product-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(22)</span>
+                                    </div>
+                                    <span class="product-size">3-teilig</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">39,90€</span>
+                                    <button class="add-to-cart-btn" data-product="pflege-set">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>In den Warenkorb</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="modal-info">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span id="modalReviews"></span>
+                    </div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-features">
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Pflegende Formel</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Dermatologisch getestet</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-recycle"></i>
+                            <span>Recycelbare Verpackung</span>
+                        </div>
+                    </div>
+                    <div class="modal-price" id="modalPrice"></div>
+                    <div class="modal-quantity">
+                        <span>Menge:</span>
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10" class="qty-input" id="modalQty">
+                            <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary modal-add-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>In den Warenkorb</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>
+                <i class="fas fa-shopping-bag"></i>
+                Warenkorb
+            </h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Ihr Warenkorb ist leer</p>
+                <span>Fügen Sie Produkte hinzu, um fortzufahren</span>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-subtotal">
+                <span>Zwischensumme:</span>
+                <span id="cartSubtotal">0,00€</span>
+            </div>
+            <div class="cart-shipping">
+                <span>Versand:</span>
+                <span>Wird an der Kasse berechnet</span>
+            </div>
+            <div class="cart-total">
+                <span>Gesamt:</span>
+                <span id="cartTotal">0,00€</span>
+            </div>
+            <button class="btn btn-primary cart-checkout">
+                <span>Zur Kasse</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <p class="cart-note">
+                <i class="fas fa-info-circle"></i>
+                Kostenloser Versand ab 50€
+            </p>
+        </div>
+    </aside>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart" id="floatingCart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="140" height="50" style="margin-bottom:18px;"><text x="70" y="20" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="18" font-weight="700" fill="#1a7a6f" letter-spacing="2">FMD</text><line x1="30" y1="26" x2="110" y2="26" stroke="#1a7a6f" stroke-width="0.4" opacity="0.5"/><text x="70" y="40" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" font-weight="300" fill="#ffffff" letter-spacing="0.5">Frank Moser-Dücker Friseurmeister</text></svg>
+                        <p>
+                            Ihr professioneller Friseursalon in Hachenburg.
+                            Qualität, die man sieht und spürt.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="tel:+4926629473444"><i class="fas fa-phone"></i></a>
+                            <a href="https://wa.me/4926629473444" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">Über uns</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#team">Team</a></li>
+                            <li><a href="booking.html">Termin buchen</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="shop.html">Styling</a></li>
+                            <li><a href="shop.html">Pflege</a></li>
+                            <li><a href="shop.html">Sets</a></li>
+                            <li><a href="shop.html">Alle Produkte</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Kontakt</h4>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Wilhelmstraße 9, 57627 Hachenburg</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+4926629473444">02662 9473444</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mo-Fr 10:30-18:00</span>
+                        </div>
+                        <a href="booking.html" class="footer-booking-btn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Termin buchen</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Frank Moser-Dücker Friseurmeister. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Produkt wurde hinzugefügt</span>
+    </div>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/shop.js"></script>
+</body>
+</html>

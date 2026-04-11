@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termin buchen - Angela Schmidt Mobile Friseurmeisterin</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/booking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40" style="margin:8px 0;"><text x="50" y="18" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a7a6f" letter-spacing="2">ASM</text><line x1="15" y1="23" x2="85" y2="23" stroke="#1a7a6f" stroke-width="0.4" opacity="0.5"/><text x="50" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="7" font-weight="400" fill="#1a1a1a" letter-spacing="0.5">Angela Schmidt Mobile Friseurmeisterin</text></svg>
+            </a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">Über uns</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#team" class="nav-link">Team</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+                <li><a href="booking.html" class="nav-btn active">Termin buchen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <section class="booking-header">
+        <div class="booking-header-bg"></div>
+        <div class="container">
+            <div class="booking-header-content" data-aos="fade-up">
+                <span class="section-subtitle">Online Buchung</span>
+                <h1 class="booking-title">Termin vereinbaren</h1>
+                <p class="booking-description">
+                    Buchen Sie Ihren Wunschtermin in wenigen Schritten.
+                    Schnell, einfach und bequem.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Content -->
+    <section class="booking-content section">
+        <div class="container">
+            <!-- Progress Steps -->
+            <div class="booking-progress" data-aos="fade-up">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-icon">
+                        <i class="fas fa-venus-mars"></i>
+                    </div>
+                    <span class="step-label">Kategorie</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <span class="step-label">Services</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="step-label">Stylist</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <span class="step-label">Termin</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="5">
+                    <div class="step-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <span class="step-label">Daten</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="6">
+                    <div class="step-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <span class="step-label">Fertig</span>
+                </div>
+            </div>
+
+            <div class="booking-wrapper">
+                <!-- Booking Form -->
+                <div class="booking-form">
+                    <!-- Step 1: Gender Selection -->
+                    <div class="booking-step active" id="step1">
+                        <div class="step-header">
+                            <h2>Für wen buchen Sie?</h2>
+                            <p>Bitte wählen Sie zunächst die Kategorie</p>
+                        </div>
+                        <div class="gender-selection">
+                            <div class="gender-option" data-gender="herren">
+                                <div class="gender-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3>Herren</h3>
+                                <p>Haarschnitte, Bartpflege & mehr</p>
+                                <div class="gender-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="gender-option" data-gender="damen">
+                                <div class="gender-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h3>Damen</h3>
+                                <p>Schnitt, Farbe, Styling & mehr</p>
+                                <div class="gender-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="gender-option" data-gender="kinder">
+                                <div class="gender-icon">
+                                    <i class="fas fa-child"></i>
+                                </div>
+                                <h3>Kinder</h3>
+                                <p>Für unsere kleinen Gäste bis 12 Jahre</p>
+                                <div class="gender-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn btn-primary next-step" data-next="2" disabled>
+                                <span>Weiter zur Service-Auswahl</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Service Selection (Multi-Select) -->
+                    <div class="booking-step" id="step2">
+                        <div class="step-header">
+                            <h2>Wählen Sie Ihre Services</h2>
+                            <p>Sie können mehrere Dienstleistungen kombinieren</p>
+                        </div>
+
+                        <!-- Herren Services -->
+                        <div class="services-category-section" id="herrenServices" style="display: none;">
+                            <!-- Schnitt -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-scissors"></i> Haarschnitt</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option" data-service="maschinenschnitt" data-price="18" data-duration="20">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Maschinenschnitt</h3>
+                                            <p>Präziser Schnitt mit Maschine, inkl. Konturierung</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 20 Min.</span>
+                                                <span class="price">18€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="herrenschnitt" data-price="25" data-duration="30">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Klassischer Haarschnitt</h3>
+                                            <p>Schnitt mit Schere & Maschine, Waschen, Styling</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 30 Min.</span>
+                                                <span class="price">25€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="premiumschnitt" data-price="35" data-duration="45">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Premium Schnitt</h3>
+                                            <p>Beratung, Schnitt, Waschen, Styling, Augenbrauen</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 45 Min.</span>
+                                                <span class="price">35€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="studentenschnitt" data-price="20" data-duration="30">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Studenten / Azubi</h3>
+                                            <p>Vergünstigter Schnitt mit Ausweis</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 30 Min.</span>
+                                                <span class="price">20€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bart -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-user-tie"></i> Bartpflege</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option" data-service="bartpflege" data-price="18" data-duration="20">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Bartpflege</h3>
+                                            <p>Trimmen, Konturieren, Pflege mit hochwertigen Ölen</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 20 Min.</span>
+                                                <span class="price">18€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="rasur" data-price="22" data-duration="30">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Rasur klassisch</h3>
+                                            <p>Traditionelle Nassrasur mit heißem Tuch</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 30 Min.</span>
+                                                <span class="price">22€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Kombi -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-star"></i> Kombi-Angebote</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option highlight" data-service="kombiangebot" data-price="38" data-duration="50">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Schnitt + Bart Kombi</h3>
+                                            <p>Komplettpaket: Haarschnitt und Bartpflege zum Vorteilspreis</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 50 Min.</span>
+                                                <span class="price">38€</span>
+                                                <span class="savings">Spare 5€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Damen Services -->
+                        <div class="services-category-section" id="damenServices" style="display: none;">
+                            <!-- Schnitt & Styling -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-cut"></i> Schnitt & Styling</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option" data-service="damenschnitt" data-price="38" data-duration="45">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Waschen & Schneiden</h3>
+                                            <p>Beratung, Waschen, Schnitt, Föhnen</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 45 Min.</span>
+                                                <span class="price">ab 38€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="waschenfohnen" data-price="25" data-duration="30">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Waschen & Föhnen</h3>
+                                            <p>Waschen mit Pflege, professionelles Styling</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 30 Min.</span>
+                                                <span class="price">ab 25€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="hochsteckfrisur" data-price="55" data-duration="60">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Hochsteckfrisur</h3>
+                                            <p>Elegantes Styling für besondere Anlässe</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 60 Min.</span>
+                                                <span class="price">ab 55€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Farbe -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-palette"></i> Farbe & Coloration</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option" data-service="faerben" data-price="65" data-duration="90">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Färben komplett</h3>
+                                            <p>Professionelle Coloration, Pflege, Styling</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 90 Min.</span>
+                                                <span class="price">ab 65€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="straehnen" data-price="85" data-duration="120">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Strähnen / Balayage</h3>
+                                            <p>Highlights, Lowlights oder trendy Balayage</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 120 Min.</span>
+                                                <span class="price">ab 85€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Pflege -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-spa"></i> Pflege & Treatments</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option" data-service="intensivpflege" data-price="35" data-duration="45">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Intensivpflege</h3>
+                                            <p>Keratin, Botox oder regenerierende Haarkur</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 45 Min.</span>
+                                                <span class="price">ab 35€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="service-option" data-service="augenbrauen" data-price="10" data-duration="15">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Augenbrauen</h3>
+                                            <p>Zupfen, Waxing oder Färben</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 15 Min.</span>
+                                                <span class="price">ab 10€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Spezial -->
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-gem"></i> Spezial</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option highlight" data-service="brautstyling" data-price="120" data-duration="150">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Braut-Styling</h3>
+                                            <p>Probe-Termin, Hochsteckfrisur, Accessoires</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 150 Min.</span>
+                                                <span class="price">120€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kinder Services -->
+                        <div class="services-category-section" id="kinderServices" style="display: none;">
+                            <div class="service-category-group">
+                                <h4 class="category-group-title"><i class="fas fa-child"></i> Kinderschnitte</h4>
+                                <div class="services-selection multi-select">
+                                    <div class="service-option" data-service="kinderschnitt" data-price="15" data-duration="25">
+                                        <div class="service-checkbox"><i class="fas fa-check"></i></div>
+                                        <div class="service-details">
+                                            <h3>Kinderschnitt</h3>
+                                            <p>Für Jungen und Mädchen bis 12 Jahre</p>
+                                            <div class="service-meta">
+                                                <span class="duration"><i class="far fa-clock"></i> 25 Min.</span>
+                                                <span class="price">15€</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Selected Services Summary -->
+                        <div class="selected-services-summary" id="selectedServicesSummary" style="display: none;">
+                            <h4><i class="fas fa-list-check"></i> Ausgewählte Services</h4>
+                            <div class="selected-list" id="selectedServicesList"></div>
+                            <div class="selected-total">
+                                <span>Gesamtdauer: <strong id="totalDuration">0 Min.</strong></span>
+                                <span>Preis: <strong id="totalPrice">0€</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Individual Wishes -->
+                        <div class="individual-wishes">
+                            <h4><i class="fas fa-comment-dots"></i> Individuelle Wünsche (optional)</h4>
+                            <textarea id="serviceWishes" placeholder="Haben Sie besondere Vorstellungen? Z.B. bestimmte Haarlänge, Styling-Ideen, Referenzbilder beschreiben..."></textarea>
+                        </div>
+
+                        <div class="step-actions">
+                            <button class="btn btn-outline prev-step" data-prev="1">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Zurück</span>
+                            </button>
+                            <button class="btn btn-primary next-step" data-next="3" disabled>
+                                <span>Weiter zur Stylist-Auswahl</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Stylist Selection -->
+                    <div class="booking-step" id="step3">
+                        <div class="step-header">
+                            <h2>Wählen Sie Ihren Stylisten</h2>
+                            <p>Bei wem möchten Sie Ihren Termin buchen?</p>
+                        </div>
+                        <div class="stylist-selection">
+                            <div class="stylist-option" data-stylist="any">
+                                <div class="stylist-avatar icon-only">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="stylist-info">
+                                    <h3>Egal / Nächster freier</h3>
+                                    <p>Flexibel bei der Auswahl</p>
+                                </div>
+                                <div class="stylist-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+
+                            <div class="stylist-option" data-stylist="marco">
+                                <div class="stylist-avatar has-image">
+                                    <img src="../../Bilder/Mitarbeiterfotos/ChatGPT Image 6. Feb. 2026, 17_29_14.png" alt="Marco">
+                                </div>
+                                <div class="stylist-info">
+                                    <h3>Marco</h3>
+                                    <p>Senior Stylist & Inhaber</p>
+                                    <span class="stylist-specialty">Herrenschnitte & Bartpflege</span>
+                                </div>
+                                <div class="stylist-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+
+                            <div class="stylist-option" data-stylist="sofia">
+                                <div class="stylist-avatar has-image">
+                                    <img src="../../Bilder/Mitarbeiterfotos/ChatGPT Image 6. Feb. 2026, 17_31_24.png" alt="Sofia">
+                                </div>
+                                <div class="stylist-info">
+                                    <h3>Sofia</h3>
+                                    <p>Color Specialist</p>
+                                    <span class="stylist-specialty">Balayage & Coloration</span>
+                                </div>
+                                <div class="stylist-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+
+                            <div class="stylist-option" data-stylist="leon">
+                                <div class="stylist-avatar has-image">
+                                    <img src="../../Bilder/Mitarbeiterfotos/ChatGPT Image 6. Feb. 2026, 17_33_59.png" alt="Leon">
+                                </div>
+                                <div class="stylist-info">
+                                    <h3>Leon</h3>
+                                    <p>Barber</p>
+                                    <span class="stylist-specialty">Rasur & Bart-Styling</span>
+                                </div>
+                                <div class="stylist-check">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn btn-outline prev-step" data-prev="2">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Zurück</span>
+                            </button>
+                            <button class="btn btn-primary next-step" data-next="4" disabled>
+                                <span>Weiter zur Terminauswahl</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Date & Time Selection -->
+                    <div class="booking-step" id="step4">
+                        <div class="step-header">
+                            <h2>Wählen Sie Datum und Uhrzeit</h2>
+                            <p>Wann passt es Ihnen am besten?</p>
+                        </div>
+                        <div class="datetime-selection">
+                            <div class="calendar-section">
+                                <div class="calendar-header">
+                                    <button class="calendar-nav prev-month" id="prevMonth">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <h3 id="currentMonth">Februar 2026</h3>
+                                    <button class="calendar-nav next-month" id="nextMonth">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <span>Mo</span>
+                                    <span>Di</span>
+                                    <span>Mi</span>
+                                    <span>Do</span>
+                                    <span>Fr</span>
+                                    <span>Sa</span>
+                                    <span>So</span>
+                                </div>
+                                <div class="calendar-days" id="calendarDays">
+                                    <!-- Calendar days will be generated by JavaScript -->
+                                </div>
+                            </div>
+                            <div class="time-section">
+                                <h4><i class="far fa-clock"></i> Verfügbare Uhrzeiten</h4>
+                                <div class="time-hint" id="timeHint">
+                                    <i class="fas fa-hand-pointer"></i>
+                                    <span>Bitte wählen Sie zunächst ein Datum</span>
+                                </div>
+                                <div class="time-slots-container" id="timeSlotsContainer" style="display: none;">
+                                    <!-- Time slots will be generated by JavaScript -->
+                                </div>
+                                <div class="selected-time-display" id="selectedTimeDisplay" style="display: none;">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <span class="time-label">Gewählte Uhrzeit</span>
+                                        <span class="time-value" id="selectedTimeValue">--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn btn-outline prev-step" data-prev="3">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Zurück</span>
+                            </button>
+                            <button class="btn btn-primary next-step" data-next="5" disabled>
+                                <span>Weiter zu Ihren Daten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Personal Data -->
+                    <div class="booking-step" id="step5">
+                        <div class="step-header">
+                            <h2>Ihre Kontaktdaten</h2>
+                            <p>Damit wir Sie erreichen können</p>
+                        </div>
+                        <div class="personal-data-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Vorname *</label>
+                                    <input type="text" id="firstName" name="firstName" required placeholder="Max">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Nachname *</label>
+                                    <input type="text" id="lastName" name="lastName" required placeholder="Mustermann">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail Adresse *</label>
+                                <input type="email" id="email" name="email" required placeholder="max@beispiel.de">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefonnummer (optional)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="02623 80493">
+                            </div>
+
+                            <div class="notification-options">
+                                <h4>
+                                    <i class="fas fa-bell"></i>
+                                    Erinnerungen erhalten
+                                </h4>
+                                <p>Wie möchten Sie an Ihren Termin erinnert werden?</p>
+                                <div class="notification-toggles">
+                                    <label class="toggle-option">
+                                        <input type="checkbox" name="emailReminder" id="emailReminder" checked>
+                                        <span class="toggle-switch"></span>
+                                        <div class="toggle-content">
+                                            <i class="fas fa-envelope"></i>
+                                            <div>
+                                                <strong>E-Mail Erinnerung</strong>
+                                                <span>24 Stunden vor dem Termin</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="toggle-option">
+                                        <input type="checkbox" name="smsReminder" id="smsReminder">
+                                        <span class="toggle-switch"></span>
+                                        <div class="toggle-content">
+                                            <i class="fas fa-sms"></i>
+                                            <div>
+                                                <strong>SMS Erinnerung</strong>
+                                                <span>2 Stunden vor dem Termin</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="toggle-option">
+                                        <input type="checkbox" name="whatsappReminder" id="whatsappReminder">
+                                        <span class="toggle-switch"></span>
+                                        <div class="toggle-content">
+                                            <i class="fab fa-whatsapp"></i>
+                                            <div>
+                                                <strong>WhatsApp Nachricht</strong>
+                                                <span>24 Stunden vor dem Termin</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <p class="notification-note" id="phoneNote">
+                                    <i class="fas fa-info-circle"></i>
+                                    Für SMS/WhatsApp Erinnerungen benötigen wir Ihre Telefonnummer
+                                </p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">Anmerkungen (optional)</label>
+                                <textarea id="notes" name="notes" rows="3" placeholder="Haben Sie besondere Wünsche oder möchten Sie uns etwas mitteilen?"></textarea>
+                            </div>
+
+                            <div class="terms-checkbox">
+                                <label>
+                                    <input type="checkbox" id="termsAccept" required>
+                                    <span class="checkmark"></span>
+                                    Ich akzeptiere die <a href="#">AGB</a> und <a href="#">Datenschutzerklärung</a> *
+                                </label>
+                            </div>
+                        </div>
+                        <div class="step-actions">
+                            <button class="btn btn-outline prev-step" data-prev="4">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Zurück</span>
+                            </button>
+                            <button class="btn btn-primary next-step" data-next="6" disabled>
+                                <span>Buchung abschließen</span>
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Confirmation -->
+                    <div class="booking-step" id="step6">
+                        <div class="confirmation-content">
+                            <div class="confirmation-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2>Buchung erfolgreich!</h2>
+                            <p>Vielen Dank für Ihre Buchung bei Angela Schmidt Mobile Friseurmeisterin.</p>
+
+                            <div class="confirmation-details">
+                                <div class="detail-card">
+                                    <div class="detail-header">
+                                        <i class="fas fa-calendar-check"></i>
+                                        <h3>Ihre Buchungsdetails</h3>
+                                    </div>
+                                    <div class="detail-body">
+                                        <div class="detail-row">
+                                            <span class="label">Buchungsnummer:</span>
+                                            <span class="value" id="bookingNumber">#LV-2024-0001</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="label">Service:</span>
+                                            <span class="value" id="confirmService">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="label">Stylist:</span>
+                                            <span class="value" id="confirmStylist">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="label">Datum:</span>
+                                            <span class="value" id="confirmDate">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="label">Uhrzeit:</span>
+                                            <span class="value" id="confirmTime">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="label">Dauer:</span>
+                                            <span class="value" id="confirmDuration">-</span>
+                                        </div>
+                                        <div class="detail-row price">
+                                            <span class="label">Preis (ca.):</span>
+                                            <span class="value" id="confirmPrice">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="confirmation-actions">
+                                    <button class="btn btn-outline" id="addToCalendar">
+                                        <i class="fas fa-calendar-plus"></i>
+                                        <span>Zum Kalender hinzufügen</span>
+                                    </button>
+                                    <button class="btn btn-primary" onclick="window.print()">
+                                        <i class="fas fa-print"></i>
+                                        <span>Bestätigung drucken</span>
+                                    </button>
+                                </div>
+
+                                <div class="confirmation-reminder">
+                                    <i class="fas fa-envelope"></i>
+                                    <p>
+                                        Eine Bestätigung wurde an <strong id="confirmEmail">-</strong> gesendet.
+                                    </p>
+                                </div>
+
+                                <div class="confirmation-note">
+                                    <h4>Wichtige Hinweise:</h4>
+                                    <ul>
+                                        <li>Bitte erscheinen Sie pünktlich zu Ihrem Termin</li>
+                                        <li>Sollten Sie verhindert sein, sagen Sie bitte mindestens 24 Stunden vorher ab</li>
+                                        <li>Bei Fragen erreichen Sie uns unter 02623 80493</li>
+                                    </ul>
+                                </div>
+
+                                <a href="index.html" class="btn btn-outline back-home">
+                                    <i class="fas fa-home"></i>
+                                    <span>Zurück zur Startseite</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Summary Sidebar -->
+                <aside class="booking-summary" data-aos="fade-left">
+                    <div class="summary-header">
+                        <h3>
+                            <i class="fas fa-clipboard-list"></i>
+                            Ihre Buchung
+                        </h3>
+                    </div>
+                    <div class="summary-body">
+                        <div class="summary-item" id="summaryService">
+                            <span class="item-label">Service</span>
+                            <span class="item-value">Bitte wählen</span>
+                        </div>
+                        <div class="summary-item" id="summaryStylist">
+                            <span class="item-label">Stylist</span>
+                            <span class="item-value">Bitte wählen</span>
+                        </div>
+                        <div class="summary-item" id="summaryDate">
+                            <span class="item-label">Datum</span>
+                            <span class="item-value">Bitte wählen</span>
+                        </div>
+                        <div class="summary-item" id="summaryTime">
+                            <span class="item-label">Uhrzeit</span>
+                            <span class="item-value">Bitte wählen</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-item" id="summaryDuration">
+                            <span class="item-label">Dauer</span>
+                            <span class="item-value">-</span>
+                        </div>
+                        <div class="summary-item total" id="summaryPrice">
+                            <span class="item-label">Preis (ca.)</span>
+                            <span class="item-value">-</span>
+                        </div>
+                    </div>
+                    <div class="summary-footer">
+                        <div class="contact-info">
+                            <p>Fragen zur Buchung?</p>
+                            <a href="tel:+49262380493">
+                                <i class="fas fa-phone"></i>
+                                02623 80493
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50" width="140" height="50" style="margin-bottom:18px;"><text x="70" y="20" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="18" font-weight="700" fill="#1a7a6f" letter-spacing="2">ASM</text><line x1="30" y1="26" x2="110" y2="26" stroke="#1a7a6f" stroke-width="0.4" opacity="0.5"/><text x="70" y="40" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" font-weight="300" fill="#ffffff" letter-spacing="0.5">Angela Schmidt Mobile Friseurmeisterin</text></svg>
+                        <p>
+                            Ihr professioneller Friseursalon in Ransbach-Baumbach.
+                            Qualität, die man sieht und spürt.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="tel:+49262380493"><i class="fas fa-phone"></i></a>
+                            <a href="https://wa.me/49262380493" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">Über uns</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#team">Team</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">Herrenschnitte</a></li>
+                            <li><a href="index.html#services">Damenschnitte</a></li>
+                            <li><a href="index.html#services">Bartpflege</a></li>
+                            <li><a href="index.html#services">Coloration</a></li>
+                            <li><a href="index.html#services">Braut-Styling</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Kontakt</h4>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Fischerweg 20, 56235 Ransbach-Baumbach</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+49262380493">02623 80493</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mo-Fr 09:00-15:00</span>
+                        </div>
+                        <a href="index.html" class="footer-booking-btn">
+                            <i class="fas fa-home"></i>
+                            <span>Zur Startseite</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Angela Schmidt Mobile Friseurmeisterin. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/booking.js"></script>
+</body>
+</html>
