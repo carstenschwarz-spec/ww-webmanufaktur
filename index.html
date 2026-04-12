@@ -7762,7 +7762,7 @@
         </div>
     </div>
 
-    <!-- Cal.com Embed (loaded conditionally via cookie consent) -->
+    <!-- Cal.eu Embed (loaded conditionally via cookie consent) -->
     <script>
     (function() {
         var banner = document.getElementById('cookieBanner');
@@ -7771,7 +7771,7 @@
         function loadCalCom() {
             if (window._calLoaded) return;
             window._calLoaded = true;
-            (function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace]);}else p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.com/embed/embed.js","init");
+            (function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace]);}else p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.eu/embed/embed.js","init");
             Cal("init", {origin:"https://cal.eu"});
             Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view","cssVarsPerTheme":{"light":{"cal-brand":"#A67C52"}}});
         }
@@ -7793,14 +7793,14 @@
             banner.classList.remove('visible');
         });
 
-        // Fallback: If Cal.com embed is not loaded (cookies declined), open Cal.com directly
+        // Fallback: If Cal.eu embed is not loaded (cookies declined), open Cal.eu directly
         document.addEventListener('click', function(e) {
             var calEl = e.target.closest('[data-cal-link]');
             if (!calEl) return;
             if (window._calLoaded) return; // Embed handles it
             e.preventDefault();
             var link = calEl.getAttribute('data-cal-link');
-            window.open('https://cal.com/' + link, '_blank');
+            window.open('https://cal.eu/' + link, '_blank');
         });
     })();
     </script>
