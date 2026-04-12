@@ -4908,41 +4908,63 @@
         }
 
         /* ═══════════════════════════════════════
-           GLOSSAR SECTION
+           GLOSSAR (inside Ratgeber/Blog section)
            ═══════════════════════════════════════ */
-        .glossar { padding: 100px 0; background: var(--gray-50); position: relative; }
-        .glossar .section-label { color: var(--primary); }
-        .glossar .section-title { color: var(--secondary); }
-        .glossar .section-subtitle { color: var(--gray-600); max-width: 600px; margin-left: auto; margin-right: auto; }
+        .blog-glossar { margin-bottom: 56px; }
+        .blog-glossar-header {
+            display: flex; align-items: center; gap: 16px;
+            margin-bottom: 24px;
+        }
+        .blog-glossar-label {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--primary); white-space: nowrap;
+        }
+        .blog-glossar-header::after {
+            content: ''; flex: 1; height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+        .blog-glossar-divider {
+            display: flex; align-items: center; gap: 16px; margin-top: 48px;
+        }
+        .blog-glossar-divider::before,
+        .blog-glossar-divider::after {
+            content: ''; flex: 1; height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+        .blog-glossar-divider span {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: rgba(255,255,255,0.3); white-space: nowrap;
+        }
         .glossar-grid {
             display: grid; grid-template-columns: repeat(5, 1fr);
-            gap: 16px; max-width: 1040px; margin: 0 auto;
+            gap: 12px;
         }
         .glossar-card {
-            background: var(--white);
-            border: 1px solid rgba(26,22,20,0.07);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
             border-radius: var(--radius-lg);
-            padding: 24px 14px 20px;
+            padding: 20px 12px 18px;
             text-align: center;
             transition: all 0.25s ease;
         }
         .glossar-card:hover {
             border-color: rgba(166,124,82,0.3);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            background: rgba(255,255,255,0.06);
         }
         .glossar-card-icon {
-            width: 44px; height: 44px; border-radius: 50%;
-            background: rgba(166,124,82,0.1);
+            width: 40px; height: 40px; border-radius: 50%;
+            background: rgba(166,124,82,0.12);
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 12px;
-            font-size: 1.1rem; color: var(--primary);
+            margin: 0 auto 11px;
+            font-size: 1rem; color: var(--primary);
         }
         .glossar-card h3 {
-            font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600;
-            color: var(--secondary); margin-bottom: 6px; line-height: 1.25;
+            font-family: var(--font-heading); font-size: 1rem; font-weight: 600;
+            color: var(--text-on-dark); margin-bottom: 5px; line-height: 1.25;
         }
-        .glossar-card p { font-size: 0.74rem; color: var(--gray-500); line-height: 1.55; }
+        .glossar-card p { font-size: 0.72rem; color: var(--text-muted-dark); line-height: 1.5; }
         @media (max-width: 992px) { .glossar-grid { grid-template-columns: repeat(3, 1fr); } }
         @media (max-width: 576px) { .glossar-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -5969,71 +5991,6 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         GLOSSAR — Was steckt dahinter?
-         ═══════════════════════════════════════ -->
-    <section class="glossar" id="glossar">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Glossar</span>
-                <h2 class="section-title">Was steckt <span class="title-highlight">dahinter?</span></h2>
-                <p class="section-subtitle">Fachbegriffe einfach erklärt — damit Sie wissen, wofür Sie bezahlen.</p>
-            </div>
-            <div class="glossar-grid" data-aos="fade-up">
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-shield-halved"></i></div>
-                    <h3>DSGVO</h3>
-                    <p>EU-Datenschutz korrekt umgesetzt — kein Abmahnrisiko</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-lock"></i></div>
-                    <h3>SSL</h3>
-                    <p>Das Schloss im Browser — Pflicht, sicher, Google-Bonus</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-magnifying-glass"></i></div>
-                    <h3>SEO</h3>
-                    <p>Bei Google gefunden werden, wenn Kunden nach Ihnen suchen</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-map-pin"></i></div>
-                    <h3>Google My Business</h3>
-                    <p>Kostenloser Eintrag mit Karte, Zeiten & Anruf-Button</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-mobile-screen"></i></div>
-                    <h3>Responsive</h3>
-                    <p>Perfekt auf Handy, Tablet und PC — automatisch</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-calendar-check"></i></div>
-                    <h3>Terminbuchung</h3>
-                    <p>Kunden buchen selbst, rund um die Uhr — ohne Anruf</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
-                    <h3>KI-Fotos</h3>
-                    <p>Professionelle Bilder ohne Fotoshooting — per KI erstellt</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-file-pen"></i></div>
-                    <h3>CMS</h3>
-                    <p>Texte & Bilder selbst ändern — so einfach wie Word</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-gift"></i></div>
-                    <h3>1. Jahr inklusive</h3>
-                    <p>Hosting, Domain & SSL ohne Aufpreis im ersten Jahr</p>
-                </div>
-                <div class="glossar-card">
-                    <div class="glossar-card-icon"><i class="fas fa-star"></i></div>
-                    <h3>Bewertungen</h3>
-                    <p>Google-Bewertungen leicht sammeln — mehr Ranking, mehr Kunden</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
          FAQ
          ═══════════════════════════════════════ -->
     <section class="faq" id="faq">
@@ -6153,7 +6110,67 @@
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Ratgeber</span>
                 <h2 class="section-title">Wissen für <span class="text-highlight">Ihr Business</span></h2>
-                <p class="section-subtitle">Praxistipps zu Website, SEO und Online-Marketing — verständlich erklärt, direkt umsetzbar.</p>
+                <p class="section-subtitle">Fachbegriffe kurz erklärt — und Praxistipps zu Website, SEO und Online-Marketing.</p>
+            </div>
+
+            <!-- Glossar: Schnell erklärt -->
+            <div class="blog-glossar" data-aos="fade-up">
+                <div class="blog-glossar-header">
+                    <span class="blog-glossar-label">Schnell erklärt</span>
+                </div>
+                <div class="glossar-grid">
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>DSGVO</h3>
+                        <p>EU-Datenschutz korrekt umgesetzt — kein Abmahnrisiko</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-lock"></i></div>
+                        <h3>SSL</h3>
+                        <p>Das Schloss im Browser — Pflicht, sicher, Google-Bonus</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-magnifying-glass"></i></div>
+                        <h3>SEO</h3>
+                        <p>Bei Google gefunden werden, wenn Kunden nach Ihnen suchen</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-map-pin"></i></div>
+                        <h3>Google My Business</h3>
+                        <p>Kostenloser Eintrag mit Karte, Zeiten & Anruf-Button</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-mobile-screen"></i></div>
+                        <h3>Responsive</h3>
+                        <p>Perfekt auf Handy, Tablet und PC — automatisch</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-calendar-check"></i></div>
+                        <h3>Terminbuchung</h3>
+                        <p>Kunden buchen selbst, rund um die Uhr — ohne Anruf</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <h3>KI-Fotos</h3>
+                        <p>Professionelle Bilder ohne Fotoshooting — per KI erstellt</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-file-pen"></i></div>
+                        <h3>CMS</h3>
+                        <p>Texte & Bilder selbst ändern — so einfach wie Word</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-gift"></i></div>
+                        <h3>1. Jahr inklusive</h3>
+                        <p>Hosting, Domain & SSL ohne Aufpreis im ersten Jahr</p>
+                    </div>
+                    <div class="glossar-card">
+                        <div class="glossar-card-icon"><i class="fas fa-star"></i></div>
+                        <h3>Bewertungen</h3>
+                        <p>Google-Bewertungen leicht sammeln — mehr Ranking, mehr Kunden</p>
+                    </div>
+                </div>
+                <div class="blog-glossar-divider"><span>Artikel & Ratgeber</span></div>
             </div>
 
             <!-- Top row: featured + side -->
