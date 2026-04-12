@@ -260,10 +260,10 @@
             },
             {
                 "@type": "Question",
-                "name": "Was ist ein Content-Management-System (CMS)?",
+                "name": "Was bedeutet Ladezeit und warum ist sie wichtig?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ein CMS ermöglicht es Ihnen, Texte und Bilder auf Ihrer Website selbst zu ändern — ohne Programmierkenntnisse. Wie ein Word-Dokument, nur für Ihre Website."
+                    "text": "Die Ladezeit ist die Zeit, bis Ihre Website vollständig angezeigt wird. Google bewertet schnelle Seiten besser im Ranking. Besucher springen ab, wenn eine Seite länger als 3 Sekunden lädt. Wir optimieren Bilder, Code und Hosting für maximale Geschwindigkeit."
                 }
             },
             {
@@ -320,10 +320,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts async — non-render-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome async — non-render-blocking -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script defer src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
@@ -5107,11 +5112,11 @@
             </div>
 
             <div class="hero-showcase" id="heroShowcase">
-                <video class="hero-mockup-video" id="heroLaptopVideo" aria-label="Website-Demo auf einem Laptop" muted playsinline preload="auto">
+                <video class="hero-mockup-video" id="heroLaptopVideo" aria-label="Website-Demo auf einem Laptop" muted playsinline preload="none">
                     <source src="../Videos/MockUp/Final/Laptop/hero-laptop.webm" type='video/webm; codecs="vp9"'>
                     <source src="../Videos/MockUp/Final/Laptop/hero-laptop.mp4" type="video/mp4">
                 </video>
-                <video class="hero-phone-video" id="heroPhoneVideo" aria-label="Website-Demo auf einem Smartphone" muted playsinline preload="auto">
+                <video class="hero-phone-video" id="heroPhoneVideo" aria-label="Website-Demo auf einem Smartphone" muted playsinline preload="none">
                     <source src="../Videos/MockUp/Final/Handy/hero-phone.webm" type='video/webm; codecs="vp9"'>
                     <source src="../Videos/MockUp/Final/Handy/hero-phone.mp4" type="video/mp4">
                 </video>
@@ -5236,13 +5241,13 @@
                         <div class="branchen-laptop-lid">
                             <div class="branchen-laptop-cam"></div>
                             <div class="branchen-laptop-screen" id="branchenLaptopScreen">
-                                <video class="active" muted loop playsinline autoplay src="branchen-showcase/output/macbook/friseure-macbook.mp4" aria-label="Friseur-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/aerzte-macbook.mp4" aria-label="Arztpraxis-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/handwerk-macbook.mp4" aria-label="Handwerker-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/gastronomie-macbook.mp4" aria-label="Restaurant-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/fitness-macbook.mp4" aria-label="Fitnessstudio-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/einzelhandel-macbook.mp4" aria-label="Einzelhandel-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/simplifyops-macbook.mp4" aria-label="Individual-Projekt auf dem Laptop"></video>
+                                <video class="active" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/friseure-macbook.mp4" aria-label="Friseur-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/aerzte-macbook.mp4" aria-label="Arztpraxis-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/handwerk-macbook.mp4" aria-label="Handwerker-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/gastronomie-macbook.mp4" aria-label="Restaurant-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/fitness-macbook.mp4" aria-label="Fitnessstudio-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/einzelhandel-macbook.mp4" aria-label="Einzelhandel-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/simplifyops-macbook.mp4" aria-label="Individual-Projekt auf dem Laptop"></video>
                             </div>
                         </div>
                         <div class="branchen-laptop-base"></div>
@@ -5253,13 +5258,13 @@
                         <div class="branchen-phone-frame">
                             <div class="branchen-phone-notch"></div>
                             <div class="branchen-phone-screen" id="branchenPhoneScreen">
-                                <video class="active" muted loop playsinline autoplay src="branchen-showcase/output/iphone/friseure-iphone.mp4" aria-label="Friseur-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/aerzte-iphone.mp4" aria-label="Arztpraxis-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/handwerk-iphone.mp4" aria-label="Handwerker-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/gastronomie-iphone.mp4" aria-label="Restaurant-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/fitness-iphone.mp4" aria-label="Fitnessstudio-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/einzelhandel-iphone.mp4" aria-label="Einzelhandel-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/simplifyops-iphone.mp4" aria-label="Individual-Projekt auf dem Smartphone"></video>
+                                <video class="active" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/friseure-iphone.mp4" aria-label="Friseur-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/aerzte-iphone.mp4" aria-label="Arztpraxis-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/handwerk-iphone.mp4" aria-label="Handwerker-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/gastronomie-iphone.mp4" aria-label="Restaurant-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/fitness-iphone.mp4" aria-label="Fitnessstudio-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/einzelhandel-iphone.mp4" aria-label="Einzelhandel-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/simplifyops-iphone.mp4" aria-label="Individual-Projekt auf dem Smartphone"></video>
                             </div>
                         </div>
                     </div>
@@ -5704,7 +5709,7 @@
                 <div class="ueber-uns-features" id="aboutStats">
                     <div class="ueber-uns-feature" data-anim="schnell">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" aria-label="Schnell-Animation" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Schnell-Animation" muted playsinline preload="none">
                                 <source src="../Videos/Animationen/schnell.webm" type="video/webm">
                                 <source src="../Videos/Animationen/schnell.mp4" type="video/mp4">
                             </video>
@@ -5715,7 +5720,7 @@
                     </div>
                     <div class="ueber-uns-feature" data-anim="regional">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" aria-label="Regional-Animation" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Regional-Animation" muted playsinline preload="none">
                                 <source src="../Videos/Animationen/regional.webm" type="video/webm">
                                 <source src="../Videos/Animationen/regional.mp4" type="video/mp4">
                             </video>
@@ -5726,7 +5731,7 @@
                     </div>
                     <div class="ueber-uns-feature" data-anim="modern">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" aria-label="Modern-Animation" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Modern-Animation" muted playsinline preload="none">
                                 <source src="../Videos/Animationen/modern.webm" type="video/webm">
                                 <source src="../Videos/Animationen/modern.mp4" type="video/mp4">
                             </video>
@@ -5737,7 +5742,7 @@
                     </div>
                     <div class="ueber-uns-feature" data-anim="fair">
                         <div class="ueber-uns-feature-icon">
-                            <video class="anim-video" aria-label="Fair-Animation" muted playsinline preload="metadata">
+                            <video class="anim-video" aria-label="Fair-Animation" muted playsinline preload="none">
                                 <source src="../Videos/Animationen/fair.webm" type="video/webm">
                                 <source src="../Videos/Animationen/fair.mp4" type="video/mp4">
                             </video>
@@ -6155,9 +6160,9 @@
                         <p>Professionelle Bilder ohne Fotoshooting — per KI erstellt</p>
                     </div>
                     <div class="glossar-card">
-                        <div class="glossar-card-icon"><i class="fas fa-file-pen"></i></div>
-                        <h3>CMS</h3>
-                        <p>Texte & Bilder selbst ändern — so einfach wie Word</p>
+                        <div class="glossar-card-icon"><i class="fas fa-gauge-high"></i></div>
+                        <h3>Ladezeit</h3>
+                        <p>Schnelle Seiten ranken besser — und Besucher bleiben länger</p>
                     </div>
                     <div class="glossar-card">
                         <div class="glossar-card-icon"><i class="fas fa-gift"></i></div>
