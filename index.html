@@ -1045,12 +1045,45 @@
             z-index: 0;
         }
 
-        /* ── Theater: the pinned scroll area ── */
+        /* ── Pill navigation ── */
+        .branchen-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 36px;
+        }
+        .branchen-pill {
+            padding: 9px 20px;
+            border-radius: 100px;
+            border: 1.5px solid rgba(15,13,11,0.15);
+            background: transparent;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: border-color 0.18s, color 0.18s, background 0.18s;
+        }
+        .branchen-pill:hover {
+            border-color: rgba(166,124,82,0.45);
+            color: var(--secondary);
+        }
+        .branchen-pill.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--gray-50);
+        }
+        .branchen-pill.individual.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* ── Theater: layout wrapper ── */
         .branchen-theater {
             position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
+            padding-bottom: 20px;
         }
 
         .branchen-theater-main {
@@ -1275,18 +1308,16 @@
             gap: 5px;
         }
         .branchen-feature i { font-size: 0.65rem; color: var(--primary); }
+        .branchen-feature.individual {
+            background: rgba(166,124,82,0.1);
+            border-color: rgba(166,124,82,0.25);
+            color: #7a5c32;
+        }
+        .branchen-feature.individual i { color: var(--primary); }
 
-        /* ── Vertical Progress Indicator (right edge) ── */
+        /* ── Vertical Progress Indicator — hidden, replaced by pills ── */
         .branchen-progress {
-            position: absolute;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 0;
-            z-index: 10;
+            display: none;
         }
 
         .branchen-progress-track {
@@ -1434,6 +1465,28 @@
         @media (max-width: 576px) {
             .branchen-custom { flex-direction: column; text-align: center; }
             .branchen-custom-mockup { width: 240px; }
+        }
+        @media (max-width: 768px) {
+            .branchen-pills {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 4px 20px;
+                margin-left: -20px;
+                margin-right: -20px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .branchen-pills::-webkit-scrollbar { display: none; }
+            .branchen-pill { flex-shrink: 0; }
+            .branchen-theater-main {
+                grid-template-columns: 1fr;
+            }
+            .branchen-devices-stage {
+                padding-right: 0;
+                max-width: 440px;
+                margin: 0 auto;
+            }
         }
         /* ═══════════════════════════════════════════
            SO FUNKTIONIERT'S — ZAHNRAD MECHANIK
@@ -4692,7 +4745,20 @@
 
         </div>
 
-        <!-- Branchen Theater (pinned scroll area) -->
+        <!-- Branchen Pill Navigation -->
+        <div class="container">
+            <div class="branchen-pills" id="branchenPills">
+                <button class="branchen-pill active" data-index="0">Friseure</button>
+                <button class="branchen-pill" data-index="1">Ärzte</button>
+                <button class="branchen-pill" data-index="2">Handwerk</button>
+                <button class="branchen-pill" data-index="3">Gastro</button>
+                <button class="branchen-pill" data-index="4">Fitness</button>
+                <button class="branchen-pill" data-index="5">Einzelhandel</button>
+                <button class="branchen-pill individual" data-index="6">✦ Individual</button>
+            </div>
+        </div>
+
+        <!-- Branchen Theater -->
         <div class="branchen-theater" id="branchenTheater">
             <div class="branchen-theater-main">
                 <!-- Left: Device Stage -->
@@ -4715,6 +4781,7 @@
                                 <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/gastronomie-macbook.mp4" aria-label="Restaurant-Website auf dem Laptop"></video>
                                 <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/fitness-macbook.mp4" aria-label="Fitnessstudio-Website auf dem Laptop"></video>
                                 <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/einzelhandel-macbook.mp4" aria-label="Einzelhandel-Website auf dem Laptop"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/simplifyops-macbook.mp4" aria-label="Individual-Projekt auf dem Laptop"></video>
                             </div>
                         </div>
                         <div class="branchen-laptop-base"></div>
@@ -4731,6 +4798,7 @@
                                 <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/gastronomie-iphone.mp4" aria-label="Restaurant-Website auf dem Smartphone"></video>
                                 <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/fitness-iphone.mp4" aria-label="Fitnessstudio-Website auf dem Smartphone"></video>
                                 <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/einzelhandel-iphone.mp4" aria-label="Einzelhandel-Website auf dem Smartphone"></video>
+                                <video muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/simplifyops-iphone.mp4" aria-label="Individual-Projekt auf dem Smartphone"></video>
                             </div>
                         </div>
                     </div>
@@ -4739,7 +4807,7 @@
                 <!-- Right: Content Panel -->
                 <div class="branchen-content-panel" id="branchenPanel">
                     <div class="branchen-slide active" data-slide="0">
-                        <span class="branchen-slide-num">01/06</span>
+                        <span class="branchen-slide-num">01/07</span>
                         <h3 class="branchen-slide-title">Friseure & Beauty</h3>
                         <p class="branchen-slide-desc">Vom Online-Terminkalender über den Produktshop bis zur Vorher/Nachher-Galerie — wir bauen genau die Website, die Ihren Salon professionell präsentiert und Neukunden überzeugt.</p>
                         <div class="branchen-slide-features">
@@ -4751,7 +4819,7 @@
                         </div>
                     </div>
                     <div class="branchen-slide" data-slide="1">
-                        <span class="branchen-slide-num">02/06</span>
+                        <span class="branchen-slide-num">02/07</span>
                         <h3 class="branchen-slide-title">Ärzte & Praxen</h3>
                         <p class="branchen-slide-desc">Patienten erwarten heute digitale Services: Online-Terminanfrage, übersichtliche Sprechzeiten und Informationen zu Ihren Leistungen — DSGVO-konform und vertrauenswürdig.</p>
                         <div class="branchen-slide-features">
@@ -4763,7 +4831,7 @@
                         </div>
                     </div>
                     <div class="branchen-slide" data-slide="2">
-                        <span class="branchen-slide-num">03/06</span>
+                        <span class="branchen-slide-num">03/07</span>
                         <h3 class="branchen-slide-title">Handwerk & Bau</h3>
                         <p class="branchen-slide-desc">Zeigen Sie Ihre besten Projekte, listen Sie Ihre Leistungen auf und machen Sie es Interessenten leicht, ein Angebot anzufragen — mit Notdienst-Button und Meisterbetrieb-Siegel.</p>
                         <div class="branchen-slide-features">
@@ -4775,7 +4843,7 @@
                         </div>
                     </div>
                     <div class="branchen-slide" data-slide="3">
-                        <span class="branchen-slide-num">04/06</span>
+                        <span class="branchen-slide-num">04/07</span>
                         <h3 class="branchen-slide-title">Gastronomie</h3>
                         <p class="branchen-slide-desc">Digitale Speisekarte mit Allergen-Infos, Online-Reservierung und Eventkalender — Ihre Gäste finden alles auf einen Blick und buchen direkt über Ihre Website.</p>
                         <div class="branchen-slide-features">
@@ -4787,7 +4855,7 @@
                         </div>
                     </div>
                     <div class="branchen-slide" data-slide="4">
-                        <span class="branchen-slide-num">05/06</span>
+                        <span class="branchen-slide-num">05/07</span>
                         <h3 class="branchen-slide-title">Fitness & Sport</h3>
                         <p class="branchen-slide-desc">Interaktiver Kursplan, Probetraining-Buchung und Trainer-Profile — motivieren Sie online und gewinnen Sie neue Mitglieder, die direkt loslegen wollen.</p>
                         <div class="branchen-slide-features">
@@ -4799,7 +4867,7 @@
                         </div>
                     </div>
                     <div class="branchen-slide" data-slide="5">
-                        <span class="branchen-slide-num">06/06</span>
+                        <span class="branchen-slide-num">06/07</span>
                         <h3 class="branchen-slide-title">Einzelhandel</h3>
                         <p class="branchen-slide-desc">Produktkatalog, Click & Collect und aktuelle Angebote — bringen Sie Ihr Geschäft online und erreichen Sie Kunden weit über Ihren Standort hinaus.</p>
                         <div class="branchen-slide-features">
@@ -4808,6 +4876,21 @@
                             <span class="branchen-feature"><i class="fas fa-location-dot"></i> Standort & Öffnungszeiten</span>
                             <span class="branchen-feature"><i class="fas fa-tags"></i> Aktionen & Angebote</span>
                             <span class="branchen-feature"><i class="fas fa-envelope"></i> Newsletter</span>
+                        </div>
+                    </div>
+                    <div class="branchen-slide" data-slide="6">
+                        <span class="branchen-slide-num" style="color:var(--primary);opacity:0.8">07/07</span>
+                        <h3 class="branchen-slide-title">Individual-Projekte</h3>
+                        <p class="branchen-slide-desc">Komplexere Anforderungen? Wir entwickeln maßgeschneiderte Web-Applikationen mit interaktiven Features, Animationen und Service-Darstellungen — wenn Standard nicht reicht.</p>
+                        <div class="branchen-slide-features">
+                            <span class="branchen-feature individual"><i class="fas fa-wand-magic-sparkles"></i> Animierte Abläufe</span>
+                            <span class="branchen-feature individual"><i class="fas fa-sliders"></i> Interaktive Features</span>
+                            <span class="branchen-feature individual"><i class="fas fa-plug"></i> API-Integrationen</span>
+                            <span class="branchen-feature individual"><i class="fas fa-pen-ruler"></i> Custom UI/UX</span>
+                            <span class="branchen-feature individual"><i class="fas fa-cube"></i> Software-Produkte</span>
+                        </div>
+                        <div style="margin-top:16px">
+                            <a href="scraper/case-study.html" style="font-size:0.82rem;font-weight:600;color:var(--primary);text-decoration:none;border-bottom:1px solid rgba(166,124,82,0.4);padding-bottom:1px">Fallstudie ansehen <i class="fas fa-arrow-right" style="font-size:0.7rem;margin-left:3px"></i></a>
                         </div>
                     </div>
                 </div>
@@ -4849,28 +4932,6 @@
             <a href="website-anfrage.html" class="btn btn-primary">Jetzt unverbindlich anfragen <i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <!-- Custom dev footer -->
-        <div class="container">
-            <div class="branchen-custom">
-                <div class="branchen-custom-mockup">
-                    <div class="branchen-device-laptop">
-                        <div class="branchen-laptop-lid">
-                            <div class="branchen-laptop-cam"></div>
-                            <div class="branchen-laptop-screen">
-                                <video muted loop playsinline autoplay src="branchen-showcase/output/macbook/simplifyops-macbook.mp4" aria-label="SimplifyOps Web-App Demo"></video>
-                            </div>
-                        </div>
-                        <div class="branchen-laptop-base"></div>
-                    </div>
-                </div>
-                <div class="branchen-custom-text">
-                    <div class="branchen-custom-label">Auch möglich</div>
-                    <div class="branchen-custom-title">Individuelle Web-Applikationen</div>
-                    <p class="branchen-custom-desc">Nicht nur Branchen-Websites — wir entwickeln auch maßgeschneiderte Web-Apps, Dashboards und Tools.</p>
-                    <a href="#kontakt-custom">Projekt besprechen <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- ═══════════════════════════════════════
@@ -6530,10 +6591,8 @@
             observer.observe(statsBar);
         })();
 
-        // ─── Branchen Werkstatt-Theater ───
+        // ─── Branchen Pill-Navigation ───
         (function() {
-            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
             var theater = document.getElementById('branchenTheater');
             var stage = document.getElementById('branchenDevicesStage');
             var laptop = document.getElementById('branchenLaptop');
@@ -6542,19 +6601,20 @@
             var laptopScreen = document.getElementById('branchenLaptopScreen');
             var phoneScreen = document.getElementById('branchenPhoneScreen');
             var panel = document.getElementById('branchenPanel');
-            var progress = document.getElementById('branchenProgress');
-            var progressFill = document.getElementById('branchenProgressFill');
-            if (!theater || !stage || !panel) return;
+            var pillsContainer = document.getElementById('branchenPills');
+            if (!theater || !stage || !panel || !pillsContainer) return;
 
-            var laptopVideos = laptopScreen ? laptopScreen.querySelectorAll('video') : [];
-            var phoneVideos = phoneScreen ? phoneScreen.querySelectorAll('video') : [];
-            var slides = panel.querySelectorAll('.branchen-slide');
-            var progressItems = progress ? progress.querySelectorAll('.branchen-progress-item') : [];
+            var laptopVideos = laptopScreen ? Array.from(laptopScreen.querySelectorAll('video')) : [];
+            var phoneVideos = phoneScreen ? Array.from(phoneScreen.querySelectorAll('video')) : [];
+            var slides = Array.from(panel.querySelectorAll('.branchen-slide'));
+            var pills = Array.from(pillsContainer.querySelectorAll('.branchen-pill'));
             var TOTAL = slides.length;
             var current = 0;
             var inView = false;
             var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var isMobile = window.matchMedia('(max-width: 768px)');
+            var autoTimer = null;
+            var pauseTimer = null;
+            var autoPaused = false;
 
             // ── Video management ──
             function playVideo(idx) {
@@ -6575,8 +6635,13 @@
                 }
             }
 
+            // ── Pill update ──
+            function updatePills(idx) {
+                pills.forEach(function(p, i) { p.classList.toggle('active', i === idx); });
+            }
+
             // ── Slide switching ──
-            function goTo(idx) {
+            function goTo(idx, manual) {
                 if (idx === current) return;
                 var prev = current;
                 current = idx;
@@ -6597,33 +6662,51 @@
                 slides[prev].classList.remove('active');
                 slides[current].classList.add('active');
 
-                // Progress update
-                if (progressItems.length) {
-                    progressItems[prev].classList.remove('active');
-                    progressItems[current].classList.add('active');
-                }
-                if (progressFill) {
-                    var fillHeight = (current / (TOTAL - 1)) * 100;
-                    progressFill.style.height = fillHeight + '%';
-                }
+                // Pills update
+                updatePills(current);
 
-                // Subtle 3D tilt on devices
-                if (!reducedMotion && laptop) {
+                // Subtle 3D tilt on devices (requires GSAP)
+                if (!reducedMotion && typeof gsap !== 'undefined') {
                     var tiltDir = current > prev ? 1 : -1;
                     gsap.timeline()
                         .to(laptop, { rotateY: tiltDir * 2, rotateX: -1, duration: 0.25, ease: 'power2.out' })
                         .to(laptop, { rotateY: 0, rotateX: 0, duration: 0.35, ease: 'power2.inOut' });
-                }
-                if (!reducedMotion && phone) {
-                    var tiltDir2 = current > prev ? 1 : -1;
                     gsap.timeline()
-                        .to(phone, { rotateY: tiltDir2 * 3, duration: 0.25, ease: 'power2.out', delay: 0.05 })
+                        .to(phone, { rotateY: tiltDir * 3, duration: 0.25, ease: 'power2.out', delay: 0.05 })
                         .to(phone, { rotateY: 0, duration: 0.35, ease: 'power2.inOut' });
+                }
+
+                // If manually triggered: pause auto-cycle for 10s
+                if (manual) {
+                    autoPaused = true;
+                    if (pauseTimer) clearTimeout(pauseTimer);
+                    pauseTimer = setTimeout(function() { autoPaused = false; }, 10000);
                 }
             }
 
-            // ── Blueprint Reveal (one-time entrance) ──
-            if (blueprint && !reducedMotion) {
+            // ── Auto-cycling ──
+            function startAuto() {
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(function() {
+                    if (!inView || autoPaused) return;
+                    var next = (current + 1) % TOTAL;
+                    goTo(next, false);
+                }, 5000);
+            }
+
+            // ── Pill click handlers ──
+            pills.forEach(function(pill, i) {
+                pill.addEventListener('click', function() {
+                    goTo(i, true);
+                });
+            });
+
+            // ── Hover pause ──
+            theater.addEventListener('mouseenter', function() { autoPaused = true; });
+            theater.addEventListener('mouseleave', function() { autoPaused = false; });
+
+            // ── Blueprint Reveal entrance (unchanged) ──
+            if (blueprint && !reducedMotion && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 var bpElements = blueprint.querySelectorAll('rect, line');
                 gsap.set(stage, { opacity: 0 });
                 gsap.set([laptop, phone], { opacity: 0 });
@@ -6637,73 +6720,15 @@
                         once: true
                     }
                 });
-
-                // Phase 1: Blueprint wireframe draws
                 revealTl.to(stage, { opacity: 1, duration: 0.1 });
                 bpElements.forEach(function(el) {
                     revealTl.to(el, { strokeDashoffset: 0, duration: 0.3 }, '<');
                 });
-                // Phase 2: Devices materialize, blueprint fades
                 revealTl.to([laptop, phone], { opacity: 1, duration: 0.3 }, '>-0.1');
                 revealTl.to(blueprint, { opacity: 0, duration: 0.2 }, '>-0.1');
-            } else if (!reducedMotion) {
-                gsap.set(stage, { opacity: 1 });
             }
 
-            // ── ScrollTrigger Pin + Scrub (Desktop + Mobile) ──
-            function initTheater() {
-                if (reducedMotion) return;
-
-                // Shorter scroll distance on mobile for snappier feel
-                var scrollPerSlide = isMobile.matches ? 350 : 500;
-
-                var scrubST = ScrollTrigger.create({
-                    trigger: theater,
-                    start: 'top top',
-                    end: '+=' + (TOTAL * scrollPerSlide),
-                    pin: true,
-                    scrub: 1,
-                    onUpdate: function(self) {
-                        var p = self.progress;
-                        var idx = Math.min(Math.floor(p * TOTAL), TOTAL - 1);
-                        if (idx !== current) goTo(idx);
-
-                        // Progress fill continuous
-                        if (progressFill) {
-                            progressFill.style.height = (p * 100) + '%';
-                        }
-                    },
-                    onEnter: function() { inView = true; playVideo(current); },
-                    onLeave: function() { inView = false; pauseAll(); },
-                    onEnterBack: function() { inView = true; playVideo(current); },
-                    onLeaveBack: function() { inView = false; pauseAll(); }
-                });
-
-                return scrubST;
-            }
-
-            // ── Progress dot click ──
-            progressItems.forEach(function(item, i) {
-                item.addEventListener('click', function() {
-                    // Calculate scroll position for this index
-                    var st = ScrollTrigger.getAll().find(function(s) { return s.trigger === theater; });
-                    if (st) {
-                        var targetScroll = st.start + (i / TOTAL) * (st.end - st.start);
-                        if (typeof lenis !== 'undefined') {
-                            lenis.scrollTo(targetScroll, { duration: 0.8 });
-                        } else {
-                            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
-                        }
-                    }
-                });
-            });
-
-            // ── Init ──
-            function setup() {
-                initTheater();
-            }
-
-            // Reduced-motion fallback: show all slides, no animations
+            // ── Reduced-motion fallback ──
             if (reducedMotion) {
                 slides.forEach(function(slide) {
                     slide.classList.add('active');
@@ -6712,10 +6737,7 @@
                     slide.style.top = 'auto';
                     slide.style.marginBottom = '32px';
                 });
-                if (progress) progress.style.display = 'none';
-                if (blueprint) blueprint.style.display = 'none';
-                gsap.set([stage, laptop, phone], { opacity: 1 });
-                // Play first video only
+                if (typeof gsap !== 'undefined') gsap.set([stage, laptop, phone], { opacity: 1 });
                 setActiveVideo(0);
                 var obs = new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
@@ -6726,9 +6748,11 @@
                 return;
             }
 
-            setup();
+            // ── Init: first slide active ──
+            setActiveVideo(0);
+            updatePills(0);
 
-            // IntersectionObserver for all videos pause when fully out of view
+            // ── IntersectionObserver: pause videos when off-screen, start auto-cycling on enter ──
             var viewObs = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (!entry.isIntersecting) {
@@ -6736,12 +6760,13 @@
                         pauseAll();
                     } else {
                         inView = true;
-                        if (laptopVideos[current] && !laptopVideos[current].paused) return;
                         playVideo(current);
                     }
                 });
-            }, { threshold: 0.05 });
+            }, { threshold: 0.1 });
             viewObs.observe(theater);
+
+            startAuto();
         })();
 
         // ─── Process Gear Animation ───
