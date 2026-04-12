@@ -6221,7 +6221,7 @@
         var sections = [];
         navAnchors.forEach(function(a) {
             var href = a.getAttribute('href');
-            if (href && href.startsWith('#')) {
+            if (href && href.startsWith('#') && href.length > 1) {
                 var sec = document.querySelector(href);
                 if (sec) sections.push({ el: sec, link: a });
             }
