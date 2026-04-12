@@ -594,6 +594,64 @@
         .nav-cta::after { display: none !important; }
         .nav-cta:hover { background-position: 0% 0 !important; }
 
+        /* Nav CTA Dropdown */
+        .nav-cta-wrap {
+            position: relative;
+        }
+        .nav-cta-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(15,13,11,0.15), 0 0 0 1px rgba(15,13,11,0.06);
+            padding: 8px;
+            min-width: 220px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-6px);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            z-index: 1000;
+        }
+        .nav-cta-wrap.open .nav-cta-dropdown {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .nav-cta-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+        .nav-cta-dropdown a:hover { background: var(--gray-50); }
+        .nav-cta-dropdown a i {
+            width: 16px;
+            text-align: center;
+            color: var(--primary);
+            font-size: 0.78rem;
+        }
+        .nav-cta-dropdown .dropdown-divider {
+            height: 1px;
+            background: var(--gray-100);
+            margin: 4px 0;
+        }
+        .nav-cta-dropdown .dropdown-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            padding: 6px 12px 2px;
+            font-weight: 600;
+        }
+
         /* Mobile Menu */
         .menu-toggle {
             display: none;
@@ -4574,7 +4632,19 @@
                 <a href="#konfigurator">Angebot</a>
                 <a href="#blog">Blog</a>
                 <a href="#kontakt">Kontakt</a>
-                <a href="website-anfrage.html" class="nav-cta"><i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen</a>
+                <div class="nav-cta-wrap" id="navCtaWrap">
+                    <button class="nav-cta" id="navCtaBtn" aria-expanded="false" aria-haspopup="true"><i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen</button>
+                    <div class="nav-cta-dropdown" id="navCtaDropdown" role="menu">
+                        <div class="dropdown-label">Wie möchten Sie starten?</div>
+                        <a href="#" data-cal-link="ww-webmanufaktur/erstgespraech" data-cal-config='{"layout":"month_view"}' role="menuitem">
+                            <i class="fas fa-calendar-check"></i> Kostenloses Erstgespräch buchen
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="website-anfrage.html" role="menuitem">
+                            <i class="fas fa-sliders"></i> Angebot & Preise berechnen
+                        </a>
+                    </div>
+                </div>
             </div>
             <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
                 <span></span><span></span><span></span>
@@ -6046,6 +6116,43 @@
             noiseEl.style.backgroundImage = 'url(' + noiseCanvas.toDataURL() + ')';
             noiseEl.style.backgroundRepeat = 'repeat';
         }
+
+        // ─── Nav CTA Dropdown ───
+        (function() {
+            var wrap = document.getElementById('navCtaWrap');
+            var btn = document.getElementById('navCtaBtn');
+            if (!wrap || !btn) return;
+
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = wrap.classList.toggle('open');
+                btn.setAttribute('aria-expanded', isOpen);
+            });
+
+            // Close on outside click
+            document.addEventListener('click', function(e) {
+                if (!wrap.contains(e.target)) {
+                    wrap.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    wrap.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close dropdown after clicking a link
+            wrap.querySelectorAll('.nav-cta-dropdown a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    wrap.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
 
         // ─── Navbar Glassmorphism ───
         var navbar = document.getElementById('navbar');
