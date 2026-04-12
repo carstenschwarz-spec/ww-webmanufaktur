@@ -4892,7 +4892,13 @@
             border-radius: 100px; padding: 5px 14px; display: none;
         }
         .preise-cal-paket-badge.visible { display: inline-block; }
+        .preise-cal-embed-container { position: relative; }
         #cal-inline-preise { width: 100%; min-height: 520px; }
+        /* Cover the Cal.eu branding bar at the bottom of the iframe */
+        .preise-cal-brand-cover {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 48px;
+            background: var(--gray-900); z-index: 2; pointer-events: none;
+        }
         .preise-cal-consent-hint { padding: 48px 28px; text-align: center; }
         .preise-cal-consent-hint i { font-size: 2rem; color: var(--text-muted-dark); margin-bottom: 12px; display: block; }
         .preise-cal-consent-hint p { font-size: 0.88rem; color: var(--text-muted-dark); }
@@ -4900,18 +4906,45 @@
             background: none; border: none; color: var(--primary);
             text-decoration: underline; cursor: pointer; font: inherit; font-size: 0.88rem;
         }
-        .preise-cal-datenschutz {
-            padding: 12px 28px; font-size: 0.7rem; color: var(--text-muted-dark);
-            text-align: center; border-top: 1px solid rgba(255,255,255,0.05);
-        }
 
         /* ═══════════════════════════════════════
            GLOSSAR SECTION
            ═══════════════════════════════════════ */
-        .glossar { padding: 120px 0; background: var(--gray-50); position: relative; }
+        .glossar { padding: 100px 0; background: var(--gray-50); position: relative; }
         .glossar .section-label { color: var(--primary); }
         .glossar .section-title { color: var(--secondary); }
         .glossar .section-subtitle { color: var(--gray-600); max-width: 600px; margin-left: auto; margin-right: auto; }
+        .glossar-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 16px; max-width: 1040px; margin: 0 auto;
+        }
+        .glossar-card {
+            background: var(--white);
+            border: 1px solid rgba(26,22,20,0.07);
+            border-radius: var(--radius-lg);
+            padding: 24px 14px 20px;
+            text-align: center;
+            transition: all 0.25s ease;
+        }
+        .glossar-card:hover {
+            border-color: rgba(166,124,82,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .glossar-card-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(166,124,82,0.1);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.1rem; color: var(--primary);
+        }
+        .glossar-card h3 {
+            font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600;
+            color: var(--secondary); margin-bottom: 6px; line-height: 1.25;
+        }
+        .glossar-card p { font-size: 0.74rem; color: var(--gray-500); line-height: 1.55; }
+        @media (max-width: 992px) { .glossar-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 576px) { .glossar-grid { grid-template-columns: repeat(2, 1fr); } }
 
         /* ─── Responsive: Preise ─── */
         @media (max-width: 992px) {
@@ -5922,12 +5955,14 @@
                     </div>
                     <span class="preise-cal-paket-badge" id="preiseCalBadge"></span>
                 </div>
-                <div id="cal-inline-preise"></div>
+                <div class="preise-cal-embed-container">
+                    <div id="cal-inline-preise"></div>
+                    <div class="preise-cal-brand-cover"></div>
+                </div>
                 <div id="cal-inline-consent-hint" class="preise-cal-consent-hint">
                     <i class="fas fa-calendar-days"></i>
                     <p>Für die Terminbuchung bitte <button class="preise-cal-consent-btn" onclick="document.getElementById('cookieAccept').click();">Cookies akzeptieren</button></p>
                 </div>
-                <p class="preise-cal-datenschutz">Ihre Daten werden vertraulich behandelt. <a href="datenschutz.html" style="color:var(--primary);">Datenschutzerklärung</a></p>
             </div>
 
         </div>
@@ -5941,48 +5976,58 @@
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Glossar</span>
                 <h2 class="section-title">Was steckt <span class="title-highlight">dahinter?</span></h2>
-                <p class="section-subtitle">Klare Antworten auf Fachbegriffe — damit Sie wissen, wofür Sie bezahlen.</p>
+                <p class="section-subtitle">Fachbegriffe einfach erklärt — damit Sie wissen, wofür Sie bezahlen.</p>
             </div>
-            <div class="faq-grid" data-aos="fade-up">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist DSGVO? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Die Datenschutz-Grundverordnung der EU schreibt vor, wie Websites mit Besucherdaten umgehen müssen. Ohne DSGVO-Konformität riskieren Sie Abmahnungen und Bußgelder. Wir richten alles korrekt ein — Datenschutzerklärung, Cookie-Hinweis, sichere Formulare.</div></div></div>
+            <div class="glossar-grid" data-aos="fade-up">
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>DSGVO</h3>
+                    <p>EU-Datenschutz korrekt umgesetzt — kein Abmahnrisiko</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist SSL-Verschlüsselung? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Das Schloss-Symbol in der Browser-Adressleiste (https://). Es zeigt, dass die Verbindung zwischen Besucher und Website verschlüsselt ist. Google bevorzugt SSL-Seiten im Ranking, Browser zeigen ohne SSL eine Warnung.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-lock"></i></div>
+                    <h3>SSL</h3>
+                    <p>Das Schloss im Browser — Pflicht, sicher, Google-Bonus</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist SEO? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Suchmaschinenoptimierung — damit Ihre Website bei Google gefunden wird, wenn jemand nach Ihrem Angebot sucht. Wir schreiben Texte mit den richtigen Keywords, strukturieren die Seite technisch korrekt und tragen lokale Daten ein.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <h3>SEO</h3>
+                    <p>Bei Google gefunden werden, wenn Kunden nach Ihnen suchen</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist Google My Business? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Ihr kostenloser Unternehmenseintrag bei Google — erscheint in der Kartenansicht und in der Seitenleiste, wenn jemand nach Ihnen sucht. Mit Öffnungszeiten, Fotos, Bewertungen und direktem Anruf-Button.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-map-pin"></i></div>
+                    <h3>Google My Business</h3>
+                    <p>Kostenloser Eintrag mit Karte, Zeiten & Anruf-Button</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist Responsive Design? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Ihre Website passt sich automatisch an jede Bildschirmgröße an — Smartphone, Tablet, Desktop. Über 60% aller Website-Besuche kommen heute vom Handy.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-mobile-screen"></i></div>
+                    <h3>Responsive</h3>
+                    <p>Perfekt auf Handy, Tablet und PC — automatisch</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist ein Terminbuchungssystem? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Ein Kalender auf Ihrer Website, über den Kunden selbst Termine buchen können — ohne Anruf, ohne Hin-und-Her. Sie sehen alle Buchungen in einer App und bekommen automatische Erinnerungen.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Terminbuchung</h3>
+                    <p>Kunden buchen selbst, rund um die Uhr — ohne Anruf</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was sind KI-generierte Fotos? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Professionelle Bilder, die durch künstliche Intelligenz für Ihre Branche erstellt werden — ohne Fotoshooting, ohne Bildlizenz. Passend zu Ihrem Unternehmen und rechtlich unbedenklich.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3>KI-Fotos</h3>
+                    <p>Professionelle Bilder ohne Fotoshooting — per KI erstellt</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist ein Content-Management-System (CMS)? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Ein CMS ermöglicht es Ihnen, Texte und Bilder auf Ihrer Website selbst zu ändern — ohne Programmierkenntnisse. Wie ein Word-Dokument, nur für Ihre Website.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-file-pen"></i></div>
+                    <h3>CMS</h3>
+                    <p>Texte & Bilder selbst ändern — so einfach wie Word</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was bedeutet "1. Jahr inklusive"? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Im ersten Jahr nach dem Start übernehmen wir Hosting, Domain-Einrichtung und SSL-Zertifikat ohne Aufpreis. Ab dem zweiten Jahr können Sie optional einen Wartungsvertrag abschließen — oder die Website selbst hosten.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-gift"></i></div>
+                    <h3>1. Jahr inklusive</h3>
+                    <p>Hosting, Domain & SSL ohne Aufpreis im ersten Jahr</p>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">Was ist Bewertungsmanagement? <span class="faq-toggle"></span></button>
-                    <div class="faq-answer"><div><div class="faq-answer-inner">Wir richten ein, dass zufriedene Kunden einfach eine Google-Bewertung hinterlassen können — z.B. per QR-Code oder Link. Mehr Bewertungen = besseres lokales Ranking = mehr Neukunden.</div></div></div>
+                <div class="glossar-card">
+                    <div class="glossar-card-icon"><i class="fas fa-star"></i></div>
+                    <h3>Bewertungen</h3>
+                    <p>Google-Bewertungen leicht sammeln — mehr Ranking, mehr Kunden</p>
                 </div>
             </div>
         </div>
