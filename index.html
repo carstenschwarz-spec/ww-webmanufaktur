@@ -201,6 +201,86 @@
                     "@type": "Answer",
                     "text": "Als junge Agentur bieten wir Neukunden 15 % Rabatt, wenn wir Ihre Website als Referenz zeigen dürfen. Gleiche Qualität, gleicher Service — einfach günstiger."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist DSGVO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Die Datenschutz-Grundverordnung der EU schreibt vor, wie Websites mit Besucherdaten umgehen müssen. Ohne DSGVO-Konformität riskieren Sie Abmahnungen und Bußgelder. Wir richten alles korrekt ein — Datenschutzerklärung, Cookie-Hinweis, sichere Formulare."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist SSL-Verschlüsselung?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Das Schloss-Symbol in der Browser-Adressleiste (https://). Es zeigt, dass die Verbindung zwischen Besucher und Website verschlüsselt ist. Google bevorzugt SSL-Seiten im Ranking, Browser zeigen ohne SSL eine Warnung."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Suchmaschinenoptimierung — damit Ihre Website bei Google gefunden wird, wenn jemand nach Ihrem Angebot sucht. Wir schreiben Texte mit den richtigen Keywords, strukturieren die Seite technisch korrekt und tragen lokale Daten ein."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist Google My Business?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ihr kostenloser Unternehmenseintrag bei Google — erscheint in der Kartenansicht und in der Seitenleiste, wenn jemand nach Ihnen sucht. Mit Öffnungszeiten, Fotos, Bewertungen und direktem Anruf-Button."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist Responsive Design?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ihre Website passt sich automatisch an jede Bildschirmgröße an — Smartphone, Tablet, Desktop. Über 60% aller Website-Besuche kommen heute vom Handy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist ein Terminbuchungssystem?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ein Kalender auf Ihrer Website, über den Kunden selbst Termine buchen können — ohne Anruf, ohne Hin-und-Her. Sie sehen alle Buchungen in einer App und bekommen automatische Erinnerungen."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was sind KI-generierte Fotos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Professionelle Bilder, die durch künstliche Intelligenz für Ihre Branche erstellt werden — ohne Fotoshooting, ohne Bildlizenz. Passend zu Ihrem Unternehmen und rechtlich unbedenklich."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist ein Content-Management-System (CMS)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ein CMS ermöglicht es Ihnen, Texte und Bilder auf Ihrer Website selbst zu ändern — ohne Programmierkenntnisse. Wie ein Word-Dokument, nur für Ihre Website."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was bedeutet '1. Jahr inklusive'?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Im ersten Jahr nach dem Start übernehmen wir Hosting, Domain-Einrichtung und SSL-Zertifikat ohne Aufpreis. Ab dem zweiten Jahr können Sie optional einen Wartungsvertrag abschließen — oder die Website selbst hosten."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Was ist Bewertungsmanagement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Wir richten ein, dass zufriedene Kunden einfach eine Google-Bewertung hinterlassen können — z.B. per QR-Code oder Link. Mehr Bewertungen = besseres lokales Ranking = mehr Neukunden."
+                }
             }
         ]
     }
@@ -4591,6 +4671,261 @@
             .scanner-card-line { animation: none !important; }
             .scanner-particles-canvas { display: none; }
         }
+
+        /* ═══════════════════════════════════════
+           PREISE & BUCHUNG SECTION
+           ═══════════════════════════════════════ */
+        .preise {
+            padding: 120px 0;
+            background: var(--bg-dark);
+            position: relative;
+            color: var(--text-on-dark);
+        }
+        .preise .section-label { color: var(--primary); }
+        .preise .section-title { color: var(--text-on-dark); }
+        .preise .section-subtitle { color: var(--text-muted-dark); max-width: 640px; margin-left: auto; margin-right: auto; }
+
+        .preise-versprechen {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 20px; margin-top: 48px; margin-bottom: 32px;
+        }
+        .preise-versprechen-item {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; padding: 28px 20px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+        }
+        .preise-versprechen-icon {
+            width: 52px; height: 52px; border-radius: var(--radius-full);
+            background: rgba(166,124,82,0.1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; color: var(--primary); margin-bottom: 14px;
+        }
+        .preise-versprechen-item h3 {
+            font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600;
+            color: var(--text-on-dark); margin-bottom: 6px;
+        }
+        .preise-versprechen-item p { font-size: 0.82rem; color: var(--text-muted-dark); line-height: 1.55; }
+
+        .preise-strip {
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+            padding: 16px 24px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg); margin-bottom: 24px;
+        }
+        .preise-strip-label {
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--text-muted-dark); white-space: nowrap;
+        }
+        .preise-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+        .preise-pill {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 5px 12px;
+            background: rgba(166,124,82,0.1); border: 1px solid rgba(166,124,82,0.2);
+            border-radius: 100px; font-size: 0.78rem; color: rgba(247,244,240,0.85);
+            cursor: default; position: relative;
+        }
+        .preise-pill i { font-size: 0.68rem; color: var(--primary); opacity: 0.75; }
+        .preise-pill::after {
+            content: attr(data-tooltip);
+            position: absolute; bottom: calc(100% + 8px); left: 50%;
+            transform: translateX(-50%);
+            background: #1a1614; color: rgba(247,244,240,0.9);
+            font-size: 0.72rem; line-height: 1.5;
+            padding: 8px 12px; border-radius: var(--radius-md);
+            white-space: normal; max-width: 220px; text-align: center;
+            pointer-events: none; opacity: 0;
+            transition: opacity 0.2s ease; z-index: 100;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .preise-pill:hover::after { opacity: 1; }
+
+        .preise-referenz {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 24px; padding: 20px 28px;
+            background: rgba(166,124,82,0.07);
+            border: 1px solid rgba(166,124,82,0.25);
+            border-radius: var(--radius-lg); margin-bottom: 36px;
+        }
+        .preise-referenz-left { flex: 1; }
+        .preise-referenz-title {
+            font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600;
+            color: var(--text-on-dark); margin-bottom: 5px;
+        }
+        .preise-referenz-title i { color: var(--primary); margin-right: 6px; }
+        .preise-referenz-sub { font-size: 0.8rem; color: var(--text-muted-dark); line-height: 1.55; }
+        .preise-referenz-right {
+            display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0;
+        }
+        .preise-toggle-wrap {
+            position: relative; display: inline-block; width: 52px; height: 28px; cursor: pointer;
+        }
+        .preise-toggle-input { opacity: 0; width: 0; height: 0; position: absolute; }
+        .preise-toggle-slider {
+            position: absolute; inset: 0;
+            background: rgba(255,255,255,0.1); border-radius: 100px;
+            transition: background 0.3s ease; border: 1px solid rgba(255,255,255,0.15);
+        }
+        .preise-toggle-slider::before {
+            content: ''; position: absolute;
+            width: 20px; height: 20px; left: 3px; top: 3px;
+            background: rgba(255,255,255,0.75); border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .preise-toggle-input:checked + .preise-toggle-slider { background: var(--primary); border-color: var(--primary); }
+        .preise-toggle-input:checked + .preise-toggle-slider::before { transform: translateX(24px); background: white; }
+        .preise-referenz-badge {
+            font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+            color: var(--primary); background: rgba(166,124,82,0.15);
+            border: 1px solid rgba(166,124,82,0.3);
+            border-radius: 100px; padding: 3px 10px;
+            opacity: 0; transition: opacity 0.3s ease; white-space: nowrap;
+        }
+        .preise-referenz-badge.visible { opacity: 1; }
+
+        .preise-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 20px; margin-bottom: 48px; align-items: start;
+        }
+        .preiskarte {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            padding: 28px 24px; position: relative;
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+        .preiskarte--highlight { border-color: rgba(166,124,82,0.3); }
+        .preiskarte:hover {
+            border-color: rgba(166,124,82,0.35);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+        }
+        .preiskarte.selected {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(166,124,82,0.15), 0 12px 32px rgba(0,0,0,0.3);
+        }
+        .preiskarte-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--primary); color: white;
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 4px 14px; border-radius: 100px; white-space: nowrap;
+        }
+        .preiskarte-name {
+            font-family: var(--font-heading); font-size: 1.6rem; font-weight: 400;
+            color: var(--text-on-dark); margin-bottom: 12px; letter-spacing: 0.02em;
+        }
+        .preiskarte-preis { margin-bottom: 4px; display: flex; align-items: baseline; gap: 8px; }
+        .preiskarte-amount {
+            font-size: 2.2rem; font-weight: 700; color: var(--text-on-dark);
+            line-height: 1; transition: color 0.35s ease;
+        }
+        .preiskarte-amount.ref-active { color: var(--primary); }
+        .preiskarte-orig { font-size: 0.88rem; color: var(--text-muted-dark); text-decoration: line-through; display: none; }
+        .preiskarte-subline { font-size: 0.74rem; color: var(--text-muted-dark); margin-bottom: 20px; }
+        .preiskarte-features { list-style: none; margin-bottom: 14px; }
+        .preiskarte-features li {
+            display: flex; align-items: flex-start; gap: 8px;
+            font-size: 0.83rem; color: rgba(247,244,240,0.75);
+            padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .preiskarte-features li:last-child { border-bottom: none; }
+        .preiskarte-features li i { color: var(--primary); font-size: 0.68rem; flex-shrink: 0; margin-top: 4px; }
+        .preiskarte-expand-btn {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 0.78rem; color: rgba(166,124,82,0.9);
+            background: none; border: none; cursor: pointer;
+            padding: 6px 0; font-family: inherit;
+            transition: opacity 0.2s; width: 100%;
+        }
+        .preiskarte-expand-btn:hover { opacity: 0.75; }
+        .preiskarte-expand-btn i { transition: transform 0.3s ease; font-size: 0.62rem; margin-left: auto; }
+        .preiskarte-expand-btn.open i { transform: rotate(180deg); }
+        .preiskarte-details {
+            display: grid; grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.23,1,0.32,1); overflow: hidden;
+        }
+        .preiskarte-details.open { grid-template-rows: 1fr; }
+        .preiskarte-details > div { overflow: hidden; }
+        .preiskarte-details-inner { padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 8px; }
+        .preiskarte-detail-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+        .preiskarte-detail-pill {
+            font-size: 0.7rem; padding: 3px 9px;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 100px; color: rgba(247,244,240,0.55);
+        }
+        .preiskarte-detail-after { font-size: 0.74rem; color: var(--text-muted-dark); margin-bottom: 8px; }
+        .preiskarte-detail-target { font-size: 0.77rem; color: rgba(247,244,240,0.45); font-style: italic; line-height: 1.55; }
+        .preiskarte-cta-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 11px 16px; margin-top: 18px;
+            background: rgba(166,124,82,0.12); border: 1px solid rgba(166,124,82,0.28);
+            border-radius: var(--radius-md);
+            font-size: 0.82rem; font-weight: 600; color: var(--text-on-dark);
+            cursor: pointer; transition: all 0.2s ease; width: 100%; font-family: inherit;
+        }
+        .preiskarte-cta-btn:hover,
+        .preiskarte.selected .preiskarte-cta-btn {
+            background: var(--primary); border-color: var(--primary); color: white;
+        }
+
+        .preise-cal-wrap {
+            background: var(--gray-900); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl); overflow: hidden;
+        }
+        .preise-cal-header {
+            padding: 24px 28px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 12px;
+        }
+        .preise-cal-header-left h3 {
+            font-family: var(--font-heading); font-size: 1.35rem; font-weight: 400;
+            color: var(--text-on-dark); margin-bottom: 4px;
+        }
+        .preise-cal-header-left p { font-size: 0.8rem; color: var(--text-muted-dark); }
+        .preise-cal-paket-badge {
+            font-size: 0.74rem; font-weight: 600; color: var(--primary);
+            background: rgba(166,124,82,0.15); border: 1px solid rgba(166,124,82,0.3);
+            border-radius: 100px; padding: 5px 14px; display: none;
+        }
+        .preise-cal-paket-badge.visible { display: inline-block; }
+        #cal-inline-preise { width: 100%; min-height: 520px; }
+        .preise-cal-consent-hint { padding: 48px 28px; text-align: center; }
+        .preise-cal-consent-hint i { font-size: 2rem; color: var(--text-muted-dark); margin-bottom: 12px; display: block; }
+        .preise-cal-consent-hint p { font-size: 0.88rem; color: var(--text-muted-dark); }
+        .preise-cal-consent-btn {
+            background: none; border: none; color: var(--primary);
+            text-decoration: underline; cursor: pointer; font: inherit; font-size: 0.88rem;
+        }
+        .preise-cal-datenschutz {
+            padding: 12px 28px; font-size: 0.7rem; color: var(--text-muted-dark);
+            text-align: center; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* ═══════════════════════════════════════
+           GLOSSAR SECTION
+           ═══════════════════════════════════════ */
+        .glossar { padding: 120px 0; background: var(--gray-50); position: relative; }
+        .glossar .section-label { color: var(--primary); }
+        .glossar .section-title { color: var(--secondary); }
+        .glossar .section-subtitle { color: var(--gray-600); max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* ─── Responsive: Preise ─── */
+        @media (max-width: 992px) {
+            .preise-grid { grid-template-columns: 1fr 1fr; }
+            .preise-grid .preiskarte:last-child { grid-column: span 2; max-width: 460px; margin: 0 auto; width: 100%; }
+        }
+        @media (max-width: 768px) {
+            .preise-versprechen { grid-template-columns: 1fr; gap: 12px; }
+            .preise-referenz { flex-direction: column; align-items: flex-start; }
+            .preise-referenz-right { flex-direction: row; align-items: center; gap: 16px; }
+            .preise-grid { grid-template-columns: 1fr; }
+            .preise-grid .preiskarte:last-child { grid-column: auto; max-width: 100%; }
+            .preise-strip { flex-direction: column; align-items: flex-start; }
+        }
     </style>
 </head>
 <body class="loading">
@@ -4640,7 +4975,7 @@
                             <i class="fas fa-calendar-check"></i> Kostenloses Erstgespräch buchen
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="website-anfrage.html" role="menuitem">
+                        <a href="#preise" role="menuitem">
                             <i class="fas fa-sliders"></i> Angebot & Preise berechnen
                         </a>
                     </div>
@@ -4662,7 +4997,7 @@
             <a href="#kontakt">Kontakt</a>
         </div>
         <div class="mobile-menu-footer">
-            <a href="website-anfrage.html" class="mobile-menu-cta"><i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen</a>
+            <a href="#preise" class="mobile-menu-cta"><i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen</a>
             <div class="mobile-menu-contact">
                 <a href="tel:+4915759617436"><i class="fas fa-phone"></i> Anrufen</a>
                 <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -4700,7 +5035,7 @@
                 </div>
 
                 <div class="hero-ctas">
-                    <a href="website-anfrage.html" class="btn btn-primary">
+                    <a href="#preise" class="btn btn-primary">
                         <i class="fas fa-laptop"></i> Jetzt unverbindlich anfragen
                     </a>
                     <button data-cal-link="ww-webmanufaktur/erstgespraech" data-cal-config='{"layout":"month_view"}' class="btn btn-outline-light">
@@ -5000,7 +5335,7 @@
 
         <!-- CTA below pinned theater -->
         <div class="branchen-cta">
-            <a href="website-anfrage.html" class="btn btn-primary">Jetzt unverbindlich anfragen <i class="fas fa-arrow-right"></i></a>
+            <a href="#preise" class="btn btn-primary">Jetzt unverbindlich anfragen <i class="fas fa-arrow-right"></i></a>
         </div>
 
     </section>
@@ -5155,7 +5490,7 @@
             </div>
 
             <div class="leistungen-cta" data-aos="fade-up">
-                <p>Nicht sicher, welche Leistungen Sie brauchen? Unser <a href="website-anfrage.html" style="color:var(--primary);text-decoration:underline;">Angebots-Assistent</a> hilft Ihnen weiter.</p>
+                <p>Nicht sicher, welches Paket passt? <a href="#preise" style="color:var(--primary);text-decoration:underline;">Alle Pakete vergleichen</a> und direkt Termin buchen.</p>
             </div>
         </div>
     </section>
@@ -5284,7 +5619,7 @@
         <div class="process-bottom">
             <p class="process-note"><strong>Kein Technikwissen nötig.</strong> Sie investieren ~30 Minuten — den Rest übernehmen wir komplett.</p>
             <div class="process-ctas">
-                <a href="website-anfrage.html" class="btn btn--primary">Jetzt Gespräch vereinbaren <i class="fas fa-arrow-right"></i></a>
+                <a href="#preise" class="btn btn--primary">Jetzt Gespräch vereinbaren <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -5399,134 +5734,255 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         ALLES INKLUSIVE (merged: CTA + Inklusive + Garantie)
+         PREISE & BUCHUNG
          ═══════════════════════════════════════ -->
-    <section class="inklusive" id="konfigurator">
+    <section class="preise" id="preise">
         <div aria-hidden="true" class="section-orbs"><div class="orb orb--cognac" style="width:800px;height:800px;top:50%;left:50%;transform:translate(-50%,-50%)"></div></div>
         <div class="section-glow-overlay"></div>
         <div class="container">
+
+            <!-- ① Section Header -->
             <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Alles inklusive</span>
-                <h2 class="section-title">Was andere extra berechnen,<br>ist bei uns im <span class="text-highlight">Festpreis</span></h2>
-                <p class="section-subtitle">Ihre Website arbeitet rund um die Uhr — für neue Kunden, für Bewerber und für Ihren professionellen Auftritt.</p>
+                <span class="section-label">Preise &amp; Buchung</span>
+                <h2 class="section-title">Ihre Website zum <span class="text-highlight">Festpreis</span></h2>
+                <p class="section-subtitle">Kein Abo, keine versteckten Kosten — einmalig bezahlen, dauerhaft profitieren.</p>
             </div>
 
-            <!-- Impact Row — 3 Audience Cards -->
-            <div class="inklusive-impact" id="inklusiveImpact">
-                <div class="inklusive-impact-card">
-                    <div class="inklusive-impact-icon"><i class="fas fa-bullseye"></i></div>
-                    <div>
-                        <h3>Kunden überzeugen</h3>
-                        <p>Professionelle Präsenz, die Vertrauen schafft und Anfragen generiert</p>
-                    </div>
+            <!-- ② Versprechen-Icons -->
+            <div class="preise-versprechen" data-aos="fade-up">
+                <div class="preise-versprechen-item">
+                    <div class="preise-versprechen-icon"><i class="fas fa-clock"></i></div>
+                    <h3>2–6 Wochen</h3>
+                    <p>Fester Zeitplan, kein endloses Hin und Her</p>
                 </div>
-                <div class="inklusive-impact-card">
-                    <div class="inklusive-impact-icon"><i class="fas fa-user-group"></i></div>
-                    <div>
-                        <h3>Bewerber gewinnen</h3>
-                        <p>Moderner Webauftritt zeigt: Hier will man arbeiten</p>
-                    </div>
+                <div class="preise-versprechen-item">
+                    <div class="preise-versprechen-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Festpreis garantiert</h3>
+                    <p>Was vereinbart ist, wird nicht teurer</p>
                 </div>
-                <div class="inklusive-impact-card">
-                    <div class="inklusive-impact-icon"><i class="fas fa-handshake"></i></div>
-                    <div>
-                        <h3>Professionell auftreten</h3>
-                        <p>Gegenüber Partnern, Lieferanten und Banken — immer überzeugend</p>
-                    </div>
+                <div class="preise-versprechen-item">
+                    <div class="preise-versprechen-icon"><i class="fas fa-key"></i></div>
+                    <h3>100% Ihr Eigentum</h3>
+                    <p>Keine Knebelverträge, keine Abhängigkeit</p>
                 </div>
             </div>
 
-            <!-- Unified Feature Card -->
-            <div class="inklusive-card" id="inklusiveCard">
-                <div class="inklusive-card-grid">
-                    <div class="inklusive-card-left">
-                        <p class="inklusive-features-label">Immer inklusive</p>
+            <!-- ③ Inklusive-Strip -->
+            <div class="preise-strip" data-aos="fade-up">
+                <span class="preise-strip-label">Immer inklusive:</span>
+                <div class="preise-pills">
+                    <span class="preise-pill" data-tooltip="Wir schreiben alle Texte für Sie — SEO-optimiert, kein Aufwand für Sie">SEO-Texte <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Professionelle Bilder passend zu Ihrer Branche — kein Fotoshooting nötig">KI-Fotos <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Ihr Unternehmenseintrag bei Google — damit Kunden Sie finden und anrufen">Google My Business <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Wir richten ein, wie neue Kundenbewertungen zu Ihnen kommen">Bewertungsmanagement <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Ihre Website entspricht der EU-Datenschutzgrundverordnung — kein Abmahnrisiko">DSGVO-konform <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Das grüne Schloss im Browser — schützt Ihre Besucher und ist Pflicht">SSL-Verschlüsselung <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Ihre Website sieht auf Handy, Tablet und PC perfekt aus">Responsive Design <i class="fas fa-circle-info"></i></span>
+                    <span class="preise-pill" data-tooltip="Sie haben eine feste Ansprechperson — keine Ticketsysteme, kein Callcenter">Pers. Ansprechpartner <i class="fas fa-circle-info"></i></span>
+                </div>
+            </div>
 
-                        <!-- 4 Highlight Features -->
-                        <div class="inklusive-feature-highlights">
-                            <div class="inklusive-feature-hl">
-                                <div class="inklusive-feature-hl-icon"><i class="fas fa-pen-fancy"></i></div>
-                                <div>
-                                    <h3>Texte geschrieben</h3>
-                                    <p>SEO-optimierte Texte — Sie liefern Stichpunkte, wir machen den Rest</p>
-                                </div>
-                            </div>
-                            <div class="inklusive-feature-hl">
-                                <div class="inklusive-feature-hl-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
-                                <div>
-                                    <h3>Professionelle Bilder</h3>
-                                    <p>KI-generierte Fotos passend zu Ihrer Branche — kein Fotoshooting nötig</p>
-                                </div>
-                            </div>
-                            <div class="inklusive-feature-hl">
-                                <div class="inklusive-feature-hl-icon"><i class="fas fa-magnifying-glass"></i></div>
-                                <div>
-                                    <h3>SEO-Optimierung</h3>
-                                    <p>Meta-Tags, strukturierte Daten, lokale Keywords — nicht nur ein Plugin</p>
-                                </div>
-                            </div>
-                            <div class="inklusive-feature-hl">
-                                <div class="inklusive-feature-hl-icon"><i class="fas fa-server"></i></div>
-                                <div>
-                                    <h3>1 Jahr Hosting</h3>
-                                    <p>Hosting, Domain-Einrichtung und SSL — komplett inklusive</p>
-                                </div>
-                            </div>
-                        </div>
+            <!-- ④ Referenz-Banner -->
+            <div class="preise-referenz" data-aos="fade-up">
+                <div class="preise-referenz-left">
+                    <p class="preise-referenz-title"><i class="fas fa-percent"></i> 15% sparen — wenn wir Ihre Website als Referenz zeigen dürfen</p>
+                    <p class="preise-referenz-sub">Ihre neue Website hilft uns, andere Unternehmer zu überzeugen. Dafür danken wir Ihnen mit 15% Rabatt auf den Paketpreis.</p>
+                </div>
+                <div class="preise-referenz-right">
+                    <label class="preise-toggle-wrap" aria-label="Referenzrabatt aktivieren">
+                        <input type="checkbox" id="referenzToggle" class="preise-toggle-input">
+                        <span class="preise-toggle-slider"></span>
+                    </label>
+                    <span class="preise-referenz-badge" id="referenzBadge">Aktiv — 15% gespart</span>
+                </div>
+            </div>
 
-                        <!-- 8 Standard Features -->
-                        <div class="inklusive-features-std">
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> Responsive Design</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> DSGVO-konform</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> SSL-Verschlüsselung</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> Kontaktformular</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> Google Maps</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> WhatsApp-Button</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> Persönlicher Ansprechpartner</div>
-                            <div class="inklusive-feature-std"><i class="fas fa-check"></i> 2 Korrekturrunden</div>
-                        </div>
+            <!-- ⑤ Preiskarten -->
+            <div class="preise-grid" data-aos="fade-up">
+
+                <!-- Starter -->
+                <div class="preiskarte" id="karte-starter">
+                    <div class="preiskarte-name">Starter</div>
+                    <div class="preiskarte-preis">
+                        <span class="preiskarte-amount" data-base="699" data-ref="595">699 €</span>
+                        <span class="preiskarte-orig">699 €</span>
                     </div>
-
-                    <div class="inklusive-card-right">
-                        <p class="inklusive-guarantees-label">Unsere Versprechen</p>
-
-                        <div class="inklusive-guarantee" id="inklusiveGuarantees">
-                            <div class="inklusive-guarantee-icon"><i class="fas fa-clock"></i></div>
-                            <div>
-                                <h3>2–6 Wochen</h3>
-                                <p>Schnelle Umsetzung, fester Zeitplan</p>
+                    <p class="preiskarte-subline">einmalig &middot; 1 Jahr Hosting inklusive</p>
+                    <ul class="preiskarte-features">
+                        <li><i class="fas fa-check"></i> Bis 5 Seiten</li>
+                        <li><i class="fas fa-check"></i> KI-Fotos &amp; SEO-Texte</li>
+                        <li><i class="fas fa-check"></i> Google My Business</li>
+                        <li><i class="fas fa-check"></i> Kontaktformular</li>
+                        <li><i class="fas fa-check"></i> 2 Korrekturrunden</li>
+                    </ul>
+                    <button class="preiskarte-expand-btn" data-karte="starter">Alle Details &amp; für wen geeignet <i class="fas fa-chevron-down"></i></button>
+                    <div class="preiskarte-details" id="details-starter">
+                        <div><div class="preiskarte-details-inner">
+                            <div class="preiskarte-detail-pills">
+                                <span class="preiskarte-detail-pill">Responsive</span>
+                                <span class="preiskarte-detail-pill">DSGVO</span>
+                                <span class="preiskarte-detail-pill">SSL</span>
+                                <span class="preiskarte-detail-pill">Kontaktformular</span>
+                                <span class="preiskarte-detail-pill">Google Maps</span>
+                                <span class="preiskarte-detail-pill">WhatsApp-Button</span>
+                                <span class="preiskarte-detail-pill">Text-Logo</span>
+                                <span class="preiskarte-detail-pill">KI-Fotos</span>
+                                <span class="preiskarte-detail-pill">SEO-Texte</span>
+                                <span class="preiskarte-detail-pill">Google My Business</span>
+                                <span class="preiskarte-detail-pill">Bewertungen</span>
+                                <span class="preiskarte-detail-pill">Social Media</span>
+                                <span class="preiskarte-detail-pill">2 Korrekturrunden</span>
+                                <span class="preiskarte-detail-pill">1 Jahr Hosting</span>
                             </div>
-                        </div>
-                        <div class="inklusive-guarantee">
-                            <div class="inklusive-guarantee-icon"><i class="fas fa-shield-halved"></i></div>
-                            <div>
-                                <h3>Festpreis</h3>
-                                <p>Keine versteckten Kosten</p>
-                            </div>
-                        </div>
-                        <div class="inklusive-guarantee">
-                            <div class="inklusive-guarantee-icon"><i class="fas fa-key"></i></div>
-                            <div>
-                                <h3>100% Eigentum</h3>
-                                <p>Keine Knebelverträge</p>
-                            </div>
-                        </div>
-
-                        <div class="inklusive-cta">
-                            <p style="font-size:2rem;font-weight:700;color:var(--text-on-dark);margin-bottom:4px;line-height:1.2;">ab <span style="color:var(--primary);">699 €</span></p>
-                            <p style="font-size:0.82rem;color:var(--text-muted-dark);margin-bottom:20px;">einmalig &middot; alles inklusive &middot; keine versteckten Kosten</p>
-                            <a href="website-anfrage.html" class="btn btn-primary">
-                                Unverbindlich anfragen <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <div class="inklusive-cta-meta">
-                                <div class="inklusive-cta-ref">
-                                    <i class="fas fa-percent"></i>
-                                    Referenzkunden sparen bis zu 15%
-                                </div>
-                                <p class="inklusive-cta-note">Ab <strong>Business</strong>: Terminbuchung, individuelles Logo & mehr.</p>
-                            </div>
-                        </div>
+                            <p class="preiskarte-detail-after">Danach optional: 19 €/Mo Hosting</p>
+                            <p class="preiskarte-detail-target">Für: Soloselbständige, Handwerker und Dienstleister, die einfach online präsent sein wollen.</p>
+                        </div></div>
                     </div>
+                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('starter')">Paket wählen &amp; Termin buchen <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Business (Beliebteste Wahl) -->
+                <div class="preiskarte preiskarte--highlight" id="karte-business">
+                    <span class="preiskarte-badge">Beliebteste Wahl</span>
+                    <div class="preiskarte-name">Business</div>
+                    <div class="preiskarte-preis">
+                        <span class="preiskarte-amount" data-base="990" data-ref="842">990 €</span>
+                        <span class="preiskarte-orig">990 €</span>
+                    </div>
+                    <p class="preiskarte-subline">einmalig &middot; 1 Jahr Basis-Wartung inklusive</p>
+                    <ul class="preiskarte-features">
+                        <li><i class="fas fa-check"></i> Bis 10 Seiten</li>
+                        <li><i class="fas fa-check"></i> Individuelles Logo</li>
+                        <li><i class="fas fa-check"></i> Terminbuchungssystem</li>
+                        <li><i class="fas fa-check"></i> KI-Bildoptimierung</li>
+                        <li><i class="fas fa-check"></i> Social-Media-Verlinkung</li>
+                    </ul>
+                    <button class="preiskarte-expand-btn" data-karte="business">Alle Details &amp; für wen geeignet <i class="fas fa-chevron-down"></i></button>
+                    <div class="preiskarte-details" id="details-business">
+                        <div><div class="preiskarte-details-inner">
+                            <div class="preiskarte-detail-pills">
+                                <span class="preiskarte-detail-pill">Alles aus Starter</span>
+                                <span class="preiskarte-detail-pill">Bis 10 Seiten</span>
+                                <span class="preiskarte-detail-pill">Individuelles Logo</span>
+                                <span class="preiskarte-detail-pill">Terminbuchungssystem</span>
+                                <span class="preiskarte-detail-pill">KI-Bildoptimierung</span>
+                                <span class="preiskarte-detail-pill">Social-Media-Verlinkung</span>
+                                <span class="preiskarte-detail-pill">1 Jahr Basis-Wartung</span>
+                            </div>
+                            <p class="preiskarte-detail-after">Danach optional: 39 €/Mo Basis-Wartung</p>
+                            <p class="preiskarte-detail-target">Für: Friseure, Ärzte, Gastronomen, Fitnessstudios — alle, die Termine online annehmen wollen.</p>
+                        </div></div>
+                    </div>
+                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('business')">Paket wählen &amp; Termin buchen <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Premium -->
+                <div class="preiskarte" id="karte-premium">
+                    <div class="preiskarte-name">Premium</div>
+                    <div class="preiskarte-preis">
+                        <span class="preiskarte-amount" data-base="1790" data-ref="1522">1.790 €</span>
+                        <span class="preiskarte-orig">1.790 €</span>
+                    </div>
+                    <p class="preiskarte-subline">einmalig &middot; 1 Jahr Komfort-Wartung inklusive</p>
+                    <ul class="preiskarte-features">
+                        <li><i class="fas fa-check"></i> Unbegrenzte Seiten</li>
+                        <li><i class="fas fa-check"></i> Shop / E-Commerce</li>
+                        <li><i class="fas fa-check"></i> Blog / News</li>
+                        <li><i class="fas fa-check"></i> Newsletter</li>
+                        <li><i class="fas fa-check"></i> Galerie / Portfolio</li>
+                    </ul>
+                    <button class="preiskarte-expand-btn" data-karte="premium">Alle Details &amp; für wen geeignet <i class="fas fa-chevron-down"></i></button>
+                    <div class="preiskarte-details" id="details-premium">
+                        <div><div class="preiskarte-details-inner">
+                            <div class="preiskarte-detail-pills">
+                                <span class="preiskarte-detail-pill">Alles aus Business</span>
+                                <span class="preiskarte-detail-pill">Unbegrenzte Seiten</span>
+                                <span class="preiskarte-detail-pill">Shop / E-Commerce</span>
+                                <span class="preiskarte-detail-pill">Blog / News</span>
+                                <span class="preiskarte-detail-pill">Newsletter</span>
+                                <span class="preiskarte-detail-pill">Gutscheine</span>
+                                <span class="preiskarte-detail-pill">Galerie / Portfolio</span>
+                                <span class="preiskarte-detail-pill">1 Jahr Komfort-Wartung</span>
+                            </div>
+                            <p class="preiskarte-detail-after">Danach optional: 59 €/Mo Komfort-Wartung</p>
+                            <p class="preiskarte-detail-target">Für: Einzelhändler, Coaches und Agenturen, die eine vollständige digitale Infrastruktur brauchen.</p>
+                        </div></div>
+                    </div>
+                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('premium')">Paket wählen &amp; Termin buchen <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+
+            <!-- ⑥ Cal.eu Inline Embed -->
+            <div class="preise-cal-wrap" id="preise-cal-wrap" data-aos="fade-up">
+                <div class="preise-cal-header">
+                    <div class="preise-cal-header-left">
+                        <h3>Kostenloses Erstgespräch buchen</h3>
+                        <p>30 Minuten &middot; kein Verkaufsdruck</p>
+                    </div>
+                    <span class="preise-cal-paket-badge" id="preiseCalBadge"></span>
+                </div>
+                <div id="cal-inline-preise"></div>
+                <div id="cal-inline-consent-hint" class="preise-cal-consent-hint">
+                    <i class="fas fa-calendar-days"></i>
+                    <p>Für die Terminbuchung bitte <button class="preise-cal-consent-btn" onclick="document.getElementById('cookieAccept').click();">Cookies akzeptieren</button></p>
+                </div>
+                <p class="preise-cal-datenschutz">Ihre Daten werden vertraulich behandelt. <a href="datenschutz.html" style="color:var(--primary);">Datenschutzerklärung</a></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GLOSSAR — Was steckt dahinter?
+         ═══════════════════════════════════════ -->
+    <section class="glossar" id="glossar">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Glossar</span>
+                <h2 class="section-title">Was steckt <span class="title-highlight">dahinter?</span></h2>
+                <p class="section-subtitle">Klare Antworten auf Fachbegriffe — damit Sie wissen, wofür Sie bezahlen.</p>
+            </div>
+            <div class="faq-grid" data-aos="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist DSGVO? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Die Datenschutz-Grundverordnung der EU schreibt vor, wie Websites mit Besucherdaten umgehen müssen. Ohne DSGVO-Konformität riskieren Sie Abmahnungen und Bußgelder. Wir richten alles korrekt ein — Datenschutzerklärung, Cookie-Hinweis, sichere Formulare.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist SSL-Verschlüsselung? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Das Schloss-Symbol in der Browser-Adressleiste (https://). Es zeigt, dass die Verbindung zwischen Besucher und Website verschlüsselt ist. Google bevorzugt SSL-Seiten im Ranking, Browser zeigen ohne SSL eine Warnung.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist SEO? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Suchmaschinenoptimierung — damit Ihre Website bei Google gefunden wird, wenn jemand nach Ihrem Angebot sucht. Wir schreiben Texte mit den richtigen Keywords, strukturieren die Seite technisch korrekt und tragen lokale Daten ein.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist Google My Business? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Ihr kostenloser Unternehmenseintrag bei Google — erscheint in der Kartenansicht und in der Seitenleiste, wenn jemand nach Ihnen sucht. Mit Öffnungszeiten, Fotos, Bewertungen und direktem Anruf-Button.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist Responsive Design? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Ihre Website passt sich automatisch an jede Bildschirmgröße an — Smartphone, Tablet, Desktop. Über 60% aller Website-Besuche kommen heute vom Handy.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist ein Terminbuchungssystem? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Ein Kalender auf Ihrer Website, über den Kunden selbst Termine buchen können — ohne Anruf, ohne Hin-und-Her. Sie sehen alle Buchungen in einer App und bekommen automatische Erinnerungen.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was sind KI-generierte Fotos? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Professionelle Bilder, die durch künstliche Intelligenz für Ihre Branche erstellt werden — ohne Fotoshooting, ohne Bildlizenz. Passend zu Ihrem Unternehmen und rechtlich unbedenklich.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist ein Content-Management-System (CMS)? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Ein CMS ermöglicht es Ihnen, Texte und Bilder auf Ihrer Website selbst zu ändern — ohne Programmierkenntnisse. Wie ein Word-Dokument, nur für Ihre Website.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was bedeutet "1. Jahr inklusive"? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Im ersten Jahr nach dem Start übernehmen wir Hosting, Domain-Einrichtung und SSL-Zertifikat ohne Aufpreis. Ab dem zweiten Jahr können Sie optional einen Wartungsvertrag abschließen — oder die Website selbst hosten.</div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Was ist Bewertungsmanagement? <span class="faq-toggle"></span></button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">Wir richten ein, dass zufriedene Kunden einfach eine Google-Bewertung hinterlassen können — z.B. per QR-Code oder Link. Mehr Bewertungen = besseres lokales Ranking = mehr Neukunden.</div></div></div>
                 </div>
             </div>
         </div>
@@ -5635,7 +6091,7 @@
                         <span class="faq-toggle"></span>
                     </button>
                     <div class="faq-answer"><div><div class="faq-answer-inner">
-                        Als junge Agentur bieten wir Neukunden 15 % Rabatt, wenn wir Ihre Website als Referenz zeigen dürfen. Gleiche Qualität, gleicher Service — einfach günstiger. Die Option können Sie im <a href="website-anfrage.html" style="color:var(--primary);text-decoration:underline;">Angebots-Assistent</a> direkt auswählen.
+                        Als junge Agentur bieten wir Neukunden 15 % Rabatt, wenn wir Ihre Website als Referenz zeigen dürfen. Gleiche Qualität, gleicher Service — einfach günstiger. Den Rabatt aktivieren Sie direkt <a href="#preise" style="color:var(--primary);text-decoration:underline;">in unserer Preisübersicht</a>.
                     </div></div></div>
                 </div>
             </div>
@@ -5823,12 +6279,12 @@
 
             <!-- Tier 2: Intent-Routing Cards -->
             <div class="contact-intents" data-aos="fade-up">
-                <a href="website-anfrage.html" class="contact-intent-card">
+                <a href="#preise" class="contact-intent-card">
                     <div class="contact-intent-icon"><i class="fas fa-sliders"></i></div>
                     <div>
-                        <div class="contact-intent-title">Website konfigurieren</div>
-                        <div class="contact-intent-desc">Paket zusammenstellen und sofort ein unverbindliches Angebot erhalten.</div>
-                        <div class="contact-intent-cta">Zum Angebots-Assistent <i class="fas fa-arrow-right"></i></div>
+                        <div class="contact-intent-title">Preise &amp; Pakete ansehen</div>
+                        <div class="contact-intent-desc">Festpreise vergleichen, Paket wählen und direkt Termin buchen.</div>
+                        <div class="contact-intent-cta">Zur Preisübersicht <i class="fas fa-arrow-right"></i></div>
                     </div>
                 </a>
                 <a href="#" data-cal-link="ww-webmanufaktur/erstgespraech" data-cal-config='{"layout":"month_view"}' class="contact-intent-card">
@@ -7852,7 +8308,100 @@
         window.addEventListener('resize', alignUeberUnsLogo);
     })();
 
+        // ─── Preise: Karten Expand/Collapse ───
+        document.querySelectorAll('.preiskarte-expand-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var karteId = this.getAttribute('data-karte');
+                var details = document.getElementById('details-' + karteId);
+                var isOpen = details.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.preiskarte-details').forEach(function(d) { d.classList.remove('open'); });
+                document.querySelectorAll('.preiskarte-expand-btn').forEach(function(b) { b.classList.remove('open'); });
+                // Open clicked (if wasn't already open)
+                if (!isOpen) {
+                    details.classList.add('open');
+                    btn.classList.add('open');
+                }
+            });
+        });
+
+        // ─── Preise: Referenzrabatt Toggle ───
+        var referenzPreise = {
+            starter:  { base: 699,  ref: 595,  baseStr: '699 €',   refStr: '595 €' },
+            business: { base: 990,  ref: 842,  baseStr: '990 €',   refStr: '842 €' },
+            premium:  { base: 1790, ref: 1522, baseStr: '1.790 €', refStr: '1.522 €' }
+        };
+        var referenzToggle = document.getElementById('referenzToggle');
+        if (referenzToggle) {
+            referenzToggle.addEventListener('change', function() {
+                var active = this.checked;
+                var badge = document.getElementById('referenzBadge');
+                if (badge) badge.classList.toggle('visible', active);
+                document.querySelectorAll('.preiskarte-amount').forEach(function(el) {
+                    var karte = el.closest('.preiskarte');
+                    if (!karte) return;
+                    var karteId = karte.id.replace('karte-', '');
+                    var p = referenzPreise[karteId];
+                    if (!p) return;
+                    var origEl = karte.querySelector('.preiskarte-orig');
+                    if (active) {
+                        el.textContent = p.refStr;
+                        el.classList.add('ref-active');
+                        if (origEl) { origEl.textContent = p.baseStr; origEl.style.display = 'inline'; }
+                    } else {
+                        el.textContent = p.baseStr;
+                        el.classList.remove('ref-active');
+                        if (origEl) { origEl.style.display = 'none'; }
+                    }
+                });
+            });
+        }
+
     }); // end DOMContentLoaded
+
+    // ─── Preise: Cal Inline Init ───
+    function initCalInlinePreise(notes) {
+        var el = document.getElementById('cal-inline-preise');
+        var hint = document.getElementById('cal-inline-consent-hint');
+        if (!el) return;
+        if (!window.Cal || !window._calLoaded) {
+            // Not loaded yet — show consent hint
+            if (hint) hint.style.display = 'block';
+            return;
+        }
+        if (hint) hint.style.display = 'none';
+        el.innerHTML = ''; // clear previous embed
+        var cfg = { layout: 'month_view' };
+        if (notes) cfg.notes = notes;
+        Cal('inline', {
+            elementOrSelector: '#cal-inline-preise',
+            calLink: 'ww-webmanufaktur/erstgespraech',
+            config: cfg
+        });
+    }
+
+    function selectPreispaket(paket) {
+        // Highlight selected card
+        document.querySelectorAll('.preiskarte').forEach(function(k) { k.classList.remove('selected'); });
+        var karte = document.getElementById('karte-' + paket);
+        if (karte) karte.classList.add('selected');
+        // Update Cal header badge
+        var namen = { starter: 'Starter', business: 'Business', premium: 'Premium' };
+        var badge = document.getElementById('preiseCalBadge');
+        if (badge) {
+            badge.textContent = 'Paket: ' + namen[paket];
+            badge.classList.add('visible');
+        }
+        // Reinit Cal with notes
+        initCalInlinePreise('Paket: ' + namen[paket]);
+        // Scroll to Cal embed
+        var calWrap = document.getElementById('preise-cal-wrap');
+        if (calWrap) {
+            setTimeout(function() {
+                calWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 80);
+        }
+    }
     </script>
 
     <!-- Cookie Banner -->
@@ -7882,6 +8431,7 @@
             (function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace]);}else p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.eu/embed/embed.js","init");
             Cal("init", {origin:"https://cal.eu"});
             Cal("ui", {"hideEventTypeDetails":false,"layout":"month_view","cssVarsPerTheme":{"light":{"cal-brand":"#A67C52"}}});
+            if (typeof initCalInlinePreise === 'function') setTimeout(initCalInlinePreise, 200);
         }
 
         if (consent === 'all') {
