@@ -323,11 +323,8 @@
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
 
-    <!-- Google Fonts async — non-render-blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    <!-- Font Awesome async — non-render-blocking -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome wird nach Preloader-Dismiss per JS geladen (verhindert Reflow während der Logo-Animation) -->
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -6562,10 +6559,22 @@
         // ─── Page Preloader (draw-on W animation) ───
         var preloader = document.getElementById('preloader');
         var pageLoaded = false;
+        var _faLoaded = false;
+        function loadFontAwesome() {
+            if (_faLoaded) return;
+            _faLoaded = true;
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+            document.head.appendChild(link);
+        }
         function dismissPreloader() {
             if (preloader && !preloader.classList.contains('done')) {
                 preloader.classList.add('done');
                 document.body.classList.remove('loading');
+                // Load Font Awesome after preloader fades out (600ms transition)
+                // so the icon reflow never interrupts the logo draw-on animation
+                setTimeout(loadFontAwesome, 650);
             }
         }
 
