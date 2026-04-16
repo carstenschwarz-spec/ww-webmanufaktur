@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /preview/
+Disallow: /branchen-showcase/
+Disallow: /assets/
 
 Sitemap: https://ww-webmanufaktur.de/sitemap.xml
