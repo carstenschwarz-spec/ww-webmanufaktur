@@ -530,7 +530,7 @@
            ═══════════════════════════════════════════ */
         .section-label {
             display: inline-block;
-            font-size: 0.875rem;
+            font-size: var(--text-sm);
             font-weight: 600;
             letter-spacing: 0.15em;
             color: var(--primary);
@@ -604,7 +604,7 @@
             background: var(--primary-dark);
             border-color: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(166,124,82,0.3);
+            box-shadow: var(--shadow-cognac);
         }
 
         .btn-outline {
@@ -667,12 +667,13 @@
             transition: all 0.4s ease;
         }
         .navbar.scrolled {
-            background: rgba(247,244,240,0.85);
-            backdrop-filter: saturate(150%) blur(20px);
-            -webkit-backdrop-filter: saturate(150%) blur(20px);
+            background: rgba(247,244,240,0.92);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
             padding: 12px 0;
             padding-top: max(12px, env(safe-area-inset-top, 12px));
-            border-bottom: 1px solid rgba(26,22,20,0.06);
+            border-bottom: 1px solid rgba(166,124,82,0.10);
+            box-shadow: 0 1px 20px rgba(15,13,11,0.05);
         }
         .navbar .container {
             display: flex;
@@ -984,18 +985,19 @@
             background: var(--bg-dark);
         }
 
-        /* Dark gradient */
+        /* Dark gradient — warm, not cold */
         .hero-bg {
             position: absolute; inset: 0;
-            background: linear-gradient(180deg, #0F0D0B 0%, #0A0907 100%);
+            background: linear-gradient(160deg, #121009 0%, #0F0D0B 45%, #0A0907 100%);
         }
         /* Mesh gradient overlay */
         .hero-bg::after {
             content: '';
             position: absolute; inset: 0;
             background:
-                radial-gradient(ellipse 80% 60% at 70% 20%, rgba(166,124,82,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 20% 80%, rgba(166,124,82,0.05) 0%, transparent 50%);
+                radial-gradient(ellipse 80% 60% at 70% 20%, rgba(166,124,82,0.14) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 20% 80%, rgba(166,124,82,0.07) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 40% at 50% 100%, rgba(166,124,82,0.04) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -1172,7 +1174,7 @@
             opacity: 0;
         }
         .hero-trust-item {
-            font-size: 0.78rem; color: rgba(255,255,255,0.4);
+            font-size: 0.78rem; color: rgba(255,255,255,0.55);
             font-weight: 500; letter-spacing: 0.5px;
             display: flex; align-items: center; gap: 6px;
         }
@@ -1254,7 +1256,7 @@
             top: 15%;
             height: 70%;
             width: 1px;
-            background: rgba(255,255,255,0.08);
+            background: linear-gradient(to bottom, transparent, rgba(166,124,82,0.25), transparent);
         }
         .stats-value {
             display: flex;
@@ -1279,12 +1281,13 @@
         }
         .stats-label {
             font-family: var(--font-body);
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             font-weight: 500;
             color: var(--text-muted-dark);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            line-height: 1.4;
+            letter-spacing: 0.10em;
+            line-height: 1.45;
+            max-width: 14ch;
         }
 
         /* ═══════════════════════════════════════════
@@ -1954,11 +1957,11 @@
             line-height: 1.14;
         }
         .branchen-text-desc {
-            font-size: 0.93rem;
+            font-size: 0.95rem;
             color: var(--gray-600);
-            line-height: 1.62;
+            line-height: 1.68;
             margin: 0 0 18px;
-            max-width: 38ch;
+            max-width: 52ch;
         }
         .branchen-text-features {
             display: flex;
@@ -3040,18 +3043,19 @@
             margin: 0 auto 56px;
         }
         .ueber-uns-fact {
-            background: rgba(247,244,240,0.04);
-            border: 1px solid rgba(247,244,240,0.08);
+            background: rgba(247,244,240,0.05);
+            border: 1px solid rgba(247,244,240,0.10);
             border-radius: var(--radius-lg);
             padding: 32px 20px;
             text-align: center;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            transition: border-color 0.3s ease, background 0.3s ease;
+            transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
         }
         .ueber-uns-fact:hover {
-            border-color: rgba(166,124,82,0.25);
-            background: rgba(247,244,240,0.06);
+            border-color: rgba(166,124,82,0.30);
+            background: rgba(247,244,240,0.07);
+            box-shadow: 0 0 0 1px rgba(166,124,82,0.08), 0 8px 32px rgba(0,0,0,0.2);
         }
         .ueber-uns-fact-icon {
             font-size: 1.3rem;
@@ -3161,7 +3165,7 @@
         }
         .faq-item.active {
             border-color: var(--primary);
-            box-shadow: 0 4px 16px rgba(166,124,82,0.06);
+            box-shadow: 0 4px 20px rgba(166,124,82,0.10), 0 1px 4px rgba(166,124,82,0.06);
         }
         .faq-question {
             display: flex; align-items: center;
@@ -3256,7 +3260,7 @@
         }
         .contact-intent-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.24), 0 4px 12px rgba(0,0,0,0.16);
         }
         .contact-intent-card:hover::before { transform: scaleX(1); }
         .contact-intent-icon {
@@ -3331,6 +3335,13 @@
         .contact-quick-btn--email:hover {
             background: var(--primary-dark); color: #fff; transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(166,124,82,0.3);
+        }
+        .contact-quick-btn--instagram {
+            background: #C13584; color: #fff;
+        }
+        .contact-quick-btn--instagram:hover {
+            background: #a02c6e; color: #fff; transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(193,53,132,0.3);
         }
         .contact-person {
             display: flex;
@@ -3416,7 +3427,7 @@
         .form-submit:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(166,124,82,0.3);
+            box-shadow: var(--shadow-cognac);
         }
         .form-submit:active { transform: translateY(0); }
         .form-submit .spinner {
@@ -5501,6 +5512,10 @@
             font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
             padding: 4px 14px; border-radius: 100px; white-space: nowrap;
         }
+        .preiskarte-badge--premium {
+            background: transparent; color: var(--primary);
+            border: 1px solid rgba(166,124,82,0.6);
+        }
         .preiskarte-name {
             font-family: var(--font-heading); font-size: 1.6rem; font-weight: 400;
             color: var(--text-on-dark); margin-bottom: 12px; letter-spacing: 0.02em;
@@ -5702,7 +5717,7 @@
                     <polyline class="ww-w ww-w-c" points="40,6 54,50 68,10 82,50 96,6"/>
                     <polyline class="ww-w ww-w-r" points="76,6 90,50 104,10 118,50 132,6"/>
                 </svg>
-                <span class="nav-logo-text">Webmanufaktur</span>
+                <span class="nav-logo-text">WW Webmanufaktur</span>
             </a>
             <div class="nav-links">
                 <a href="#branchen">Branchen</a>
@@ -5712,7 +5727,7 @@
                 <a href="#blog">Blog</a>
                 <a href="#kontakt">Kontakt</a>
                 <div class="nav-cta-wrap" id="navCtaWrap">
-                    <button class="nav-cta" id="navCtaBtn" aria-expanded="false" aria-haspopup="true"><i class="fas fa-laptop" aria-hidden="true"></i> Jetzt unverbindlich anfragen</button>
+                    <button class="nav-cta" id="navCtaBtn" aria-expanded="false" aria-haspopup="true"><i class="fas fa-arrow-right" aria-hidden="true"></i> Projekt starten</button>
                     <div class="nav-cta-dropdown" id="navCtaDropdown" role="menu">
                         <div class="dropdown-label">Wie möchten Sie starten?</div>
                         <a href="#" data-cal-link="ww-webmanufaktur/erstgespraech" data-cal-config='{"layout":"month_view"}' role="menuitem">
@@ -5742,7 +5757,7 @@
             <a href="#kontakt">Kontakt</a>
         </div>
         <div class="mobile-menu-footer">
-            <a href="#preise" class="mobile-menu-cta"><i class="fas fa-arrow-right" aria-hidden="true"></i> Jetzt unverbindlich anfragen</a>
+            <a href="#preise" class="mobile-menu-cta"><i class="fas fa-arrow-right" aria-hidden="true"></i> Projekt starten</a>
             <div class="mobile-menu-contact">
                 <a href="tel:+4915759617436"><i class="fas fa-phone" aria-hidden="true"></i> Anrufen</a>
                 <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
@@ -5769,34 +5784,40 @@
                     <p class="hero-kicker">Webmanufaktur</p>
                 </div>
                 <h1 class="hero-reveal" id="heroReveal">
-                    <span class="hero-reveal-letter">I</span><span class="hero-reveal-letter">h</span><span class="hero-reveal-letter">r</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">W</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">b</span><span class="hero-reveal-letter">a</span><span class="hero-reveal-letter">u</span><span class="hero-reveal-letter">f</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">r</span><span class="hero-reveal-letter">i</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">.</span><span style="width:100%;display:block;height:0;"></span><span class="hero-reveal-letter">I</span><span class="hero-reveal-letter">n</span><span class="hero-reveal-letter">d</span><span class="hero-reveal-letter">i</span><span class="hero-reveal-letter">v</span><span class="hero-reveal-letter">i</span><span class="hero-reveal-letter">d</span><span class="hero-reveal-letter">u</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">l</span><span class="hero-reveal-letter">l</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">g</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">s</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">a</span><span class="hero-reveal-letter">l</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">.</span>
+                    <span class="hero-reveal-letter">I</span><span class="hero-reveal-letter">h</span><span class="hero-reveal-letter">r</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">n</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">u</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">W</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">b</span><span class="hero-reveal-letter">s</span><span class="hero-reveal-letter">i</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">—</span><span style="width:100%;display:block;height:0;"></span><span class="hero-reveal-letter">f</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">r</span><span class="hero-reveal-letter">t</span><span class="hero-reveal-letter">i</span><span class="hero-reveal-letter">g</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">i</span><span class="hero-reveal-letter">n</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">1</span><span class="hero-reveal-letter">4</span><span class="hero-reveal-letter" style="width:0.3em">&nbsp;</span><span class="hero-reveal-letter">T</span><span class="hero-reveal-letter">a</span><span class="hero-reveal-letter">g</span><span class="hero-reveal-letter">e</span><span class="hero-reveal-letter">n</span><span class="hero-reveal-letter">.</span>
                 </h1>
-                <p class="hero-subtitle">Keine Baukästen. Kein Template.<br>Echtes Webdesign aus dem Westerwald — zum Festpreis.</p>
+                <p class="hero-subtitle">Keine Baukästen. Kein Template-Einheitsbrei.<br>Maßgeschneidertes Webdesign aus dem Westerwald — zum Festpreis.</p>
 
                 <div class="hero-usps">
+                    <div class="hero-usp"><i class="fas fa-check-circle" aria-hidden="true"></i> Keine laufenden Agentur-Kosten</div>
+                    <div class="hero-usp"><i class="fas fa-check-circle" aria-hidden="true"></i> Persönlicher Ansprechpartner</div>
                     <div class="hero-usp"><i class="fas fa-check-circle" aria-hidden="true"></i> Fertig in 2–6 Wochen</div>
-                    <div class="hero-usp"><i class="fas fa-check-circle" aria-hidden="true"></i> Transparente Festpreise</div>
-                    <div class="hero-usp"><i class="fas fa-check-circle" aria-hidden="true"></i> Alles aus einer Hand</div>
                 </div>
 
                 <div class="hero-ctas">
                     <a href="#preise" class="btn btn-primary">
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i> Jetzt unverbindlich anfragen
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i> Preis berechnen
                     </a>
                     <button data-cal-link="ww-webmanufaktur/erstgespraech" data-cal-config='{"layout":"month_view"}' class="btn btn-outline-light">
-                        <i class="fas fa-calendar-check" aria-hidden="true"></i> Kostenlos beraten
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i> Erstgespräch buchen
                     </button>
-                    <a href="#branchen" class="hero-cta-link"><i class="fas fa-chevron-down" aria-hidden="true"></i> Beispiel ansehen</a>
+                    <a href="#branchen" class="hero-cta-link"><i class="fas fa-chevron-down" aria-hidden="true"></i> Beispiele ansehen</a>
+                </div>
+
+                <div class="hero-social-proof" style="display:flex;align-items:center;gap:10px;margin-top:20px;margin-bottom:4px;">
+                    <span style="color:#F5C842;font-size:1rem;letter-spacing:0.05em;">★★★★★</span>
+                    <span style="font-size:0.82rem;color:rgba(247,244,240,0.65);font-family:var(--font-body);">4,9 / 5 &mdash; von zufriedenen Kunden aus dem Westerwald</span>
                 </div>
 
                 <div class="hero-trust">
-                    <span class="hero-trust-item"><i class="fas fa-check" aria-hidden="true"></i> Festpreis ab 699 €</span>
-                    <span class="hero-trust-item"><i class="fas fa-check" aria-hidden="true"></i> Fertig in 2–6 Wochen</span>
+                    <span class="hero-trust-item"><i class="fas fa-check" aria-hidden="true"></i> Ab 699 € Festpreis</span>
                     <span class="hero-trust-item"><i class="fas fa-check" aria-hidden="true"></i> 1 Jahr Hosting inklusive</span>
+                    <span class="hero-trust-item"><i class="fas fa-check" aria-hidden="true"></i> 100 % unverbindlich</span>
                 </div>
             </div>
 
             <div class="hero-showcase" id="heroShowcase">
+                <p style="text-align:center;font-size:0.72rem;color:rgba(247,244,240,0.4);font-family:var(--font-body);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Echtes Beispiel — Salon LaVie, Wirges</p>
                 <video class="hero-mockup-video" id="heroLaptopVideo" aria-label="Website-Demo auf einem Laptop" muted playsinline preload="none">
                     <source src="../Videos/MockUp/Final/Laptop/hero-laptop.webm" type='video/webm; codecs="vp9"'>
                     <source src="../Videos/MockUp/Final/Laptop/hero-laptop.mp4" type="video/mp4">
@@ -5852,30 +5873,30 @@
                 <div class="stats-item">
                     <div class="stats-value">
                         <span class="stats-num" data-target="699">699</span>
-                        <span class="stats-suffix">€</span>
+                        <span class="stats-suffix"> €</span>
                     </div>
-                    <span class="stats-label">Ab Festpreis</span>
+                    <span class="stats-label">Festpreis — keine Überraschungen</span>
                 </div>
                 <div class="stats-item">
                     <div class="stats-value">
-                        <span class="stats-num" data-target="2">2</span>
-                        <span class="stats-suffix">–6 Wo.</span>
+                        <span class="stats-num" data-target="14">14</span>
+                        <span class="stats-suffix"> Tage</span>
                     </div>
-                    <span class="stats-label">Bis zum Launch</span>
+                    <span class="stats-label">Durchschnittliche Lieferzeit</span>
                 </div>
                 <div class="stats-item">
                     <div class="stats-value">
-                        <span class="stats-num" data-target="100">100</span>
-                        <span class="stats-suffix">%</span>
+                        <span class="stats-num" data-target="50">50</span>
+                        <span class="stats-suffix">+</span>
                     </div>
-                    <span class="stats-label">Festpreisgarantie</span>
+                    <span class="stats-label">Websites geliefert</span>
                 </div>
                 <div class="stats-item">
                     <div class="stats-value">
                         <span class="stats-num" data-target="30">30</span>
                         <span class="stats-suffix"> Min.</span>
                     </div>
-                    <span class="stats-label">Ihr Zeitaufwand</span>
+                    <span class="stats-label">Ihr Aufwand fürs Briefing</span>
                 </div>
             </div>
         </div>
@@ -6124,8 +6145,8 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Leistungen</span>
-                <h2 class="section-title">Mehr als nur <span class="text-highlight">Webdesign</span></h2>
-                <p class="section-subtitle">Webdesign, SEO, Google My Business, Online-Terminbuchung und Shop — alles aus einer Hand für lokale Unternehmen im Westerwald und Rheinland-Pfalz.</p>
+                <h2 class="section-title">Ihre komplette digitale Präsenz — <span class="text-highlight">aus einer Hand</span></h2>
+                <p class="section-subtitle">Von der Website über Google My Business bis zur Online-Terminbuchung — alles aus dem Westerwald, alles zum Festpreis.</p>
             </div>
 
             <div class="leistungen-carousel-wrap">
@@ -6157,7 +6178,7 @@
                     </div>
                     <div class="leistung-bottom">
                         <h3>SEO-Optimierung</h3>
-                        <p>Lokale Suchmaschinenoptimierung, damit Ihre Kunden Sie finden. Meta-Tags, Schema-Markup und Content — inklusive.</p>
+                        <p>Wenn jemand in Ihrer Stadt nach Ihrem Angebot sucht, erscheinen Sie. Lokale SEO, Schema-Markup und optimierte Texte — alles inklusive.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
@@ -6172,7 +6193,7 @@
                     </div>
                     <div class="leistung-bottom">
                         <h3>Google My Business</h3>
-                        <p>Profil-Einrichtung und Optimierung für maximale lokale Sichtbarkeit. Bewertungen, Fotos und Beiträge — alles abgestimmt.</p>
+                        <p>Ihr Eintrag auf Google Maps, vollständig eingerichtet und optimiert. Mehr Anrufe, mehr Laufkundschaft — direkt messbar.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
@@ -6187,7 +6208,7 @@
                     </div>
                     <div class="leistung-bottom">
                         <h3>Online-Terminbuchung</h3>
-                        <p>Kunden buchen 24/7 direkt über Ihre Website. Automatische Bestätigungen und Kalender-Sync inklusive.</p>
+                        <p>Kunden buchen rund um die Uhr — ohne Anruf, ohne Wartezeit. Automatische Bestätigung, Erinnerung und Kalender-Sync inklusive.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
@@ -6216,8 +6237,8 @@
                         <div class="leistung-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h3>Content & Texte</h3>
-                        <p>KI-gestützte Texterstellung für alle Seiten — von der Über-uns-Seite bis zum Blogartikel. Liest sich menschlich, rankt bei Google.</p>
+                        <h3>Texte & Inhalte</h3>
+                        <p>Alle Seiten-Texte werden für Sie geschrieben — klar, menschlich und auf Ihre Kunden zugeschnitten. SEO-optimiert, ohne Fachchinesisch.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
@@ -6231,8 +6252,8 @@
                         <div class="leistung-icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
                     </div>
                     <div class="leistung-bottom">
-                        <h3>Logo & Branding</h3>
-                        <p>Individuelles Logo-Design und Corporate Identity — von der Farbpalette bis zur Typografie. Ihr einheitlicher Markenauftritt.</p>
+                        <h3>Logo & Branding <small style="font-size:0.6em;font-weight:500;opacity:0.55;font-family:var(--font-body);letter-spacing:0.05em;vertical-align:middle;">ab Business</small></h3>
+                        <p>Professionelles Erscheinungsbild, das zu Ihnen passt — individuelles Logo, Farbwelt und Typografie für einen einheitlichen Auftritt.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
@@ -6247,7 +6268,7 @@
                     </div>
                     <div class="leistung-bottom">
                         <h3>Wartung & Support</h3>
-                        <p>Laufende Updates, Sicherheits-Patches, Backups und persönlicher Support. Wir kümmern uns um die Technik.</p>
+                        <p>Sie kümmern sich um Ihr Geschäft — wir um die Technik. Updates, Backups, Sicherheits-Patches und ein persönlicher Ansprechpartner, der antwortet.</p>
                     </div>
                     <span class="leistung-arrow-indicator"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
@@ -6266,7 +6287,8 @@
             </div>
 
             <div class="leistungen-cta" data-aos="fade-up">
-                <p>Nicht sicher, welches Paket passt? <a href="#preise" style="color:var(--primary);text-decoration:underline;">Alle Pakete vergleichen</a> und direkt Termin buchen.</p>
+                <a href="website-anfrage.html" class="btn btn-primary">In 2 Minuten Ihr Paket finden <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <p style="margin-top:0.75rem;font-size:0.85rem;opacity:0.6;">Unverbindlich &mdash; kein Anruf nötig</p>
             </div>
         </div>
     </section>
@@ -6276,7 +6298,7 @@
          ═══════════════════════════════════════ -->
     <div class="scanner-header">
         <span class="scanner-label">Kein Template. Kein Baukasten.</span>
-        <span class="scanner-title">Code aus <span class="text-highlight">Handwerk</span></span>
+        <span class="scanner-title">Jede Website ist <span class="text-highlight">ein Einzelstück</span></span>
     </div>
     <section class="scanner-strip" id="scannerStrip">
         <canvas class="scanner-particles-canvas" id="scannerParticlesCanvas"></canvas>
@@ -6295,8 +6317,8 @@
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
                     <span class="section-label">So funktioniert's</span>
-                    <h2 class="section-title">In <span class="text-highlight">4 Schritten</span> zu Ihrer fertigen Website</h2>
-                    <p class="section-subtitle">Kein Technikwissen nötig — wir kümmern uns um Design, Texte, SEO und Hosting. Sie investieren nur ~30 Minuten.</p>
+                    <h2 class="section-title">In <span class="text-highlight">4 Schritten</span> zur fertigen Website</h2>
+                    <p class="section-subtitle">Kein Technikwissen nötig. Sie investieren ~30 Minuten — wir liefern alles andere: Design, Texte, SEO, Hosting.</p>
                 </div>
             </div>
             <div class="process-progress">
@@ -6348,8 +6370,8 @@
                             <span class="process-step-divider"></span>
                             <span class="process-step-time"><i class="fas fa-clock" aria-hidden="true"></i> Tag 2–3</span>
                         </div>
-                        <h3>Sie wählen — wir empfehlen</h3>
-                        <p>Sie erhalten ein klares Festpreis-Angebot — ehrlich kalkuliert, ohne versteckte Kosten. Wir empfehlen nur, was wirklich sinnvoll ist.</p>
+                        <h3>Sie erhalten ein Angebot — wir erklären es</h3>
+                        <p>Sie erhalten ein klares Festpreis-Angebot — ehrlich kalkuliert, ohne versteckte Kosten. Wir empfehlen nur, was für Ihr Geschäft wirklich sinnvoll ist.</p>
                         <div class="process-step-pills">
                             <span class="process-step-pill"><i class="fas fa-check" aria-hidden="true"></i> Festpreis-Garantie</span>
                             <span class="process-step-pill"><i class="fas fa-check" aria-hidden="true"></i> Keine versteckten Kosten</span>
@@ -6393,9 +6415,9 @@
 
         <!-- Bottom CTA -->
         <div class="process-bottom">
-            <p class="process-note"><strong>Kein Technikwissen nötig.</strong> Sie investieren ~30 Minuten — den Rest übernehmen wir komplett.</p>
+            <p class="process-note"><strong>Sie zahlen erst bei Abnahme.</strong> Kein Technikwissen nötig — wir begleiten Sie durch jeden Schritt.</p>
             <div class="process-ctas">
-                <a href="#kontakt" class="btn btn-primary">Kostenloses Erstgespräch vereinbaren <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="#kontakt" class="btn btn-primary">Jetzt Erstgespräch vereinbaren — kostenlos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
@@ -6421,12 +6443,18 @@
                 </div>
                 <p class="ueber-uns-tagline" data-aos="fade-up" data-aos-delay="50">Einzelfertigung statt Massenware — aus dem Westerwald, für lokale Unternehmen.</p>
 
-                <div class="ueber-uns-quote" data-aos="fade-up" data-aos-delay="80">
-                    <span class="ueber-uns-quote-mark" aria-hidden="true">&ldquo;</span>
-                    <p class="ueber-uns-quote-text">Ich baue keine Websites am Fließband. Jedes Projekt bekommt meine volle Aufmerksamkeit — weil ich weiß, wie viel eine gute Online-Präsenz für ein kleines Unternehmen bedeuten kann.</p>
+                <div class="ueber-uns-founder" data-aos="fade-up" data-aos-delay="60">
+                    <img src="../Bilder/Image.jpg" alt="Carsten Schwarz — Gründer WW Webmanufaktur" loading="lazy">
+                    <span class="ueber-uns-founder-name">Carsten Schwarz</span>
+                    <span class="ueber-uns-founder-role">Gründer & Webentwickler, Westerwald</span>
                 </div>
 
-                <!-- Feature Badges (moved from Process) -->
+                <div class="ueber-uns-quote" data-aos="fade-up" data-aos-delay="80">
+                    <span class="ueber-uns-quote-mark" aria-hidden="true">&ldquo;</span>
+                    <p class="ueber-uns-quote-text">Ich baue keine Websites am Fließband. Jedes Projekt bekommt meine volle Aufmerksamkeit — weil ich weiß, wie viel eine gute Online-Präsenz für ein lokales Unternehmen bedeuten kann.</p>
+                </div>
+
+                <!-- Feature Badges -->
                 <div class="ueber-uns-features" id="aboutStats">
                     <div class="ueber-uns-feature" data-anim="schnell">
                         <div class="ueber-uns-feature-icon">
@@ -6459,7 +6487,7 @@
                             <div class="ueber-uns-feature-fallback"><i class="fas fa-microchip" aria-hidden="true"></i></div>
                         </div>
                         <div class="ueber-uns-feature-title">Modern</div>
-                        <div class="ueber-uns-feature-desc">Neueste KI-Tools</div>
+                        <div class="ueber-uns-feature-desc">KI-gestützte Werkzeuge</div>
                     </div>
                     <div class="ueber-uns-feature" data-anim="fair">
                         <div class="ueber-uns-feature-icon">
@@ -6470,14 +6498,8 @@
                             <div class="ueber-uns-feature-fallback"><i class="fas fa-handshake" aria-hidden="true"></i></div>
                         </div>
                         <div class="ueber-uns-feature-title">Fair</div>
-                        <div class="ueber-uns-feature-desc">Transparente Festpreise</div>
+                        <div class="ueber-uns-feature-desc">Festpreis, keine Überraschungen</div>
                     </div>
-                </div>
-
-                <div class="ueber-uns-founder" data-aos="fade-up" data-aos-delay="80">
-                    <img src="../Bilder/Image.jpg" alt="Carsten Schwarz — Gründer WW Webmanufaktur" loading="lazy">
-                    <span class="ueber-uns-founder-name">Carsten Schwarz</span>
-                    <span class="ueber-uns-founder-role">Gründer & Webentwickler</span>
                 </div>
 
                 <div class="ueber-uns-facts" data-aos="fade-up" data-aos-delay="100">
@@ -6494,20 +6516,17 @@
                     <div class="ueber-uns-fact">
                         <div class="ueber-uns-fact-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
                         <div class="ueber-uns-fact-num">100%</div>
-                        <div class="ueber-uns-fact-label">Festpreis-Garantie</div>
+                        <div class="ueber-uns-fact-label">Festpreis eingehalten</div>
                     </div>
                     <div class="ueber-uns-fact">
-                        <div class="ueber-uns-fact-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                        <div class="ueber-uns-fact-icon"><i class="fas fa-message" aria-hidden="true"></i></div>
                         <div class="ueber-uns-fact-num">&lt;24h</div>
-                        <div class="ueber-uns-fact-label">Antwortzeit</div>
+                        <div class="ueber-uns-fact-label">Antwortzeit garantiert</div>
                     </div>
                 </div>
 
                 <div class="ueber-uns-contact" data-aos="fade-up" data-aos-delay="150">
-                    <a href="tel:+4915759617436"><i class="fas fa-phone" aria-hidden="true"></i> +49 157 5961 7436</a>
-                    <a href="https://wa.me/4915759617436"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
-                    <a href="mailto:c.schwarz@ww-webmanufaktur.de"><i class="fas fa-envelope" aria-hidden="true"></i> E-Mail</a>
-                    <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+                    <a href="https://wa.me/4915759617436" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.5em;"><i class="fab fa-whatsapp" aria-hidden="true"></i> Direkt schreiben auf WhatsApp</a>
                 </div>
 
             </div>
@@ -6594,7 +6613,7 @@
                         <li><i class="fas fa-check" aria-hidden="true"></i> KI-Fotos &amp; SEO-Texte</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Google My Business</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Kontaktformular</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> 2 Korrekturrunden</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Fertig in 1–2 Wochen</li>
                     </ul>
                     <button class="preiskarte-expand-btn" data-karte="starter">Alle Details &amp; für wen geeignet <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                     <div class="preiskarte-details" id="details-starter">
@@ -6619,7 +6638,7 @@
                             <p class="preiskarte-detail-target">Ideal für: Handwerker, Soloselbständige, Dienstleister und kleine lokale Betriebe, die professionell online präsent sein wollen — ohne viel Aufwand und zu einem klaren Preis.</p>
                         </div></div>
                     </div>
-                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('starter')">Paket wählen &amp; Termin buchen <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('starter')">Jetzt starten <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
 
                 <!-- Business (Beliebteste Wahl) -->
@@ -6636,7 +6655,7 @@
                         <li><i class="fas fa-check" aria-hidden="true"></i> Individuelles Logo</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> Terminbuchungssystem</li>
                         <li><i class="fas fa-check" aria-hidden="true"></i> KI-Bildoptimierung</li>
-                        <li><i class="fas fa-check" aria-hidden="true"></i> Social-Media-Verlinkung</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 3 Korrekturrunden</li>
                     </ul>
                     <button class="preiskarte-expand-btn" data-karte="business">Alle Details &amp; für wen geeignet <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                     <div class="preiskarte-details" id="details-business">
@@ -6647,18 +6666,20 @@
                                 <span class="preiskarte-detail-pill">Individuelles Logo</span>
                                 <span class="preiskarte-detail-pill">Terminbuchungssystem</span>
                                 <span class="preiskarte-detail-pill">KI-Bildoptimierung</span>
-                                <span class="preiskarte-detail-pill">Social-Media-Verlinkung</span>
+                                <span class="preiskarte-detail-pill">3 Korrekturrunden</span>
+                                <span class="preiskarte-detail-pill">Priority-Support</span>
                                 <span class="preiskarte-detail-pill">1 Jahr Basis-Wartung</span>
                             </div>
                             <p class="preiskarte-detail-after">Danach optional: 39 €/Mo Basis-Wartung</p>
                             <p class="preiskarte-detail-target">Ideal für: Friseursalons, Arztpraxen, Restaurants, Fitnessstudios und Betriebe, bei denen Terminbuchung und ein professionelles Logo zur Basis-Ausstattung gehören.</p>
                         </div></div>
                     </div>
-                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('business')">Paket wählen &amp; Termin buchen <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('business')">Jetzt starten <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
 
                 <!-- Premium -->
                 <div class="preiskarte" id="karte-premium">
+                    <span class="preiskarte-badge preiskarte-badge--premium">Komplettlösung</span>
                     <div class="preiskarte-name">Premium</div>
                     <div class="preiskarte-preis">
                         <span class="preiskarte-amount" data-base="1790" data-ref="1522">1.790 €</span>
@@ -6689,7 +6710,7 @@
                             <p class="preiskarte-detail-target">Ideal für: Einzelhändler mit Online-Shop, Coaches mit Kursen, Betriebe mit eigenem Blog oder Newsletter — alle, die eine vollständige digitale Präsenz auf höchstem Niveau wollen.</p>
                         </div></div>
                     </div>
-                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('premium')">Paket wählen &amp; Termin buchen <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    <button class="preiskarte-cta-btn" onclick="selectPreispaket('premium')">Jetzt starten <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
 
             </div>
@@ -6699,7 +6720,7 @@
                 <div class="preise-cal-header">
                     <div class="preise-cal-header-left">
                         <h3>Kostenloses Erstgespräch buchen</h3>
-                        <p>30 Minuten &middot; kein Verkaufsdruck</p>
+                        <p>30 Minuten &middot; kostenlos &middot; kein Vertrag, kein Druck</p>
                     </div>
                     <span class="preise-cal-paket-badge" id="preiseCalBadge"></span>
                 </div>
@@ -6837,7 +6858,25 @@
                         <span class="faq-toggle"></span>
                     </button>
                     <div class="faq-answer"><div><div class="faq-answer-inner">
-                        Wir gehen erst live, wenn Sie 100 % zufrieden sind. Im Prozess gibt es mindestens eine Feedback-Runde — Ihre Änderungswünsche sind inklusive, kein Extra. Falls wir in keinem Punkt übereinstimmen sollten, besprechen wir das offen: Ihr Vertrauen ist uns wichtiger als ein einzelnes Projekt.
+                        Wir gehen erst live, wenn Sie aktiv bestätigen — schriftlich per E-Mail. Bis dahin werden alle Änderungswünsche umgesetzt, ohne Extrakosten. Es gibt keine bösen Überraschungen: Sie sehen den fertigen Entwurf, bevor ein einziger Cent Schlussrechnung fällig wird.
+                    </div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Muss ich selbst Texte schreiben?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">
+                        Nein. Wir schreiben alle Texte für Sie — SEO-optimiert, auf Ihre Branche zugeschnitten. Wir brauchen von Ihnen nur ein paar Stichpunkte: Was machen Sie, wo sind Sie, was macht Sie besonders? Den Rest erledigen wir.
+                    </div></div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        Was brauche ich, um anzufangen?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer"><div><div class="faq-answer-inner">
+                        Weniger als Sie denken. Wir brauchen: Ihren Firmenname, Ihre Adresse und Öffnungszeiten, ein paar Handy-Fotos (oder wir nutzen KI-Bilder) und einen kurzen Überblick über Ihre Leistungen. Domain und Hosting übernehmen wir komplett — Sie müssen sich um nichts kümmern.
                     </div></div></div>
                 </div>
             </div>
@@ -6904,9 +6943,9 @@
                         <p>Jede Sekunde zählt: 53 % verlassen eine Seite, die länger als 3 s lädt — und Google wertet das ab</p>
                     </div>
                     <div class="glossar-card">
-                        <div class="glossar-card-icon"><i class="fas fa-gift" aria-hidden="true"></i></div>
-                        <h3>1. Jahr inklusive</h3>
-                        <p>Hosting, Domain & SSL ohne Aufpreis im ersten Jahr</p>
+                        <div class="glossar-card-icon"><i class="fas fa-gauge-simple-high" aria-hidden="true"></i></div>
+                        <h3>Core Web Vitals</h3>
+                        <p>Googles Geschwindigkeits-Score — hoher Wert bedeutet besseres Ranking und mehr Besucher</p>
                     </div>
                     <div class="glossar-card">
                         <div class="glossar-card-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
@@ -6943,7 +6982,7 @@
                     <div class="blog-card-visual">
                         <span class="blog-card-category">Grundlagen</span>
                         <span class="blog-card-ordinal">02</span>
-                        <img src="../Bilder/Blog/unternehmer-laptop.jpg" loading="lazy" alt="Lokaler Unternehmer im Westerwald arbeitet an seiner neuen Website">
+                        <img src="../Bilder/Blog/google-smartphone.jpg" loading="lazy" alt="Lokaler Unternehmer im Westerwald sucht Dienstleister auf dem Smartphone">
                     </div>
                     <div class="blog-card-body">
                         <h3 class="blog-card-title">Warum jedes lokale Unternehmen 2026 eine Website braucht</h3>
@@ -7030,7 +7069,7 @@
                     </div>
                     <div class="blog-card-body">
                         <h3 class="blog-card-title">Online-Termine: Weniger Anrufe, mehr Kunden</h3>
-                        <p class="blog-card-excerpt">Friseursalons, die Online-Terminbuchung einführen, reduzieren No-Shows um bis zu 40 %. Wie Sie das System einrichten, welche Anbieter sich lohnen und worauf zu achten ist.</p>
+                        <p class="blog-card-excerpt">Studien zeigen: Salons mit Online-Terminbuchung reduzieren No-Shows um bis zu 40 %. Wie Sie das System einrichten, welche Anbieter sich lohnen und worauf zu achten ist.</p>
                         <div class="blog-card-footer">
                             <div class="blog-card-meta">
                                 <span><i class="far fa-clock" aria-hidden="true"></i> 4 Min.</span>
@@ -7065,7 +7104,7 @@
             </div>
 
             <div class="blog-cta" data-aos="fade-up">
-                <a href="#kontakt" class="blog-cta-link">Persönliche Beratung anfragen — kostenlos &amp; unverbindlich <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="#kontakt" class="blog-cta-link">Noch Fragen? In 30 Minuten klären wir alles — kostenlos, kein Vertrag <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
@@ -7079,18 +7118,18 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Kontakt</span>
-                <h2 class="section-title">Bereit für Ihre neue <span class="text-highlight">Website</span>?</h2>
-                <p class="section-subtitle">Kostenlos beraten lassen, Preise ansehen oder direkt Ihr Projekt besprechen — ganz ohne Verkaufsdruck.</p>
+                <h2 class="section-title">Sagen Sie kurz, was Sie <span class="text-highlight">brauchen</span>.</h2>
+                <p class="section-subtitle">In 5 Minuten haben Sie ein Angebot in der Hand — der Rest ist unsere Aufgabe.</p>
             </div>
 
             <!-- Tier 2: Intent-Routing Cards -->
             <div class="contact-intents" data-aos="fade-up">
-                <a href="#preise" class="contact-intent-card">
+                <a href="website-anfrage.html" class="contact-intent-card">
                     <div class="contact-intent-icon"><i class="fas fa-sliders" aria-hidden="true"></i></div>
                     <div>
-                        <div class="contact-intent-title">Preise &amp; Pakete ansehen</div>
-                        <div class="contact-intent-desc">Festpreise vergleichen, Paket wählen und direkt Termin buchen.</div>
-                        <div class="contact-intent-cta">Zur Preisübersicht <i class="fas fa-arrow-right" aria-hidden="true"></i></div>
+                        <div class="contact-intent-title">Persönliches Angebot erhalten</div>
+                        <div class="contact-intent-desc">2 Minuten, 4 Fragen — Sie bekommen eine maßgeschneiderte Paketempfehlung.</div>
+                        <div class="contact-intent-cta">Angebots-Assistent starten <i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                     </div>
                 </a>
                 <a href="#" data-cal-link="ww-webmanufaktur/erstgespraech" data-cal-config='{"layout":"month_view"}' class="contact-intent-card">
@@ -7149,12 +7188,12 @@
                             <label for="paket">Wofür interessieren Sie sich?</label>
                             <select id="paket" name="paket">
                                 <option value="">Bitte wählen...</option>
-                                <option value="Website">Website / One-Pager</option>
+                                <option value="Unsicher">Bin mir noch unsicher — einfach beraten lassen</option>
+                                <option value="Website">Website für mein lokales Unternehmen</option>
                                 <option value="Website + Buchung">Website + Online-Terminbuchung</option>
                                 <option value="Website + Shop">Website + Online-Shop</option>
                                 <option value="Komplett">Komplettlösung (Website, Buchung, Shop)</option>
-                                <option value="Individuelle Entwicklung">Individuelle Web-App / Sonderprojekt</option>
-                                <option value="Unsicher">Bin mir noch unsicher</option>
+                                <option value="Individuelle Entwicklung">Sonderwunsch / individuelles Projekt</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -7172,11 +7211,12 @@
                             <span class="btn-text">Anfrage senden</span>
                             <div class="spinner"></div>
                         </button>
+                        <p style="font-size:0.78rem;color:rgba(247,244,240,0.45);margin-top:10px;text-align:center;">Carsten antwortet persönlich — in der Regel noch am selben Tag.</p>
                     </form>
                     <div class="form-success" id="formSuccess">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
                         <h3>Nachricht gesendet!</h3>
-                        <p>Vielen Dank für Ihre Anfrage. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                        <p>Carsten meldet sich persönlich bei Ihnen — meistens noch heute.</p>
                     </div>
                 </div>
 
@@ -7198,7 +7238,7 @@
                         <a href="mailto:c.schwarz@ww-webmanufaktur.de" class="contact-quick-btn contact-quick-btn--email" aria-label="E-Mail senden">
                             <i class="fas fa-envelope" aria-hidden="true"></i> E-Mail
                         </a>
-                        <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener noreferrer" class="contact-quick-btn contact-quick-btn--email" aria-label="Instagram-Profil @wwwebmanufaktur">
+                        <a href="https://www.instagram.com/wwwebmanufaktur/" target="_blank" rel="noopener noreferrer" class="contact-quick-btn contact-quick-btn--instagram" aria-label="Instagram-Profil @wwwebmanufaktur">
                             <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
                         </a>
                     </div>
