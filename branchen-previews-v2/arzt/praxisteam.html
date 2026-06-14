@@ -155,7 +155,7 @@
 </header>
 
 <div class="werte-list">
-<article class="werte-statement">
+<article class="werte-statement reveal">
 <div>
 <span class="werte-num">No. 01 · Zeit</span>
 <blockquote class="werte-pull">30 Minuten Erstgespräch — und kein Bonus dafür</blockquote>
@@ -166,7 +166,7 @@
 </div>
 </article>
 
-<article class="werte-statement">
+<article class="werte-statement reveal reveal-delay-1">
 <div>
 <span class="werte-num">No. 02 · Mobilität</span>
 <blockquote class="werte-pull">Wer nicht zu uns kommt, zu dem kommen wir</blockquote>
@@ -177,7 +177,7 @@
 </div>
 </article>
 
-<article class="werte-statement">
+<article class="werte-statement reveal reveal-delay-2">
 <div>
 <span class="werte-num">No. 03 · Verschwiegenheit</span>
 <blockquote class="werte-pull">Wir reden nicht über Sie — auch nicht beim Mittagessen</blockquote>
@@ -190,7 +190,7 @@
 
 <blockquote class="inline-quote">„Vertrauen ist das Verbandszeug, das die Medizin zusammenhält. Wer einmal das Gefühl hatte, dass etwas in einer Akte nichts zu suchen hatte und trotzdem da steht — kommt nie wieder."<cite>— Dr. Lisa Werner</cite></blockquote>
 
-<article class="werte-statement">
+<article class="werte-statement reveal">
 <div>
 <span class="werte-num">No. 04 · Vorsorge</span>
 <blockquote class="werte-pull">Wir warten nicht, bis Sie krank werden</blockquote>
@@ -201,7 +201,7 @@
 </div>
 </article>
 
-<article class="werte-statement">
+<article class="werte-statement reveal reveal-delay-1">
 <div>
 <span class="werte-num">No. 05 · Integrität</span>
 <blockquote class="werte-pull">Medizin, kein Marketing</blockquote>
@@ -212,7 +212,7 @@
 </div>
 </article>
 
-<article class="werte-statement">
+<article class="werte-statement reveal reveal-delay-2">
 <div>
 <span class="werte-num">No. 06 · Generationen</span>
 <blockquote class="werte-pull">Vom Säugling bis zur Urgroßmutter — alle in einer Akte</blockquote>
@@ -431,6 +431,8 @@ const shut=()=>{drawer.classList.remove('is-open');burger.setAttribute('aria-exp
 burger?.addEventListener('click',open);close?.addEventListener('click',shut);
 drawer?.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('is-open'))shut();});
+/* Scroll-reveal */
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');io.unobserve(x.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));}
 </script>
 
 </body>

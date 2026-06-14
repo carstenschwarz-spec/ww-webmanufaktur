@@ -35,8 +35,9 @@
     --text-muted: rgba(247, 244, 240, 0.5);
     --text-on-light: #1A1614;
     --text-on-light-secondary: rgba(26, 22, 20, 0.65);
-    --accent: #A67C52;
-    --accent-hover: #B68C62;
+    --accent: #B8924A;
+    --accent-hover: #C9A461;
+    --accent-warm: #D4A574;
     --hairline: rgba(247, 244, 240, 0.12);
     --hairline-light: rgba(26, 22, 20, 0.08);
 
@@ -45,10 +46,10 @@
     --font-body: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Type Scale (mobile → desktop via clamp) */
-    --fs-hero: clamp(3rem, 12vw, 8rem);          /* 48-128px */
-    --fs-h1: clamp(2rem, 6vw, 4rem);             /* 32-64px */
-    --fs-h2: clamp(1.5rem, 4vw, 2.5rem);         /* 24-40px */
-    --fs-h3: clamp(1.25rem, 2.5vw, 1.5rem);      /* 20-24px */
+    --fs-hero: clamp(4rem, 13vw, 9rem);          /* 64-144px — größer für Impact */
+    --fs-h1: clamp(2.25rem, 6.5vw, 4.5rem);      /* 36-72px */
+    --fs-h2: clamp(1.75rem, 4vw, 2.75rem);       /* 28-44px */
+    --fs-h3: clamp(1.25rem, 2.5vw, 1.625rem);    /* 20-26px */
     --fs-body-lg: clamp(1rem, 1.4vw, 1.125rem);  /* 16-18px */
     --fs-body: 1rem;                              /* 16px */
     --fs-small: 0.875rem;                         /* 14px */
@@ -58,7 +59,7 @@
     --content-max: 1280px;
     --content-narrow: 720px;
     --gutter: clamp(1.25rem, 4vw, 3rem);
-    --section-py: clamp(4rem, 10vw, 8rem);
+    --section-py: clamp(5rem, 11vw, 9rem);        /* mehr Luft = mehr Luxus */
 
     /* Motion */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -71,7 +72,9 @@
 
 /* ─── Base Layer ─── */
 @layer base {
+  html { overflow-x: hidden; }
   body {
+    overflow-x: hidden;
     background: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -83,7 +86,7 @@
     font-family: var(--font-display);
     font-weight: 400;
     line-height: 1.05;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.03em;    /* dichter = hochwertiger, wie die Referenzen zeigen */
   }
 
   p { line-height: 1.6; }
@@ -138,10 +141,12 @@
     display: inline-flex;
     align-items: center;
     gap: 0.625rem;
-    padding: 0.875rem 1.625rem;
+    padding: 0.95rem 2.5rem;      /* Premium: mehr horizontales Padding */
     font-size: var(--fs-body);
     font-weight: 500;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.04em;       /* leicht gesperrt = high-end */
+    text-transform: uppercase;    /* Premium-Signal */
+    font-size: 0.8125rem;         /* etwas kleiner durch uppercase-Wirkung ausgleichen */
     border-radius: 2px;
     transition:
       background var(--dur-base) var(--ease-out),
@@ -156,15 +161,24 @@
   .btn-primary {
     background: var(--accent);
     color: var(--bg-primary);
+    box-shadow: 0 0 0 0 rgba(184, 146, 74, 0);
+    transition:
+      background var(--dur-base) var(--ease-out),
+      color var(--dur-base) var(--ease-out),
+      box-shadow var(--dur-base) var(--ease-out),
+      transform var(--dur-fast) var(--ease-out);
   }
   .btn-primary:hover,
   .btn-primary:focus-visible {
     background: var(--accent-hover);
     color: var(--bg-primary);
+    box-shadow: 0 6px 24px rgba(184, 146, 74, 0.32);  /* Warm-Gold-Glow */
+    transform: translateY(-2px);
   }
   .btn-primary:active {
-    background: #8f6a44;
+    background: #9a7a3c;
     transform: translateY(1px);
+    box-shadow: none;
   }
   .btn-ghost {
     background: transparent;
@@ -482,33 +496,34 @@
    ================================================================ */
 @layer pages {
 
-  /* ─── Hero (Magazine-Stack #3) ─── */
-  .hero { padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: 0; }
+  /* ─── Hero (Full-bleed Atmosphäre — Beauty-DNA) ─── */
+  .hero { padding-top: 0; padding-bottom: 0; }
   .hero-stack {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin-bottom: clamp(2.5rem, 5vw, 4rem);
   }
   .hero-display {
     font-family: var(--font-display);
     font-size: var(--fs-hero);
     font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
+    line-height: 0.96;
+    letter-spacing: -0.04em;      /* enger = eleganter bei großer Display-Schrift */
     margin-block: 0.25rem 0.5rem;
     color: var(--text-primary);
   }
   .hero-lead {
     font-size: var(--fs-body-lg);
-    color: var(--text-secondary);
-    max-width: 56ch;
-    line-height: 1.55;
+    color: rgba(247, 244, 240, 0.88);
+    max-width: 52ch;
+    line-height: 1.6;
+    font-style: italic;           /* italic subline = Refugium-Ton */
   }
   .hero-actions {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
     flex-wrap: wrap;
   }
   .hero-figure {
@@ -541,23 +556,88 @@
     line-height: 1.0;
   }
 
-  /* ─── Manifesto ─── */
+  /* ─── Manifesto (Warm light bg — Refugium-Moment) ─── */
   .manifesto {
     text-align: left;
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(5rem, 10vw, 8rem);
+    background: var(--bg-light);
+    color: var(--text-on-light);
+    border-block: 1px solid var(--hairline-light);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Subtiler Warm-Gold-Glow als Stimmungs-Atmosphäre */
+  .manifesto::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 60%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(184, 146, 74, 0.08) 0%, transparent 65%);
+    pointer-events: none;
   }
   .manifesto-text {
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(1.625rem, 3.2vw, 2.5rem);
     line-height: 1.35;
     font-style: italic;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    color: var(--text-on-light);
+    margin-bottom: 1.75rem;
+  }
+  .manifesto .pullquote,
+  .manifesto .pull-italic {
+    color: var(--text-on-light);
+    border-left-color: var(--accent);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    line-height: 1.4;
+    padding-left: 1.25rem;
+    margin-block: 1.5rem;
+  }
+  .manifesto .pull-italic cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: var(--fs-small);
+    font-style: normal;
+    color: var(--text-on-light-secondary);
+    letter-spacing: 0.04em;
+  }
+  .manifesto .dropcap::first-letter {
+    font-size: 4.5rem;
+    line-height: 0.8;
+    float: left;
+    margin-right: 0.12em;
+    color: var(--accent);
+    font-family: var(--font-display);
   }
   .manifesto-signature {
     font-size: var(--fs-small);
-    color: var(--text-muted);
+    color: var(--text-on-light-secondary);
     letter-spacing: 0.04em;
+  }
+
+  /* ─── Leistungen-Teaser (Cream-Hintergrund für Rhythmus-Kontrast) ─── */
+  .leistungen-teaser {
+    background: var(--bg-light);
+    color: var(--text-on-light);
+    --text-primary: var(--text-on-light);
+    --text-secondary: var(--text-on-light-secondary);
+    --hairline: var(--hairline-light);
+  }
+  .leistungen-teaser .eyebrow { color: var(--accent); }
+  .leistungen-teaser .leistung-body p { color: var(--text-on-light-secondary); }
+  .leistungen-teaser .micro-quote {
+    color: var(--text-on-light-secondary);
+    border-left-color: var(--accent);
+  }
+  .leistungen-teaser .btn-link { color: var(--accent); }
+
+  /* ─── Stimmen (dunkel für Rhythmus) ─── */
+  .stimmen {
+    background: var(--bg-secondary);
+    border-block: 1px solid var(--hairline);
   }
 
   /* ─── Leistungen-Teaser ─── */
@@ -575,25 +655,29 @@
   .leistung-card {
     display: grid;
     gap: 1.25rem;
+    transition: transform var(--dur-base) var(--ease-out);
   }
+  .leistung-card:hover { transform: translateY(-6px); }
   .leistung-photo {
     aspect-ratio: 4/5;
     background: var(--bg-secondary);
+    border: 1px solid rgba(26, 22, 20, 0.1);
   }
   .leistung-body h3 {
     font-size: var(--fs-h2);
     line-height: 1;
     margin-bottom: 0.5rem;
+    color: var(--text-on-light);
   }
   .leistung-body p {
-    color: var(--text-secondary);
+    color: var(--text-on-light-secondary);
     line-height: 1.55;
     max-width: 32ch;
   }
   .leistung-card .leistung-price {
     color: var(--accent);
     margin-top: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.02em;
   }
 
@@ -612,8 +696,9 @@
   }
   .team-card {
     display: block;
-    transition: color var(--dur-fast) var(--ease-out);
+    transition: color var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out);
   }
+  .team-card:hover { transform: translateY(-5px); }
   .team-card .photo {
     aspect-ratio: 4/5;
     margin-bottom: 1rem;
@@ -682,21 +767,25 @@
 
   /* ─── Subpage Hero (alle 3 subpages) ─── */
   .subpage-hero {
-    padding-block: clamp(4rem, 9vw, 7rem) clamp(2rem, 4vw, 3rem);
+    padding-block: clamp(5rem, 10vw, 8rem) clamp(2.5rem, 5vw, 4rem);
   }
   .subpage-display {
     font-family: var(--font-display);
-    /* Was clamp(2.75rem, 9vw, 6rem) — tighter minimum prevents 3-line wraps on 375px */
-    font-size: clamp(2.25rem, 8vw, 6rem);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.5rem, 9vw, 6.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.04em;   /* gleiche Strenge wie Hero */
     margin-block: 0.5rem 0.875rem;
+  }
+  .subpage-display em {
+    font-style: italic;
+    color: var(--accent);      /* Kursiv-Akzent in Gold: editoriales Signal */
   }
   .subpage-lead {
     font-size: var(--fs-body-lg);
     color: var(--text-secondary);
-    max-width: 60ch;
-    line-height: 1.55;
+    max-width: 58ch;
+    line-height: 1.6;
+    font-style: italic;        /* Subline italic = Refugium-Ton */
   }
 
   /* ─── Service Group (leistungen.html) ─── */
@@ -1094,11 +1183,22 @@
     color: var(--text-primary);
     margin-block: 1.75rem;
     padding-left: 1.25rem;
-    border-left: 2px solid var(--accent);
+    border-left: 2px solid var(--accent-warm, var(--accent));
   }
 
-  /* ─── Process-Step Numbered (Booking-Steps "So läuft's") ─── */
-  .process-steps { padding-block: clamp(4rem, 8vw, 7rem); }
+  /* ─── Process-Step Numbered (Booking-Steps "So läuft's" — cream bg für Rhythmus) ─── */
+  .process-steps {
+    padding-block: clamp(4rem, 8vw, 7rem);
+    background: var(--bg-light);
+    color: var(--text-on-light);
+    border-block: 1px solid var(--hairline-light);
+  }
+  .process-steps .eyebrow { color: var(--accent); }
+  .process-steps .section-header h2 { color: var(--text-on-light); }
+  .process-steps .btn-link { color: var(--accent); }
+  .process-step { border-top-color: var(--hairline-light); }
+  .process-step h3 { color: var(--text-on-light); }
+  .process-step p { color: var(--text-on-light-secondary); }
   .process-steps-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1566,10 +1666,13 @@
      ROUND-1 ENRICHMENT — Hero Video, Cut-outs, Reveal-Slider, Timeline
      ============================================================ */
 
-  /* ─── Hero with background video (Magazine-Stack erhalten, Video als Atmosphäre) ─── */
+  /* ─── Hero with background video (Full-bleed Atmosphäre, Beauty-DNA) ─── */
   .hero-media {
     position: relative;
-    margin-bottom: clamp(2rem, 4vw, 3rem);
+    min-height: 100svh;           /* ganzer Viewport — Vogue-Feeling */
+    display: flex;
+    align-items: flex-end;        /* Text am unteren Drittel = Drama */
+    margin-bottom: 0;
     overflow: hidden;
     background: var(--bg-secondary);
   }
@@ -1577,18 +1680,18 @@
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    /* B/W direction even for motion */
-    filter: grayscale(1) contrast(1.05) brightness(0.78);
+    /* Warmer Ton statt hartem B/W: leichtes Entsättigen + volles Leuchten */
+    filter: saturate(0.65) contrast(1.08) brightness(0.95);
     z-index: 0;
   }
-  /* Vignette + grain over the video so type stays grounded */
+  /* Vignette angepasst: wärmer, weniger Schwärze, Goldton schimmert durch */
   .hero-media::after {
     content: "";
     position: absolute; inset: 0;
     pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(26,22,20,0.55) 0%, rgba(26,22,20,0.15) 35%, rgba(26,22,20,0.65) 100%),
-      radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(26,22,20,0.55) 100%);
+      linear-gradient(180deg, rgba(20,14,8,0.5) 0%, rgba(20,14,8,0.08) 40%, rgba(20,14,8,0.62) 100%),
+      radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(15,10,5,0.45) 100%);
     z-index: 1;
   }
   .hero-media-grain {
@@ -1605,7 +1708,8 @@
   .hero-media-stack {
     position: relative;
     z-index: 3;
-    padding-block: clamp(3rem, 8vw, 6.5rem) clamp(2.5rem, 6vw, 5rem);
+    width: 100%;
+    padding-block: clamp(7rem, 14vw, 11rem) clamp(3.5rem, 7vw, 6rem);
   }
   .hero-media-stack .hero-display { color: var(--text-primary); }
   .hero-media-stack .hero-lead { color: rgba(247,244,240,0.85); }
@@ -1720,12 +1824,82 @@
     object-fit: contain;
     filter: grayscale(0.4) contrast(1.05);
   }
+  /* SVG-Variante des Cutout braucht keine mask-image */
+  .cutout-tool-svg {
+    -webkit-mask-image: none;
+            mask-image: none;
+    mix-blend-mode: normal;
+    opacity: 1;
+    transform: rotate(-8deg);
+  }
   @media (max-width: 768px) {
     .cutout-product { width: 90px; bottom: 0.5rem; left: -0.5rem; }
   }
 
   .saison-banner-grid { position: relative; }
   .editorial-split-grid { position: relative; }
+
+  /* ─── Salon-Versprechen: Zahlen-Reihe ─── */
+  .salon-versprechen {
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+    background: var(--bg-secondary);
+    border-block: 1px solid var(--hairline);
+  }
+  .sv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+  }
+  @media (min-width: 900px) {
+    .sv-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  }
+  .sv-item {
+    border-top: 2px solid var(--accent);
+    padding-top: 1.25rem;
+  }
+  .sv-zahl {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    margin-bottom: 0.625rem;
+  }
+  .sv-label {
+    display: block;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    line-height: 1.45;
+    max-width: 18ch;
+  }
+
+  /* ─── Galerie-Teaser: Nachher-Bild in Farbe auch auf Startseite ─── */
+  .galerie-teaser .vn-image.vn-nachher img {
+    filter: none;
+  }
+  .galerie-teaser .vn-image.vn-nachher .vn-label {
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+
+  /* ─── BIGGEST WIN: Nachher-Fotos in Farbe, Vorher in B/W ─── */
+  /* Vorher-Shots bleiben grayscale (photo-bw Klasse), Nachher-Shots werden in Farbe gezeigt */
+  .story-triptych .story-shot:last-child img,
+  .story-triptych .story-shot:last-child,
+  .vn-image.vn-nachher img {
+    filter: none !important;      /* Farbe als Hauptleistung — Transformation sichtbar machen */
+  }
+  /* Noch mehr Wirkung: Nachher-Label in Accent-Farbe */
+  .story-triptych .story-shot:last-child .shot-label,
+  .vn-image.vn-nachher .vn-label {
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+  /* Während-Shot: leicht weniger entsättigt als Vorher */
+  .story-triptych .story-shot:nth-child(2) img {
+    filter: grayscale(0.5) contrast(1.04) brightness(1.18);
+  }
 
   /* ─── Vorher/Nachher CSS-only Reveal-Slider (using :has() + clip-path) ─── */
   /* Distinctive UI piece: drag the slider to reveal "nachher" — pure CSS via input[type=range] */
@@ -3604,9 +3778,9 @@
   .tia-photo {
     position: relative;
     aspect-ratio: 4 / 5;
-    /* Cream-halo isolated mask: feather to ground colour at edges */
-    -webkit-mask-image: radial-gradient(ellipse 75% 90% at 50% 45%, #000 55%, rgba(0,0,0,0.6) 78%, transparent 100%);
-            mask-image: radial-gradient(ellipse 75% 90% at 50% 45%, #000 55%, rgba(0,0,0,0.6) 78%, transparent 100%);
+    /* Robuste lineare Maske: funktioniert motiv-unabhängig */
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 88%, transparent 100%);
     /* Photo extends ABOVE the section background (overlap effect) */
     margin-top: clamp(-3.5rem, -7vw, -5rem);
     transition: transform var(--dur-base, 280ms) var(--ease-out, cubic-bezier(.4,0,.2,1));

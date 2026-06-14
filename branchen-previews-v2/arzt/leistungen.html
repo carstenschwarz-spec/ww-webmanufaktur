@@ -53,14 +53,14 @@
 <div class="container-wide">
 <span class="eyebrow">Leistungen · 6 Kategorien</span>
 <h1 class="subpage-display">Was wir <em>tun.</em></h1>
-<p class="subpage-lead">Hausärztliche Allgemeinmedizin im klassischen Sinne — Erstkontakt für alle Beschwerden, strukturierte Vorsorge, Chronikermanagement nach DMP-Leitlinie, Reise- und Tropenmedizin, Telemedizin. Wir listen jede Leistung transparent: was wir tun, wie lange es dauert, was es ggf. kostet. Wenn Sie nicht wissen, wohin Ihr Anliegen gehört — der <a href="#service-finder" style="color: var(--accent); border-bottom: 1px solid currentColor;">Service-Finder</a> hilft.</p>
+<p class="subpage-lead">Allgemeinmedizin. Vorsorge. DMP. Reisemedizin. Telemedizin. Jede Leistung transparent: was, wie lange, was es kostet. Nicht sicher, welche Leistung passt? Der <a href="#service-finder" style="color: var(--accent); border-bottom: 1px solid currentColor;">Service-Finder</a> führt Sie in drei Schritten.</p>
 </div>
 </section>
 
 <!-- ─── Service-Finder Quiz (pure-CSS) ─── -->
 <section id="service-finder" class="section-soft">
 <div class="container-wide">
-<header class="section-head">
+<header class="section-head reveal">
 <span class="eyebrow">Service-Finder</span>
 <h2>Was ist <em>Ihr Anliegen?</em></h2>
 <p>Drei kleine Schritte — wir sagen Ihnen, welche Leistung am ehesten passt, wie schnell wir Sie sehen können und was Sie mitbringen sollten. Im echten Notfall bitte direkt <a href="tel:112">112</a>, bei dringenden Beschwerden außerhalb unserer Sprechzeiten <a href="tel:116117">116 117</a>. Die Auswahl bleibt nur in dieser Seite — nichts wird gespeichert oder gesendet.</p>
@@ -509,6 +509,8 @@ const shut=()=>{drawer.classList.remove('is-open');burger.setAttribute('aria-exp
 burger?.addEventListener('click',open);close?.addEventListener('click',shut);
 drawer?.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('is-open'))shut();});
+/* Scroll-reveal */
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');io.unobserve(x.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));}
 </script>
 
 </body>

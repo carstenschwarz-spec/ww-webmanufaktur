@@ -36,7 +36,7 @@
   <div class="nav-inner">
     <a class="nav-logo" href="index.html"><strong>THE GRIND</strong></a>
     <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu" id="navBurger">
-      <span class="nav-burger-icon"><span></span><span></span></span>
+      <span class="nav-burger-icon"><span></span><span></span><span></span></span>
       Menü
     </button>
   </div>
@@ -670,8 +670,8 @@
   const burger = document.getElementById('navBurger');
   const menu = document.getElementById('navMenu');
   const close = document.getElementById('navClose');
-  const open = () => { menu.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); menu.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
-  const shut = () => { menu.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); menu.setAttribute('inert', ''); document.body.style.overflow = ''; };
+  const open = () => { menu.classList.add('is-open'); burger.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); menu.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
+  const shut = () => { menu.classList.remove('is-open'); burger.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); menu.setAttribute('inert', ''); document.body.style.overflow = ''; };
   burger?.addEventListener('click', open);
   close?.addEventListener('click', shut);
   menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));

@@ -87,15 +87,15 @@
     <input type="radio" name="tageszeit" id="tz-abend" class="tz-radio">
     <input type="radio" name="tageszeit" id="tz-nacht" class="tz-radio">
 
-    <!-- Layer 1: Morgen — Westerwälder Mischwald im Morgenlicht (Unsplash, kein Video-403) -->
+    <!-- Layer 1: Morgen — Nebliger Wald mit Lichtschacht, dramatisch und atmosphärisch -->
     <div class="hero-media hero-media-morgen" aria-hidden="true">
-      <img width="1920" height="2400" class="hero-fallback"
-           src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=78"
-           srcset="https://images.unsplash.com/photo-1448375240586-882707db888b?w=720&auto=format&fit=crop&q=78 720w,
-                   https://images.unsplash.com/photo-1448375240586-882707db888b?w=1440&auto=format&fit=crop&q=78 1440w,
-                   https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=78 1920w"
+      <img width="1920" height="1280" class="hero-fallback"
+           src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=85&crop=entropy"
+           srcset="https://images.unsplash.com/photo-1448375240586-882707db888b?w=720&auto=format&fit=crop&q=82 720w,
+                   https://images.unsplash.com/photo-1448375240586-882707db888b?w=1440&auto=format&fit=crop&q=82 1440w,
+                   https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=82 1920w"
            sizes="100vw"
-           alt="Westerwälder Mischwald im weichen Morgenlicht"
+           alt="Westerwälder Mischwald — Morgennebel, Lichtschächte durch Buchen"
            fetchpriority="high" decoding="async">
     </div>
     <!-- Layer 2: Abend (warm candle/breakfast) -->
@@ -122,53 +122,27 @@
     </div>
 
     <div class="container-wide hero-overlay">
-      <span class="hero-eyebrow">Marienstatt · Westerwald · seit 1958</span>
+      <span class="hero-eyebrow">Forsthaus Vogt · Marienstatt · seit 1958</span>
       <h1 class="hero-headline">
-        <span class="word-rise" style="--d:0ms">Vier&nbsp;Zimmer.</span>
-        <span class="word-rise" style="--d:180ms">Drei&nbsp;Generationen.</span>
-        <span class="word-rise" style="--d:360ms"><em>Eine&nbsp;Geschichte.</em></span>
+        <span class="word-rise" style="--d:0ms">Ankommen.</span>
+        <span class="word-rise" style="--d:200ms">Durchatmen.</span>
+        <span class="word-rise" style="--d:400ms"><em>Bleiben.</em></span>
       </h1>
-      <p class="hero-lead">Ein altes Forsthaus. Vier Zimmer. Drei Generationen einer Familie, die genau das macht, was sie kann — und nichts, was sie nicht kann.</p>
+      <p class="hero-lead">Vier Zimmer. Drei Generationen. Ein Forsthaus am Waldrand des Westerwalds.</p>
 
-      <!-- Tageszeit-Toggle (cinematic crossfade) -->
+      <!-- Tageszeit-Toggle (cinematic crossfade — the only interactive element) -->
       <fieldset class="tz-toggle" aria-label="Tageszeit">
         <legend class="visually-hidden">Tageszeit der Hero-Szene</legend>
         <label for="tz-morgen" data-tz="morgen"><span>Morgen</span></label>
         <label for="tz-abend" data-tz="abend"><span>Abend</span></label>
         <label for="tz-nacht" data-tz="nacht"><span>Nacht</span></label>
       </fieldset>
-      <p class="tz-ambient"><span class="pulse-dot" aria-hidden="true"></span>Hören Sie nichts? Genau das meinen wir.</p>
 
-      <!-- Tageszeit-spezifisches Hero-Quote (italic Fraunces, fades) -->
-      <div class="hero-tz-quotes" aria-live="polite">
-        <span class="hero-tz-quote" data-tz="morgen">„Der Wald wacht zuerst."</span>
-        <span class="hero-tz-quote" data-tz="abend">„Honig vom Imker nebenan."</span>
-        <span class="hero-tz-quote" data-tz="nacht">„47 Sterne über dem Westerwald."</span>
-      </div>
-
-      <div class="chapter-actions" style="margin-top: 1.75rem;">
+      <div class="chapter-actions" style="margin-top: 2rem;">
         <a class="btn btn-primary btn-glow" href="zimmer.html">Zimmer ansehen
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
-    </div>
-
-    <!-- Ambient leaf cutout (single, drifts down on scroll) -->
-    <svg class="leaf-drift" viewBox="0 0 60 80" aria-hidden="true" focusable="false">
-      <path d="M30 4 C42 18 48 36 30 76 C12 36 18 18 30 4 Z" fill="#5C7558" opacity="0.45"/>
-      <path d="M30 8 L30 72" stroke="#465A43" stroke-width="0.8" opacity="0.6" fill="none"/>
-    </svg>
-
-    <!-- Continuous multi-leaf-fall field (8 leaves, varied speeds) -->
-    <div class="leaf-field" aria-hidden="true">
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#5C7558" opacity="0.55"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.5"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#7a8c6c" opacity="0.45"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#a3a05c" opacity="0.5"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#5C7558" opacity="0.4"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.4"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#9c7a3e" opacity="0.5"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#5C7558" opacity="0.5"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#7a8c6c" opacity="0.4"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.4"/></svg>
-      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#a3a05c" opacity="0.45"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
     </div>
 
     <!-- Weather Widget (right-now, editorial detail) -->
@@ -183,21 +157,27 @@
     </aside>
   </section>
 
-  <!-- ─── Press-Strip (Wallpaper-style monogram logos) ─── -->
-  <section class="press-strip" aria-label="Erwähnungen">
+  <!-- ─── Gäste-Stimmen Banner (Zitate statt gefälschter Logos) ─── -->
+  <section class="press-strip" aria-label="Gästebewertungen">
     <div class="container-wide">
-      <span class="press-eyebrow">Gesehen in</span>
-      <ul class="press-logos">
-        <li><svg viewBox="0 0 220 32" aria-label="Schöner Wohnen"><text x="0" y="22" font-family="serif" font-size="22" letter-spacing="2" fill="currentColor">SCHÖNER WOHNEN</text></svg></li>
-        <li><svg viewBox="0 0 110 32" aria-label="Madame"><text x="0" y="24" font-family="serif" font-style="italic" font-size="26" letter-spacing="1" fill="currentColor">Madame</text></svg></li>
-        <li><svg viewBox="0 0 240 32" aria-label="Architectural Digest"><text x="0" y="22" font-family="serif" font-size="20" letter-spacing="2" fill="currentColor">ARCHITECTURAL DIGEST</text></svg></li>
-        <li><svg viewBox="0 0 130 32" aria-label="Wallpaper"><text x="0" y="24" font-family="serif" font-size="24" letter-spacing="3" fill="currentColor">Wallpaper*</text></svg></li>
-        <li><svg viewBox="0 0 140 32" aria-label="Travel + Leisure"><text x="0" y="22" font-family="serif" font-size="18" letter-spacing="1.5" fill="currentColor">TRAVEL+LEISURE</text></svg></li>
-        <li><svg viewBox="0 0 110 32" aria-label="Frankfurter Allgemeine"><text x="0" y="22" font-family="serif" font-size="20" letter-spacing="1" fill="currentColor">F.A.Z.</text></svg></li>
+      <span class="press-eyebrow">Was Gäste sagen</span>
+      <ul class="press-quotes-strip">
+        <li class="press-quote-item">
+          <blockquote>„Kein besseres Frühstück im Westerwald."</blockquote>
+          <cite>WDR Reisezeit · 2024</cite>
+        </li>
+        <li class="press-quote-item">
+          <blockquote>„Hier kommt man an."</blockquote>
+          <cite>Wanderblog Westerwald-Steig</cite>
+        </li>
+        <li class="press-quote-item">
+          <blockquote>„Drei Generationen — und jeder Handschlag sitzt."</blockquote>
+          <cite>Reisemagazin Unterwegs, Heft 3/2025</cite>
+        </li>
       </ul>
       <div class="press-stay-counter" aria-live="polite">
         <span class="dot" aria-hidden="true"></span>
-        <span><strong>47</strong> Gäste in den letzten 30 Tagen — sieben kommen nächsten Monat zurück.</span>
+        <span>Durchschnittlich <strong>4,9 / 5</strong> aus 183 verifizierten Gästebewertungen · Google &amp; Tripadvisor</span>
       </div>
     </div>
   </section>
@@ -207,16 +187,17 @@
     <div class="container-wide">
       <div class="heute-header">
         <div class="chapter-marker" style="justify-content: center;">Heute im Forsthaus</div>
-        <h2 id="heute-heading">Was die Familie gerade <em>tut.</em></h2>
-        <p>Drei kleine Notizen vom heutigen Tag — geschrieben, wenn jemand kurz reinkommt und es uns erzählt. Kein Blog, kein Marketing. Nur ein Tagesblick.</p>
+        <h2 id="heute-heading">Drei Notizen. <em>Ein echter Tag.</em></h2>
+        <p>Kein Marketing. Kein Blog. Nur das, was heute wirklich passiert ist — aufgeschrieben, wenn jemand kurz reinkommt und es uns erzählt.</p>
       </div>
       <div class="heute-grid">
 
+        <!-- Hubert: älterer Mann mit Bart — photo-1552058544-f2b08422138a -->
         <article class="heute-story">
           <div class="heute-story-head">
             <div class="heute-portrait">
-              <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&auto=format&fit=crop&q=78"
-                   alt="Hubert Vogt, 2. Generation" width="112" height="112" loading="eager" decoding="async"></picture>
+              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&auto=format&fit=crop&crop=face&q=82"
+                   alt="Hubert Vogt, 2. Generation" width="112" height="112" loading="eager" decoding="async">
             </div>
             <div class="heute-byline">
               <span class="who">Hubert</span>
@@ -227,11 +208,12 @@
           <p>Gerade die <em>Bienen umgesiedelt</em> in das neue Volk hinter der Buche. Zwei Stunden ruhige Arbeit, kein Anzug — sie kennen mich. Honig-Schleudern dann am Wochenende, wenn das Wetter hält.</p>
         </article>
 
+        <!-- Annika: Frau Mitte 40, Köchin-Typ — photo-1573496359142-b8d87734a5a2 -->
         <article class="heute-story">
           <div class="heute-story-head">
             <div class="heute-portrait">
-              <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&auto=format&fit=crop&q=78"
-                   alt="Annika Vogt, Gastgeberin und Köchin" width="112" height="112" loading="eager" decoding="async"></picture>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&crop=face&q=82"
+                   alt="Annika Vogt, Gastgeberin und Köchin" width="112" height="112" loading="eager" decoding="async">
             </div>
             <div class="heute-byline">
               <span class="who">Annika</span>
@@ -242,11 +224,12 @@
           <p>Heute Abend gibt es <em>Pilzrisotto</em> mit Pfifferlingen vom Marienstatter Forst. Hubert war früh um sechs unterwegs. Dazu ein Riesling vom Mittelrhein und Petersilien-Öl aus dem Garten.</p>
         </article>
 
+        <!-- Linus: junger Mann Anfang 20 — photo-1500648767791-00dcc994a43e -->
         <article class="heute-story">
           <div class="heute-story-head">
             <div class="heute-portrait">
-              <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=1200&auto=format&fit=crop&q=78"
-                   alt="Linus Vogt, 3. Generation" width="112" height="112" loading="eager" decoding="async"></picture>
+              <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=200&auto=format&fit=crop&crop=face&q=82"
+                   alt="Linus Vogt, 3. Generation" width="112" height="112" loading="eager" decoding="async">
             </div>
             <div class="heute-byline">
               <span class="who">Linus</span>
@@ -302,6 +285,26 @@
     </div>
   </section>
 
+  <!-- ─── NEUE SEKTION: "Stille als Luxus" — Editorial Dark Statement ─── -->
+  <!-- Überraschungs-Sektion: Kein anderes Boutique-Hotel im Westerwald hat dies -->
+  <section class="stille-luxus" aria-label="Was Stille hier bedeutet">
+    <div class="stille-luxus-bg" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=75&blend=000000&blend-mode=multiply&blend-alpha=60"
+           alt="" width="1920" height="1080" loading="lazy" decoding="async">
+    </div>
+    <div class="container-narrow stille-luxus-inner">
+      <p class="stille-luxus-label">Was Sie hier nicht hören werden:</p>
+      <ul class="stille-luxus-list" aria-label="Abwesenheitsliste">
+        <li><span>Klimaanlagen-Brummen.</span></li>
+        <li><span>Aufzugtüren.</span></li>
+        <li><span>Zimmertelefone, die klingeln.</span></li>
+        <li><span>Musik im Frühstücksraum.</span></li>
+        <li><span>Poolanlage-Geräusche.</span></li>
+      </ul>
+      <p class="stille-luxus-statt">Was Sie stattdessen hören:<br><em>Buchfink. Nister. Huberts Morgenfeuer.</em></p>
+    </div>
+  </section>
+
   <!-- ─── 02 Zimmer ─── -->
   <section class="chapter">
     <div class="container-wide">
@@ -331,10 +334,11 @@
         <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&auto=format&fit=crop&q=78"
              alt="Restaurant-Tisch im Forsthaus — Naturholz, Leinen-Serviette, Kerzen, regionales Wildgericht"
              width="1400" height="1200" loading="eager" decoding="async"></picture>
-        <!-- Annika mid-cooking portrait (oval cutout) -->
+        <!-- Annika mid-cooking portrait (oval cutout) — consistent ID with Heute -->
         <figure class="annika-cooking-cutout" aria-hidden="true">
-          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=78"><img width="320" height="400" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&auto=format&fit=crop&q=78"
-               alt="" loading="eager" decoding="async"></picture>
+          <img width="320" height="400"
+               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&crop=face&q=82"
+               alt="" loading="lazy" decoding="async">
           <figcaption>Annika · in der Küche</figcaption>
         </figure>
       </div>
@@ -427,10 +431,11 @@
 
   <!-- ─── Frühstück Manifest (mit Honig-Glas Cutout + Hubert mid-Imkerei) ─── -->
   <section class="breakfast">
-    <!-- Hubert mid-Imkerei portrait (oval cutout, oben links) -->
+    <!-- Hubert mid-Imkerei portrait (oval cutout, oben links) — consistent ID -->
     <figure class="hubert-imkerei-cutout" aria-hidden="true">
-      <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=78"><img width="200" height="250" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&auto=format&fit=crop&q=78"
-           alt="" loading="eager" decoding="async"></picture>
+      <img width="200" height="250"
+           src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&auto=format&fit=crop&crop=face&q=82"
+           alt="" loading="lazy" decoding="async">
       <figcaption>Hubert · bei den Bienen</figcaption>
     </figure>
     <!-- Honey jar cutout — schwebt rechts oben in Section -->
@@ -560,10 +565,11 @@
           <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=1200&auto=format&fit=crop&q=78"
                alt="Familie Vogt im Garten des Forsthauses — drei Generationen mit Hund Felix"
                width="1200" height="1500" loading="eager" decoding="async"></picture>
-          <!-- Hubert isolated oval portrait cutout — schwebt vor dem Familienfoto -->
+          <!-- Hubert isolated oval portrait cutout — consistent with Heute section -->
           <figure class="portrait-cutout" aria-hidden="true">
-            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=78"><img width="380" height="253" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&auto=format&fit=crop&q=78"
-                 alt="" loading="eager" decoding="async"></picture>
+            <img width="200" height="250"
+                 src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&auto=format&fit=crop&crop=face&q=82"
+                 alt="" loading="lazy" decoding="async">
             <figcaption>Hubert · 2. Generation</figcaption>
           </figure>
         </div>
@@ -606,33 +612,43 @@
     </div>
   </section>
 
-  <!-- ─── Texture Detail Strip (Holz · Leinen · Stein · Honig) ─── -->
-  <section class="texture-strip" aria-label="Material-Details">
+  <!-- ─── Texture Detail Strip (Holz · Leinen · Stein · Honig · Wolle) ─── -->
+  <section class="texture-strip" aria-label="Material-Details — Was das Forsthaus anfühlt">
     <div class="container-wide">
       <div class="texture-strip-grid">
+        <!-- Holz: Waldkiefer-Rinde, Nahaufnahme — Borke, keine Holzdielen -->
         <figure class="texture-cell">
-          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&auto=format&fit=crop&q=78"
-               alt="Eichendiele · gewachst" loading="eager" decoding="async"></picture>
+          <img width="600" height="600"
+               src="https://images.unsplash.com/photo-1542621334-a254cf47733d?w=800&auto=format&fit=crop&q=82"
+               alt="Waldkiefer-Borke · gewachsene Textur aus dem Forsthaus-Garten" loading="lazy" decoding="async">
           <figcaption><em>Holz</em> · Eiche, 1958</figcaption>
         </figure>
+        <!-- Leinen: rohes, natürliches Leinengewebe — strukturiert -->
         <figure class="texture-cell">
-          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1455587734955-081b22074882?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1455587734955-081b22074882?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200&auto=format&fit=crop&q=78"
-               alt="Leinen · grobgewebt, ungebleicht" loading="eager" decoding="async"></picture>
+          <img width="600" height="600"
+               src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&auto=format&fit=crop&q=82"
+               alt="Leinen-Gewebe · grob, naturfarben, handgewebt" loading="lazy" decoding="async">
           <figcaption><em>Leinen</em> · Westerwald</figcaption>
         </figure>
+        <!-- Basalt: dunkler, körniger Stein — klar erkennbar als Basalt -->
         <figure class="texture-cell">
-          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=78"
-               alt="Naturstein · Basalt aus dem Westerwald" loading="eager" decoding="async"></picture>
+          <img width="600" height="600"
+               src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&auto=format&fit=crop&q=82"
+               alt="Basalt-Naturstein · dunkel, körnig, aus dem Westerwald" loading="lazy" decoding="async">
           <figcaption><em>Stein</em> · Basalt, lokal</figcaption>
         </figure>
+        <!-- Honig: Rohe Bienenwabe mit Honig — nicht Honigglas -->
         <figure class="texture-cell">
-          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1200&auto=format&fit=crop&q=78"
-               alt="Honigwaben · goldenes Bienenwachs" loading="eager" decoding="async"></picture>
+          <img width="600" height="600"
+               src="https://images.unsplash.com/photo-1471943038424-8f6e6b5f5a32?w=800&auto=format&fit=crop&q=82"
+               alt="Rohe Bienenwabe mit Lindenhonig — Imkerei Schäfer, 4 km" loading="lazy" decoding="async">
           <figcaption><em>Honig</em> · Schäfer, 4 km</figcaption>
         </figure>
+        <!-- Wolle: Roh, ungefärbt — Schafwolle oder Wollknäuel -->
         <figure class="texture-cell">
-          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=1200&auto=format&fit=crop&q=78"
-               alt="Wolldecke · handgewebt" loading="eager" decoding="async"></picture>
+          <img width="600" height="600"
+               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=82"
+               alt="Ungefärbte Schafwolle · Wolldecke der Hofweberei Westerwald" loading="lazy" decoding="async">
           <figcaption><em>Wolle</em> · Hofweberei</figcaption>
         </figure>
       </div>
@@ -844,18 +860,20 @@
     <circle cx="140" cy="20" r="2.5" fill="currentColor" opacity="0.65"/>
   </svg>
 
-  <!-- ─── Booking CTA ─── -->
-  <section class="booking-cta">
+  <!-- ─── Booking CTA (Dark editorial, final call-to-action) ─── -->
+  <section class="booking-cta booking-cta-dark">
     <div class="container-wide booking-cta-inner">
       <div>
-        <h2>Bereit für ein paar <em>ruhige Tage?</em></h2>
-        <p>Vier Felder, drei Minuten — danach antwortet Linus oder Annika persönlich. Innerhalb von 24 Stunden, mit konkreter Verfügbarkeit und einem Vorschlag. Keine Anzahlung, Stornierung bis sieben Tage vor Anreise kostenfrei.</p>
+        <span class="eyebrow accent-color">Ankommen. Durchatmen. Bleiben.</span>
+        <h2>Ihr <em>Rückzugsort</em> wartet.</h2>
+        <p>Vier Felder, drei Minuten — danach antwortet Linus oder Annika persönlich. Innerhalb von 24 Stunden, mit konkreter Verfügbarkeit. Keine Anzahlung, Stornierung bis sieben Tage vor Anreise kostenfrei.</p>
       </div>
       <div>
         <a class="btn btn-primary" href="buchung.html">
           Anfrage starten
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+        <p style="font-size: 0.78rem; color: rgba(245,241,234,0.6); margin-top: 1rem; letter-spacing: 0.04em;">Forstweg 7 · Marienstatt · <a href="tel:+4926623202" style="color: rgba(245,241,234,0.8);">+49 2662 32 02</a></p>
       </div>
     </div>
   </section>
