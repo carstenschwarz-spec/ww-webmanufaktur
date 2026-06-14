@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1A1614">
+<meta name="theme-color" content="#F5EDE8">
 <title>Team — Friseur Bergfeld</title>
 <meta name="description" content="Bastian, Mira, Henrik und Anna. Vier Hände, vier Geschichten — Friseur Bergfeld in Westerburg.">
 
@@ -31,7 +31,7 @@
 
 <a class="visually-hidden" href="#main">Zum Inhalt springen</a>
 
-<header class="nav">
+<header class="nav" id="siteNav">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html" aria-label="Friseur Bergfeld — Startseite">Friseur <strong>Bergfeld</strong></a>
     <nav>
@@ -775,6 +775,12 @@
 </div>
 
 <script>
+  // Nav-Scroll-State
+  const siteNav = document.getElementById('siteNav');
+  const onScroll = () => { siteNav?.classList.toggle('is-scrolled', window.scrollY > 60); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
   const burger = document.getElementById('navBurger');
   const drawer = document.getElementById('navDrawer');
   const overlay = document.getElementById('navOverlay');

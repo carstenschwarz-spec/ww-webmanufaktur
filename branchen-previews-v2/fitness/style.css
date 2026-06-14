@@ -23,34 +23,35 @@
 /* ─── Tokens Layer ─── */
 @layer tokens {
   :root {
-    /* Palette — Athletic-Cinematic Dark */
-    --bg-primary: #0F0F0F;
-    --bg-secondary: #1A1A1A;
+    /* Palette — Athletic Brutalism · Neon on Black */
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #111111;
     --bg-tertiary: #000000;
-    --text-primary: #FFFFFF;
-    --text-secondary: rgba(255, 255, 255, 0.78);
-    --text-muted: rgba(255, 255, 255, 0.62);
-    --accent: #FF5938;        /* WCAG-tuned: 4.5:1 mit white · Build-Decision: brighter than DNA #E54B26 */
-    --accent-hover: #FF7458;
-    --accent-deep: #B83515;
-    --accent-on: #0F0F0F;     /* dark text auf accent für Buttons */
-    --hairline: rgba(255, 255, 255, 0.1);
-    --hairline-strong: rgba(255, 255, 255, 0.18);
+    --text-primary: #F0F0F0;
+    --text-secondary: rgba(240, 240, 240, 0.72);
+    --text-muted: #666666;
+    --accent: #C8FF00;          /* Neon-Gelbgrün — aggressiv, modern */
+    --accent-hover: #DEFF33;
+    --accent-deep: #8FB800;
+    --accent-on: #0A0A0A;       /* dark text auf accent für Buttons */
+    --hairline: rgba(200, 255, 0, 0.12);
+    --hairline-strong: rgba(200, 255, 0, 0.2);
 
     /* Typography */
     --font-display: 'Archivo Black', 'Arial Black', system-ui, sans-serif;
     --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Courier New', 'Lucida Console', monospace;
 
-    /* Type Scale — Athletic, größer als Friseur */
-    --fs-hero: clamp(3.5rem, 16vw, 10.5rem);     /* 56-168px */
-    --fs-h1: clamp(2rem, 7vw, 4.5rem);            /* 32-72px */
-    --fs-h2: clamp(1.5rem, 4vw, 2.75rem);         /* 24-44px */
-    --fs-h3: clamp(1.375rem, 2.4vw, 1.75rem);     /* 22-28px */
-    --fs-stat: clamp(3rem, 8vw, 6rem);            /* 48-96px für Numbers */
-    --fs-body-lg: clamp(1rem, 1.4vw, 1.125rem);   /* 16-18px */
+    /* Type Scale — EXTREM groß, Brutalist */
+    --fs-hero: clamp(6rem, 20vw, 18rem);          /* 96px–288px */
+    --fs-h1: clamp(2.5rem, 8vw, 5.5rem);
+    --fs-h2: clamp(1.75rem, 4.5vw, 3.25rem);
+    --fs-h3: clamp(1.375rem, 2.4vw, 1.875rem);
+    --fs-stat: clamp(3.5rem, 9vw, 7rem);
+    --fs-body-lg: clamp(1rem, 1.4vw, 1.125rem);
     --fs-body: 1rem;
     --fs-small: 0.875rem;
-    --fs-eyebrow: 0.75rem;
+    --fs-eyebrow: 0.6875rem;
 
     /* Layout */
     --content-max: 1280px;
@@ -58,20 +59,20 @@
     --gutter: clamp(1.25rem, 4vw, 3rem);
     --section-py: clamp(4rem, 9vw, 7rem);
 
-    /* Spacing — used by Round 2+ components */
+    /* Spacing */
     --space-sm:  clamp(1rem,   2vw,  1.5rem);
     --space-md:  clamp(1.5rem, 3vw,  2.5rem);
     --space-lg:  clamp(2rem,   4vw,  3.5rem);
     --space-xl:  clamp(4rem,   9vw,  7rem);
 
-    /* Kurstyp-Farben — visuell differenziert für Stundenplan */
-    --color-kurs-kraft:    #FF5938;   /* Coral — Haupt-Kurstyp, entspricht --accent */
-    --color-kurs-hyrox:    #E8C832;   /* Gelb — Hochintensiv, sichtbar verschieden */
-    --color-kurs-mobility: #2A7FD4;   /* Electric-Blue — ruhig-sportlich */
-    --color-kurs-pilates:  #E8E0D0;   /* Warm-Ivory — kontrastiert die drei lauten Farben */
+    /* Kurstyp-Farben */
+    --color-kurs-kraft:    #C8FF00;   /* Neon — Haupt-Kurstyp */
+    --color-kurs-hyrox:    #FF3D00;   /* Orange-Red — Hochintensiv */
+    --color-kurs-mobility: #00D4FF;   /* Cyan */
+    --color-kurs-pilates:  #E0E0E0;   /* Weiß-Grau */
 
     /* Semantische Status-Farben */
-    --color-success: #4ADE80;         /* Lime-Green — frei / bestätigt */
+    --color-success: #C8FF00;
 
     /* Motion */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -91,22 +92,26 @@
     font-size: var(--fs-body);
     font-weight: 400;
     letter-spacing: -0.005em;
-    overflow-x: hidden; /* prevent horizontal-scroll bleed from .ls-week grid */
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.025em;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
   }
 
   p { line-height: 1.55; }
 
-  ::selection { background: var(--accent); color: var(--text-primary); }
+  /* Neon selection */
+  ::selection { background: var(--accent); color: var(--accent-on); }
 
   .container { container-type: inline-size; }
+
+  /* Brutalist: no radius anywhere unless explicitly set */
+  *, *::before, *::after { border-radius: 0 !important; }
 }
 
 /* ─── Components Layer ─── */
@@ -128,9 +133,9 @@
   section { padding-block: var(--section-py); }
   section.tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
 
-  /* Hard-cut section divider — NOT a hairline; signature Athletic-Pacing */
+  /* Hard-cut section divider */
   .hardcut {
-    height: 4px;
+    height: 2px;
     background: var(--accent);
     border: 0;
     width: 100%;
@@ -142,56 +147,60 @@
     width: 100%;
   }
 
-  /* Eyebrow */
+  /* Eyebrow — monospace terminal label */
   .eyebrow {
     display: inline-block;
-    font-family: var(--font-body);
+    font-family: var(--font-mono);
     font-size: var(--fs-eyebrow);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 1rem;
   }
   .eyebrow.muted { color: var(--text-muted); }
 
-  /* Buttons — sharp, no pills */
+  /* Neon utility class */
+  .neon { color: var(--accent); }
+
+  /* Buttons — sharp, no pills, brutalist */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.625rem;
-    padding: 0.875rem 1.625rem;
+    padding: 0.875rem 1.75rem;
     font-family: var(--font-body);
     font-size: var(--fs-body);
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    border-radius: 0;
-    transition: background var(--dur-base) var(--ease-sharp), color var(--dur-base) var(--ease-sharp);
-    min-height: 48px;
+    transition: background var(--dur-base) var(--ease-sharp), color var(--dur-base) var(--ease-sharp), outline var(--dur-base);
+    min-height: 52px;
+    border: 0;
   }
   .btn-primary {
     background: var(--accent);
-    color: var(--accent-on);  /* dark text auf coral für WCAG AA Kontrast */
-    font-weight: 700;
+    color: var(--accent-on);
+    outline: 2px solid transparent;
   }
-  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:hover { background: var(--accent-hover); outline: 2px solid var(--accent); outline-offset: 3px; }
   .btn-ghost {
     background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--text-primary);
+    color: var(--accent);
+    outline: 2px solid var(--accent);
   }
-  .btn-ghost:hover { background: var(--text-primary); color: var(--bg-primary); }
+  .btn-ghost:hover { background: var(--accent); color: var(--accent-on); }
   .btn-link {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 700;
     border-bottom: 2px solid currentColor;
     padding: 0;
-    border-radius: 0;
     min-height: 0;
     text-transform: uppercase;
     font-size: var(--fs-small);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
+    background: transparent;
+    outline: 0;
   }
   .btn-link:hover { color: var(--accent-hover); }
 
@@ -300,7 +309,7 @@
     border-bottom: 1px solid var(--hairline);
     transition: color var(--dur-fast), padding-left var(--dur-base) var(--ease-sharp);
   }
-  .nav-overlay-list a:hover { color: var(--accent); padding-left: 1rem; }
+  .nav-overlay-list a:hover { color: var(--accent); padding-left: 1rem; letter-spacing: 0.02em; }
   .nav-overlay-list a[aria-current="page"] { color: var(--accent); }
   .nav-overlay-meta {
     margin-top: auto;
@@ -329,11 +338,11 @@
     width: 18px; height: 18px;
   }
 
-  /* Footer — dense, hard-cut, athletic */
+  /* Footer — dense, hard-cut, brutalist */
   .footer {
     background: var(--bg-tertiary);
     padding: clamp(3rem, 6vw, 5rem) 0 1.5rem;
-    border-top: 4px solid var(--accent);
+    border-top: 2px solid var(--accent);
   }
   .footer-grid {
     display: grid;
@@ -468,68 +477,471 @@
    ================================================================ */
 @layer pages {
 
-  /* ─── Hero (#15 Editorial-Headline-Block) ─── */
+  /* ─── Hero — Brutalist Full-Text · No Image ─── */
   .hero {
-    padding-top: clamp(7rem, 14vw, 11rem);
-    padding-bottom: clamp(3rem, 6vw, 5rem);
+    padding: 0;
     min-height: 100svh;
     display: grid;
-    align-content: start;
-    background: var(--bg-primary);
+    grid-template-rows: 1fr auto;
+    background: var(--bg-tertiary);
+    position: relative;
+    overflow: hidden;
   }
-  .hero-headline {
+  .hero-text-block {
+    display: grid;
+    align-content: center;
+    padding-top: clamp(5rem, 12vw, 9rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    padding-inline: var(--gutter);
+    position: relative;
+    z-index: 1;
+  }
+  /* Huge words filling viewport width */
+  .hero-words {
+    display: block;
+    line-height: 0.88;
+    overflow: hidden;
+  }
+  .hero-word {
+    display: block;
     font-family: var(--font-display);
     font-size: var(--fs-hero);
     font-weight: 900;
-    line-height: 0.92;
-    letter-spacing: -0.045em;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--text-primary);
-    margin-block: 1rem 1.5rem;
+    white-space: nowrap;
+    /* Allow clip if too wide — that IS the brutalist look */
+    overflow: hidden;
   }
-  .hero-headline .word {
-    display: block;
-  }
-  .hero-headline .accent-word {
-    color: var(--accent);
-  }
-  .hero-lead {
-    font-size: var(--fs-body-lg);
-    color: var(--text-secondary);
-    max-width: 42ch;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-    padding-left: 0.125em;
-  }
-  .hero-cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 2rem;
-    align-items: center;
-  }
-  .hero-image-section {
-    padding: 0;
-    background: var(--bg-tertiary);
-  }
-  .hero-image-fullbleed {
-    width: 100%;
-    aspect-ratio: 21/9;
-    position: relative;
-  }
-  /* Duotone-overlay: grayscale + accent-tinted veil → branded statt stock */
-  .hero-image-fullbleed img {
-    filter: grayscale(0.4) contrast(1.12);
-    transition: filter 0.8s ease;
-  }
-  .hero-image-fullbleed::after {
+  .hero-word.is-neon { color: var(--accent); }
+  /* Background grid lines */
+  .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(255,89,56,0.08) 0%, rgba(15,15,15,0.55) 100%);
+    z-index: 0;
     pointer-events: none;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 calc(100vw / 12 - 1px),
+        rgba(200,255,0,0.03) calc(100vw / 12 - 1px) calc(100vw / 12)
+      );
   }
-  @media (max-width: 720px) {
-    .hero-image-fullbleed { aspect-ratio: 4/5; }
+  .hero-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    align-items: center;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1.2vw, 0.8125rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .hero-meta-row .neon { font-weight: 700; }
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  /* Remove old image section */
+  .hero-image-section { display: none; }
+  .hero-image-fullbleed { display: none; }
+
+  /* ─── Scoreboard Stats (replaces stat-strip) ─── */
+  .scoreboard {
+    background: var(--bg-tertiary);
+    padding-block: 0;
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--hairline);
+  }
+  .scoreboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 600px) { .scoreboard-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .scoreboard-grid { grid-template-columns: repeat(4, 1fr); } }
+  .scoreboard-cell {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 2.5vw, 2rem);
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    transition: background var(--dur-fast);
+  }
+  .scoreboard-cell:hover { background: rgba(200,255,0,0.04); }
+  @media (min-width: 900px) { .scoreboard-cell:last-child { border-right: 0; } }
+  .scoreboard-num {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    flex-shrink: 0;
+  }
+  .scoreboard-num.is-neon { color: var(--accent); }
+  .scoreboard-label {
+    font-family: var(--font-mono);
+    font-size: clamp(0.6rem, 1vw, 0.75rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 12ch;
+  }
+
+  /* ─── Wall of Gains — PR Terminal Board ─── */
+  .wall-of-gains {
+    background: var(--bg-tertiary);
+    padding-block: clamp(4rem, 8vw, 6rem);
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--hairline);
+  }
+  .wog-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .wog-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+  .wog-title .neon { color: var(--accent); }
+  .wog-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.375rem 0.625rem;
+  }
+  .wog-live-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    animation: wog-blink 1.2s step-end infinite;
+  }
+  @keyframes wog-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  /* Terminal table */
+  .wog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+  }
+  .wog-table-head {
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 2fr;
+    gap: 1rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0.75rem 0;
+  }
+  @media (max-width: 600px) {
+    .wog-table-head { grid-template-columns: 2fr 2fr 2fr; }
+    .wog-table-head :last-child { display: none; }
+  }
+  .wog-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 2fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.125rem 0;
+    border-bottom: 1px solid rgba(200,255,0,0.08);
+    transition: background var(--dur-fast);
+  }
+  .wog-row:hover { background: rgba(200,255,0,0.04); padding-left: 0.5rem; }
+  @media (max-width: 600px) {
+    .wog-row { grid-template-columns: 2fr 2fr 2fr; }
+    .wog-row :nth-child(4) { display: none; }
+  }
+  .wog-name {
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .wog-lift {
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
+    color: var(--text-secondary);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .wog-weight {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    color: var(--text-primary);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .wog-weight .wog-unit {
+    font-size: 0.6em;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 0.2em;
+  }
+  /* Progress bar */
+  .wog-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+  .wog-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(200,255,0,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+  .wog-bar-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: var(--accent);
+    transition: width 1.2s var(--ease-out);
+  }
+  .wog-tag-pr {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-on);
+    background: var(--accent);
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+  }
+  .wog-tag-near {
+    color: var(--text-muted);
+    font-size: 0.5625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* ─── 30-Tage CTA Block ─── */
+  .days-cta {
+    background: var(--bg-primary);
+    padding-block: clamp(5rem, 10vw, 8rem);
+    border-top: 2px solid var(--hairline);
+    border-bottom: 2px solid var(--accent);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 768px) {
+    .days-cta { grid-template-columns: 1fr 1fr; }
+  }
+  .days-cta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .days-counter-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .days-number {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 18vw, 14rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .days-label-wrap {
+    display: grid;
+    gap: 0.375rem;
+  }
+  .days-unit {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .days-sublabel {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    max-width: 14ch;
+  }
+  .days-cta-right {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .days-cta-right h2 {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+  .days-cta-right p {
+    color: var(--text-secondary);
+    font-size: var(--fs-body-lg);
+    line-height: 1.6;
+    max-width: 42ch;
+  }
+
+  /* ─── Timetable (Kurse — Abfahrtstafel-Stil) ─── */
+  .timetable-section {
+    background: var(--bg-primary);
+    padding-block: clamp(4rem, 8vw, 6rem);
+    border-top: 2px solid var(--hairline);
+  }
+  .timetable-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .timetable-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .timetable-title .neon { color: var(--accent); }
+  /* Table */
+  .timetable {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+  }
+  .timetable-cols-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 90px;
+    gap: 0;
+    padding: 0.625rem 1rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  @media (max-width: 600px) {
+    .timetable-cols-header { grid-template-columns: 70px 1fr 70px; }
+    .timetable-cols-header :nth-child(3) { display: none; }
+  }
+  .timetable-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 90px;
+    gap: 0;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid rgba(240,240,240,0.06);
+    align-items: center;
+    transition: background var(--dur-fast);
+    cursor: default;
+  }
+  .timetable-row:hover { background: rgba(200,255,0,0.04); }
+  .timetable-row.is-full { opacity: 0.5; }
+  @media (max-width: 600px) {
+    .timetable-row { grid-template-columns: 70px 1fr 70px; }
+    .timetable-row :nth-child(3) { display: none; }
+  }
+  .tt-time {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .tt-name {
+    font-family: var(--font-display);
+    font-size: clamp(0.9375rem, 1.6vw, 1.125rem);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+  .tt-name small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+  .tt-trainer {
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .tt-status {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: right;
+    padding-right: 0.25rem;
+  }
+  .tt-status.is-free { color: var(--accent); }
+  .tt-status.is-low { color: #FFDD00; }
+  .tt-status.is-full { color: #FF3D00; }
+  /* Kurs-Typ-Indikator left border */
+  .timetable-row.type-kraft { border-left: 3px solid var(--color-kurs-kraft); }
+  .timetable-row.type-hyrox { border-left: 3px solid var(--color-kurs-hyrox); }
+  .timetable-row.type-mobility { border-left: 3px solid var(--color-kurs-mobility); }
+  .timetable-row.type-pilates { border-left: 3px solid var(--color-kurs-pilates); }
+  .timetable-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .tt-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tt-legend-bar {
+    width: 20px;
+    height: 3px;
+    flex-shrink: 0;
   }
 
   /* ─── Quiz Section (after hero, signature interaction) ─── */
@@ -799,10 +1211,10 @@
   /* ─── CTA Block (Probetraining) ─── */
   .cta-block {
     background: var(--accent);
-    color: var(--text-primary);
+    color: var(--accent-on);
     padding-block: clamp(4rem, 8vw, 7rem);
-    border-top: 4px solid var(--bg-tertiary);
-    border-bottom: 4px solid var(--bg-tertiary);
+    border-top: 0;
+    border-bottom: 0;
   }
   .cta-block-inner {
     display: grid;
@@ -816,16 +1228,23 @@
   .cta-block h2 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 0.9;
-    color: var(--text-primary);
+    color: var(--accent-on);
   }
   .cta-block p {
-    color: rgba(255,255,255,0.85);
+    color: rgba(10,10,10,0.78);
     font-size: var(--fs-body-lg);
     line-height: 1.5;
     margin-block: 1rem 1.5rem;
     max-width: 40ch;
   }
-  .cta-block .btn-ghost { border-color: var(--text-primary); }
+  .cta-block .btn-ghost {
+    color: var(--accent-on);
+    outline-color: var(--accent-on);
+  }
+  .cta-block .btn-ghost:hover {
+    background: var(--accent-on);
+    color: var(--accent);
+  }
 
   /* ─── Subpage Hero (kurse, trainer, probetraining) ─── */
   .subpage-hero {
@@ -1939,32 +2358,9 @@
      Live-Board, Disziplin-Dial, Section-Dividers)
      ================================================================ */
 
-  /* ─── Hero with background video + stagger letters + pulse dot ─── */
-  .hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-  }
-  .hero-video-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    opacity: 0.55;
-    filter: contrast(1.2) saturate(0.6);
-    pointer-events: none;
-  }
-  .hero-video-veil {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 80% 60% at 30% 40%, transparent 0%, rgba(15,15,15,0.65) 60%, rgba(15,15,15,0.95) 100%),
-      linear-gradient(180deg, rgba(15,15,15,0.35) 0%, rgba(15,15,15,0.9) 100%);
-  }
+  /* ─── Hero video elements — hidden (new hero is text-only) ─── */
+  .hero-video-bg { display: none; }
+  .hero-video-veil { display: none; }
   .hero .container-wide { position: relative; z-index: 1; }
 
   /* Pulse marker — heart-beat indicator above eyebrow */
@@ -1985,13 +2381,13 @@
     height: 10px;
     background: var(--accent);
     /* No border-radius — brutalist hard rule */
-    box-shadow: 0 0 0 0 rgba(255, 89, 56, 0.6);
+    box-shadow: 0 0 0 0 rgba(200, 255, 0, 0.5);
     animation: pulse-beat 1.4s var(--ease-out) infinite;
   }
   @keyframes pulse-beat {
-    0%   { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(255, 89, 56, 0.6); }
-    50%  { transform: scale(1.1);  box-shadow: 0 0 0 9px rgba(255, 89, 56, 0); }
-    100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(255, 89, 56, 0); }
+    0%   { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(200, 255, 0, 0.5); }
+    50%  { transform: scale(1.1);  box-shadow: 0 0 0 9px rgba(200, 255, 0, 0); }
+    100% { transform: scale(0.85); box-shadow: 0 0 0 0 rgba(200, 255, 0, 0); }
   }
 
   /* Stagger-reveal headline letters */
@@ -2086,13 +2482,13 @@
     animation: pulse-beat 1.4s var(--ease-out) infinite;
   }
 
-  /* ─── Section-Divider: Kettlebell silhouette (SVG, brutal-aggressive) ─── */
+  /* ─── Section-Divider: Kettlebell silhouette ─── */
   .divider-iron {
     background: var(--bg-tertiary);
     padding: 0;
     overflow: hidden;
     line-height: 0;
-    border-block: 4px solid var(--accent);
+    border-block: 2px solid var(--hairline);
   }
   .divider-iron svg {
     display: block;
@@ -2100,7 +2496,7 @@
     height: clamp(80px, 14vw, 160px);
   }
   .divider-iron .iron-shape { fill: var(--accent); }
-  .divider-iron .iron-shape-ghost { fill: rgba(255,89,56,0.18); }
+  .divider-iron .iron-shape-ghost { fill: rgba(200,255,0,0.12); }
 
   /* ─── Iron-Stack Animation (Olympic plate stack — scroll-driven) ─── */
   .iron-stack-block {
@@ -2121,10 +2517,10 @@
     position: relative;
     aspect-ratio: 4/5;
     background:
-      linear-gradient(180deg, transparent 65%, rgba(255,89,56,0.08) 100%),
+      linear-gradient(180deg, transparent 65%, rgba(200,255,0,0.06) 100%),
       var(--bg-tertiary);
     overflow: hidden;
-    border: 1px solid var(--hairline-strong);
+    border: 1px solid var(--hairline);
   }
   .iron-bar {
     position: absolute;
@@ -2271,7 +2667,7 @@
     height: 12px;
     background: var(--accent);
     /* No border-radius — brutalist */
-    box-shadow: 0 0 0 0 rgba(255, 89, 56, 0.6);
+    box-shadow: 0 0 0 0 rgba(200, 255, 0, 0.5);
     animation: pulse-beat 1.4s var(--ease-out) infinite;
     flex-shrink: 0;
   }
@@ -2304,7 +2700,7 @@
       align-items: center;
     }
   }
-  .live-row:hover { background: rgba(255,89,56,0.05); }
+  .live-row:hover { background: rgba(200,255,0,0.04); }
   .live-time {
     font-family: var(--font-display);
     font-size: 0.875rem;
@@ -2443,7 +2839,7 @@
     cursor: pointer;
     transition: background var(--dur-fast), padding-left var(--dur-base);
   }
-  .dial-options label:hover { background: rgba(255,89,56,0.06); padding-left: 1.25rem; }
+  .dial-options label:hover { background: rgba(200,255,0,0.06); padding-left: 1.25rem; }
   .dial-options label:focus-within { outline: 2px solid var(--accent); outline-offset: -2px; }
   .dial-num {
     font-family: var(--font-display);
@@ -2473,7 +2869,7 @@
     color: var(--accent);
   }
   .dial-options input:checked + label {
-    background: rgba(255,89,56,0.1);
+    background: rgba(200,255,0,0.1);
     border-left: 3px solid var(--accent);
     padding-left: 1rem;
   }
@@ -2588,7 +2984,7 @@
   }
   .cf-options label:hover {
     border-color: var(--accent);
-    background: rgba(255, 89, 56, 0.06);
+    background: rgba(200, 255, 0, 0.06);
   }
   .cf-options input:focus-visible + label {
     outline: 2px solid var(--accent);
@@ -2621,7 +3017,7 @@
     color: var(--accent-on);
   }
   .cf-options input:checked + label .cf-sub {
-    color: rgba(15, 15, 15, 0.78);
+    color: rgba(10, 10, 10, 0.78);
   }
   .cf-options input:checked + label::after {
     content: "✓";
@@ -2691,7 +3087,7 @@
     font-size: 0.6875rem;
     letter-spacing: 0.18em;
     color: var(--accent);
-    background: rgba(255, 89, 56, 0.12);
+    background: rgba(200, 255, 0, 0.1);
     padding: 0.4rem 0.625rem;
     margin-bottom: 0.75rem;
     text-transform: uppercase;
@@ -3635,34 +4031,32 @@
      equipment monograms · noise textile overlay
      ═══════════════════════════════════════════════════════════════ */
 
-  /* Hero eyebrow CTA above headline */
+  /* Hero eyebrow CTA — monospace terminal style */
   .hero-eyebrow-cta {
     display: inline-flex;
     align-items: center;
     gap: 0.625rem;
     padding: 0.45rem 0.875rem;
-    margin-bottom: 1rem;
-    background: var(--accent);
-    color: var(--accent-on);
-    font-family: var(--font-display);
+    margin-bottom: 1.5rem;
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--font-mono);
     font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    border: 0;
-    transform: skewX(-6deg);
+    letter-spacing: 0.2em;
+    border: 1px solid var(--accent);
   }
-  .hero-eyebrow-cta > span { display: inline-block; transform: skewX(6deg); }
+  .hero-eyebrow-cta > span { display: inline-block; }
 
-  /* Live PR marquee — slim ticker bottom of hero */
+  /* Live PR marquee — slim ticker bottom of hero, neon on black */
   .hero-marquee {
     position: relative;
     width: 100%;
-    margin-top: 2.5rem;
     overflow: hidden;
     border-top: 2px solid var(--accent);
-    border-bottom: 2px solid var(--accent);
-    background: var(--accent);
-    color: var(--accent-on);
+    border-bottom: 0;
+    background: var(--bg-tertiary);
+    color: var(--accent);
     line-height: 1;
   }
   .hero-marquee-track {
@@ -3670,45 +4064,28 @@
     gap: 3rem;
     padding-block: 0.7rem;
     white-space: nowrap;
-    font-family: var(--font-display);
-    font-size: clamp(0.95rem, 1.6vw, 1.35rem);
-    letter-spacing: -0.005em;
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 1.2vw, 0.9375rem);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     animation: marquee-scroll 60s linear infinite;
     will-change: transform;
   }
-  .hero-marquee-track > span { flex-shrink: 0; }
+  .hero-marquee-track > span { flex-shrink: 0; color: var(--text-muted); }
+  .hero-marquee-track > span strong { color: var(--accent); font-family: var(--font-display); font-size: 1.1em; }
   .hero-marquee-track > span::after {
-    content: "✕";
-    color: var(--accent-on);
+    content: " ·";
+    color: var(--accent);
     margin-left: 3rem;
-    opacity: 0.55;
+    opacity: 0.6;
   }
   @keyframes marquee-scroll {
     from { transform: translate3d(0, 0, 0); }
     to   { transform: translate3d(-50%, 0, 0); }
   }
 
-  /* Cursor-following accent dot — JS sets --cx, --cy as percent */
-  .cursor-dot {
-    position: fixed;
-    top: 0; left: 0;
-    width: 14px; height: 14px;
-    background: var(--accent);
-    pointer-events: none;
-    z-index: 9999;
-    /* Square — brutalist */
-    transform: translate3d(var(--cx, -50px), var(--cy, -50px), 0) translate(-50%, -50%);
-    transition: transform 0.18s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.25s;
-    mix-blend-mode: difference;
-    opacity: 0;
-    box-shadow: 0 0 0 1px var(--accent), 0 0 14px rgba(255, 89, 56, 0.45);
-  }
-  .cursor-dot.is-active { opacity: 1; }
-  /* Hide on touch devices */
-  @media (hover: none), (pointer: coarse) {
-    .cursor-dot { display: none; }
-  }
+  /* Cursor dot — REMOVED per design spec */
+  .cursor-dot { display: none !important; }
 
   /* BPM-120 pulse override (current is 1.4s = ~43bpm; 0.5s = 120bpm) */
   .hero-pulse-dot, .hero-ticker-pulse {
@@ -3733,7 +4110,7 @@
       repeating-linear-gradient(
         135deg,
         transparent 0 12px,
-        rgba(255, 89, 56, 0.08) 12px 13px
+        rgba(200, 255, 0, 0.05) 12px 13px
       );
     pointer-events: none;
   }
@@ -3927,15 +4304,16 @@
     }
   }
 
-  /* Manifest-quote — full-bleed, large brutalist — min 60svh für Manifest-Moment */
+  /* Manifest-quote — full-bleed, large brutalist */
   .manifest-quote {
     position: relative;
     min-height: 60svh;
     display: grid;
     align-content: center;
     padding-block: clamp(5rem, 12vw, 9rem);
-    background: var(--bg-primary);
-    border-block: 4px solid var(--accent);
+    background: var(--bg-tertiary);
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--hairline);
     text-align: center;
     overflow: hidden;
     isolation: isolate;
@@ -4075,7 +4453,7 @@
       repeating-linear-gradient(
         90deg,
         transparent 0 96px,
-        rgba(255, 89, 56, 0.05) 96px 97px
+        rgba(200, 255, 0, 0.04) 96px 97px
       );
   }
   .athletes-action .container-wide,
