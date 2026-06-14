@@ -1299,6 +1299,7 @@
             justify-content: center;
             margin-bottom: 36px;
         }
+        /* Default pills (kept for backwards-compat) */
         .branchen-pill {
             padding: 9px 20px;
             border-radius: 100px;
@@ -1324,6 +1325,106 @@
         .branchen-pill.individual.active {
             background: var(--primary);
             border-color: var(--primary);
+        }
+
+        /* Underline-style (subtler — editorial-magazine tab-row) */
+        .branchen-pills--underline {
+            border-bottom: 1px solid rgba(15,13,11,0.08);
+            padding-bottom: 0;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .branchen-pills--underline .branchen-pill {
+            padding: 14px 16px 16px;
+            border-radius: 0;
+            border: none;
+            border-bottom: 2px solid transparent;
+            background: transparent;
+            font-size: 0.78rem;
+            color: rgba(15,13,11,0.45);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: -1px;
+        }
+        .branchen-pills--underline .branchen-pill:hover {
+            color: var(--secondary);
+            border-bottom-color: rgba(166,124,82,0.35);
+            background: transparent;
+        }
+        .branchen-pills--underline .branchen-pill.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+            background: transparent;
+            font-weight: 600;
+        }
+        .branchen-pills--underline .branchen-pill.individual.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background: transparent;
+        }
+
+        /* ── Mini-Spread per Slide · 3 fanned page-thumbnails ── */
+        .branchen-slide-spread {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(15,13,11,0.08);
+        }
+        .spread-eyebrow {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: rgba(15,13,11,0.45);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .spread-fan {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 130px;
+            padding: 8px 4px;
+        }
+        .spread-paper {
+            width: 90px;
+            aspect-ratio: 3/4.4;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 4px;
+            background: #f6f1e8;
+            border: 1px solid rgba(15,13,11,0.18);
+            box-shadow: 0 10px 18px -8px rgba(15,13,11,0.35);
+            transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 380ms cubic-bezier(0.22, 1, 0.36, 1);
+            transform-origin: 50% 95%;
+        }
+        .spread-paper.sp-1 {
+            transform: rotate(-6deg);
+            z-index: 1;
+            margin-right: -36px;
+        }
+        .spread-paper.sp-2 {
+            transform: translateY(-6px) rotate(0deg);
+            z-index: 3;
+            margin-right: -36px;
+        }
+        .spread-paper.sp-3 {
+            transform: rotate(6deg);
+            z-index: 2;
+        }
+        .branchen-slide.active .spread-paper.sp-2 {
+            box-shadow: 0 18px 28px -10px rgba(166,124,82,0.45),
+                        0 8px 16px -4px rgba(15,13,11,0.35);
+        }
+        @media (max-width: 768px) {
+            .spread-paper { width: 78px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .spread-paper { transition: none; }
         }
 
         /* ── Theater: layout wrapper ── */
@@ -1635,6 +1736,363 @@
             font-size: 0.78rem;
             color: var(--gray-400);
             margin-top: 10px;
+        }
+
+        /* ═════════════════════════════════════════
+           BRANCHEN-SCROLL · Pinned scroll-driven showcase
+           ═════════════════════════════════════════ */
+        .branchen-scroll {
+            background: var(--gray-50);
+            color: var(--bg-dark);
+            position: relative;
+            padding-top: clamp(60px, 8vw, 100px);
+            padding-bottom: clamp(40px, 5vw, 80px);
+        }
+        /* subtle editorial texture */
+        .branchen-scroll::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(166,124,82,0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: 0 0;
+            pointer-events: none;
+            opacity: 0.6;
+            z-index: 0;
+        }
+        .branchen-scroll-header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto clamp(40px, 5vw, 80px);
+            position: relative;
+            z-index: 2;
+        }
+        .branchen-scroll-track {
+            position: relative;
+            height: 900vh;
+            z-index: 1;
+        }
+        .branchen-scroll-pin {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(20px, 3vw, 40px) 0;
+        }
+        .branchen-scroll-stage {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: clamp(40px, 5vw, 80px);
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            min-height: min(640px, 78vh);
+            padding: 0 clamp(20px, 3vw, 48px);
+        }
+
+        /* ── LEFT column: Screenshot stack + Text panel ── */
+        .branchen-left {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(22px, 2.5vw, 32px);
+            align-self: center;
+            max-width: 460px;
+        }
+        .branchen-stack {
+            position: relative;
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 4 / 5;
+            border-radius: 6px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #f0ebe4 0%, #e8e0d4 100%);
+            box-shadow: 0 30px 60px -20px rgba(15,13,11,0.35), 0 10px 22px -10px rgba(15,13,11,0.18), 0 0 0 1px rgba(15,13,11,0.04);
+        }
+        .branchen-stack::after {
+            content: '';
+            position: absolute; inset: 0;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+            border-radius: inherit;
+            pointer-events: none;
+            z-index: 20;
+        }
+        .branchen-shot {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            background: #f6f1e8;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease-out;
+            z-index: 1;
+            will-change: transform, opacity;
+        }
+        .branchen-shot.is-active { transform: translateY(0); opacity: 1; z-index: 10; }
+        .branchen-shot.is-past { transform: translateY(-10%) scale(0.97); opacity: 0; z-index: 2; }
+        .branchen-shot img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center; display: block;
+        }
+
+        /* ── Text panel (below stack) — auto-sized to longest content ── */
+        .branchen-text {
+            position: relative;
+            display: grid;
+            width: 100%;
+        }
+        .branchen-text-item {
+            grid-area: 1 / 1;
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 460ms ease, transform 560ms cubic-bezier(0.22,1,0.36,1);
+            pointer-events: none;
+            min-width: 0;
+        }
+        .branchen-text-item.is-active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .branchen-text-num {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 14px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        .branchen-text-num::before {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--primary);
+            display: inline-block;
+            opacity: 0.7;
+        }
+        .branchen-text-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 2.5vw, 1.95rem);
+            font-weight: 700;
+            color: var(--bg-dark);
+            margin: 0 0 12px;
+            letter-spacing: -0.01em;
+            line-height: 1.14;
+        }
+        .branchen-text-desc {
+            font-size: 0.93rem;
+            color: var(--gray-600);
+            line-height: 1.62;
+            margin: 0 0 18px;
+            max-width: 38ch;
+        }
+        .branchen-text-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+        .branchen-text-pill {
+            padding: 5px 12px;
+            background: transparent;
+            border: 1px solid rgba(15,13,11,0.14);
+            border-radius: 100px;
+            font-size: 0.74rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.01em;
+        }
+        .branchen-text-pill i {
+            font-size: 0.62rem;
+            color: var(--primary);
+        }
+        .branchen-text-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            border-bottom: 1px solid rgba(166,124,82,0.4);
+            padding-bottom: 3px;
+            transition: gap 240ms ease, border-color 240ms ease;
+        }
+        .branchen-text-cta:hover { gap: 12px; border-color: var(--primary); }
+        .branchen-text-cta i { font-size: 0.7rem; }
+
+        /* ── RIGHT column: high-quality Mockup ── */
+        .branchen-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            margin: 0 auto 0 0;
+            align-self: center;
+        }
+        .bm-laptop {
+            position: relative;
+            width: 100%;
+            filter: drop-shadow(0 30px 60px rgba(15,13,11,0.2));
+        }
+        .bm-laptop-lid {
+            background: #1d1d1f;
+            border-radius: 14px 14px 0 0;
+            padding: 14px 14px 0 14px;
+            position: relative;
+        }
+        .bm-laptop-cam {
+            width: 6px; height: 6px;
+            background: #3a3a3c;
+            border-radius: 50%;
+            margin: 0 auto 7px;
+        }
+        .bm-laptop-screen {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1920 / 1200;
+            overflow: hidden;
+            border-radius: 3px;
+            background: #000;
+        }
+        .bm-laptop-screen video {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            opacity: 0;
+            transition: opacity 500ms ease;
+        }
+        .bm-laptop-screen video.is-active { opacity: 1; }
+        /* Brushstroke transition */
+        .bm-laptop-screen::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            z-index: 5;
+            transition: none;
+        }
+        .bm-laptop-screen.brushstroke::after {
+            animation: bm-brushstroke 0.4s ease-out forwards;
+        }
+        @keyframes bm-brushstroke {
+            0% { left: -100%; opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+        .bm-laptop-base {
+            width: 113%;
+            margin-left: -6.5%;
+            height: 13px;
+            background: linear-gradient(to bottom, #cccccc 0%, #d8d8d8 30%, #a8a8a8 100%);
+            border-radius: 0 0 14px 14px;
+            position: relative;
+        }
+        .bm-laptop-base::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 18%; height: 5px;
+            background: #8e8e8e;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .bm-phone {
+            position: absolute;
+            bottom: 4%;
+            right: -5%;
+            width: 19%;
+            z-index: 5;
+            filter: drop-shadow(0 18px 36px rgba(15,13,11,0.28));
+        }
+        .bm-phone-frame {
+            background: #1d1d1f;
+            border-radius: 22px;
+            padding: 3px;
+            position: relative;
+        }
+        .bm-phone-notch {
+            position: absolute;
+            top: 6px; left: 50%; transform: translateX(-50%);
+            width: 36%; height: 7px;
+            background: #1d1d1f;
+            border-radius: 0 0 6px 6px;
+            z-index: 2;
+        }
+        .bm-phone-screen {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 19.5;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #000;
+        }
+        .bm-phone-screen video {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            opacity: 0;
+            transition: opacity 500ms ease;
+        }
+        .bm-phone-screen video.is-active { opacity: 1; }
+
+        /* Dots */
+        .branchen-dots {
+            position: absolute; bottom: clamp(16px, 2.5vw, 30px);
+            left: 50%; transform: translateX(-50%);
+            display: flex; gap: 10px; z-index: 5;
+        }
+        .branchen-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: rgba(15,13,11,0.18); border: 0; padding: 0;
+            cursor: pointer; transition: background 240ms, transform 240ms;
+        }
+        .branchen-dot.is-active { background: var(--primary); transform: scale(1.4); }
+        .branchen-scroll-cta { text-align: center; padding-top: clamp(40px, 5vw, 60px); position: relative; z-index: 2; }
+
+        /* Mobile */
+        @media (max-width: 992px) {
+            .branchen-scroll-track { height: 750vh; }
+            .branchen-scroll-stage {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                height: auto;
+                max-height: 90vh;
+            }
+            .branchen-left {
+                flex-direction: row;
+                gap: 24px;
+                align-items: center;
+            }
+            .branchen-stack {
+                flex: 0 0 36%;
+                aspect-ratio: 4 / 5;
+                max-width: 220px;
+            }
+            .branchen-text { min-height: 0; flex: 1; }
+            .branchen-mockup { max-width: 90%; margin: 0 auto; }
+        }
+        @media (max-width: 540px) {
+            .branchen-left { flex-direction: column; gap: 16px; }
+            .branchen-stack { flex: none; max-width: 60%; }
+            .branchen-text-title { font-size: 1.35rem; }
+            .branchen-text-desc { font-size: 0.88rem; }
+            .bm-phone { width: 22%; bottom: 3%; right: -3%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .branchen-shot, .branchen-text-item { transition: opacity 0.2s; }
+            .branchen-shot.is-active, .branchen-text-item.is-active { transform: translateY(0); }
+            .branchen-shot.is-past { transform: none; opacity: 0; }
         }
 
         /* ── Custom Dev Footer ── */
@@ -5353,202 +5811,226 @@
     <!-- ═══════════════════════════════════════
          BRANCHEN SPOTLIGHT
          ═══════════════════════════════════════ -->
-    <section class="branchen" id="branchen">
-        <div aria-hidden="true" class="section-orbs"><div class="orb orb--cognac" style="width:700px;height:700px;top:-150px;left:-200px"></div><div class="orb orb--gray" style="width:500px;height:500px;bottom:-100px;right:-150px"></div></div>
-        <div class="section-glow-overlay"></div>
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Branchen</span>
-                <h2 class="section-title">Websites für <span class="text-highlight">jede Branche</span></h2>
-                <p class="section-subtitle">Ob Friseursalon, Arztpraxis oder Handwerksbetrieb im Westerwald und darüber hinaus — wir kennen die digitalen Anforderungen Ihrer Branche.</p>
-            </div>
+    <section class="branchen-scroll" id="branchen">
 
-        </div>
+        <header class="branchen-scroll-header container" data-aos="fade-up">
+            <span class="section-label">Branchen</span>
+            <h2 class="section-title">Websites für <span class="text-highlight">jede Branche</span></h2>
+            <p class="section-subtitle">Zehn Branchen, zehn Design-Sprachen. Scrollen Sie durch — jede Branche bekommt ihren eigenen Auftritt.</p>
+        </header>
 
-        <!-- Branchen Pill Navigation -->
-        <div class="container">
-            <div class="branchen-pills" id="branchenPills">
-                <button class="branchen-pill active" data-index="0">Friseure</button>
-                <button class="branchen-pill" data-index="1">Ärzte</button>
-                <button class="branchen-pill" data-index="2">Handwerk</button>
-                <button class="branchen-pill" data-index="3">Gastro</button>
-                <button class="branchen-pill" data-index="4">Fitness</button>
-                <button class="branchen-pill" data-index="5">Einzelhandel</button>
-                <button class="branchen-pill individual" data-index="6">✦ Individual</button>
-            </div>
-        </div>
+        <div class="branchen-scroll-track">
+            <div class="branchen-scroll-pin">
 
-        <!-- Branchen Theater -->
-        <div class="branchen-theater" id="branchenTheater">
-            <div class="branchen-theater-main">
-                <!-- Left: Device Stage -->
-                <div class="branchen-devices-stage" id="branchenDevicesStage">
-                    <!-- Blueprint SVG wireframe overlay -->
-                    <svg class="branchen-blueprint" id="branchenBlueprint" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid meet">
-                        <rect x="10" y="10" width="520" height="340" rx="12" />
-                        <line x1="10" y1="355" x2="530" y2="355" />
-                        <rect x="430" y="140" width="90" height="190" rx="14" />
-                    </svg>
+                <div class="branchen-scroll-stage container">
 
-                    <!-- Laptop Mockup -->
-                    <div class="branchen-device-laptop" id="branchenLaptop">
-                        <div class="branchen-laptop-lid">
-                            <div class="branchen-laptop-cam"></div>
-                            <div class="branchen-laptop-screen" id="branchenLaptopScreen">
-                                <video class="active" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/friseure-macbook.mp4" aria-label="Friseur-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/aerzte-macbook.mp4" aria-label="Arztpraxis-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/handwerk-macbook.mp4" aria-label="Handwerker-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/gastronomie-macbook.mp4" aria-label="Restaurant-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/fitness-macbook.mp4" aria-label="Fitnessstudio-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/einzelhandel-macbook.mp4" aria-label="Einzelhandel-Website auf dem Laptop"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/macbook/simplifyops-macbook.mp4" aria-label="Individual-Projekt auf dem Laptop"></video>
+                    <!-- LEFT: Stack + Text panel -->
+                    <div class="branchen-left">
+                        <div class="branchen-stack" id="branchenStack">
+                        <article class="branchen-shot is-active" data-i="0" data-branche="friseur">
+                            <img src="branchen-previews-v2/_meta/gallery/friseur-full.jpg" alt="Friseure & Beauty · ganze Landing-Page" loading="eager" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="1" data-branche="arzt">
+                            <img src="branchen-previews-v2/_meta/gallery/arzt-full.jpg" alt="Ärzte & Praxen · ganze Landing-Page" loading="eager" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="2" data-branche="handwerk">
+                            <img src="branchen-previews-v2/_meta/gallery/handwerk-full.jpg" alt="Handwerk & Bau · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="3" data-branche="gastronomie">
+                            <img src="branchen-previews-v2/_meta/gallery/gastronomie-full.jpg" alt="Gastronomie · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="4" data-branche="fitness">
+                            <img src="branchen-previews-v2/_meta/gallery/fitness-full.jpg" alt="Fitness & Sport · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="5" data-branche="einzelhandel">
+                            <img src="branchen-previews-v2/_meta/gallery/einzelhandel-full.jpg" alt="Einzelhandel · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="6" data-branche="hotel">
+                            <img src="branchen-previews-v2/_meta/gallery/hotel-full.jpg" alt="Hotels & Pensionen · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="7" data-branche="zahnarzt">
+                            <img src="branchen-previews-v2/_meta/gallery/zahnarzt-full.jpg" alt="Zahnarzt & Kosmetik · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="8" data-branche="beratung">
+                            <img src="branchen-previews-v2/_meta/gallery/beratung-full.jpg" alt="Beratung & Coaching · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        <article class="branchen-shot" data-i="9" data-branche="immobilien">
+                            <img src="branchen-previews-v2/_meta/gallery/immobilien-full.jpg" alt="Immobilien & Makler · ganze Landing-Page" loading="lazy" decoding="async">
+                        </article>
+                        </div>
+                        <div class="branchen-text" id="branchenText">
+                        <article class="branchen-text-item is-active" data-i="0">
+                            <span class="branchen-text-num">01 / 10 · Friseure & Beauty</span>
+                            <h3 class="branchen-text-title">Magazine-Stack mit Cognac-Akzenten.</h3>
+                            <p class="branchen-text-desc">Editorial-Stil für Salons, die ihren Auftritt wie ein Hochglanz-Magazin lesen lassen wollen — Atmosphäre, Storytelling, Vertrauen.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Online-Buchung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>KI-Bilder</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Galerie</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/friseur/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="1">
+                            <span class="branchen-text-num">02 / 10 · Ärzte & Praxen</span>
+                            <h3 class="branchen-text-title">Clinical-Spacious. Ruhe in Steel-Blau.</h3>
+                            <p class="branchen-text-desc">Vertrauen durch Klarheit. Großzügige Weißflächen, exakte Typografie und ein Tonfall, der Sicherheit ausstrahlt.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Terminbuchung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Sprechzeiten</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Notdienst</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/arzt/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="2">
+                            <span class="branchen-text-num">03 / 10 · Handwerk & Bau</span>
+                            <h3 class="branchen-text-title">Bold-Confident. Stark wie das Handwerk.</h3>
+                            <p class="branchen-text-desc">Direkter Stil mit Orange-Akzenten. Referenzen vor, Beweise gleich danach — wie auf der Baustelle.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Referenzen</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Notdienst</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Angebot</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/handwerk/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="3">
+                            <span class="branchen-text-num">04 / 10 · Gastronomie</span>
+                            <h3 class="branchen-text-title">Dense-Magazine. Weintöne, Karten-Layout.</h3>
+                            <p class="branchen-text-desc">Wie eine Speisekarte mit Geschichte. Dichte Spalten, große Foodfotos, kurze Texte mit Geschmack.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Reservierung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Speisekarte</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Events</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/gastronomie/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="4">
+                            <span class="branchen-text-num">05 / 10 · Fitness & Sport</span>
+                            <h3 class="branchen-text-title">Brutalist mit Coral-Energie.</h3>
+                            <p class="branchen-text-desc">Klar, mutig, motiviert. Kein Geschwurbel — nur Plan, Trainer und der nächste Schritt.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Probetraining</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Kursplan</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Mitgliedschaft</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/fitness/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="5">
+                            <span class="branchen-text-num">06 / 10 · Einzelhandel</span>
+                            <h3 class="branchen-text-title">Boutique-Magazine in Signal-Red.</h3>
+                            <p class="branchen-text-desc">Magazinhafte Produktbühne. Sortiment wie eine Lookbook-Strecke, Filialdetails ohne Schnörkel.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Sortiment</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Newsletter</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Filiale</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/einzelhandel/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="6">
+                            <span class="branchen-text-num">07 / 10 · Hotels & Pensionen</span>
+                            <h3 class="branchen-text-title">Cinematic-Luxe in Sage-Green.</h3>
+                            <p class="branchen-text-desc">Wie ein Filmplakat fürs Wochenende. Großformatige Stille, sanfte Töne, klare Saison-Angebote.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Buchung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Pakete</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Saison</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/hotel/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="7">
+                            <span class="branchen-text-num">08 / 10 · Zahnarzt & Kosmetik</span>
+                            <h3 class="branchen-text-title">Minimalist-Premium in Emerald.</h3>
+                            <p class="branchen-text-desc">Hochwertig, ruhig, präzise. Reduktion als Versprechen — jede Linie sitzt.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Beratung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Behandlung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Team</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/zahnarzt/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="8">
+                            <span class="branchen-text-num">09 / 10 · Beratung & Coaching</span>
+                            <h3 class="branchen-text-title">Editorial-Minimal in Slate.</h3>
+                            <p class="branchen-text-desc">Sachlichkeit als Statement. Klare Methodik, klare Termine, klare Sprache — wie ein gutes Briefing.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Termine</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Methoden</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Referenzen</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/beratung/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        <article class="branchen-text-item" data-i="9">
+                            <span class="branchen-text-num">10 / 10 · Immobilien & Makler</span>
+                            <h3 class="branchen-text-title">Editorial-Luxe in Taupe.</h3>
+                            <p class="branchen-text-desc">Häuser sind Geschichten. Architektur-Magazin trifft Maklerbüro — Atmosphäre vor Datenwüste.</p>
+                            <div class="branchen-text-features">
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Objekte</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Bewertung</span>
+                                <span class="branchen-text-pill"><i class="fa-solid fa-check" aria-hidden="true"></i>Service</span>
+                            </div>
+                            <a class="branchen-text-cta" href="branchen-previews-v2/immobilien/" target="_blank" rel="noopener">Vorschau ansehen <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </article>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Mockup mit Laptop + Phone-Overlay -->
+                    <div class="branchen-mockup" id="branchenMockup">
+                        <div class="bm-laptop">
+                            <div class="bm-laptop-lid">
+                                <div class="bm-laptop-cam"></div>
+                                <div class="bm-laptop-screen" id="bmLaptopScreen">
+                                    <video data-i="0" data-branche="friseur" muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/friseur-cinematic.mp4" aria-label="Friseure & Beauty" class="is-active"></video>
+                                    <video data-i="1" data-branche="arzt" muted loop playsinline preload="metadata" src="branchen-showcase/output/macbook/arzt-cinematic.mp4" aria-label="Ärzte & Praxen"></video>
+                                    <video data-i="2" data-branche="handwerk" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/handwerk-cinematic.mp4" aria-label="Handwerk & Bau"></video>
+                                    <video data-i="3" data-branche="gastronomie" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/gastronomie-cinematic.mp4" aria-label="Gastronomie"></video>
+                                    <video data-i="4" data-branche="fitness" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/fitness-cinematic.mp4" aria-label="Fitness & Sport"></video>
+                                    <video data-i="5" data-branche="einzelhandel" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/einzelhandel-cinematic.mp4" aria-label="Einzelhandel"></video>
+                                    <video data-i="6" data-branche="hotel" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/hotel-cinematic.mp4" aria-label="Hotels & Pensionen"></video>
+                                    <video data-i="7" data-branche="zahnarzt" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/zahnarzt-cinematic.mp4" aria-label="Zahnarzt & Kosmetik"></video>
+                                    <video data-i="8" data-branche="beratung" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/beratung-cinematic.mp4" aria-label="Beratung & Coaching"></video>
+                                    <video data-i="9" data-branche="immobilien" muted loop playsinline preload="none" src="branchen-showcase/output/macbook/immobilien-cinematic.mp4" aria-label="Immobilien & Makler"></video>
+                                </div>
+                            </div>
+                            <div class="bm-laptop-base"></div>
+                        </div>
+                        <div class="bm-phone">
+                            <div class="bm-phone-frame">
+                                <div class="bm-phone-notch"></div>
+                                <div class="bm-phone-screen" id="bmPhoneScreen">
+                                    <video data-i="0" data-branche="friseur" muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/friseur-cinematic.mp4" aria-label="Friseure & Beauty" class="is-active"></video>
+                                    <video data-i="1" data-branche="arzt" muted loop playsinline preload="metadata" src="branchen-showcase/output/iphone/arzt-cinematic.mp4" aria-label="Ärzte & Praxen"></video>
+                                    <video data-i="2" data-branche="handwerk" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/handwerk-cinematic.mp4" aria-label="Handwerk & Bau"></video>
+                                    <video data-i="3" data-branche="gastronomie" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/gastronomie-cinematic.mp4" aria-label="Gastronomie"></video>
+                                    <video data-i="4" data-branche="fitness" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/fitness-cinematic.mp4" aria-label="Fitness & Sport"></video>
+                                    <video data-i="5" data-branche="einzelhandel" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/einzelhandel-cinematic.mp4" aria-label="Einzelhandel"></video>
+                                    <video data-i="6" data-branche="hotel" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/hotel-cinematic.mp4" aria-label="Hotels & Pensionen"></video>
+                                    <video data-i="7" data-branche="zahnarzt" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/zahnarzt-cinematic.mp4" aria-label="Zahnarzt & Kosmetik"></video>
+                                    <video data-i="8" data-branche="beratung" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/beratung-cinematic.mp4" aria-label="Beratung & Coaching"></video>
+                                    <video data-i="9" data-branche="immobilien" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/immobilien-cinematic.mp4" aria-label="Immobilien & Makler"></video>
+                                </div>
                             </div>
                         </div>
-                        <div class="branchen-laptop-base"></div>
                     </div>
 
-                    <!-- Phone Mockup -->
-                    <div class="branchen-device-phone" id="branchenPhone">
-                        <div class="branchen-phone-frame">
-                            <div class="branchen-phone-notch"></div>
-                            <div class="branchen-phone-screen" id="branchenPhoneScreen">
-                                <video class="active" muted loop playsinline preload="none" src="branchen-showcase/output/iphone/friseure-iphone.mp4" aria-label="Friseur-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/aerzte-iphone.mp4" aria-label="Arztpraxis-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/handwerk-iphone.mp4" aria-label="Handwerker-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/gastronomie-iphone.mp4" aria-label="Restaurant-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/fitness-iphone.mp4" aria-label="Fitnessstudio-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/einzelhandel-iphone.mp4" aria-label="Einzelhandel-Website auf dem Smartphone"></video>
-                                <video muted loop playsinline preload="none" src="branchen-showcase/output/iphone/simplifyops-iphone.mp4" aria-label="Individual-Projekt auf dem Smartphone"></video>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Right: Content Panel -->
-                <div class="branchen-content-panel" id="branchenPanel">
-                    <div class="branchen-slide active" data-slide="0">
-                        <span class="branchen-slide-num">01/07</span>
-                        <h3 class="branchen-slide-title">Friseure & Beauty</h3>
-                        <p class="branchen-slide-desc">Vom Online-Terminkalender über den Produktshop bis zur Vorher/Nachher-Galerie — wir bauen genau die Website, die Ihren Salon professionell präsentiert und Neukunden überzeugt.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature"><i class="fas fa-calendar-check" aria-hidden="true"></i> Online-Terminbuchung</span>
-                            <span class="branchen-feature"><i class="fas fa-bag-shopping" aria-hidden="true"></i> Produktshop</span>
-                            <span class="branchen-feature"><i class="fas fa-users" aria-hidden="true"></i> Team & Stylisten</span>
-                            <span class="branchen-feature"><i class="fas fa-images" aria-hidden="true"></i> Vorher/Nachher Galerie</span>
-                            <span class="branchen-feature"><i class="fas fa-star" aria-hidden="true"></i> Kundenbewertungen</span>
-                        </div>
-                    </div>
-                    <div class="branchen-slide" data-slide="1">
-                        <span class="branchen-slide-num">02/07</span>
-                        <h3 class="branchen-slide-title">Ärzte & Praxen</h3>
-                        <p class="branchen-slide-desc">Patienten erwarten heute digitale Services: Online-Terminanfrage, übersichtliche Sprechzeiten und Informationen zu Ihren Leistungen — DSGVO-konform und vertrauenswürdig.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Online-Terminanfrage</span>
-                            <span class="branchen-feature"><i class="fas fa-clock" aria-hidden="true"></i> Sprechzeiten & Notdienst</span>
-                            <span class="branchen-feature"><i class="fas fa-stethoscope" aria-hidden="true"></i> Leistungsübersicht</span>
-                            <span class="branchen-feature"><i class="fas fa-file-medical" aria-hidden="true"></i> Patienteninformationen</span>
-                            <span class="branchen-feature"><i class="fas fa-shield-halved" aria-hidden="true"></i> DSGVO-konform</span>
-                        </div>
-                    </div>
-                    <div class="branchen-slide" data-slide="2">
-                        <span class="branchen-slide-num">03/07</span>
-                        <h3 class="branchen-slide-title">Handwerk & Bau</h3>
-                        <p class="branchen-slide-desc">Zeigen Sie Ihre besten Projekte, listen Sie Ihre Leistungen auf und machen Sie es Interessenten leicht, ein Angebot anzufragen — mit Notdienst-Button und Meisterbetrieb-Siegel.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature"><i class="fas fa-images" aria-hidden="true"></i> Referenzprojekte</span>
-                            <span class="branchen-feature"><i class="fas fa-file-invoice" aria-hidden="true"></i> Angebotsanfrage</span>
-                            <span class="branchen-feature"><i class="fas fa-list-check" aria-hidden="true"></i> Leistungskatalog</span>
-                            <span class="branchen-feature"><i class="fas fa-phone-volume" aria-hidden="true"></i> Notdienst-Kontakt</span>
-                            <span class="branchen-feature"><i class="fas fa-award" aria-hidden="true"></i> Zertifikate & Siegel</span>
-                        </div>
-                    </div>
-                    <div class="branchen-slide" data-slide="3">
-                        <span class="branchen-slide-num">04/07</span>
-                        <h3 class="branchen-slide-title">Gastronomie</h3>
-                        <p class="branchen-slide-desc">Digitale Speisekarte mit Allergen-Infos, Online-Tischreservierung und Eventkalender — mehr Gäste, weniger Telefonanrufe. 70 % der Restaurant-Suchen enden mit einem Besuch am selben Tag.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature"><i class="fas fa-utensils" aria-hidden="true"></i> Digitale Speisekarte</span>
-                            <span class="branchen-feature"><i class="fas fa-chair" aria-hidden="true"></i> Online-Reservierung</span>
-                            <span class="branchen-feature"><i class="fas fa-bell-concierge" aria-hidden="true"></i> Tagesgerichte & Aktionen</span>
-                            <span class="branchen-feature"><i class="fas fa-champagne-glasses" aria-hidden="true"></i> Events & Catering</span>
-                            <span class="branchen-feature"><i class="fas fa-star" aria-hidden="true"></i> Gästebewertungen</span>
-                        </div>
-                    </div>
-                    <div class="branchen-slide" data-slide="4">
-                        <span class="branchen-slide-num">05/07</span>
-                        <h3 class="branchen-slide-title">Fitness & Sport</h3>
-                        <p class="branchen-slide-desc">Interaktiver Kursplan, Probetraining-Buchung und Trainer-Profile — 73 % der Fitnessstudio-Interessenten suchen zuerst online. Holen Sie sie mit einer Website ab, die sofort Lust aufs Training macht.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature"><i class="fas fa-table-cells" aria-hidden="true"></i> Interaktiver Kursplan</span>
-                            <span class="branchen-feature"><i class="fas fa-dumbbell" aria-hidden="true"></i> Probetraining buchen</span>
-                            <span class="branchen-feature"><i class="fas fa-id-card" aria-hidden="true"></i> Mitgliedschafts-Infos</span>
-                            <span class="branchen-feature"><i class="fas fa-person-running" aria-hidden="true"></i> Trainer-Profile</span>
-                            <span class="branchen-feature"><i class="fas fa-apple-whole" aria-hidden="true"></i> Ernährungstipps</span>
-                        </div>
-                    </div>
-                    <div class="branchen-slide" data-slide="5">
-                        <span class="branchen-slide-num">06/07</span>
-                        <h3 class="branchen-slide-title">Einzelhandel</h3>
-                        <p class="branchen-slide-desc">Produktkatalog, Click & Collect und aktuelle Aktionen — Ihr stationäres Geschäft bekommt einen digitalen Schaufenster, der 24/7 geöffnet ist und regional neue Kunden anzieht.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature"><i class="fas fa-bag-shopping" aria-hidden="true"></i> Produktkatalog</span>
-                            <span class="branchen-feature"><i class="fas fa-box-open" aria-hidden="true"></i> Click & Collect</span>
-                            <span class="branchen-feature"><i class="fas fa-location-dot" aria-hidden="true"></i> Standort & Öffnungszeiten</span>
-                            <span class="branchen-feature"><i class="fas fa-tags" aria-hidden="true"></i> Aktionen & Angebote</span>
-                            <span class="branchen-feature"><i class="fas fa-envelope" aria-hidden="true"></i> Newsletter</span>
-                        </div>
-                    </div>
-                    <div class="branchen-slide" data-slide="6">
-                        <span class="branchen-slide-num" style="color:var(--primary);opacity:0.8">07/07</span>
-                        <h3 class="branchen-slide-title">Individual-Projekte</h3>
-                        <p class="branchen-slide-desc">Komplexere Anforderungen? Wir entwickeln maßgeschneiderte Web-Applikationen mit interaktiven Features, Animationen und Service-Darstellungen — wenn Standard nicht reicht.</p>
-                        <div class="branchen-slide-features">
-                            <span class="branchen-feature individual"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> Animierte Abläufe</span>
-                            <span class="branchen-feature individual"><i class="fas fa-sliders" aria-hidden="true"></i> Interaktive Features</span>
-                            <span class="branchen-feature individual"><i class="fas fa-plug" aria-hidden="true"></i> API-Integrationen</span>
-                            <span class="branchen-feature individual"><i class="fas fa-pen-ruler" aria-hidden="true"></i> Custom UI/UX</span>
-                            <span class="branchen-feature individual"><i class="fas fa-cube" aria-hidden="true"></i> Software-Produkte</span>
-                        </div>
-                        <div style="margin-top:16px">
-                            <a href="scraper/case-study.html" style="font-size:0.82rem;font-weight:600;color:var(--primary);text-decoration:none;border-bottom:1px solid rgba(166,124,82,0.4);padding-bottom:1px">Fallstudie ansehen <i class="fas fa-arrow-right" style="font-size:0.7rem;margin-left:3px" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+                <!-- Progress-Dots (subtle, bottom-center) -->
+                <div class="branchen-dots" id="branchenDots" role="tablist" aria-label="Branchen-Auswahl">
+                    <button class="branchen-dot is-active" data-i="0" aria-label="Friseure & Beauty"></button>
+                    <button class="branchen-dot" data-i="1" aria-label="Ärzte & Praxen"></button>
+                    <button class="branchen-dot" data-i="2" aria-label="Handwerk & Bau"></button>
+                    <button class="branchen-dot" data-i="3" aria-label="Gastronomie"></button>
+                    <button class="branchen-dot" data-i="4" aria-label="Fitness & Sport"></button>
+                    <button class="branchen-dot" data-i="5" aria-label="Einzelhandel"></button>
+                    <button class="branchen-dot" data-i="6" aria-label="Hotels & Pensionen"></button>
+                    <button class="branchen-dot" data-i="7" aria-label="Zahnarzt & Kosmetik"></button>
+                    <button class="branchen-dot" data-i="8" aria-label="Beratung & Coaching"></button>
+                    <button class="branchen-dot" data-i="9" aria-label="Immobilien & Makler"></button>
                 </div>
-            </div>
 
-            <!-- Vertical Progress Indicator -->
-            <div class="branchen-progress" id="branchenProgress">
-                <div class="branchen-progress-track"></div>
-                <div class="branchen-progress-fill" id="branchenProgressFill"></div>
-                <div class="branchen-progress-item active" data-index="0">
-                    <span class="branchen-progress-label">Friseure</span>
-                    <span class="branchen-progress-dot"></span>
-                </div>
-                <div class="branchen-progress-item" data-index="1">
-                    <span class="branchen-progress-label">Ärzte</span>
-                    <span class="branchen-progress-dot"></span>
-                </div>
-                <div class="branchen-progress-item" data-index="2">
-                    <span class="branchen-progress-label">Handwerk</span>
-                    <span class="branchen-progress-dot"></span>
-                </div>
-                <div class="branchen-progress-item" data-index="3">
-                    <span class="branchen-progress-label">Gastronomie</span>
-                    <span class="branchen-progress-dot"></span>
-                </div>
-                <div class="branchen-progress-item" data-index="4">
-                    <span class="branchen-progress-label">Fitness</span>
-                    <span class="branchen-progress-dot"></span>
-                </div>
-                <div class="branchen-progress-item" data-index="5">
-                    <span class="branchen-progress-label">Einzelhandel</span>
-                    <span class="branchen-progress-dot"></span>
-                </div>
             </div>
         </div>
 
-        <!-- CTA below pinned theater -->
-        <div class="branchen-cta">
+        <div class="branchen-scroll-cta container">
             <a href="#preise" class="btn btn-primary">Jetzt unverbindlich anfragen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
@@ -7532,7 +8014,7 @@
                     if (!inView || autoPaused) return;
                     var next = (current + 1) % TOTAL;
                     goTo(next, false);
-                }, 5000);
+                }, 9000);
             }
 
             // ── Pill click handlers ──
@@ -8766,6 +9248,82 @@
             var link = calEl.getAttribute('data-cal-link');
             window.open('https://cal.eu/' + link, '_blank');
         });
+    })();
+
+    // ═════════════════════════════════════════════════
+    // BRANCHEN-SCROLL · Pinned scroll-driven showcase
+    // Track scroll-progress on .branchen-scroll-track → branche index 0..9
+    // ═════════════════════════════════════════════════
+    (function initBranchenScroll() {
+        const track = document.querySelector('.branchen-scroll-track');
+        if (!track) return;
+        const stack = document.getElementById('branchenStack');
+        const textPanel = document.getElementById('branchenText');
+        const laptopScreen = document.getElementById('bmLaptopScreen');
+        const dots = document.querySelectorAll('.branchen-dot');
+        const laptopVideos = document.querySelectorAll('#bmLaptopScreen video');
+        const phoneVideos = document.querySelectorAll('#bmPhoneScreen video');
+        const shots = stack ? stack.querySelectorAll('.branchen-shot') : [];
+        const texts = textPanel ? textPanel.querySelectorAll('.branchen-text-item') : [];
+        const TOTAL = 10;
+        let currentIdx = 0;
+        let ticking = false;
+
+        function setActiveIdx(idx) {
+            idx = Math.max(0, Math.min(TOTAL - 1, idx));
+            if (idx === currentIdx) return;
+            currentIdx = idx;
+            shots.forEach((el, i) => {
+                el.classList.remove('is-active', 'is-past');
+                if (i === idx) el.classList.add('is-active');
+                else if (i < idx) el.classList.add('is-past');
+            });
+            texts.forEach((el, i) => el.classList.toggle('is-active', i === idx));
+            dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+            if (laptopScreen) {
+                laptopScreen.classList.remove('brushstroke');
+                void laptopScreen.offsetWidth;
+                laptopScreen.classList.add('brushstroke');
+            }
+            laptopVideos.forEach((v, i) => {
+                v.classList.toggle('is-active', i === idx);
+                if (i === idx) { try { v.currentTime = 0; } catch(_){} v.play().catch(() => {}); }
+                else { try { v.pause(); } catch (_) {} }
+            });
+            phoneVideos.forEach((v, i) => {
+                v.classList.toggle('is-active', i === idx);
+                if (i === idx) { try { v.currentTime = 0; } catch(_){} v.play().catch(() => {}); }
+                else { try { v.pause(); } catch (_) {} }
+            });
+        }
+
+        function onScroll() {
+            const rect = track.getBoundingClientRect();
+            const total = rect.height - window.innerHeight;
+            const progressed = Math.min(Math.max(-rect.top, 0), total);
+            const t = total > 0 ? progressed / total : 0;
+            const idx = Math.min(TOTAL - 1, Math.floor(t * TOTAL));
+            setActiveIdx(idx);
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+        }, { passive: true });
+
+        // Dot click → jump to that stage's center
+        dots.forEach((d, i) => d.addEventListener('click', () => {
+            const rect = track.getBoundingClientRect();
+            const total = rect.height - window.innerHeight;
+            const targetT = (i + 0.5) / TOTAL;
+            const targetY = window.scrollY + rect.top + targetT * total;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+        }));
+
+        // Init: play first video, set first as active
+        if (laptopVideos[0]) laptopVideos[0].play().catch(() => {});
+        if (phoneVideos[0]) phoneVideos[0].play().catch(() => {});
+        onScroll();
     })();
     </script>
 </body>

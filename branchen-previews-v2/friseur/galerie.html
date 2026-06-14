@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1A1614">
+<title>Galerie — Friseur Bergfeld</title>
+<meta name="description" content="Vorher, nachher, dazwischen die Schere. Sieben Geschichten aus dem Salon-Alltag von Friseur Bergfeld.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%231A1614'/><text x='16' y='23' font-family='Georgia,serif' font-size='22' fill='%23A67C52' text-anchor='middle' font-style='italic'>B</text></svg>">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://ww-webmanufaktur.de/preview/friseur/galerie.html">
+<meta property="og:title" content="Galerie — Friseur Bergfeld">
+<meta property="og:description" content="Vorher, nachher, dazwischen die Schere. Sieben Geschichten aus dem Salon-Alltag von Friseur Bergfeld.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&h=630&auto=format&fit=crop&q=85">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galerie — Friseur Bergfeld">
+<meta name="twitter:description" content="Vorher, nachher, dazwischen die Schere. Sieben Geschichten aus dem Salon-Alltag von Friseur Bergfeld.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&h=630&auto=format&fit=crop&q=85">
+<link rel="canonical" href="https://ww-webmanufaktur.de/preview/friseur/galerie.html">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Zum Inhalt springen</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html" aria-label="Friseur Bergfeld — Startseite">Friseur <strong>Bergfeld</strong></a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="galerie.html" aria-current="page">Galerie</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-ghost nav-cta" href="#kontakt">Termin</a>
+    <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navDrawer" id="navBurger"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay"></div>
+<aside class="nav-drawer" id="navDrawer" aria-label="Hauptmenü" inert>
+  <button class="nav-drawer-close" aria-label="Menü schließen" id="navDrawerClose">×</button>
+  <a href="index.html">Start</a>
+  <a href="leistungen.html">Leistungen</a>
+  <a href="team.html">Team</a>
+  <a href="galerie.html" aria-current="page">Galerie</a>
+  <a href="#kontakt" class="accent">Termin</a>
+</aside>
+
+<main id="main">
+
+  <!-- ─── Subpage Hero ─── -->
+  <section class="subpage-hero">
+    <div class="container-wide">
+      <span class="eyebrow">Galerie · Photo-Stories</span>
+      <h1 class="subpage-display">Vorher, nachher,<br>dazwischen die Schere.</h1>
+      <p class="subpage-lead">
+        Sieben Geschichten aus drei Jahren. Kein Look-Book, keine Hochglanz-Inszenierung — jede Geschichte hat einen Namen, eine Dauer und ein Problem, das gelöst wurde. Klick auf jedes Bild für die Detailansicht.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Year Mini-Timeline ─── -->
+  <nav class="year-timeline" aria-label="Nach Jahr filtern">
+    <div class="container-wide year-timeline-inner">
+      <span class="eyebrow">Jahrgänge</span>
+      <ul class="year-list">
+        <li><a href="#year-2025" class="year-link is-current">2025</a></li>
+        <li><a href="#year-2024" class="year-link">2024</a></li>
+        <li><a href="#year-2023" class="year-link">2023</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── Tag-Filter Bar (Pure-CSS via :has() + :checked) ─── -->
+  <section class="tag-filter" aria-labelledby="tag-filter-h" style="position: relative; overflow: hidden;">
+    <div class="cutout-comb" aria-hidden="true">
+      <svg viewBox="0 0 60 144" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <!-- Comb spine -->
+        <rect x="6" y="6" width="48" height="14" rx="2" fill="currentColor" opacity="0.28"/>
+        <!-- Comb teeth -->
+        <line x1="9"  y1="20" x2="9"  y2="138"/>
+        <line x1="13" y1="20" x2="13" y2="138"/>
+        <line x1="17" y1="20" x2="17" y2="138"/>
+        <line x1="21" y1="20" x2="21" y2="138"/>
+        <line x1="25" y1="20" x2="25" y2="138"/>
+        <line x1="29" y1="20" x2="29" y2="138"/>
+        <line x1="33" y1="20" x2="33" y2="138"/>
+        <line x1="37" y1="20" x2="37" y2="138"/>
+        <line x1="41" y1="20" x2="41" y2="138"/>
+        <line x1="45" y1="20" x2="45" y2="138"/>
+        <line x1="49" y1="20" x2="49" y2="138"/>
+        <!-- Brand mark on spine -->
+        <text x="30" y="16" font-family="Georgia, serif" font-size="6" fill="#1A1614" text-anchor="middle" font-style="italic">B.</text>
+      </svg>
+    </div>
+    <div class="container-wide">
+      <header class="tag-filter-head">
+        <span class="eyebrow">Filter</span>
+        <h2 id="tag-filter-h">Was Sie sehen wollen.</h2>
+        <p class="muted">Filtern Sie nach dem, was Sie interessiert — die Geschichten bleiben vollständig sichtbar.</p>
+      </header>
+      <form class="tag-filter-form" id="tagFilterForm" aria-label="Tag-Filter">
+        <input type="radio" name="tag" id="tag-all" value="all" checked>
+        <label for="tag-all" class="tag-pill">Alle <span class="tag-count">7</span></label>
+
+        <input type="radio" name="tag" id="tag-damen" value="damen-color">
+        <label for="tag-damen" class="tag-pill">Damen-Color</label>
+
+        <input type="radio" name="tag" id="tag-olaplex" value="olaplex">
+        <label for="tag-olaplex" class="tag-pill">Olaplex</label>
+
+        <input type="radio" name="tag" id="tag-hochsteck" value="hochsteck">
+        <label for="tag-hochsteck" class="tag-pill">Hochsteck</label>
+
+        <input type="radio" name="tag" id="tag-calligraphy" value="calligraphy">
+        <label for="tag-calligraphy" class="tag-pill">Calligraphy</label>
+
+        <input type="radio" name="tag" id="tag-herren" value="herren">
+        <label for="tag-herren" class="tag-pill">Herren · Bart</label>
+
+        <input type="radio" name="tag" id="tag-bridal" value="bridal">
+        <label for="tag-bridal" class="tag-pill">Bridal</label>
+
+        <input type="radio" name="tag" id="tag-balayage" value="balayage">
+        <label for="tag-balayage" class="tag-pill">Balayage</label>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── Year 2025 — Photo Stories ─── -->
+  <section class="story-year" id="year-2025" aria-labelledby="year-2025-h">
+    <div class="container-wide">
+      <header class="story-year-head">
+        <span class="year-marker">2025</span>
+        <h2 id="year-2025-h" class="story-year-h">Drei Geschichten,<br><em>dieses Jahr.</em></h2>
+        <p class="muted">Bob mit Pony. Calligraphy-Federn. Eine Hochzeit, die durch den Standesamt-Tag hielt.</p>
+      </header>
+
+      <!-- Story 1: Sarah · Bob mit Pony -->
+      <article class="photo-story" data-tags="damen-color olaplex">
+        <header class="photo-story-head">
+          <span class="story-num">01</span>
+          <div>
+            <span class="eyebrow">März 2025 · Damenschnitt &amp; Olaplex</span>
+            <h3>Sarah, 34 — vom 6-Monats-Wuchs zum Bob mit Pony.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Damen-Color</li>
+            <li>#Olaplex</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Sarah · Vorher — sechs Monate Wuchs, Schulterhöhe">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1200&auto=format&fit=crop&q=80"
+                 alt="Sarah vorher — lange Wellen, schulterlang, Naturhaar"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Schnitt im Trockenen, Bastian zeichnet die Linie">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während des Schnitts — Schere und Hand, Detail"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Sarah · Nachher — Bob mit langem Pony, Olaplex versiegelt">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1200&auto=format&fit=crop&q=80"
+                 alt="Sarah nachher — Bob auf Schulterhöhe mit langem Pony"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Sarah kam an einem Mittwoch-Vormittag — zwei Kinder im Schlepptau, sechs Monate kein Schnitt, „nur etwas kürzer". Wir haben uns 20 Minuten Zeit genommen für das Gespräch davor. Spitzen ehrlich angeschaut (kaputt), Gesichtsform geprüft (eckig mit weicher Stirn), Alltag besprochen (kein Zeitfenster zum Föhnen, Pferdeschwanz täglich).</p>
+          <p>Ein langer Bob mit Pony war die einzige sinnvolle Antwort. Bastian hat erst trocken vor-geschnitten, dann nass gefeinert, anschließend Olaplex No.2 zur Versiegelung — weil die Längen vorher schon brüchig waren. 95 Minuten. Sie ist gegangen mit der ersten freien Stunde seit Wochen.</p>
+          <dl class="story-meta">
+            <div><dt>Stylist</dt><dd>Bastian</dd></div>
+            <div><dt>Dauer</dt><dd>95 Min</dd></div>
+            <div><dt>Produkte</dt><dd>Olaplex No.2, No.3</dd></div>
+            <div><dt>Pflege-Empfehlung</dt><dd>Davines OI Shampoo</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Story 2: Mara · Calligraphy Cut -->
+      <article class="photo-story" data-tags="calligraphy damen-color">
+        <header class="photo-story-head">
+          <span class="story-num">02</span>
+          <div>
+            <span class="eyebrow">Februar 2025 · Calligraphy Cut</span>
+            <h3>Mara, 28 — Federn, die fallen.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Calligraphy</li>
+            <li>#Damen-Color</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Mara · Vorher — Mid-Length, klebrige Stufen aus dem Vor-Salon">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=1200&auto=format&fit=crop&q=80"
+                 alt="Mara vorher — schulterlang, gestufte Spitzen"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Calligraphy-Werkzeug im Anschnitt, 28-Grad-Winkel">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während Calligraphy — Werkzeug arbeitet im flachen Winkel"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Mara · Nachher — Calligraphy fertig, Federn statt Stufen">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&auto=format&fit=crop&q=80"
+                 alt="Mara nachher — Spitzen federn statt stufen"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Mara kam mit einer Bitte, die wir oft hören: „Meine Spitzen sehen klebrig aus, egal wie ich sie föhne." Drei Salons, drei Stufenschnitte, immer dasselbe Ergebnis. Wir haben das Haar trocken angeschaut, mit dem Calligraphy-Werkzeug eine Probe gemacht — eine Strähne im 28-Grad-Winkel angeschliffen — und der Unterschied war sofort sichtbar.</p>
+          <p>Bastian ist seit 2014 Calligraphy-Master. Die Behandlung dauert 60 Minuten, weil das Werkzeug bei jedem dritten Schnitt nachgeschliffen werden muss und die Bewegung präzise sein muss. Mara kommt seitdem alle zehn Wochen — der Schnitt wächst raus, ohne dass die Spitzen brechen.</p>
+          <dl class="story-meta">
+            <div><dt>Stylist</dt><dd>Bastian</dd></div>
+            <div><dt>Dauer</dt><dd>60 Min</dd></div>
+            <div><dt>Werkzeug</dt><dd>Calligraphy-Hohlschliff</dd></div>
+            <div><dt>Pflege</dt><dd>Oribe Gold Lust Oil</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Story 3: Joana · Hochzeit -->
+      <article class="photo-story" data-tags="hochsteck bridal">
+        <header class="photo-story-head">
+          <span class="story-num">03</span>
+          <div>
+            <span class="eyebrow">Mai 2025 · Bridal-Paket</span>
+            <h3>Joana, 31 — Hochsteckfrisur für 12 Stunden Tanzen.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Hochsteck</li>
+            <li>#Bridal</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Joana · Vorher — Mid-Length, Probe-Termin">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&auto=format&fit=crop&q=80"
+                 alt="Joana vorher — schulterlang, ungestylt"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Anna steckt mit Forken und U-Klammern, kein Spray">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während Bridal — Hände stecken Strähnen"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Joana · Nachher — Hochsteck am Hochzeitstag">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&auto=format&fit=crop&q=80"
+                 alt="Joana nachher — Hochsteckfrisur, Schleier-bereit"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Joana wollte eine Frisur, die durch Standesamt, kirchliche Trauung, Empfang und 12 Stunden Tanzen hält — ohne Nachsteck-Termin. Anna hat zwei Probe-Termine angesetzt: einen vier Wochen vorher (Form testen, Schleier-Befestigung), einen drei Tage vorher (Final-Check mit der Make-Up-Artistin).</p>
+          <p>Am Hochzeitstag selbst: 90 Minuten am Salon-Stuhl. Trockenes Haar, leicht angefeuchtet, in zwölf Sektionen aufgeteilt. Anna arbeitet ohne Hairspray, nur mit Forken und unsichtbaren U-Klammern. Hält länger, sieht weicher aus — und am Morgen danach sind keine harten Stellen im Haar.</p>
+          <dl class="story-meta">
+            <div><dt>Stylistin</dt><dd>Anna</dd></div>
+            <div><dt>Termine</dt><dd>2 (Probe + Tag)</dd></div>
+            <div><dt>Dauer</dt><dd>90 Min</dd></div>
+            <div><dt>Paket</dt><dd>Bridal · 220 €</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── Year 2024 — Photo Stories ─── -->
+  <section class="story-year story-year-alt" id="year-2024" aria-labelledby="year-2024-h">
+    <div class="container-wide">
+      <header class="story-year-head">
+        <span class="year-marker">2024</span>
+        <h2 id="year-2024-h" class="story-year-h">Drei Geschichten,<br><em>letztes Jahr.</em></h2>
+        <p class="muted">Balayage ohne Wartungs-Falle. Skin Fade nach drei Monaten Berlin. Olaplex-Reha nach dem DIY-Bleach-Fehler.</p>
+      </header>
+
+      <!-- Story 4: Lena · Balayage -->
+      <article class="photo-story" data-tags="balayage damen-color">
+        <header class="photo-story-head">
+          <span class="story-num">04</span>
+          <div>
+            <span class="eyebrow">Oktober 2024 · Balayage Honig &amp; Karamell</span>
+            <h3>Lena, 36 — Übergänge, die ohne Wartung halten.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Balayage</li>
+            <li>#Damen-Color</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Lena · Vorher — Naturhaar, Ansatz nach 8 Monaten">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=1200&auto=format&fit=crop&q=80"
+                 alt="Lena vorher — Naturhaar, Ansatz dunkler"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Mira malt Strähnen freihand, ohne Folie">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während Balayage — Pinsel im Haar"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Lena · Nachher — Balayage Honig &amp; Karamell, weiche Übergänge">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1200&auto=format&fit=crop&q=80"
+                 alt="Lena nachher — Balayage in warmen Tönen"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Lena wollte aussteigen aus dem 6-Wochen-Strähnen-Zyklus. Mira hat eine freihändige Balayage in Honig &amp; Karamell gemacht — ohne Folie, mit weichem Pinsel-Ansatz auf der Mittellänge. Der Trick liegt im Hands-Painting: kein harter Highlight-Streifen, sondern verlaufende Pigment-Verteilung, die wie Sommer aussieht.</p>
+          <p>Erste Auffrischung nach 4 Monaten, zweite nach 6. Lena ist jetzt im 9-Monats-Zyklus angekommen — der Ansatz fließt natürlich mit dem Wuchs. Wichtig: zu Hause Davines Alchemic Tobacco, einmal die Woche, sonst kühlt der Ton aus.</p>
+          <dl class="story-meta">
+            <div><dt>Stylistin</dt><dd>Mira</dd></div>
+            <div><dt>Dauer</dt><dd>150 Min</dd></div>
+            <div><dt>Technik</dt><dd>Freihand, ohne Folie</dd></div>
+            <div><dt>Pflege</dt><dd>Davines Alchemic Tobacco</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Story 5: Tobias · Skin Fade & Royal Shave -->
+      <article class="photo-story" data-tags="herren">
+        <header class="photo-story-head">
+          <span class="story-num">05</span>
+          <div>
+            <span class="eyebrow">Juli 2024 · Skin Fade &amp; Royal Shave</span>
+            <h3>Tobias, 42 — vom Drei-Monats-Bart zur Klassik.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Herren · Bart</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Tobias · Vorher — Drei-Monats-Bart, formlos">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=1200&auto=format&fit=crop&q=80"
+                 alt="Tobias vorher — langer Vollbart, ungeschnitten"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Royal Shave mit heißem Tuch, Klingenrasur">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während Royal Shave — heißes Tuch im Bart"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Tobias · Nachher — Skin Fade, Bart konturiert">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=1200&auto=format&fit=crop&q=80"
+                 alt="Tobias nachher — Skin Fade mit konturiertem Bart"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Tobias kam aus Berlin zurück nach Westerburg — neuer Job, neue Stadt, „den Bart muss ich loswerden, der nervt im Helm". Henrik hat zuerst die Bart-Linie reduziert, dann den Skin Fade an den Seiten gemacht — von Skin auf 6 mm in vier Stufen, alles freihand mit der Klingen-Maschine.</p>
+          <p>Den Bart selbst: nicht weg, nur konturiert. Heißes Tuch, klassische Rasur entlang der Wange, drei Min Bart-Öl einwirken — Manufaktur-Edition aus der eigenen Apotheker-Flasche. 75 Minuten gesamt. Tobias kommt seitdem alle drei Wochen für Auffrischung des Fades.</p>
+          <dl class="story-meta">
+            <div><dt>Stylist</dt><dd>Henrik</dd></div>
+            <div><dt>Dauer</dt><dd>75 Min</dd></div>
+            <div><dt>Inkl.</dt><dd>Heißes Tuch, Bart-Öl</dd></div>
+            <div><dt>Pflege</dt><dd>Bergfeld Bart-Öl Edition</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- Story 6: Christina · Olaplex-Reha -->
+      <article class="photo-story" data-tags="olaplex damen-color">
+        <header class="photo-story-head">
+          <span class="story-num">06</span>
+          <div>
+            <span class="eyebrow">März 2024 · Olaplex 8-Wochen-Programm</span>
+            <h3>Christina, 39 — Reha nach DIY-Bleach-Unfall.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Olaplex</li>
+            <li>#Damen-Color</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Christina · Vorher — gebleichte Spitzen, brüchig">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&auto=format&fit=crop&q=80"
+                 alt="Christina vorher — gebleichte Spitzen, sichtbar geschädigt"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Olaplex No.1 + No.2 unter der Folie, 35 Min">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während Olaplex — Pflege unter Folie"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Christina · Nachher Woche 8 — gesunde Längen, weicher Ton">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=1200&auto=format&fit=crop&q=80"
+                 alt="Christina nachher — Längen tragen wieder Pigment"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Christina hatte sich an einem Sonntag-Abend selbst gebleicht — Drogerie-Box, 30 Volume, 45 Minuten Einwirkzeit. Das Resultat: orange-gelbe Spitzen, brüchig, am dritten Tag bereits Haarbruch beim Kämmen. Mira hat ehrlich gesagt: „Wir reparieren nicht in einer Sitzung. Acht Wochen Programm — oder Schnitt."</p>
+          <p>Christina entschied sich für Reha. Vier Olaplex-Termine im Salon (No.1 + No.2 unter Folie, je 35 Min), dazwischen No.3 zu Hause, einmal die Woche, drei Stunden einwirken. Nach acht Wochen war die Struktur stabil genug für eine sanfte Tonung in Karamell. Die Spitzen sind heute zwei Zentimeter länger als beim Start.</p>
+          <dl class="story-meta">
+            <div><dt>Stylistin</dt><dd>Mira</dd></div>
+            <div><dt>Programm</dt><dd>4 Termine über 8 Wochen</dd></div>
+            <div><dt>Produkte</dt><dd>Olaplex No.1, No.2, No.3</dd></div>
+            <div><dt>Ergebnis</dt><dd>Tonung statt Schnitt</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── Year 2023 — Photo Stories ─── -->
+  <section class="story-year" id="year-2023" aria-labelledby="year-2023-h">
+    <div class="container-wide">
+      <header class="story-year-head">
+        <span class="year-marker">2023</span>
+        <h2 id="year-2023-h" class="story-year-h">Eine Geschichte,<br><em>aus dem ersten Jahr.</em></h2>
+        <p class="muted">Annas erste Bridal-Kundin nach dem Umbau. Das Hochzeitsfoto hängt noch heute in der Werkstatt.</p>
+      </header>
+
+      <!-- Story 7: Marie · Bridal 2023 -->
+      <article class="photo-story" data-tags="hochsteck bridal">
+        <header class="photo-story-head">
+          <span class="story-num">07</span>
+          <div>
+            <span class="eyebrow">August 2023 · Bridal-Premiere</span>
+            <h3>Marie, 29 — Hochsteck mit Schleier-Befestigung.</h3>
+          </div>
+          <ul class="story-tags" aria-label="Tags">
+            <li>#Hochsteck</li>
+            <li>#Bridal</li>
+          </ul>
+        </header>
+
+        <div class="story-triptych">
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Marie · Vorher — Probe-Termin sechs Wochen vor der Hochzeit">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&auto=format&fit=crop&q=80"
+                 alt="Marie vorher — Probe-Termin"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Vorher</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Während — Hochsteck am Tag, Anna steckt mit Forken">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=1200&auto=format&fit=crop&q=80"
+                 alt="Während Hochsteck — Anna mit Forken im Detail"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Während</span></figcaption>
+          </figure>
+          <figure class="story-shot photo photo-bw photo-grain"
+                  data-lightbox-src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=2000&auto=format&fit=crop&q=85"
+                  data-lightbox-caption="Marie · Nachher — fertig mit Schleier, Standesamt-bereit">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&auto=format&fit=crop&q=80"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=900&auto=format&fit=crop&q=80"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=1200&auto=format&fit=crop&q=80"
+                 alt="Marie nachher — Hochsteckfrisur mit Schleier"
+                 width="900" height="1125" loading="lazy" decoding="async"></picture>
+            <figcaption><span class="shot-label">Nachher</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="story-copy">
+          <p>Marie war Annas erste Bridal-Kundin nach dem Umbau im Mai 2023. Sechs Wochen Vorlauf, ein Probe-Termin, sehr klare Wünsche: Schleier-Befestigung muss durch das Standesamt halten, danach Schleier weg fürs Tanzen — ohne Nachsteck-Termin, weil keine Make-Up-Artistin angereist war.</p>
+          <p>Anna hat das Hochsteck so gebaut, dass die Schleier-Befestigung über zwei verdeckte Forken läuft — am Empfang einfach raus, der Hochsteck blieb. 80 Minuten am Hochzeitstag, 4:30 Uhr morgens. Marie hat uns danach das Hochzeitsfoto geschickt — hängt noch heute in der Werkstatt.</p>
+          <dl class="story-meta">
+            <div><dt>Stylistin</dt><dd>Anna</dd></div>
+            <div><dt>Dauer</dt><dd>80 Min am Tag</dd></div>
+            <div><dt>Spezial</dt><dd>Schleier-Wechsel ohne Nachsteck</dd></div>
+            <div><dt>Bonus</dt><dd>4:30 Uhr morgens</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── Vorher/Nachher Reveal-Slider (1 als Highlight beibehalten) ─── -->
+  <section class="vn-section">
+    <div class="container-wide">
+      <span class="eyebrow">Interaktiv</span>
+      <h2 class="vn-section-heading">Ein Bild,<br>zwei Wirklichkeiten.</h2>
+      <p class="muted" style="max-width: 48ch; margin-bottom: 2.5rem;">Sarahs Bob aus Geschichte 01 — sechs Monate Wuchs gegen 95 Minuten Bastian. Schieber bewegen für den direkten Vergleich.</p>
+
+      <article class="vn-pair-detail vn-pair-reveal">
+        <article class="reveal-slider" data-reveal>
+          <div class="reveal-image reveal-vorher">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&auto=format&fit=crop&q=85"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=900&auto=format&fit=crop&q=85"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1200&auto=format&fit=crop&q=85"
+                 alt="Sarah · Vorher — lange Wellen, ungeschnitten 6 Monate"
+                 width="1200" height="1500" loading="lazy" decoding="async"></picture>
+          </div>
+          <div class="reveal-image reveal-nachher">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&auto=format&fit=crop&q=85"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=900&auto=format&fit=crop&q=85"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=1200&auto=format&fit=crop&q=85"
+                 alt="Sarah · Nachher — Bob mit langem Pony"
+                 width="1200" height="1500" loading="lazy" decoding="async"></picture>
+          </div>
+          <span class="reveal-credit">Bastian · 95 Min · Olaplex</span>
+          <span class="vn-label vn-label-vorher">vorher</span>
+          <span class="vn-label vn-label-nachher">nachher</span>
+          <div class="reveal-handle" aria-hidden="true"></div>
+          <input type="range" class="reveal-range" min="0" max="100" value="50"
+                 aria-label="Vorher/Nachher-Vergleich verschieben" data-reveal-range>
+        </article>
+        <div class="vn-meta">
+          <h3>Sarah · Bob mit langem Pony.</h3>
+          <p>Stylist: Bastian. Inkl. Olaplex-Pflege. 95 Minuten. — Detailgeschichte oben.</p>
+          <p class="muted" style="font-size: var(--fs-small); margin-top: 0.875rem;">↔ Schieber bewegen für Vergleich.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── Ornament Divider (❦) — between Reveal-Slider & Konsultation ─── -->
+  <div class="container-wide">
+    <div class="ornament" role="presentation" aria-hidden="true"><span class="ornament-mark">❦</span></div>
+  </div>
+
+  <!-- ─── Konsultation Slot ─── -->
+  <section class="konsultation" aria-labelledby="galerie-konsult">
+    <div class="container-wide">
+      <div class="konsultation-card">
+        <div class="konsultation-time">15 Min</div>
+        <div class="konsultation-text">
+          <span class="eyebrow">Kostenfrei · 15 Minuten</span>
+          <h3 id="galerie-konsult">Sie haben ein Bild.<br>Wir haben eine ehrliche Meinung.</h3>
+          <p>Bringen Sie das Instagram-Bild, den Screenshot, die Idee — egal wie unfertig. Wir schauen Haar-Struktur, Gesichtsform, Alltag an und sagen, was geht und was nicht. Auch wenn am Ende kein Termin daraus wird.</p>
+        </div>
+        <a class="btn btn-ghost" href="#kontakt">Beratung anfragen
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Kontakt-Strip ─── -->
+  <section class="kontakt-strip" id="kontakt">
+    <div class="container-wide kontakt-strip-inner">
+      <div class="kontakt-block">
+        <span class="eyebrow">Salon</span>
+        <address>Friseur Bergfeld<br>Hauptstraße 12<br>56457 Westerburg</address>
+      </div>
+      <div class="kontakt-block">
+        <span class="eyebrow">Termin</span>
+        <p><a href="tel:+4926635553120">+49 2663 555 31 20</a><br><a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a></p>
+      </div>
+      <div class="kontakt-block">
+        <p class="kontakt-cta"><a class="btn btn-primary" href="#kontakt">Online-Termin →</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── Lightbox Dialog (native <dialog>, ESC + arrow keys) ─── -->
+<dialog class="lightbox-sheet" id="lightbox" aria-label="Bildvorschau">
+  <button class="lightbox-close-btn" id="lightboxClose" aria-label="Schließen">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Nächstes Bild">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+  <figure>
+    <img id="lightboxImg" src="" alt="" width="1200" height="800">
+    <figcaption id="lightboxCaption"></figcaption>
+    <span class="lightbox-counter" id="lightboxCounter" aria-live="polite"></span>
+  </figure>
+</dialog>
+
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="nav-logo">Friseur <strong>Bergfeld</strong></span>
+        <p class="footer-tagline">Manufaktur-Salon im Westerwald. Drei Generationen Schere.</p>
+        <div class="footer-meta-row">
+          <a href="leistungen.html">Leistungen</a>
+          <a href="team.html">Team</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="https://instagram.com/friseur.bergfeld" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Salon</h3>
+        <address>Hauptstraße 12<br>56457 Westerburg</address>
+        <p><a href="tel:+4926635553120">+49 2663 555 31 20</a></p>
+        <p><a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a></p>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Friseur Bergfeld. Alle Rechte vorbehalten.</span>
+      <span><a href="#" onclick="openLegal('impressum');return false;">Impressum</a> · <a href="#" onclick="openLegal('datenschutz');return false;">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Impressum Modal -->
+<div class="legal-modal" id="modal-impressum" role="dialog" aria-modal="true" aria-labelledby="modal-impressum-title">
+  <div class="legal-modal-sheet">
+    <button class="legal-modal-close" onclick="closeLegal('impressum')" aria-label="Schließen">×</button>
+    <h2 id="modal-impressum-title">Impressum</h2>
+    <address>
+      <strong>Friseur Bergfeld</strong><br>
+      Hauptstraße 12<br>
+      56457 Westerburg<br><br>
+      Inhaber: Bastian Bergfeld<br>
+      Tel.: <a href="tel:+4926635553120">+49 2663 555 31 20</a><br>
+      E-Mail: <a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a>
+    </address>
+    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: wird auf Anfrage mitgeteilt.</p>
+    <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Bastian Bergfeld, Hauptstraße 12, 56457 Westerburg.</p>
+    <p><strong>Haftungshinweis:</strong> Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
+  </div>
+</div>
+
+<!-- Datenschutz Modal -->
+<div class="legal-modal" id="modal-datenschutz" role="dialog" aria-modal="true" aria-labelledby="modal-datenschutz-title">
+  <div class="legal-modal-sheet">
+    <button class="legal-modal-close" onclick="closeLegal('datenschutz')" aria-label="Schließen">×</button>
+    <h2 id="modal-datenschutz-title">Datenschutz&shy;erklärung</h2>
+    <p><strong>Verantwortlicher:</strong> Bastian Bergfeld, Hauptstraße 12, 56457 Westerburg, <a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a></p>
+    <p><strong>Erhebung und Verarbeitung personenbezogener Daten:</strong> Diese Website erhebt beim Besuch automatisch technische Daten im Rahmen der Serverprotokollierung. Diese Daten werden nach 7 Tagen gelöscht.</p>
+    <p><strong>Kontaktformular:</strong> Bei Kontaktaufnahme per E-Mail werden Ihre Angaben zur Bearbeitung gespeichert und nicht an Dritte weitergegeben.</p>
+    <p><strong>Ihre Rechte:</strong> Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung: <a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a>.</p>
+    <p><strong>Cookies:</strong> Diese Website verwendet keine Tracking-Cookies. Stand: Mai 2026.</p>
+  </div>
+</div>
+
+<script>
+  // Mobile menu
+  const burger = document.getElementById('navBurger');
+  const drawer = document.getElementById('navDrawer');
+  const overlay = document.getElementById('navOverlay');
+  const closeBtn = document.getElementById('navDrawerClose');
+  const open = () => { drawer.classList.add('is-open'); overlay.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); drawer.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
+  const close = () => { drawer.classList.remove('is-open'); overlay.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); drawer.setAttribute('inert', ''); document.body.style.overflow = ''; };
+  burger?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  overlay?.addEventListener('click', close);
+  drawer?.addEventListener('click', e => { if (e.target.tagName === 'A') close(); });
+
+  // Year-Timeline current-link highlight (IntersectionObserver)
+  const yearLinks = document.querySelectorAll('.year-link');
+  const yearSections = document.querySelectorAll('.story-year[id^="year-"]');
+  if ('IntersectionObserver' in window && yearSections.length) {
+    const yObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          yearLinks.forEach(l => l.classList.toggle('is-current', l.getAttribute('href') === '#' + id));
+        }
+      });
+    }, { rootMargin: '-30% 0px -50% 0px' });
+    yearSections.forEach(s => yObs.observe(s));
+  }
+
+  // Lightbox with ESC + arrow keys + counter
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+
+  // Build the visible-image array. We re-build per open so filter changes are honored.
+  let lbItems = [];
+  let lbIdx = 0;
+
+  const collectVisible = () => Array.from(document.querySelectorAll('[data-lightbox-src]'))
+    .filter(el => el.offsetParent !== null);
+
+  const renderItem = i => {
+    if (!lbItems.length) return;
+    lbIdx = (i + lbItems.length) % lbItems.length;
+    const el = lbItems[lbIdx];
+    lightboxImg.src = el.dataset.lightboxSrc;
+    lightboxImg.alt = el.dataset.lightboxCaption || '';
+    lightboxCaption.textContent = el.dataset.lightboxCaption || '';
+    lightboxCounter.textContent = (lbIdx + 1) + ' / ' + lbItems.length;
+  };
+
+  document.querySelectorAll('[data-lightbox-src]').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => {
+      lbItems = collectVisible();
+      lbIdx = lbItems.indexOf(el);
+      if (lbIdx < 0) lbIdx = 0;
+      renderItem(lbIdx);
+      lightbox.showModal();
+    });
+  });
+
+  lightboxClose?.addEventListener('click', () => lightbox.close());
+  lightboxPrev?.addEventListener('click', () => renderItem(lbIdx - 1));
+  lightboxNext?.addEventListener('click', () => renderItem(lbIdx + 1));
+  lightbox?.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
+
+  // Keyboard nav (only when dialog open)
+  document.addEventListener('keydown', e => {
+    if (!lightbox.open) return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); renderItem(lbIdx - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); renderItem(lbIdx + 1); }
+    // ESC handled natively by <dialog>
+  });
+
+  // Vorher/Nachher Reveal-Slider
+  document.querySelectorAll('[data-reveal]').forEach(slider => {
+    const range = slider.querySelector('[data-reveal-range]');
+    if (!range) return;
+    const update = () => slider.style.setProperty('--reveal-pos', range.value + '%');
+    range.addEventListener('input', update);
+    update();
+  });
+
+  // Legal modals
+  function openLegal(id) {
+    const modal = document.getElementById('modal-' + id);
+    if (!modal) return;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    modal.addEventListener('click', function handler(e) {
+      if (e.target === modal) { closeLegal(id); modal.removeEventListener('click', handler); }
+    });
+    document.addEventListener('keydown', function escHandler(e) {
+      if (e.key === 'Escape') { closeLegal(id); document.removeEventListener('keydown', escHandler); }
+    });
+  }
+  function closeLegal(id) {
+    const modal = document.getElementById('modal-' + id);
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+</script>
+
+</body>
+</html>

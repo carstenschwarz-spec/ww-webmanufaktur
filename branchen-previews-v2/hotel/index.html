@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F1EA">
+<title>Forsthaus Vogt — Manufaktur-Gastfreundschaft im Westerwald</title>
+<meta name="description" content="Forsthaus Vogt · Marienstatt. Vier Zimmer, drei Generationen, eine Geschichte. Boutique-Pension mit Restaurant, Spa und Wald-Direktanschluss im Westerwald.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30..100;1,9..144,300..700,30..100&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='3' fill='%23F5F1EA'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%235C7558' text-anchor='middle' font-style='italic'>F</text></svg>">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://ww-webmanufaktur.de/preview/hotel/index.html">
+<meta property="og:title" content="Forsthaus Vogt — Manufaktur-Gastfreundschaft im Westerwald">
+<meta property="og:description" content="Forsthaus Vogt · Marienstatt. Vier Zimmer, drei Generationen, eine Geschichte.">
+<meta property="og:image" content="https://ww-webmanufaktur.de/preview/_meta/og/hotel.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Forsthaus Vogt — Manufaktur-Gastfreundschaft im Westerwald">
+<meta name="twitter:description" content="Forsthaus Vogt · Marienstatt. Vier Zimmer, drei Generationen, eine Geschichte.">
+<meta name="twitter:image" content="https://ww-webmanufaktur.de/preview/_meta/og/hotel.jpg">
+<link rel="canonical" href="https://ww-webmanufaktur.de/preview/hotel/index.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Forsthaus Vogt",
+  "description": "Boutique-Pension mit Restaurant und Spa im Westerwald. Familie Vogt, dritte Generation.",
+  "telephone": "+4926623202",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Forstweg 7",
+    "postalCode": "57629",
+    "addressLocality": "Marienstatt",
+    "addressCountry": "DE"
+  },
+  "priceRange": "€€€",
+  "starRating": { "@type": "Rating", "ratingValue": "4" },
+  "areaServed": "Westerwald, Rheinland-Pfalz"
+}
+</script>
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Zum Inhalt springen</a>
+
+<!-- ─── Floating Pill Navigation ─── -->
+<header class="nav" role="banner">
+  <a class="nav-logo" href="index.html" aria-label="Forsthaus Vogt — Startseite">Forsthaus <span class="accent">Vogt</span></a>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="zimmer.html">Zimmer</a></li>
+      <li><a href="region.html">Region</a></li>
+      <li><a href="buchung.html">Buchung</a></li>
+    </ul>
+  </nav>
+  <a class="nav-cta" href="buchung.html">Anfragen</a>
+  <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navDrawer" id="navBurger"><span></span><span></span></button>
+</header>
+
+<aside class="nav-drawer" id="navDrawer" aria-label="Hauptmenü" inert>
+  <button class="nav-drawer-close" aria-label="Menü schließen" id="navDrawerClose">×</button>
+  <ul class="nav-drawer-list">
+    <li><a href="index.html" aria-current="page">Start</a></li>
+    <li><a href="zimmer.html">Zimmer</a></li>
+    <li><a href="region.html">Region</a></li>
+    <li><a href="buchung.html">Buchung</a></li>
+  </ul>
+  <div class="nav-drawer-meta">
+    <a href="tel:+4926623202">+49 2662 32 02</a>
+    <a href="mailto:hallo@forsthaus-vogt.de">hallo@forsthaus-vogt.de</a>
+  </div>
+</aside>
+
+<main id="main">
+
+  <!-- ─── Hero (#2 Full-Bleed Photo + Tageszeit-Toggle, JS-frei via :has()) ─── -->
+  <section class="hero" id="hero">
+    <!-- Tageszeit Radio Inputs (visually-hidden, steuern Layer-Sichtbarkeit via :has()) -->
+    <input type="radio" name="tageszeit" id="tz-morgen" class="tz-radio" checked>
+    <input type="radio" name="tageszeit" id="tz-abend" class="tz-radio">
+    <input type="radio" name="tageszeit" id="tz-nacht" class="tz-radio">
+
+    <!-- Layer 1: Morgen — Westerwälder Mischwald im Morgenlicht (Unsplash, kein Video-403) -->
+    <div class="hero-media hero-media-morgen" aria-hidden="true">
+      <img width="1920" height="2400" class="hero-fallback"
+           src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=78"
+           srcset="https://images.unsplash.com/photo-1448375240586-882707db888b?w=720&auto=format&fit=crop&q=78 720w,
+                   https://images.unsplash.com/photo-1448375240586-882707db888b?w=1440&auto=format&fit=crop&q=78 1440w,
+                   https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&auto=format&fit=crop&q=78 1920w"
+           sizes="100vw"
+           alt="Westerwälder Mischwald im weichen Morgenlicht"
+           fetchpriority="high" decoding="async">
+    </div>
+    <!-- Layer 2: Abend (warm candle/breakfast) -->
+    <div class="hero-media hero-media-abend" aria-hidden="true">
+      <video class="hero-video"
+             loop muted playsinline preload="none"
+             poster="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&auto=format&fit=crop&q=78">
+        <source src="https://videos.pexels.com/video-files/2099455/2099455-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      </video>
+      <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&auto=format&fit=crop&q=78"><img width="1920" height="2400" class="hero-fallback"
+           src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&auto=format&fit=crop&q=78"
+           alt="Forsthaus am Abend — Kerzenlicht und warmer Tisch" decoding="async" loading="eager"></picture>
+    </div>
+    <!-- Layer 3: Nacht (interior fireplace) -->
+    <div class="hero-media hero-media-nacht" aria-hidden="true">
+      <video class="hero-video"
+             loop muted playsinline preload="none"
+             poster="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1920&auto=format&fit=crop&q=78">
+        <source src="https://videos.pexels.com/video-files/4929498/4929498-uhd_2732_1440_30fps.mp4" type="video/mp4">
+      </video>
+      <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=900&auto=format&fit=crop&q=78"><img width="1920" height="2400" class="hero-fallback"
+           src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&auto=format&fit=crop&q=78"
+           alt="Zimmer bei Nacht — Lampenlicht, ruhig" decoding="async" loading="eager"></picture>
+    </div>
+
+    <div class="container-wide hero-overlay">
+      <span class="hero-eyebrow">Marienstatt · Westerwald · seit 1958</span>
+      <h1 class="hero-headline">
+        <span class="word-rise" style="--d:0ms">Vier&nbsp;Zimmer.</span>
+        <span class="word-rise" style="--d:180ms">Drei&nbsp;Generationen.</span>
+        <span class="word-rise" style="--d:360ms"><em>Eine&nbsp;Geschichte.</em></span>
+      </h1>
+      <p class="hero-lead">Ein altes Forsthaus. Vier Zimmer. Drei Generationen einer Familie, die genau das macht, was sie kann — und nichts, was sie nicht kann.</p>
+
+      <!-- Tageszeit-Toggle (cinematic crossfade) -->
+      <fieldset class="tz-toggle" aria-label="Tageszeit">
+        <legend class="visually-hidden">Tageszeit der Hero-Szene</legend>
+        <label for="tz-morgen" data-tz="morgen"><span>Morgen</span></label>
+        <label for="tz-abend" data-tz="abend"><span>Abend</span></label>
+        <label for="tz-nacht" data-tz="nacht"><span>Nacht</span></label>
+      </fieldset>
+      <p class="tz-ambient"><span class="pulse-dot" aria-hidden="true"></span>Hören Sie nichts? Genau das meinen wir.</p>
+
+      <!-- Tageszeit-spezifisches Hero-Quote (italic Fraunces, fades) -->
+      <div class="hero-tz-quotes" aria-live="polite">
+        <span class="hero-tz-quote" data-tz="morgen">„Der Wald wacht zuerst."</span>
+        <span class="hero-tz-quote" data-tz="abend">„Honig vom Imker nebenan."</span>
+        <span class="hero-tz-quote" data-tz="nacht">„47 Sterne über dem Westerwald."</span>
+      </div>
+
+      <div class="chapter-actions" style="margin-top: 1.75rem;">
+        <a class="btn btn-primary btn-glow" href="zimmer.html">Zimmer ansehen
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Ambient leaf cutout (single, drifts down on scroll) -->
+    <svg class="leaf-drift" viewBox="0 0 60 80" aria-hidden="true" focusable="false">
+      <path d="M30 4 C42 18 48 36 30 76 C12 36 18 18 30 4 Z" fill="#5C7558" opacity="0.45"/>
+      <path d="M30 8 L30 72" stroke="#465A43" stroke-width="0.8" opacity="0.6" fill="none"/>
+    </svg>
+
+    <!-- Continuous multi-leaf-fall field (8 leaves, varied speeds) -->
+    <div class="leaf-field" aria-hidden="true">
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#5C7558" opacity="0.55"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.5"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#7a8c6c" opacity="0.45"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#a3a05c" opacity="0.5"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#5C7558" opacity="0.4"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.4"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#9c7a3e" opacity="0.5"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#5C7558" opacity="0.5"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#7a8c6c" opacity="0.4"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.4"/></svg>
+      <svg viewBox="0 0 24 32" fill="none"><path d="M12 2 C18 8 21 18 12 30 C3 18 6 8 12 2 Z" fill="#a3a05c" opacity="0.45"/><path d="M12 4 L12 28" stroke="#465A43" stroke-width="0.6" opacity="0.45"/></svg>
+    </div>
+
+    <!-- Weather Widget (right-now, editorial detail) -->
+    <aside class="weather-widget" aria-label="Wetter im Westerwald gerade jetzt">
+      <svg class="ww-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <circle cx="9" cy="11" r="3.5"/>
+        <path d="M14 8 a4 4 0 0 1 0 8 H7 a4.5 4.5 0 0 1 0 -9 a4 4 0 0 1 7 1Z" opacity="0.85"/>
+      </svg>
+      <span class="ww-temp">17°</span>
+      <span class="ww-meta">leicht bewölkt</span>
+      <span class="ww-loc">Westerwald</span>
+    </aside>
+  </section>
+
+  <!-- ─── Press-Strip (Wallpaper-style monogram logos) ─── -->
+  <section class="press-strip" aria-label="Erwähnungen">
+    <div class="container-wide">
+      <span class="press-eyebrow">Gesehen in</span>
+      <ul class="press-logos">
+        <li><svg viewBox="0 0 220 32" aria-label="Schöner Wohnen"><text x="0" y="22" font-family="serif" font-size="22" letter-spacing="2" fill="currentColor">SCHÖNER WOHNEN</text></svg></li>
+        <li><svg viewBox="0 0 110 32" aria-label="Madame"><text x="0" y="24" font-family="serif" font-style="italic" font-size="26" letter-spacing="1" fill="currentColor">Madame</text></svg></li>
+        <li><svg viewBox="0 0 240 32" aria-label="Architectural Digest"><text x="0" y="22" font-family="serif" font-size="20" letter-spacing="2" fill="currentColor">ARCHITECTURAL DIGEST</text></svg></li>
+        <li><svg viewBox="0 0 130 32" aria-label="Wallpaper"><text x="0" y="24" font-family="serif" font-size="24" letter-spacing="3" fill="currentColor">Wallpaper*</text></svg></li>
+        <li><svg viewBox="0 0 140 32" aria-label="Travel + Leisure"><text x="0" y="22" font-family="serif" font-size="18" letter-spacing="1.5" fill="currentColor">TRAVEL+LEISURE</text></svg></li>
+        <li><svg viewBox="0 0 110 32" aria-label="Frankfurter Allgemeine"><text x="0" y="22" font-family="serif" font-size="20" letter-spacing="1" fill="currentColor">F.A.Z.</text></svg></li>
+      </ul>
+      <div class="press-stay-counter" aria-live="polite">
+        <span class="dot" aria-hidden="true"></span>
+        <span><strong>47</strong> Gäste in den letzten 30 Tagen — sieben kommen nächsten Monat zurück.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Heute im Forsthaus (gentle blog, 3 Mini-Stories vom Tag) ─── -->
+  <section class="heute" aria-labelledby="heute-heading">
+    <div class="container-wide">
+      <div class="heute-header">
+        <div class="chapter-marker" style="justify-content: center;">Heute im Forsthaus</div>
+        <h2 id="heute-heading">Was die Familie gerade <em>tut.</em></h2>
+        <p>Drei kleine Notizen vom heutigen Tag — geschrieben, wenn jemand kurz reinkommt und es uns erzählt. Kein Blog, kein Marketing. Nur ein Tagesblick.</p>
+      </div>
+      <div class="heute-grid">
+
+        <article class="heute-story">
+          <div class="heute-story-head">
+            <div class="heute-portrait">
+              <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&auto=format&fit=crop&q=78"
+                   alt="Hubert Vogt, 2. Generation" width="112" height="112" loading="eager" decoding="async"></picture>
+            </div>
+            <div class="heute-byline">
+              <span class="who">Hubert</span>
+              <span class="when">Heute · 11:23 Uhr</span>
+            </div>
+          </div>
+          <span class="heute-tag">Imkerei</span>
+          <p>Gerade die <em>Bienen umgesiedelt</em> in das neue Volk hinter der Buche. Zwei Stunden ruhige Arbeit, kein Anzug — sie kennen mich. Honig-Schleudern dann am Wochenende, wenn das Wetter hält.</p>
+        </article>
+
+        <article class="heute-story">
+          <div class="heute-story-head">
+            <div class="heute-portrait">
+              <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&auto=format&fit=crop&q=78"
+                   alt="Annika Vogt, Gastgeberin und Köchin" width="112" height="112" loading="eager" decoding="async"></picture>
+            </div>
+            <div class="heute-byline">
+              <span class="who">Annika</span>
+              <span class="when">Heute · 14:08 Uhr</span>
+            </div>
+          </div>
+          <span class="heute-tag">Küche</span>
+          <p>Heute Abend gibt es <em>Pilzrisotto</em> mit Pfifferlingen vom Marienstatter Forst. Hubert war früh um sechs unterwegs. Dazu ein Riesling vom Mittelrhein und Petersilien-Öl aus dem Garten.</p>
+        </article>
+
+        <article class="heute-story">
+          <div class="heute-story-head">
+            <div class="heute-portrait">
+              <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=1200&auto=format&fit=crop&q=78"
+                   alt="Linus Vogt, 3. Generation" width="112" height="112" loading="eager" decoding="async"></picture>
+            </div>
+            <div class="heute-byline">
+              <span class="who">Linus</span>
+              <span class="when">Heute · 16:41 Uhr</span>
+            </div>
+          </div>
+          <span class="heute-tag">Garten</span>
+          <p>Drei junge <em>Apfelbäume</em> gepflanzt unten an der Wiese — Boskoop, Cox-Orange und ein alter Berlepsch. In acht Jahren machen die ersten Brände, sagt Hubert. Wir warten.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 01 Willkommen (mit Floating-Breakfast-Tray Cutout) ─── -->
+  <section class="chapter chapter-with-cutout">
+    <div class="container-wide">
+      <div class="chapter-grid">
+        <div class="chapter-text">
+          <div class="chapter-marker">01 · Willkommen</div>
+          <h2>Wo der Westerwald <em>Pause macht.</em></h2>
+          <p>Ein Forsthaus aus dem Jahr 1958, am Waldrand, fünf Gehminuten von der Marienstatter Abtei. Wir haben vier Zimmer — und die haben alle Namen, weil jedes anders ist. Kein Konferenz-Hotel. Kein Wellness-Tempel. Einfach ein Haus, das gut riecht und in dem man nachts wirklich schläft.</p>
+          <p>Frühstück wird an den Tisch gebracht, bis halb elf. Brot vom Bäcker in Hachenburg, Honig vom Imker vier Kilometer weiter, Eier vom Nachbarhof. Wir wissen, wo im Wald es nach Regen gut riecht, und reservieren für Sie beim Wirtshaus in Marienberg — falls Sie das wollen.</p>
+          <div class="chapter-actions">
+            <a class="btn btn-primary" href="buchung.html">Zimmer anfragen
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn-link" href="#gastgeber">Über uns →</a>
+          </div>
+        </div>
+        <div class="chapter-photo">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&auto=format&fit=crop&q=78"
+               alt="Forsthaus-Salon — Holzbalken, Tageslicht, Lese-Ecke"
+               width="1200" height="1500" loading="eager" decoding="async"></picture>
+          <!-- Floating breakfast tray cutout (PNG-style mask, hovers above photo) -->
+          <figure class="breakfast-tray-cutout" aria-hidden="true">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=900&auto=format&fit=crop&q=78"><img width="520" height="347" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1200&auto=format&fit=crop&q=78"
+                 alt="" loading="eager" decoding="async"></picture>
+            <figcaption><em>Frühstück</em> · 8 — 10:30</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Editorial Quote (Annika) ─── -->
+  <section class="quote-block">
+    <div class="container-narrow">
+      <blockquote>
+        Bei uns gibt es kein Buffet. Wir bringen Ihnen das Frühstück an den Tisch, weil wir Sie auch sehen wollen.
+      </blockquote>
+      <cite>Annika Vogt · Gastgeberin</cite>
+    </div>
+  </section>
+
+  <!-- ─── 02 Zimmer ─── -->
+  <section class="chapter">
+    <div class="container-wide">
+      <div class="chapter-grid flip">
+        <div class="chapter-text">
+          <div class="chapter-marker">02 · Zimmer</div>
+          <h2>Vier Zimmer.<br><em>Vier Charaktere.</em></h2>
+          <p>Buche, Linde, Eiche, Atelier — jedes hat seinen eigenen Blick, seinen eigenen Geruch, sein eigenes Tempo. Eines liegt im Erdgeschoss mit eigenem Gartenzugang und privater Sauna. Eines ist eine Mansarde unter dem alten Dachstuhl, mit freistehender Wanne direkt unterm Dachfenster. Das Atelier war einmal die Werkstatt des Försters.</p>
+          <p>Alle mit gutem Bett, ehrlichem Holz und einem Buch auf dem Nachttisch, das wir selbst empfehlen würden. Ab 149 € inklusive Frühstück am Tisch.</p>
+          <div class="chapter-actions">
+            <a class="btn-link" href="zimmer.html">Alle Zimmer ansehen →</a>
+          </div>
+        </div>
+        <div class="chapter-photo">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1200&auto=format&fit=crop&q=78"
+               alt="Atelier-Suite — warmes Lampenlicht, freistehende Wanne, Holzbalken und Terrasse Richtung Wald"
+               width="1200" height="1500" loading="eager" decoding="async"></picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Restaurant — Forsthaus-Küche by Annika ─── -->
+  <section class="restaurant-hero" aria-label="Restaurant Forsthaus-Küche">
+    <div class="restaurant-hero-inner">
+      <div class="restaurant-photo">
+        <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&auto=format&fit=crop&q=78"
+             alt="Restaurant-Tisch im Forsthaus — Naturholz, Leinen-Serviette, Kerzen, regionales Wildgericht"
+             width="1400" height="1200" loading="eager" decoding="async"></picture>
+        <!-- Annika mid-cooking portrait (oval cutout) -->
+        <figure class="annika-cooking-cutout" aria-hidden="true">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=78"><img width="320" height="400" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&auto=format&fit=crop&q=78"
+               alt="" loading="eager" decoding="async"></picture>
+          <figcaption>Annika · in der Küche</figcaption>
+        </figure>
+      </div>
+      <div class="restaurant-text">
+        <div class="chapter-marker">Forsthaus-Küche</div>
+        <h2>Annika kocht.<br><em>Westerwälder Wildküche, neu gedacht.</em></h2>
+        <p>Annika Vogt hat in Berlin und Wien gekocht, bevor sie 2018 zurück ins Forsthaus kam. Was bleibt: Das Verständnis für Saison, Region und Reduktion. Was geht: Schnickschnack. Sechs Gänge am Abend, à la carte mittags, Reservierung empfohlen. Auch für Externe — wenn Tisch frei ist.</p>
+        <p>Wir kochen, was am Markt ist. Reh aus dem Distrikt, Forelle aus der Nister, Spargel von Hofnachbar Berger, Kräuter aus dem eigenen Garten. Vegetarisches und veganes Menü auf Anfrage, immer.</p>
+
+        <ul class="restaurant-menu-list">
+          <li>
+            <span class="dish"><em>Marienstatter</em> Forelle</span>
+            <span class="price">28 €</span>
+            <span class="dish-note">Heißgeräuchert, Holunderblüte, Gurken-Joghurt, geröstetes Roggenbrot</span>
+          </li>
+          <li>
+            <span class="dish">Reh aus dem Westerwald</span>
+            <span class="price">42 €</span>
+            <span class="dish-note">Rücken im Holzofen, Wacholder-Jus, Pilz-Risotto, Preiselbeere</span>
+          </li>
+          <li>
+            <span class="dish"><em>Wurzel-Gericht</em> (vegan)</span>
+            <span class="price">26 €</span>
+            <span class="dish-note">Saisonales Wurzelgemüse, Buchenholz-Asche, Birne, gerösteter Buchweizen</span>
+          </li>
+          <li>
+            <span class="dish">Sechs-Gänge-Forsthaus-Menü</span>
+            <span class="price">89 €</span>
+            <span class="dish-note">Mit Weinbegleitung 49 € · Vegetarisch / vegan auf Anfrage · Donnerstag bis Sonntag, ab 19:00</span>
+          </li>
+        </ul>
+
+        <a class="btn btn-primary" href="buchung.html#tisch" style="align-self: flex-start;">
+          Tisch reservieren
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Spa & Sauna ─── -->
+  <section class="spa-section" aria-label="Spa & Sauna">
+    <div class="container-wide">
+      <div class="spa-grid">
+        <div class="spa-text">
+          <div class="chapter-marker">Spa &amp; Sauna</div>
+          <h2>Holz-Saunafass.<br><em>Whirlpool unterm Lindenbaum.</em></h2>
+          <p>Wir haben kein Wellness-Center. Wir haben ein Holz-Saunafass im Garten, einen Open-Air-Whirlpool unter den alten Linden, einen Ruheraum mit Kachelofen — und das reicht. Für Hausgäste kostenfrei, für maximal sechs Personen gleichzeitig (wir sind klein, ehrlich).</p>
+          <p>Saunaaufgüsse mit Westerwälder Tannenharz, Heu-Bad-Aufguss am Sonntagmorgen, Birken-Aufguss im Frühling. Saunameisterin ist Annikas Mutter Heidi — sie weiß, was sie tut.</p>
+          <ul class="spa-features">
+            <li>
+              <h3>Holz-Saunafass</h3>
+              <p>90 °C, 8 m², finnischer Aufguss. Direkt im Garten unter den alten Buchen.</p>
+            </li>
+            <li>
+              <h3>Open-Air-Whirlpool</h3>
+              <p>Ganzjährig 38 °C, sechs Plätze, Sterne-Sicht im Winter, Linden-Schatten im Sommer.</p>
+            </li>
+            <li>
+              <h3>Ruheraum</h3>
+              <p>Mit Kachelofen, Wolldecken, Tee von Kräuterhof Birkenfeld.</p>
+            </li>
+            <li>
+              <h3>Massagen auf Anfrage</h3>
+              <p>Mobile Therapeutin Petra Klein. Bitte 24 h im Voraus buchen, 75 € / Stunde.</p>
+            </li>
+          </ul>
+          <a class="btn btn-spa-primary" href="buchung.html">
+            Wellness-Wochenende anfragen
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="spa-photo">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1200&auto=format&fit=crop&q=78"
+               alt="Holz-Saunafass im Garten unter alten Buchen — warmes Abendlicht"
+               width="1200" height="1500" loading="eager" decoding="async"></picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Linus Portrait Overlap (Section-Bridge zwischen Spa & Frühstück) ─── -->
+  <figure class="linus-overlap" aria-label="Linus Vogt, dritte Generation">
+    <div class="linus-overlap-inner">
+      <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=900&auto=format&fit=crop&q=78"><img width="240" height="300" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=1200&auto=format&fit=crop&q=78"
+           alt="Linus Vogt, dritte Generation, im Forsthaus" loading="eager" decoding="async"></picture>
+    </div>
+    <figcaption><em>Linus</em> · 3. Generation</figcaption>
+  </figure>
+
+  <!-- ─── Frühstück Manifest (mit Honig-Glas Cutout + Hubert mid-Imkerei) ─── -->
+  <section class="breakfast">
+    <!-- Hubert mid-Imkerei portrait (oval cutout, oben links) -->
+    <figure class="hubert-imkerei-cutout" aria-hidden="true">
+      <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=78"><img width="200" height="250" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&auto=format&fit=crop&q=78"
+           alt="" loading="eager" decoding="async"></picture>
+      <figcaption>Hubert · bei den Bienen</figcaption>
+    </figure>
+    <!-- Honey jar cutout — schwebt rechts oben in Section -->
+    <figure class="honey-cutout" aria-hidden="true">
+      <svg viewBox="0 0 100 130" aria-hidden="true">
+        <!-- Lid -->
+        <ellipse cx="50" cy="14" rx="28" ry="6" fill="#7a5a2a"/>
+        <rect x="22" y="12" width="56" height="10" fill="#9c7a3e" rx="1.5"/>
+        <!-- Honey label string -->
+        <path d="M40 22 L40 28 M60 22 L60 28" stroke="#3a2a14" stroke-width="0.8"/>
+        <!-- Glass body -->
+        <path d="M22 24 L22 116 Q22 124 30 124 L70 124 Q78 124 78 116 L78 24 Z" fill="#d9a443" opacity="0.92"/>
+        <!-- Honey shimmer -->
+        <path d="M28 30 L28 110" stroke="rgba(255,255,255,0.4)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        <!-- Label -->
+        <rect x="32" y="60" width="36" height="36" fill="#F5F1EA" rx="1.5"/>
+        <text x="50" y="76" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="9" fill="#465A43">Schäfer</text>
+        <text x="50" y="89" text-anchor="middle" font-family="Georgia, serif" font-size="6" fill="#465A43" letter-spacing="0.5">LINDE · 2025</text>
+        <!-- Drip -->
+        <path d="M50 124 Q48 130 50 132 Q52 130 50 124 Z" fill="#d9a443"/>
+      </svg>
+    </figure>
+    <div class="container-wide">
+      <div class="breakfast-intro">
+        <div class="chapter-marker">Frühstück · 8 bis 10:30</div>
+        <h2>Was Sie morgens <em>tatsächlich essen.</em></h2>
+        <p>Kein Buffet. Kein Tableau mit aufgeschlagenen Aufschnitt-Resten. Wir bringen Ihnen das Frühstück an den Tisch — egal ob im Salon, auf der Terrasse oder direkt aufs Zimmer. Alles, was bei uns auf dem Teller liegt, kommt aus maximal zwölf Kilometer Umkreis.</p>
+      </div>
+
+      <div class="breakfast-grid">
+        <div class="breakfast-item">
+          <span class="source">Bäckerei Hachenburg · 11 km</span>
+          <h3>Brot &amp; <em>Brötchen</em></h3>
+          <p>Roggen-Sauerteig vom Holzofen. Lieferung jeden Morgen um sieben, noch warm. Dazu Butter-Croissants und ein helles Bauern-Brötchen.</p>
+        </div>
+        <div class="breakfast-item">
+          <span class="source">Imkerei Schäfer · 4 km</span>
+          <h3>Lindenblüten-<em>Honig</em></h3>
+          <p>Sortenreiner Honig aus den alten Linden in Marienstatt. Direkt von Hubert Schäfers Imkerei. Im Frühjahr auch Akazie und Wildblüte.</p>
+        </div>
+        <div class="breakfast-item">
+          <span class="source">Hof Berger · 800 m</span>
+          <h3>Eier vom <em>Hofnachbar</em></h3>
+          <p>Wachtel- und Hühnereier von Hof Berger, sechshundert Meter Luftlinie. Auf Wunsch weichgekocht, drei Minuten — versprochen.</p>
+        </div>
+        <div class="breakfast-item">
+          <span class="source">Hofkäserei Brauer · 8 km</span>
+          <h3>Bergkäse <em>&amp; Quark</em></h3>
+          <p>Drei rohmilch-gereifte Sorten. Gold-prämiert seit 2019. Dazu Frischquark und Butter aus eigener Produktion — ja, das gibt's hier noch.</p>
+        </div>
+        <div class="breakfast-item">
+          <span class="source">Garten · 0 m</span>
+          <h3>Marmeladen <em>nach Saison</em></h3>
+          <p>Holunder, Pflaume, Rhabarber, Quitte. Alles aus dem Garten, alles eingekocht von Hubert Vogt (Annikas Schwiegervater) — ein bisschen Familienbande gehört dazu.</p>
+        </div>
+        <div class="breakfast-item">
+          <span class="source">Rösterei Koblenz · 65 km</span>
+          <h3>Kaffee &amp; <em>Tee</em></h3>
+          <p>Espresso-Bohnen aus Koblenzer Rösterei (Bio, fair). Lose Tees vom Kräuterhof Birkenfeld, ungesüßt, in Glaskannen. Auch Latte-Hafer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Tageslauf-Timeline (Wedding-Invitation Numerals) ─── -->
+  <section class="tageslauf" aria-label="Tagesablauf im Forsthaus">
+    <div class="container-wide">
+      <div class="tageslauf-header">
+        <div class="chapter-marker" style="justify-content: center;">Ein Tag im Forsthaus</div>
+        <h2>Vom <em>Sonnenaufgang</em><br>bis zu den ersten Sternen.</h2>
+      </div>
+      <ol class="tageslauf-line">
+        <li class="tageslauf-step">
+          <span class="tl-num"><i>V</i></span>
+          <span class="tl-time">05:30</span>
+          <h3>Erstes Licht</h3>
+          <p>Brot kommt aus Hachenburg. Hubert macht Feuer im Kachelofen. Der Wald wacht auf, lautlos.</p>
+        </li>
+        <li class="tageslauf-step">
+          <span class="tl-num"><i>VIII</i></span>
+          <span class="tl-time">08:00</span>
+          <h3>Frühstück</h3>
+          <p>Wir bringen es Ihnen — Salon, Terrasse oder Zimmer. Bis halb elf, wenn Sie wollen.</p>
+        </li>
+        <li class="tageslauf-step">
+          <span class="tl-num"><i>XIV</i></span>
+          <span class="tl-time">14:00</span>
+          <h3>Wald-Stille</h3>
+          <p>Die Sonne steht hoch über der Buche. E-Bike rollt aus dem Schuppen. Sie auch.</p>
+        </li>
+        <li class="tageslauf-step">
+          <span class="tl-num"><i>XVIII</i></span>
+          <span class="tl-time">18:30</span>
+          <h3>Vesper im Kloster</h3>
+          <p>Gregorianischer Choral, fünf Gehminuten. Zurück zum Aperitif vor dem Restaurant.</p>
+        </li>
+        <li class="tageslauf-step">
+          <span class="tl-num"><i>XXII</i></span>
+          <span class="tl-time">22:00</span>
+          <h3>Sterne &amp; Sauna</h3>
+          <p>Whirlpool unter der Linde, Saunafass dampft. Über uns: keine Stadt, nur Sterne.</p>
+        </li>
+      </ol>
+
+      <!-- Stille-Indikator (animated waveform) -->
+      <div class="stille-indikator" role="img" aria-label="Lautstärke-Vergleich: Stadt 60 Dezibel, Forsthaus 22 Dezibel">
+        <div class="stille-row">
+          <span class="stille-label">Großstadt</span>
+          <div class="stille-bar stille-loud"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="stille-value">60 dB</span>
+        </div>
+        <div class="stille-row">
+          <span class="stille-label">Forsthaus, 22:00</span>
+          <div class="stille-bar stille-quiet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="stille-value">22 dB</span>
+        </div>
+        <p class="stille-caption">Gemessen mit dem iPhone vor unserer Haustür. Im Wald, hundert Meter weiter, sind es 18 dB.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 04 Gastgeber (mit Hubert Portrait Cutout) ─── -->
+  <section class="family-story" id="gastgeber">
+    <div class="container-wide">
+      <div class="family-story-grid">
+        <div class="family-photo">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1604147706283-d7119b5b822c?w=1200&auto=format&fit=crop&q=78"
+               alt="Familie Vogt im Garten des Forsthauses — drei Generationen mit Hund Felix"
+               width="1200" height="1500" loading="eager" decoding="async"></picture>
+          <!-- Hubert isolated oval portrait cutout — schwebt vor dem Familienfoto -->
+          <figure class="portrait-cutout" aria-hidden="true">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=78"><img width="380" height="253" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&auto=format&fit=crop&q=78"
+                 alt="" loading="eager" decoding="async"></picture>
+            <figcaption>Hubert · 2. Generation</figcaption>
+          </figure>
+        </div>
+        <div class="family-text has-dropcap">
+          <div class="chapter-marker">04 · Gastgeber</div>
+          <h2>Familie Vogt.<br><em>Drei Generationen.</em></h2>
+          <span class="reading-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            4 Min Lesen
+          </span>
+          <p>Mein Großvater Walter hat dieses alte Forsthaus 1958 gekauft — als die Försterei das Gebäude aufgegeben hat. Seitdem ist es in unserer Familie. Heute führen wir es zu dritt: Mein Mann Hubert (zweite Generation), unser Sohn Linus (dritte), und ich, Annika (angeheiratet, aber inzwischen länger hier als die meisten Westerwälder).</p>
+          <p>Sie treffen uns am Frühstückstisch, am Empfang, oder wenn Sie um die Abtei laufen — meistens mit unserem Hund Felix dabei. Linus, 24, ist gerade aus Lausanne zurück und übernimmt langsam.</p>
+          <div class="stempel" aria-label="Familie Vogt seit 1958"><strong>Hachenburg · Westerwald</strong><em>Familie Vogt seit 1958</em></div>
+
+          <div class="family-generations">
+            <div class="family-gen">
+              <span class="year">1958</span>
+              <div>
+                <h3>Walter Vogt — der Gründer.</h3>
+                <p>Forstmeister im Ruhestand, kauft das alte Forsthaus und vermietet zwei Zimmer an Wanderer.</p>
+              </div>
+            </div>
+            <div class="family-gen">
+              <span class="year">1991</span>
+              <div>
+                <h3>Hubert &amp; Annika Vogt — Ausbau.</h3>
+                <p>Hubert übernimmt vom Vater, baut das Gästehaus aus, eröffnet die Forsthaus-Küche. Annika kommt 2003 dazu.</p>
+              </div>
+            </div>
+            <div class="family-gen">
+              <span class="year">2024</span>
+              <div>
+                <h3>Linus Vogt — dritte Generation.</h3>
+                <p>Nach Hotelfachschule Lausanne und vier Jahren Schweiz zurück nach Marienstatt. Verantwortlich für Spa, Reservierungen, Online-Welt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Texture Detail Strip (Holz · Leinen · Stein · Honig) ─── -->
+  <section class="texture-strip" aria-label="Material-Details">
+    <div class="container-wide">
+      <div class="texture-strip-grid">
+        <figure class="texture-cell">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&auto=format&fit=crop&q=78"
+               alt="Eichendiele · gewachst" loading="eager" decoding="async"></picture>
+          <figcaption><em>Holz</em> · Eiche, 1958</figcaption>
+        </figure>
+        <figure class="texture-cell">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1455587734955-081b22074882?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1455587734955-081b22074882?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=1200&auto=format&fit=crop&q=78"
+               alt="Leinen · grobgewebt, ungebleicht" loading="eager" decoding="async"></picture>
+          <figcaption><em>Leinen</em> · Westerwald</figcaption>
+        </figure>
+        <figure class="texture-cell">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=78"
+               alt="Naturstein · Basalt aus dem Westerwald" loading="eager" decoding="async"></picture>
+          <figcaption><em>Stein</em> · Basalt, lokal</figcaption>
+        </figure>
+        <figure class="texture-cell">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1200&auto=format&fit=crop&q=78"
+               alt="Honigwaben · goldenes Bienenwachs" loading="eager" decoding="async"></picture>
+          <figcaption><em>Honig</em> · Schäfer, 4 km</figcaption>
+        </figure>
+        <figure class="texture-cell">
+          <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=900&auto=format&fit=crop&q=78"><img width="600" height="400" src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=1200&auto=format&fit=crop&q=78"
+               alt="Wolldecke · handgewebt" loading="eager" decoding="async"></picture>
+          <figcaption><em>Wolle</em> · Hofweberei</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Saison-Pakete (Round 2 — editorial seasonal packages) ─── -->
+  <section class="saison-pakete" aria-labelledby="saison-heading">
+    <div class="container-wide">
+      <div class="saison-pakete-header">
+        <div class="chapter-marker" style="justify-content: center;">Saison-Pakete · Vier Häuser im Jahr</div>
+        <h2 id="saison-heading">Wann immer Sie kommen,<br><em>haben wir etwas vorbereitet.</em></h2>
+        <p>Vier Pakete, die wir das Jahr über zusammengestellt haben — mit allem, was wir selbst gerne mitnehmen würden. Preise gelten pro Person im Doppelzimmer Linde.</p>
+      </div>
+
+      <div class="saison-pakete-grid">
+
+        <!-- 1. Frühlings-Erwachen -->
+        <article class="saison-card" aria-labelledby="paket-fruehling">
+          <div class="saison-card-photo">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=1200&auto=format&fit=crop&q=78"
+                 alt="Frühlings-Bärlauch im Buchenwald — frisches Grün im Westerwald-Steig"
+                 width="900" height="675" loading="eager" decoding="async"></picture>
+            <span class="saison-card-month">März – Mai</span>
+          </div>
+          <div class="saison-card-body">
+            <span class="saison-card-tag">Frühling</span>
+            <h3 id="paket-fruehling">Frühlings-<em>Erwachen</em></h3>
+            <p class="saison-card-summary">Wenn der Westerwald wach wird. Bärlauch unter den Buchen, erstes Frühstück draußen, lange Lichtabende.</p>
+            <ul class="saison-includes">
+              <li>2 Übernachtungen mit Forsthaus-Frühstück</li>
+              <li>Geführte Wanderung mit Annika (halbtags)</li>
+              <li>Kräuter-Workshop in der Hofküche</li>
+              <li>3-Gang Wildkräuter-Menü an einem Abend</li>
+              <li>Picknickkorb für die zweite Wanderung</li>
+            </ul>
+            <div class="saison-card-pricing">
+              <span class="saison-card-price">280 €<small>ab · pro Person</small></span>
+              <span class="saison-card-nights">2 Nächte</span>
+            </div>
+            <div class="saison-picker">
+              <label>Anreise<input type="date" name="anreise-fruehling" min="2026-03-01" max="2026-05-31"></label>
+              <label>Abreise<input type="date" name="abreise-fruehling" min="2026-03-03" max="2026-06-02"></label>
+            </div>
+            <a class="saison-card-cta" href="buchung.html?paket=fruehling">
+              Anfragen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Sommer-Forsthaus -->
+        <article class="saison-card" aria-labelledby="paket-sommer">
+          <div class="saison-card-photo">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&auto=format&fit=crop&q=78"
+                 alt="Sommer-Picknick im Wald — Holzbrett mit Käse und Wein in der Sonne"
+                 width="900" height="675" loading="eager" decoding="async"></picture>
+            <span class="saison-card-month">Juni – August</span>
+          </div>
+          <div class="saison-card-body">
+            <span class="saison-card-tag">Sommer</span>
+            <h3 id="paket-sommer">Sommer-<em>Forsthaus</em></h3>
+            <p class="saison-card-summary">Lange Tage. Kalte Drinks am Hot-Tub. Wandern in den frühen Morgenstunden, See-Bad am Nachmittag.</p>
+            <ul class="saison-includes">
+              <li>3 Übernachtungen inklusive Frühstück</li>
+              <li>Premium-Wald-Picknick für zwei Personen</li>
+              <li>Leihrad für die Tour zum Dreifelder Weiher</li>
+              <li>Saunafass-Abend mit Aufguss durch Hubert</li>
+              <li>Apéro auf der Linden-Terrasse</li>
+            </ul>
+            <div class="saison-card-pricing">
+              <span class="saison-card-price">420 €<small>ab · pro Person</small></span>
+              <span class="saison-card-nights">3 Nächte</span>
+            </div>
+            <div class="saison-picker">
+              <label>Anreise<input type="date" name="anreise-sommer" min="2026-06-01" max="2026-08-31"></label>
+              <label>Abreise<input type="date" name="abreise-sommer" min="2026-06-04" max="2026-09-03"></label>
+            </div>
+            <a class="saison-card-cta" href="buchung.html?paket=sommer">
+              Anfragen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Herbst-Pilze -->
+        <article class="saison-card" aria-labelledby="paket-herbst">
+          <div class="saison-card-photo">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1507371341162-763b5e419408?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1507371341162-763b5e419408?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1507371341162-763b5e419408?w=1200&auto=format&fit=crop&q=78"
+                 alt="Herbst — Steinpilze und Pfifferlinge auf Waldmoos"
+                 width="900" height="675" loading="eager" decoding="async"></picture>
+            <span class="saison-card-month">September – Oktober</span>
+          </div>
+          <div class="saison-card-body">
+            <span class="saison-card-tag">Herbst</span>
+            <h3 id="paket-herbst">Herbst-<em>Pilze</em></h3>
+            <p class="saison-card-summary">Wenn der Wald sich neigt. Hubert kennt die Stellen. Annika kocht, was Sie mitbringen — und was sonst noch in die Saison passt.</p>
+            <ul class="saison-includes">
+              <li>2 Übernachtungen inklusive Frühstück</li>
+              <li>Geführte Pilztour mit Hubert (halbtags)</li>
+              <li>4-Gang Wildküchen-Menü mit Wein-Begleitung</li>
+              <li>Eintritt Stöffel-Park &amp; Hachenburger Burg</li>
+              <li>Hauseigener Holundersirup zum Mitnehmen</li>
+            </ul>
+            <div class="saison-card-pricing">
+              <span class="saison-card-price">340 €<small>ab · pro Person</small></span>
+              <span class="saison-card-nights">2 Nächte</span>
+            </div>
+            <div class="saison-picker">
+              <label>Anreise<input type="date" name="anreise-herbst" min="2026-09-01" max="2026-10-31"></label>
+              <label>Abreise<input type="date" name="abreise-herbst" min="2026-09-03" max="2026-11-02"></label>
+            </div>
+            <a class="saison-card-cta" href="buchung.html?paket=herbst">
+              Anfragen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Winter-Stille -->
+        <article class="saison-card" aria-labelledby="paket-winter">
+          <div class="saison-card-photo">
+            <picture><source media="(max-width: 540px)" srcset="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&auto=format&fit=crop&q=78"><source media="(max-width: 992px)" srcset="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&auto=format&fit=crop&q=78"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&auto=format&fit=crop&q=78"
+                 alt="Verschneiter Westerwald — stille Winterlandschaft"
+                 width="900" height="675" loading="eager" decoding="async"></picture>
+            <span class="saison-card-month">November – Februar</span>
+          </div>
+          <div class="saison-card-body">
+            <span class="saison-card-tag">Winter</span>
+            <h3 id="paket-winter">Winter-<em>Stille</em></h3>
+            <p class="saison-card-summary">Schnee auf dem Saunafass. Lesen vor dem Kachelofen. Ein Glühweinabend im Salon — ohne dass man darum bitten müsste.</p>
+            <ul class="saison-includes">
+              <li>2 Übernachtungen inklusive Frühstück</li>
+              <li>Sauna-Marathon mit drei Aufgüssen</li>
+              <li>Glühweinabend im Salon mit Hofkäse</li>
+              <li>3-Gang Winter-Menü an einem Abend</li>
+              <li>Hauseigener Apfelpunsch zum Mitnehmen</li>
+            </ul>
+            <div class="saison-card-pricing">
+              <span class="saison-card-price">260 €<small>ab · pro Person</small></span>
+              <span class="saison-card-nights">2 Nächte</span>
+            </div>
+            <div class="saison-picker">
+              <label>Anreise<input type="date" name="anreise-winter" min="2026-11-01" max="2027-02-28"></label>
+              <label>Abreise<input type="date" name="abreise-winter" min="2026-11-03" max="2027-03-02"></label>
+            </div>
+            <a class="saison-card-cta" href="buchung.html?paket=winter">
+              Anfragen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Gäste-Stimmen / Reviews ─── -->
+  <section class="reviews">
+    <div class="container-wide">
+      <div class="reviews-header">
+        <div class="chapter-marker">Gäste-Stimmen</div>
+        <h2>Was Menschen <em>schreiben.</em></h2>
+        <p class="muted">Auswahl unredigierter Stimmen aus den letzten zwölf Monaten — Google, TripAdvisor, handgeschriebene Karten an der Rezeption.</p>
+      </div>
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="review-stars" aria-label="Fünf von fünf Sternen">★ ★ ★ ★ ★</div>
+          <blockquote>Wir kommen seit drei Jahren jedes Jahr im Oktober. Annikas Reh-Menü ist ein Ritual geworden, der Whirlpool unter Sternen genauso. Es gibt schickere Hotels — aber kein wärmeres.</blockquote>
+          <cite><strong>Chris &amp; Maria Klemm</strong>Köln · Stammgäste seit 2023</cite>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Fünf von fünf Sternen">★ ★ ★ ★ ★</div>
+          <blockquote>Das Forsthaus ist mein Refugium für Schreib-Wochen. Stille, gutes WLAN, und Linus organisiert mir einen Schreibtisch im Bibliotheks-Salon. Die Bohne unten im Restaurant kostet drei Euro und schmeckt nach Italien.</blockquote>
+          <cite><strong>Dr. Helena Falk</strong>Frankfurt · Workation, fünf Mal pro Jahr</cite>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Fünf von fünf Sternen">★ ★ ★ ★ ★</div>
+          <blockquote>Hochzeit für 38 Personen im Forsthaus. Familie Vogt hat nichts dem Zufall überlassen — und gleichzeitig nichts steif gemacht. Heidi am Aufguss, Hubert am Holzofen, Annika in der Küche, Linus an der Bar. Ein Familienunternehmen wie es sein soll.</blockquote>
+          <cite><strong>Felix &amp; Tomma Bauer</strong>Düsseldorf · Hochzeit Mai 2025</cite>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Fünf von fünf Sternen">★ ★ ★ ★ ★</div>
+          <blockquote>Mit zwei kleinen Kindern (3 und 6) und Hund. Die Vogts haben uns nicht nur ertragen — sie haben uns ernst genommen. Reichelt, der Hund, hat im Garten ein Eichhörnchen gestellt. Mein Sohn redet noch davon.</blockquote>
+          <cite><strong>Familie Reichelt</strong>München · Sommer 2025</cite>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Fünf von fünf Sternen">★ ★ ★ ★ ★</div>
+          <blockquote>Ich war ein Wochenende allein da. Buch lesen, Sauna, Wald. Annika hat mir am Sonntagmorgen Kaffee an die Liege gebracht, ohne dass ich gefragt habe. Das ist Gastfreundschaft, die man nicht trainieren kann.</blockquote>
+          <cite><strong>Maren Sommer</strong>Berlin · Solo-Reise März 2025</cite>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="Fünf von fünf Sternen">★ ★ ★ ★ ★</div>
+          <blockquote>The dinner — six courses with Annika cooking — is reason enough to drive from Brussels. The next morning, breakfast in the garden with breads still warm. Quietly perfect.</blockquote>
+          <cite><strong>Antoine &amp; Léa Dubois</strong>Brüssel · Februar 2026</cite>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Botanic Ornament Divider ─── -->
+  <svg class="ornament" viewBox="0 0 280 40" aria-hidden="true" focusable="false">
+    <path class="stem" d="M10 20 Q70 8 140 20 Q210 32 270 20"/>
+    <path class="leaf" d="M50 14 Q56 6 64 14 Q56 22 50 14 Z"/>
+    <path class="leaf" d="M88 24 Q94 16 102 24 Q94 32 88 24 Z"/>
+    <path class="leaf" d="M138 14 Q144 6 152 14 Q144 22 138 14 Z"/>
+    <path class="leaf" d="M186 24 Q192 16 200 24 Q192 32 186 24 Z"/>
+    <path class="leaf" d="M226 14 Q232 6 240 14 Q232 22 226 14 Z"/>
+    <circle cx="140" cy="20" r="2.5" fill="currentColor" opacity="0.65"/>
+  </svg>
+
+  <!-- ─── Booking CTA ─── -->
+  <section class="booking-cta">
+    <div class="container-wide booking-cta-inner">
+      <div>
+        <h2>Bereit für ein paar <em>ruhige Tage?</em></h2>
+        <p>Vier Felder, drei Minuten — danach antwortet Linus oder Annika persönlich. Innerhalb von 24 Stunden, mit konkreter Verfügbarkeit und einem Vorschlag. Keine Anzahlung, Stornierung bis sieben Tage vor Anreise kostenfrei.</p>
+      </div>
+      <div>
+        <a class="btn btn-primary" href="buchung.html">
+          Anfrage starten
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Page-Numbering (sticky bottom-right editorial detail) -->
+<div class="page-number" aria-hidden="true"><em>01</em>Forsthaus</div>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <span class="nav-logo">Forsthaus <span class="accent">Vogt</span></span>
+        <p class="footer-tagline">Manufaktur-Gastfreundschaft im Westerwald.</p>
+        <div class="footer-meta-row">
+          <a href="zimmer.html">Zimmer</a>
+          <a href="region.html">Region</a>
+          <a href="buchung.html">Buchung</a>
+          <a href="https://instagram.com/forsthausvogt" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h3>Hotel</h3>
+        <address>Forstweg 7<br>57629 Marienstatt</address>
+        <p style="margin-top: 0.625rem;"><a href="tel:+4926623202">+49 2662 32 02</a></p>
+        <p><a href="mailto:hallo@forsthaus-vogt.de">hallo@forsthaus-vogt.de</a></p>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Forsthaus Vogt. Familie Vogt.</span>
+      <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <a href="#agb">AGB</a></span>
+    </div>
+    <div class="footer-signature" aria-label="Mit ruhiger Hand · Familie Vogt">
+      <svg viewBox="0 0 200 32" aria-hidden="true">
+        <path d="M4 22 Q10 6 18 22 Q24 30 30 18 Q36 6 44 22 Q52 32 60 14 Q68 6 76 24 Q84 32 96 14 Q108 4 120 22 Q132 30 142 16 Q154 4 168 24 Q180 30 196 18"/>
+      </svg>
+      <span>Mit ruhiger Hand · Familie Vogt</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('navBurger');
+  const drawer = document.getElementById('navDrawer');
+  const close = document.getElementById('navDrawerClose');
+  const open = () => { drawer.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); drawer.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
+  const shut = () => { drawer.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); drawer.setAttribute('inert', ''); document.body.style.overflow = ''; };
+  burger?.addEventListener('click', open);
+  close?.addEventListener('click', shut);
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) shut(); });
+
+  // Hero video: respect prefers-reduced-motion + lazy-load alternate scenes on selection
+  (function () {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.hero-video').forEach(v => {
+      if (reduced) { try { v.pause(); v.removeAttribute('autoplay'); } catch(e){} }
+    });
+    // when user selects abend/nacht, kick the corresponding video to load+play
+    document.querySelectorAll('.tz-radio').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const id = radio.id; // tz-morgen / tz-abend / tz-nacht
+        const layer = document.querySelector('.hero-media-' + id.replace('tz-', ''));
+        const vid = layer?.querySelector('video');
+        if (vid && !reduced) { try { vid.load(); vid.play().catch(()=>{}); } catch(e){} }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

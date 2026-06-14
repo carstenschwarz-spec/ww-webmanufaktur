@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1F1813">
+<title>Reservierung — Forsthaus Brandt</title>
+<meta name="description" content="Tisch reservieren beim Forsthaus Brandt. Smart-Booking in fünf Schritten — persönlich, mit Anlass und Wein-Empfehlung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231F1813'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23E07560' text-anchor='middle' font-style='italic' font-weight='500'>F</text></svg>">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://ww-webmanufaktur.de/preview/gastronomie/reservierung.html">
+<meta property="og:title" content="Reservierung — Forsthaus Brandt">
+<meta property="og:description" content="Tisch reservieren beim Forsthaus Brandt. Smart-Booking in fünf Schritten — persönlich, mit Anlass und Wein-Empfehlung.">
+<meta property="og:image" content="https://ww-webmanufaktur.de/preview/_meta/og/gastronomie.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reservierung — Forsthaus Brandt">
+<meta name="twitter:description" content="Tisch reservieren beim Forsthaus Brandt. Smart-Booking in fünf Schritten — persönlich, mit Anlass und Wein-Empfehlung.">
+<meta name="twitter:image" content="https://ww-webmanufaktur.de/preview/_meta/og/gastronomie.jpg">
+<link rel="canonical" href="https://ww-webmanufaktur.de/preview/gastronomie/reservierung.html">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Zum Inhalt springen</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Forsthaus <span class="accent">Brandt</span></a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="karte.html">Karte</a></li>
+        <li><a href="ueber.html">Über uns</a></li>
+        <li><a href="reservierung.html" aria-current="page">Reservierung</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#form">Tisch buchen</a>
+    <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navDrawer" id="navBurger"><span></span><span></span></button>
+  </div>
+</header>
+
+<aside class="nav-drawer" id="navDrawer" aria-label="Hauptmenü" inert>
+  <button class="nav-drawer-close" aria-label="Menü schließen" id="navDrawerClose">×</button>
+  <ul>
+    <li><a href="index.html">Start</a></li>
+    <li><a href="karte.html">Karte</a></li>
+    <li><a href="ueber.html">Über uns</a></li>
+    <li><a href="reservierung.html" aria-current="page">Reservierung</a></li>
+  </ul>
+</aside>
+
+<main id="main">
+
+  <section class="subpage-hero">
+    <div class="container-wide">
+      <span class="eyebrow">Smart-Booking · Persönlich</span>
+      <h1 class="subpage-display">Wir freuen uns <em>auf Sie.</em></h1>
+      <p class="subpage-lead">Fünf Schritte. Wir fragen, was Sie feiern, wie viele Sie sind, und richten ein. Antwort innerhalb weniger Stunden, persönlich von Anette oder Ben. 5-Gang-Wild &amp; Pasta Menü bitte 1 Tag im Voraus.</p>
+    </div>
+  </section>
+
+  <section class="smart-booking" id="form">
+    <div class="container-wide">
+      <div class="smart-booking-inner">
+        <p class="smart-booking-sub">In fünf Schritten zum Tisch — kein Algorithmus, sondern Menschen, die Ihnen antworten.</p>
+
+        <!-- Step radios — pure CSS routing -->
+        <input type="radio" class="step-input" name="step" id="step-1" checked>
+        <input type="radio" class="step-input" name="step" id="step-2">
+        <input type="radio" class="step-input" name="step" id="step-3">
+        <input type="radio" class="step-input" name="step" id="step-4">
+        <input type="radio" class="step-input" name="step" id="step-5">
+
+        <!-- Step Bar -->
+        <div class="step-bar" aria-label="Reservierungs-Fortschritt">
+          <span class="step-bar-item" data-for="1"><span class="step-bar-num">1</span>Anlass</span>
+          <span class="step-bar-divider"></span>
+          <span class="step-bar-item" data-for="2"><span class="step-bar-num">2</span>Personen</span>
+          <span class="step-bar-divider"></span>
+          <span class="step-bar-item" data-for="3"><span class="step-bar-num">3</span>Datum</span>
+          <span class="step-bar-divider"></span>
+          <span class="step-bar-item" data-for="4"><span class="step-bar-num">4</span>Wünsche</span>
+          <span class="step-bar-divider"></span>
+          <span class="step-bar-item" data-for="5"><span class="step-bar-num">5</span>Kontakt</span>
+        </div>
+
+        <form id="bookingForm" novalidate>
+
+          <!-- ─── STEP 1 — Anlass ─── -->
+          <div class="step-panel" data-step="1">
+            <h2 class="step-panel-title">Was <em>feiern</em> Sie?</h2>
+            <p class="step-panel-lead">Wir richten den Abend nach dem Anlass — andere Tisch-Position bei Geburtstag, andere Wein-Empfehlung beim Jahrestag, kindgerechte Bestuhlung bei Familie. Spontan ist auch ein Anlass.</p>
+
+            <div class="anlass-grid" role="radiogroup" aria-label="Anlass auswählen">
+              <label>
+                <input type="radio" name="anlass" value="geburtstag" class="anlass-input">
+                <span class="anlass-card">
+                  <span class="anlass-card-icon">i.</span>
+                  <span class="anlass-card-name"><em>Geburtstag</em></span>
+                  <span class="anlass-card-desc">Mit Kerze, kleiner Geste, etwas Lärm erlaubt.</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="anlass" value="jahrestag" class="anlass-input">
+                <span class="anlass-card">
+                  <span class="anlass-card-icon">ii.</span>
+                  <span class="anlass-card-name"><em>Jahrestag</em></span>
+                  <span class="anlass-card-desc">Ruhiger Tisch, Wein-Pairing, Kerze auf dem Tisch.</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="anlass" value="business" class="anlass-input">
+                <span class="anlass-card">
+                  <span class="anlass-card-icon">iii.</span>
+                  <span class="anlass-card-name"><em>Geschäftsessen</em></span>
+                  <span class="anlass-card-desc">Gespräche-tauglich, eher ohne Musik, separate Rechnung.</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="anlass" value="familie" class="anlass-input">
+                <span class="anlass-card">
+                  <span class="anlass-card-icon">iv.</span>
+                  <span class="anlass-card-name"><em>Familie</em></span>
+                  <span class="anlass-card-desc">Mehr Platz, Hochstuhl möglich, Pasta-Portionen für Kinder.</span>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="anlass" value="spontan" class="anlass-input">
+                <span class="anlass-card">
+                  <span class="anlass-card-icon">v.</span>
+                  <span class="anlass-card-name"><em>Spontan</em></span>
+                  <span class="anlass-card-desc">Einfach Lust auf gut essen — gibt 's bei uns.</span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Conditional sub-questions — only show when matching Anlass selected -->
+            <div class="anlass-sub" data-sub="geburtstag">
+              <span class="anlass-sub-eyebrow">Klein, aber fein</span>
+              <p class="anlass-sub-question">Soll ein <em>Dessert mit Kerze</em> kommen — als Überraschung?</p>
+              <div class="anlass-sub-options" role="radiogroup" aria-label="Geburtstags-Überraschung">
+                <label><input type="radio" name="geb-kerze" value="ja" class="sub-pill-input"><span class="sub-pill">Ja, mit Kerze</span></label>
+                <label><input type="radio" name="geb-kerze" value="diskret" class="sub-pill-input"><span class="sub-pill">Diskret, ohne Lied</span></label>
+                <label><input type="radio" name="geb-kerze" value="nein" class="sub-pill-input"><span class="sub-pill">Nein danke</span></label>
+              </div>
+            </div>
+
+            <div class="anlass-sub" data-sub="jahrestag">
+              <span class="anlass-sub-eyebrow">Tante Marie schlägt vor</span>
+              <p class="anlass-sub-question">Möchten Sie eine <em>Wein-Pairing-Empfehlung</em> von unserer Sommelière?</p>
+              <div class="anlass-sub-options" role="radiogroup" aria-label="Wein-Pairing">
+                <label><input type="radio" name="wein-pair" value="full" class="sub-pill-input"><span class="sub-pill">Komplett (5×) — 35 €/Pers.</span></label>
+                <label><input type="radio" name="wein-pair" value="abend" class="sub-pill-input"><span class="sub-pill">Nur 2 Highlights — 18 €/Pers.</span></label>
+                <label><input type="radio" name="wein-pair" value="selber" class="sub-pill-input"><span class="sub-pill">Wir wählen selber</span></label>
+              </div>
+            </div>
+
+            <div class="anlass-sub" data-sub="business">
+              <span class="anlass-sub-eyebrow">Gut zu wissen</span>
+              <p class="anlass-sub-question">Brauchen Sie eine <em>Sammelrechnung</em> oder getrennte Belege?</p>
+              <div class="anlass-sub-options" role="radiogroup" aria-label="Rechnungs-Modus">
+                <label><input type="radio" name="biz-bill" value="firma" class="sub-pill-input"><span class="sub-pill">Eine Rechnung an die Firma</span></label>
+                <label><input type="radio" name="biz-bill" value="getrennt" class="sub-pill-input"><span class="sub-pill">Getrennt, einzeln</span></label>
+                <label><input type="radio" name="biz-bill" value="standard" class="sub-pill-input"><span class="sub-pill">Standard, klären wir vor Ort</span></label>
+              </div>
+            </div>
+
+            <div class="anlass-sub" data-sub="familie">
+              <span class="anlass-sub-eyebrow">Kleine Gäste</span>
+              <p class="anlass-sub-question">Wir haben einen <em>Kindertisch</em> mit Bauklötzen und Wachsstiften — interessiert?</p>
+              <div class="anlass-sub-options" role="radiogroup" aria-label="Kindertisch">
+                <label><input type="radio" name="kids-table" value="ja" class="sub-pill-input"><span class="sub-pill">Ja, gerne (1+ Kind)</span></label>
+                <label><input type="radio" name="kids-table" value="hochstuhl" class="sub-pill-input"><span class="sub-pill">Hochstuhl reicht</span></label>
+                <label><input type="radio" name="kids-table" value="nein" class="sub-pill-input"><span class="sub-pill">Nicht nötig</span></label>
+              </div>
+            </div>
+
+            <div class="anlass-sub" data-sub="spontan">
+              <span class="anlass-sub-eyebrow">Heute? Heute!</span>
+              <p class="anlass-sub-question">Soll Ben einen <em>spontanen Gruß</em> aus der Küche schicken?</p>
+              <div class="anlass-sub-options" role="radiogroup" aria-label="Gruß">
+                <label><input type="radio" name="gruss" value="ja" class="sub-pill-input"><span class="sub-pill">Ja, überraschen Sie uns</span></label>
+                <label><input type="radio" name="gruss" value="nein" class="sub-pill-input"><span class="sub-pill">Lieber nicht</span></label>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <label for="step-2" class="step-btn is-submit">Weiter zu Personen →</label>
+            </div>
+          </div>
+
+          <!-- ─── STEP 2 — Personen ─── -->
+          <div class="step-panel" data-step="2">
+            <h2 class="step-panel-title">Wie viele <em>sind Sie</em>?</h2>
+            <p class="step-panel-lead">Mehr als 8 Personen reservieren wir gerne in der Schankstube oder im Privat-Bereich — dort haben Sie Ruhe und können auch mal anstoßen.</p>
+
+            <div class="pers-grid" role="radiogroup" aria-label="Personenanzahl">
+              <label><input type="radio" name="pers" value="1"  class="pers-input"><span class="pers-pill">1</span></label>
+              <label><input type="radio" name="pers" value="2"  class="pers-input" checked><span class="pers-pill">2</span></label>
+              <label><input type="radio" name="pers" value="3"  class="pers-input"><span class="pers-pill">3</span></label>
+              <label><input type="radio" name="pers" value="4"  class="pers-input"><span class="pers-pill">4</span></label>
+              <label><input type="radio" name="pers" value="5"  class="pers-input"><span class="pers-pill">5</span></label>
+              <label><input type="radio" name="pers" value="6"  class="pers-input"><span class="pers-pill">6</span></label>
+              <label><input type="radio" name="pers" value="7"  class="pers-input"><span class="pers-pill">7</span></label>
+              <label><input type="radio" name="pers" value="8"  class="pers-input"><span class="pers-pill">8</span></label>
+              <label><input type="radio" name="pers" value="9"  class="pers-input"><span class="pers-pill">9</span></label>
+              <label><input type="radio" name="pers" value="10" class="pers-input"><span class="pers-pill">10</span></label>
+              <label><input type="radio" name="pers" value="11" class="pers-input"><span class="pers-pill">11</span></label>
+              <label><input type="radio" name="pers" value="12" class="pers-input"><span class="pers-pill">12+</span></label>
+            </div>
+
+            <div class="pers-large-hint" aria-live="polite">
+              <strong>Privat-Bereich für Ihre Gruppe.</strong>
+              Ab 9 Personen reservieren wir Ihnen automatisch die Schankstube (bis 18) oder einen Teil des Hauptraums. Bei Gruppen ab 12 berechnen wir eine Mindestabnahme von 62 €/Person — wir sprechen das in der Bestätigung ab.
+            </div>
+
+            <div class="step-nav">
+              <label for="step-1" class="step-btn is-back">← Zurück</label>
+              <label for="step-3" class="step-btn is-submit">Weiter zu Datum →</label>
+            </div>
+          </div>
+
+          <!-- ─── STEP 3 — Datum & Uhrzeit ─── -->
+          <div class="step-panel" data-step="3">
+            <h2 class="step-panel-title">Wann <em>kommen Sie</em>?</h2>
+            <p class="step-panel-lead">Datum wählen, dann eine Uhrzeit. Verbleibende Tische pro Slot zeigen wir transparent an — bei "voll" einfach den nächsten nehmen oder anrufen, oft geht 's doch.</p>
+
+            <div class="datum-row">
+              <div>
+                <label class="datum-label" for="form-date">Datum</label>
+                <input type="date" id="form-date" name="date" class="datum-input" required>
+              </div>
+              <div>
+                <span class="datum-label">Uhrzeit</span>
+                <div class="uhrzeit-grid" role="radiogroup" aria-label="Uhrzeit">
+                  <label>
+                    <input type="radio" name="uhrzeit" value="18:00" class="uhrzeit-input">
+                    <span class="uhrzeit-pill">
+                      <span class="uhrzeit-pill-time">18:00</span>
+                      <span class="uhrzeit-pill-avail">5 Tische frei</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="uhrzeit" value="18:30" class="uhrzeit-input">
+                    <span class="uhrzeit-pill">
+                      <span class="uhrzeit-pill-time">18:30</span>
+                      <span class="uhrzeit-pill-avail">3 Tische frei</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="uhrzeit" value="19:00" class="uhrzeit-input">
+                    <span class="uhrzeit-pill">
+                      <span class="uhrzeit-pill-time">19:00</span>
+                      <span class="uhrzeit-pill-avail is-low">Nur noch 1</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="uhrzeit" value="19:30" class="uhrzeit-input">
+                    <span class="uhrzeit-pill">
+                      <span class="uhrzeit-pill-time">19:30</span>
+                      <span class="uhrzeit-pill-avail is-low">Nur noch 2</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="uhrzeit" value="20:00" class="uhrzeit-input" disabled>
+                    <span class="uhrzeit-pill">
+                      <span class="uhrzeit-pill-time">20:00</span>
+                      <span class="uhrzeit-pill-avail is-full">Voll</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="uhrzeit" value="20:30" class="uhrzeit-input">
+                    <span class="uhrzeit-pill">
+                      <span class="uhrzeit-pill-time">20:30</span>
+                      <span class="uhrzeit-pill-avail">4 Tische frei</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-family: var(--font-display); font-style: italic; color: var(--text-muted); font-size: var(--fs-small); max-width: 56ch;">Live-Verfügbarkeiten als Richtwert — wir bestätigen jede Reservierung persönlich. Bei "Voll" lohnt der Anruf, manchmal sagt jemand kurzfristig ab.</p>
+
+            <div class="step-nav">
+              <label for="step-2" class="step-btn is-back">← Zurück</label>
+              <label for="step-4" class="step-btn is-submit">Weiter zu Wünschen →</label>
+            </div>
+          </div>
+
+          <!-- ─── STEP 4 — Sonderwünsche + Allergen-Vorab ─── -->
+          <div class="step-panel" data-step="4">
+            <h2 class="step-panel-title">Etwas <em>Besonderes</em>?</h2>
+            <p class="step-panel-lead">Allergien sammeln wir hier vorab, damit Ben das Menü anpassen kann. Sonderwünsche — Hund dabei, Tisch am Fenster, Geburtstagsblumen — gerne ins Notiz-Feld.</p>
+
+            <label class="datum-label" for="form-notes">Sonderwünsche · Notizen (frei)</label>
+            <textarea id="form-notes" name="notes" class="wuensche-textarea" placeholder="Tisch am Fenster · Hund unter dem Tisch · Geburtstagsblumen · Vor-Speise auslassen — Sie wissen, wir richten."></textarea>
+
+            <p class="datum-label" style="margin-top: 1.75rem;">Allergene · Vorab melden (Mehrfachauswahl)</p>
+            <div class="allergen-pre-list" role="group" aria-label="Allergene">
+              <label><input type="checkbox" name="all" value="nuesse" class="allergen-pre-input"><span class="allergen-pre-pill">Nüsse</span></label>
+              <label><input type="checkbox" name="all" value="lactose" class="allergen-pre-input"><span class="allergen-pre-pill">Lactose</span></label>
+              <label><input type="checkbox" name="all" value="eier" class="allergen-pre-input"><span class="allergen-pre-pill">Eier</span></label>
+              <label><input type="checkbox" name="all" value="fisch" class="allergen-pre-input"><span class="allergen-pre-pill">Fisch</span></label>
+              <label><input type="checkbox" name="all" value="sellerie" class="allergen-pre-input"><span class="allergen-pre-pill">Sellerie</span></label>
+              <label><input type="checkbox" name="all" value="senf" class="allergen-pre-input"><span class="allergen-pre-pill">Senf</span></label>
+              <label><input type="checkbox" name="all" value="gluten" class="allergen-pre-input"><span class="allergen-pre-pill">Gluten</span></label>
+              <label><input type="checkbox" name="all" value="vegan" class="allergen-pre-input"><span class="allergen-pre-pill">Vegan-Wunsch</span></label>
+            </div>
+
+            <div class="step-nav">
+              <label for="step-3" class="step-btn is-back">← Zurück</label>
+              <label for="step-5" class="step-btn is-submit">Weiter zum Kontakt →</label>
+            </div>
+          </div>
+
+          <!-- ─── STEP 5 — Kontakt + Bestätigung ─── -->
+          <div class="step-panel" data-step="5">
+            <h2 class="step-panel-title">Fast <em>geschafft</em>.</h2>
+            <p class="step-panel-lead">Wir brauchen noch Ihren Namen und einen Weg, Sie zu erreichen — telefonisch ist uns am liebsten, weil wir dann direkt antworten können.</p>
+
+            <div class="kontakt-grid">
+              <div class="kontakt-row">
+                <label for="form-name">Name</label>
+                <input type="text" id="form-name" name="name" required autocomplete="name" placeholder="Vor- und Nachname">
+              </div>
+              <div class="kontakt-row">
+                <label for="form-phone">Telefon</label>
+                <input type="tel" id="form-phone" name="phone" autocomplete="tel" placeholder="+49 ..." required>
+              </div>
+              <div class="kontakt-row full">
+                <label for="form-email">E-Mail</label>
+                <input type="email" id="form-email" name="email" required autocomplete="email" placeholder="ihre@mail.de">
+              </div>
+            </div>
+
+            <div class="booking-summary" id="bookingSummary" aria-live="polite">
+              <span class="booking-summary-eyebrow">Ihre Reservierung in Kurzform</span>
+              <dl>
+                <dt>Anlass</dt><dd id="sum-anlass"><em>—</em></dd>
+                <dt>Personen</dt><dd id="sum-pers"><em>2</em></dd>
+                <dt>Datum</dt><dd id="sum-date"><em>—</em></dd>
+                <dt>Uhrzeit</dt><dd id="sum-time"><em>—</em></dd>
+                <dt>Sonderwünsche</dt><dd id="sum-notes"><em>—</em></dd>
+                <dt>Allergene</dt><dd id="sum-all"><em>keine</em></dd>
+              </dl>
+            </div>
+
+            <div class="step-nav">
+              <label for="step-4" class="step-btn is-back">← Zurück</label>
+              <button type="submit" class="step-btn is-submit" id="bookingSubmit">Reservierung absenden →</button>
+            </div>
+
+            <div class="oder-divider">oder direkt</div>
+
+            <div class="direct-contact-row">
+              <a class="direct-contact-card" href="https://wa.me/4917612345678" target="_blank" rel="noopener">
+                <span class="direct-contact-card-eyebrow">WhatsApp</span>
+                <span class="direct-contact-card-value">+49 176 1234 5678</span>
+                <span class="direct-contact-card-meta">Schreiben Sie kurz, was Sie suchen — Antwort meist innerhalb 1 h.</span>
+              </a>
+              <a class="direct-contact-card" href="tel:+4926623030">
+                <span class="direct-contact-card-eyebrow">Anruf direkt</span>
+                <span class="direct-contact-card-value">+49 2662 30 30</span>
+                <span class="direct-contact-card-meta">Mi–Sa 11:30–22:00 — Anette nimmt ab.</span>
+              </a>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Events · Catering · Privatbuchung ─── -->
+  <section class="events" id="events" aria-labelledby="events-h">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Anlässe · Privat &amp; Firma</span>
+          <h2 id="events-h">Wenn 's <em>mehr</em> werden soll.</h2>
+        </div>
+        <a class="btn-link" href="mailto:reservierung@forsthaus-brandt.de?subject=Anfrage%20Privat-Event">Anfrage senden →</a>
+      </header>
+      <p class="events-lead">Drei Formate, die wir wirklich gut können — abseits vom à la carte. Schreiben Sie uns Datum, Personenzahl, Anlass: wir antworten persönlich innerhalb 24 h mit konkretem Vorschlag und Festpreis.</p>
+
+      <div class="events-grid">
+        <article class="event-card">
+          <div class="event-card-num">I.</div>
+          <h3>Schankstube — <em>privat gebucht</em></h3>
+          <span class="event-card-meta">10 – 18 Personen · ab 65 €/Pers.</span>
+          <p>Unsere historische Schankstube von 1924, separierbar mit eigener Wirts-Theke. Ideal für Geburtstage, runde Jubiläen, kleinere Firmen-Essen. 3-Gang oder Wild &amp; Pasta-Menü, Wein-Pairing optional.</p>
+          <ul class="event-card-list">
+            <li>Eigener Service · separate Rechnung möglich</li>
+            <li>Beamer + Leinwand für Reden / Bilder</li>
+            <li>Anzahlung 30 €/Pers., Storno bis 7 Tage kostenfrei</li>
+          </ul>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card-num">II.</div>
+          <h3>Catering — <em>wir kommen zu Ihnen</em></h3>
+          <span class="event-card-meta">ab 25 Personen · ab 48 €/Pers.</span>
+          <p>Bei Ihnen zu Hause, in der Firma oder im Westerwälder Saal. Wir bringen Wild &amp; Pasta-Buffets, Flying-Dinner oder klassisches 4-Gang im Sitzen. Eigene Crew, eigenes Geschirr, eigene Wein-Auswahl.</p>
+          <ul class="event-card-list">
+            <li>Radius bis 35 km um Müschenbach inklusive</li>
+            <li>Live-Cooking Pasta-Station auf Wunsch (+ 8 €/Pers.)</li>
+            <li>Vegan / glutenfrei jederzeit anpassbar</li>
+          </ul>
+        </article>
+
+        <article class="event-card">
+          <div class="event-card-num">III.</div>
+          <h3>Ganzes Haus — <em>exklusiv</em></h3>
+          <span class="event-card-meta">40 – 65 Personen · ab 89 €/Pers.</span>
+          <p>Hochzeiten, große Jubiläen, Firmen-Weihnachtsfeiern. Forsthaus geschlossen für externe Gäste — Sie haben Schankstube, Hauptraum, Wein-Keller und Garten für sich. Buchbar Di + Mo (Ruhetage).</p>
+          <ul class="event-card-list">
+            <li>Standesamtliche Trauung im Wein-Keller möglich</li>
+            <li>DJ / Live-Band Strom &amp; Anschluss vorhanden</li>
+            <li>Bis 22 Uhr Musik, danach ruhig — Nachbarschaft</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="events-foot">
+        <span class="events-foot-eyebrow">Wir antworten persönlich · keine Vorlagen</span>
+        <p>Anette und Ben besprechen jedes Event selbst — kein Sales-Funnel, kein Standard-Pauschal-Paket. Sagen Sie uns einfach, was Sie sich wünschen.</p>
+        <div class="events-foot-row">
+          <a class="btn btn-primary" href="mailto:reservierung@forsthaus-brandt.de?subject=Event-Anfrage">E-Mail an Anette &amp; Ben</a>
+          <a class="btn btn-ghost" href="tel:+4926623030">+49 2662 30 30</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Info-Karten: Dress Code, Hund, Parken ─── -->
+  <section class="info-cards">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Gut zu wissen</span>
+          <h2>Drei kleine Hinweise.</h2>
+        </div>
+      </header>
+      <div class="info-grid">
+        <article class="info-card">
+          <div class="info-card-icon">01</div>
+          <h3>Kleider-Code</h3>
+          <p>Smart casual. Wir sind ein Forsthaus, kein Sterne-Tempel — aber Anstand ist gut. Hose statt Trainingsanzug, geschlossene Schuhe nach 18 Uhr, Hemd schadet nicht. Krawatte: nicht nötig.</p>
+        </article>
+        <article class="info-card">
+          <div class="info-card-icon">02</div>
+          <h3>Hund willkommen</h3>
+          <p>Wohlerzogene Hunde dürfen mit in die Schankstube. Wir haben Wassernäpfe und ein Leckerli-Glas auf der Theke. Im Gastraum bitte unter dem Tisch, nicht auf der Bank — ist nicht für alle Gäste.</p>
+        </article>
+        <article class="info-card">
+          <div class="info-card-icon">03</div>
+          <h3>Parkplätze</h3>
+          <p>20 kostenfreie Plätze direkt vor dem Forsthaus. Bei Hochsaison nutzen Sie den Wanderparkplatz 200 m weiter (kostenlos, beleuchtet). Ladesäule für E-Autos installieren wir Sommer 2026.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ Reservierung ─── -->
+  <section class="faq">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Reservierungs-FAQ</span>
+          <h2>Was Sie sich vielleicht <em>fragen</em>.</h2>
+        </div>
+      </header>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Brauche ich überhaupt eine Reservierung?</summary>
+          <div class="faq-item-body">
+            <p>Mittags meistens nicht — wir haben Platz für Spontane. Abends ja, vor allem Freitag/Samstag. Mit Wild-Saison (September–Januar) bitte mindestens 2 Tage vorab. Das 5-Gang-Menü <em>immer</em> mindestens 24 h vorher reservieren, weil wir vorbereiten müssen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie funktioniert die Stornierung?</summary>
+          <div class="faq-item-body">
+            <p>Bis 24 h vor dem Termin kostenlos — einfach anrufen oder mailen. Bei Gruppen ab 6 Personen oder beim 5-Gang-Menü gilt eine Frist von 48 h, weil wir Zutaten reservieren.</p>
+            <p>Wir berechnen <em>nichts</em> für ehrliche Absagen. Wer zweimal in Folge ohne Nachricht nicht erscheint, bekommt allerdings keine neue Reservierung mehr — das ist die einzige rote Linie.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Brauchen Sie eine Anzahlung?</summary>
+          <div class="faq-item-body">
+            <p>Nein, in der Regel nicht. Bei Gruppen ab 10 Personen oder Veranstaltungen (Geburtstag, Hochzeit, Firmen-Essen) bitten wir um eine Anzahlung von 30 € pro Person — das verrechnen wir mit der Endrechnung. Per Überweisung oder bei der Anfahrt bar/Karte.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kann ich Allergien melden?</summary>
+          <div class="faq-item-body">
+            <p>Bitte unbedingt — am besten direkt im Smart-Booking Schritt 4. Wir kennzeichnen die Karte nach EU-Verordnung 1169/2011 und passen Gerichte gerne an. Glutenfreie Pasta liegt im Haus, Vegan/Laktosefrei auf Vorbestellung.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie lange habe ich den Tisch?</summary>
+          <div class="faq-item-body">
+            <p>Mittags planen wir 1,5 h ein, abends 2 h für à la carte und 2,5 h für das Degustationsmenü. In Stoßzeiten bitten wir Sie, das einzuhalten — sonst gerne länger sitzen bleiben. Ein zweiter Espresso geht immer.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Akzeptieren Sie Karten?</summary>
+          <div class="faq-item-body">
+            <p>Ja: EC, Visa, Mastercard, Apple Pay, Google Pay. Bargeld ist uns immer am liebsten — gibt 's einen Espresso obendrauf. Trinkgeld am liebsten bar in das hölzerne Tipp-Schälchen an der Theke, geht 100% an Service und Küche.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Gibt es Übernachtung?</summary>
+          <div class="faq-item-body">
+            <p>Direkt im Forsthaus nein. Aber wir empfehlen das Landhotel Westerwald (1,8 km, Stammgast-Rabatt für unsere Reservierungen) oder das Schlosshotel Hachenburg (12 km, im Schloss). Bei der Reservierung einfach erwähnen, wir mailen Ihnen die Kontakte.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kann ich allein essen?</summary>
+          <div class="faq-item-body">
+            <p>Selbstverständlich. Wir haben einen kleinen Stamm-Tisch direkt am Tresen, gerne mit Buchsicht in die offene Küche. Allein-Essen ist bei uns kein Trauerspiel — Anette setzt sich gerne mal kurz dazu.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Westerwald-Karte ─── -->
+  <section class="map-embed">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Anfahrt &amp; Karte</span>
+          <h2>Mitten im <em>Westerwald</em>.</h2>
+        </div>
+        <a class="btn-link" href="https://maps.google.com/?q=Forstweg+12+Müschenbach" target="_blank" rel="noopener">In Google Maps öffnen →</a>
+      </header>
+      <div class="map-frame" role="img" aria-label="Schematische Karte des Westerwald-Standorts">
+        <svg class="map-svg" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="800" height="360" fill="#332821"/>
+          <g stroke="rgba(255,241,221,0.08)" stroke-width="1" fill="none">
+            <path d="M 0 80 Q 200 40 400 90 T 800 70"/>
+            <path d="M 0 160 Q 250 120 500 170 T 800 150"/>
+            <path d="M 0 240 Q 200 200 450 250 T 800 230"/>
+            <path d="M 0 320 Q 300 280 550 330 T 800 310"/>
+          </g>
+          <g stroke="rgba(168,54,44,0.55)" stroke-width="1.5" fill="none" stroke-dasharray="3 5">
+            <path d="M 50 270 L 200 220 L 350 200 L 416 137 L 500 130 L 700 80"/>
+          </g>
+          <g fill="rgba(255,241,221,0.45)" font-family="Crimson Pro, Georgia, serif" font-style="italic" font-size="14">
+            <text x="64" y="280">Limburg A3</text>
+            <text x="180" y="240">Westerburg</text>
+            <text x="370" y="220">Hachenburg</text>
+            <text x="490" y="115">Altenkirchen</text>
+            <text x="660" y="65">Köln A4</text>
+          </g>
+          <g fill="rgba(255,241,221,0.3)" font-family="Outfit, sans-serif" font-size="10" letter-spacing="2">
+            <text x="40" y="40">WESTERWALD</text>
+          </g>
+          <text x="416" y="125" fill="#E07560" font-family="Crimson Pro, Georgia, serif" font-style="italic" font-size="18" font-weight="500" text-anchor="middle">Forsthaus Brandt</text>
+          <text x="416" y="170" fill="rgba(255,241,221,0.6)" font-family="Outfit, sans-serif" font-size="11" text-anchor="middle">Müschenbach · Forstweg 12</text>
+        </svg>
+        <span class="map-pin" aria-hidden="true"></span>
+      </div>
+      <div class="map-caption-strip">
+        <span><em>A3</em> Abfahrt Limburg-Nord — 25 Min.</span>
+        <span><em>A4</em> Abfahrt Hennef — 38 Min.</span>
+        <span><em>Bahnhof</em> Westerburg + 12 Min. Taxi</span>
+        <span><em>Frankfurt</em> 1:05 h · <em>Köln</em> 0:55 h</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="anfahrt-strip">
+    <div class="container-wide">
+      <div class="anfahrt-grid">
+        <div>
+          <h2>Anfahrt</h2>
+          <address>
+            Forsthaus Brandt<br>
+            Forstweg 12<br>
+            57629 Müschenbach<br>
+            <a href="https://maps.google.com/?q=Forstweg+12+Müschenbach" target="_blank" rel="noopener">Google Maps öffnen →</a>
+          </address>
+          <p style="margin-top: 0.75rem;">A3 Abfahrt Limburg-Nord, 25 min durch den Westerwald. Parkplätze direkt am Forsthaus.</p>
+        </div>
+        <div>
+          <h2>Öffnungszeiten</h2>
+          <p>
+            Frühstück · Mi–So · 08:00–11:30<br>
+            Mittag · Mo–Sa · 12:00–14:30<br>
+            Abend · Mi–Sa · 18:00–22:00<br>
+            <small>Sonntag &amp; Montagabend Ruhetag.</small>
+          </p>
+        </div>
+        <div>
+          <h2>Direktkontakt</h2>
+          <p>
+            <a href="tel:+4926623030">+49 2662 30 30</a><br>
+            <a href="mailto:reservierung@forsthaus-brandt.de">reservierung@forsthaus-brandt.de</a><br>
+            <small>Antwort werktags innerhalb 4 h.</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <span class="nav-logo">Forsthaus <span class="accent">Brandt</span></span>
+        <p class="footer-tagline">Wo der Westerwald <em>isst.</em></p>
+        <div class="footer-meta-row">
+          <a href="karte.html">Karte</a>
+          <a href="ueber.html">Über uns</a>
+          <a href="reservierung.html">Reservierung</a>
+          <a href="https://instagram.com/forsthaus.brandt" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h2>Forsthaus</h2>
+        <address>Forstweg 12<br>57629 Müschenbach</address>
+        <p style="margin-top: 0.625rem;"><a href="tel:+4926623030">+49 2662 30 30</a></p>
+        <p><a href="mailto:reservierung@forsthaus-brandt.de">reservierung@forsthaus-brandt.de</a></p>
+      </div>
+    </div>
+    <div class="footer-signature" aria-label="Familien-Signatur">
+      <span class="sig-name">Familie Brandt</span>
+      <span class="footer-signature-meta">Familie Brandt · 4 Generationen · seit 1924</span>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Forsthaus Brandt. Familie Brandt.</span>
+      <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<section id="impressum" class="legal-section" style="padding: 2rem; background: #1F1813; color: rgba(245,235,220,0.5); font-size: 0.75rem; line-height: 1.6;">
+  <h3 style="color: rgba(245,235,220,0.7); font-size: 0.875rem; margin-bottom: 1rem;">Impressum</h3>
+  <p>Forsthaus Brandt GbR · Forstweg 12 · 57629 Müschenbach<br>
+  Tel: 026 62 – 30 30 · E-Mail: tisch@forsthaus-brandt.de<br>
+  Inhaber: Ben Brandt · USt-IdNr: DE123456789</p>
+  <p id="datenschutz" style="margin-top: 1.5rem;"><strong style="color: rgba(245,235,220,0.7);">Datenschutz:</strong> Diese Demo-Website verarbeitet keine personenbezogenen Daten. Kontaktformulare senden keine Daten. Alle Inhalte sind Demonstrations-Zwecken vorbehalten.</p>
+</section>
+
+<aside class="page-num" aria-hidden="true"><em>Seite IV</em>· Brandt Reservierung</aside>
+
+<script>
+  // ── Ensure all Unsplash images strip referrer (Chrome ORB resistance) ──
+  document.querySelectorAll('img[src*="images.unsplash.com"], source[srcset*="images.unsplash.com"]').forEach(el => {
+    if (!el.hasAttribute('referrerpolicy')) el.setAttribute('referrerpolicy', 'no-referrer');
+  });
+
+  // Nav drawer
+  const burger = document.getElementById('navBurger');
+  const drawer = document.getElementById('navDrawer');
+  const close = document.getElementById('navDrawerClose');
+  const open = () => { drawer.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); drawer.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
+  const shut = () => { drawer.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); drawer.setAttribute('inert', ''); document.body.style.overflow = ''; };
+  burger?.addEventListener('click', open);
+  close?.addEventListener('click', shut);
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) shut(); });
+
+  // ── Smart-Booking: live-summary + mailto submit ──
+  const form = document.getElementById('bookingForm');
+  if (form) {
+    const anlassLabel = {
+      geburtstag: 'Geburtstag',
+      jahrestag: 'Jahrestag',
+      business: 'Geschäftsessen',
+      familie: 'Familie',
+      spontan: 'Spontan'
+    };
+    const setText = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = val ? `<em>${val}</em>` : '<em>—</em>';
+    };
+    const updateSummary = () => {
+      const anlass = form.querySelector('input[name="anlass"]:checked');
+      setText('sum-anlass', anlass ? anlassLabel[anlass.value] : '');
+      const pers = form.querySelector('input[name="pers"]:checked');
+      setText('sum-pers', pers ? `${pers.value === '12' ? '12+' : pers.value} Personen` : '2 Personen');
+      const date = form.querySelector('#form-date').value;
+      if (date) {
+        try {
+          const d = new Date(date);
+          setText('sum-date', d.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }));
+        } catch { setText('sum-date', date); }
+      } else setText('sum-date', '');
+      const uhr = form.querySelector('input[name="uhrzeit"]:checked');
+      setText('sum-time', uhr ? `${uhr.value} Uhr` : '');
+      const notes = form.querySelector('#form-notes').value.trim();
+      setText('sum-notes', notes || '');
+      const all = [...form.querySelectorAll('input[name="all"]:checked')].map(c => c.value);
+      const sumAll = document.getElementById('sum-all');
+      if (sumAll) sumAll.innerHTML = all.length ? `<em>${all.join(' · ')}</em>` : '<em>keine</em>';
+    };
+    form.addEventListener('change', updateSummary);
+    form.addEventListener('input', updateSummary);
+    updateSummary();
+
+    // Mailto-Submit
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const get = name => form.querySelector(`[name="${name}"]:checked`)?.value || '';
+      const fName = form.querySelector('#form-name').value.trim();
+      const fEmail = form.querySelector('#form-email').value.trim();
+      const fPhone = form.querySelector('#form-phone').value.trim();
+      const fDate = form.querySelector('#form-date').value;
+      const fNotes = form.querySelector('#form-notes').value.trim();
+      const all = [...form.querySelectorAll('input[name="all"]:checked')].map(c => c.value).join(', ');
+      const subAnlass = get('anlass');
+      const subOptions = ['geb-kerze','wein-pair','biz-bill','kids-table','gruss']
+        .map(n => { const v = get(n); return v ? `${n}: ${v}` : null; })
+        .filter(Boolean).join(' · ');
+
+      const body = [
+        'Reservierungs-Anfrage Forsthaus Brandt',
+        '',
+        `Anlass: ${anlassLabel[subAnlass] || subAnlass || '—'}`,
+        subOptions ? `Sonder-Optionen: ${subOptions}` : '',
+        `Personen: ${get('pers')}`,
+        `Datum: ${fDate || '—'}`,
+        `Uhrzeit: ${get('uhrzeit') || '—'}`,
+        '',
+        `Name: ${fName}`,
+        `Telefon: ${fPhone}`,
+        `E-Mail: ${fEmail}`,
+        '',
+        fNotes ? `Sonderwünsche:\n${fNotes}` : '',
+        all ? `Allergene: ${all}` : ''
+      ].filter(Boolean).join('\n');
+
+      const subj = `Reservierung ${fName || ''} · ${fDate || ''} · ${get('uhrzeit') || ''}`.trim();
+      const mailto = `mailto:reservierung@forsthaus-brandt.de?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+
+    // Auto-advance to next step on Anlass / Personen click (UX nicety)
+    form.querySelectorAll('.anlass-input').forEach(r => {
+      r.addEventListener('change', () => {
+        // Only advance if no sub-question is pending
+        // Keep manual advance via button — user might want to choose sub-option first
+      });
+    });
+  }
+</script>
+
+</body>
+</html>

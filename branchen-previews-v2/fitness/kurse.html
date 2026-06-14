@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F0F0F">
+<title>Kurse &amp; Stundenplan — The Grind Hachenburg</title>
+<meta name="description" content="Stundenplan, Hyrox-Programm, Krafttraining, Pilates, Equipment-Liste, FAQ. The Grind Boutique-Sportstudio Hachenburg.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230F0F0F'/><text x='16' y='23' font-family='Arial Black,sans-serif' font-size='18' font-weight='900' fill='%23FF5938' text-anchor='middle'>G</text></svg>">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://ww-webmanufaktur.de/preview/fitness/kurse.html">
+<meta property="og:title" content="Kurse &amp; Stundenplan — The Grind Hachenburg">
+<meta property="og:description" content="Stundenplan, Hyrox-Programm, Krafttraining, Pilates. The Grind Boutique-Sportstudio Hachenburg.">
+<meta property="og:image" content="https://ww-webmanufaktur.de/preview/_meta/og/fitness.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kurse &amp; Stundenplan — The Grind Hachenburg">
+<meta name="twitter:description" content="Stundenplan, Hyrox-Programm, Krafttraining, Pilates. The Grind Boutique-Sportstudio Hachenburg.">
+<meta name="twitter:image" content="https://ww-webmanufaktur.de/preview/_meta/og/fitness.jpg">
+<link rel="canonical" href="https://ww-webmanufaktur.de/preview/fitness/kurse.html">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Zum Inhalt springen</a>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><strong>THE GRIND</strong></a>
+    <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu" id="navBurger">
+      <span class="nav-burger-icon"><span></span><span></span></span>
+      Menü
+    </button>
+  </div>
+</header>
+
+<div class="nav-overlay-menu" id="navMenu" aria-label="Hauptmenü" inert>
+  <div class="nav-overlay-menu-header">
+    <a class="nav-logo" href="index.html"><strong>THE GRIND</strong></a>
+    <button class="nav-close" aria-label="Menü schließen" id="navClose">
+      <svg class="nav-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Schließen
+    </button>
+  </div>
+  <ul class="nav-overlay-list">
+    <li><a href="index.html">Start</a></li>
+    <li><a href="kurse.html" aria-current="page">Kurse</a></li>
+    <li><a href="trainer.html">Trainer</a></li>
+    <li><a href="probetraining.html">Probetraining</a></li>
+  </ul>
+  <div class="nav-overlay-meta">
+    <a href="tel:+4926623301">+49 2662 33 01</a>
+    <a href="mailto:hallo@thegrind-hachenburg.de">hallo@thegrind-hachenburg.de</a>
+    <a href="https://instagram.com/thegrind.hachenburg" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ─── Subpage Hero ─── -->
+  <section class="subpage-hero">
+    <div class="container-wide">
+      <span class="eyebrow">Kurse · Stundenplan · Equipment</span>
+      <h1 class="subpage-display">Sieben Tage.<br><span class="accent">Ein Plan.</span></h1>
+      <p class="subpage-lead">Live-Stundenplan. Wische horizontal auf Mobile, scrolle vertikal auf Desktop. Hyrox · Kraft · Pilates — farblich markiert. Kursbuchung läuft per Mitglieder-App, vor Ort oder Telefon.</p>
+    </div>
+  </section>
+
+  <!-- ─── Athlete cut-out divider (Round 4: hard clip-path polygon) ─── -->
+  <section class="athlete-cutout-divider" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=1600&auto=format&fit=crop&q=78"
+         alt="" loading="lazy" decoding="async" width="1600" height="500">
+    <div class="athlete-cutout-band">Wische horizontal · 7 Tage · 28 Slots · live</div>
+  </section>
+
+  <!-- ─── Course-Finder Quiz (Round 2: pure-CSS 3-step :checked + :has()) ─── -->
+  <section class="cf-quiz" id="kursfinder" aria-labelledby="cfTitle">
+    <div class="container-wide">
+      <div class="cf-intro">
+        <span class="eyebrow">Kurs-Finder · 3 Fragen · 0 JS</span>
+        <h2 id="cfTitle">Welcher Kurs<br><span class="accent">passt zu dir?</span></h2>
+        <p>Drei kurze Fragen — Trainer, Programm und Probe-Wochenplan kommen automatisch. Keine E-Mail nötig, läuft komplett im Browser.</p>
+      </div>
+
+      <form class="cf-form" autocomplete="off" novalidate>
+
+        <fieldset class="cf-fieldset" data-step="1">
+          <legend><span class="cf-step-num">01</span> Was ist dein Ziel?</legend>
+          <div class="cf-options">
+            <input type="radio" name="cf-ziel" id="cf-ziel-kraft" value="kraft">
+            <label for="cf-ziel-kraft"><span class="cf-key">A</span><span class="cf-label">Kraft</span><span class="cf-sub">Muskel · Stärke · Programm</span></label>
+            <input type="radio" name="cf-ziel" id="cf-ziel-cardio" value="cardio">
+            <label for="cf-ziel-cardio"><span class="cf-key">B</span><span class="cf-label">Cardio</span><span class="cf-sub">Ausdauer · Lunge · Puls</span></label>
+            <input type="radio" name="cf-ziel" id="cf-ziel-mobility" value="mobility">
+            <label for="cf-ziel-mobility"><span class="cf-key">C</span><span class="cf-label">Beweglichkeit</span><span class="cf-sub">Pilates · Mobility · Rücken</span></label>
+            <input type="radio" name="cf-ziel" id="cf-ziel-hyrox" value="hyrox">
+            <label for="cf-ziel-hyrox"><span class="cf-key">D</span><span class="cf-label">Hyrox</span><span class="cf-sub">Wettkampf · Strukturierter Plan</span></label>
+            <input type="radio" name="cf-ziel" id="cf-ziel-stress" value="stress">
+            <label for="cf-ziel-stress"><span class="cf-key">E</span><span class="cf-label">Anti-Stress</span><span class="cf-sub">Kopf frei · Reset · Schlaf</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="cf-fieldset" data-step="2">
+          <legend><span class="cf-step-num">02</span> Wieviel Zeit hast du?</legend>
+          <div class="cf-options">
+            <input type="radio" name="cf-zeit" id="cf-zeit-3-4" value="3-4">
+            <label for="cf-zeit-3-4"><span class="cf-key">A</span><span class="cf-label">3 – 4 × Woche</span><span class="cf-sub">Strukturierter Wochenplan</span></label>
+            <input type="radio" name="cf-zeit" id="cf-zeit-1-2" value="1-2">
+            <label for="cf-zeit-1-2"><span class="cf-key">B</span><span class="cf-label">1 – 2 × Woche</span><span class="cf-sub">Realistisch · konstant</span></label>
+            <input type="radio" name="cf-zeit" id="cf-zeit-wend" value="wend">
+            <label for="cf-zeit-wend"><span class="cf-key">C</span><span class="cf-label">Wochenend-only</span><span class="cf-sub">Sa + So Schwerpunkt</span></label>
+            <input type="radio" name="cf-zeit" id="cf-zeit-probe" value="probe">
+            <label for="cf-zeit-probe"><span class="cf-key">D</span><span class="cf-label">1 × Probe</span><span class="cf-sub">Erst gucken · dann entscheiden</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="cf-fieldset" data-step="3">
+          <legend><span class="cf-step-num">03</span> Wo stehst du gerade?</legend>
+          <div class="cf-options">
+            <input type="radio" name="cf-erfahrung" id="cf-erf-anf" value="anfaenger">
+            <label for="cf-erf-anf"><span class="cf-key">A</span><span class="cf-label">Anfänger</span><span class="cf-sub">Erstes Studio · keine Eile</span></label>
+            <input type="radio" name="cf-erfahrung" id="cf-erf-wieder" value="wiedereinsteiger">
+            <label for="cf-erf-wieder"><span class="cf-key">B</span><span class="cf-label">Wiedereinsteiger</span><span class="cf-sub">Lange weg · zurück mit Plan</span></label>
+            <input type="radio" name="cf-erfahrung" id="cf-erf-erf" value="erfahren">
+            <label for="cf-erf-erf"><span class="cf-key">C</span><span class="cf-label">Erfahren</span><span class="cf-sub">Studios kenne ich · jetzt strukturiert</span></label>
+            <input type="radio" name="cf-erfahrung" id="cf-erf-athl" value="athlet">
+            <label for="cf-erf-athl"><span class="cf-key">D</span><span class="cf-label">Athlet</span><span class="cf-sub">Performance · Wettkampf-Mode</span></label>
+          </div>
+        </fieldset>
+
+        <!-- ─── Result-Block · sichtbar nur wenn alle drei beantwortet ─── -->
+        <div class="cf-result" role="region" aria-live="polite" aria-atomic="true">
+
+          <div class="cf-empty">
+            <p>Drei Antworten — und du bekommst Trainer, Programm und einen Probe-Wochenplan. Beantworte oben Frage 01 bis 03.</p>
+          </div>
+
+          <div class="cf-card" data-ziel="kraft">
+            <span class="cf-tag">Empfehlung · Kraft</span>
+            <h3 class="cf-card-title">Kraft-Programm <span class="accent">mit Felix.</span></h3>
+            <div class="cf-card-grid">
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Programme</span>
+                <ul class="cf-card-list">
+                  <li><strong>Kraft Coached</strong> · 75 min · 1:1 Plan-Korrektur</li>
+                  <li><strong>Hypertrophie-Block</strong> · 12 Wo. Programm</li>
+                </ul>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Trainer</span>
+                <p class="cf-card-trainer"><strong>Felix Geduld</strong><br>B-Trainer Leistungssport · Kraft-Programmierung · 6 Jahre Powerlifting-Coach Köln.</p>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Wochenplan · Beispiel</span>
+                <ul class="cf-card-week">
+                  <li><span>Mo</span><strong>Kraft Coached</strong> · 17:00 · Felix</li>
+                  <li><span>Mi</span><strong>Open Gym</strong> · 18:00 · 5×5 Squat</li>
+                  <li><span>Fr</span><strong>Kraft Coached</strong> · 17:00 · Felix</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cf-card" data-ziel="cardio">
+            <span class="cf-tag">Empfehlung · Cardio</span>
+            <h3 class="cf-card-title">Conditioning <span class="accent">mit Niko.</span></h3>
+            <div class="cf-card-grid">
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Programme</span>
+                <ul class="cf-card-list">
+                  <li><strong>Hyrox Power</strong> · Functional Conditioning</li>
+                  <li><strong>Air-Bike + Rower-Intervall</strong> · 45 min</li>
+                </ul>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Trainer</span>
+                <p class="cf-card-trainer"><strong>Niko Disziplin</strong><br>Inhaber · Hyrox-Coach · 4× Hyrox-Finisher (Frankfurt, Berlin, Mailand).</p>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Wochenplan · Beispiel</span>
+                <ul class="cf-card-week">
+                  <li><span>Di</span><strong>Hyrox Power</strong> · 06:30 · Niko</li>
+                  <li><span>Do</span><strong>Conditioning</strong> · 18:30 · Open Gym</li>
+                  <li><span>Sa</span><strong>Long Cardio</strong> · 09:00 · 60 min</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cf-card" data-ziel="mobility">
+            <span class="cf-tag">Empfehlung · Beweglichkeit</span>
+            <h3 class="cf-card-title">Reformer-Pilates <span class="accent">mit Eva.</span></h3>
+            <div class="cf-card-grid">
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Programme</span>
+                <ul class="cf-card-list">
+                  <li><strong>Reformer Basics</strong> · 50 min · max. 6 Plätze</li>
+                  <li><strong>Mobility Floor</strong> · frei nutzbar · So 10:00 Reformer-Recovery</li>
+                </ul>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Trainer</span>
+                <p class="cf-card-trainer"><strong>Eva Plan</strong><br>BASI-Pilates zertifiziert · Sportphysiotherapie · Reformer-Spezialistin.</p>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Wochenplan · Beispiel</span>
+                <ul class="cf-card-week">
+                  <li><span>Mo</span><strong>Reformer Basics</strong> · 09:00 · Eva</li>
+                  <li><span>Mi</span><strong>Mobility</strong> · 17:00 · Eva</li>
+                  <li><span>So</span><strong>Recovery-Reformer</strong> · 10:00 · Eva</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cf-card" data-ziel="hyrox">
+            <span class="cf-tag">Empfehlung · Hyrox</span>
+            <h3 class="cf-card-title">Hyrox-Block <span class="accent">mit Niko.</span></h3>
+            <div class="cf-card-grid">
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Programme</span>
+                <ul class="cf-card-list">
+                  <li><strong>Hyrox Strength</strong> · 60 min · Sled, Sandbag, Wall Ball</li>
+                  <li><strong>16-Wo. Race-Block</strong> · Volume → Intensity → Race-Sim → Taper</li>
+                </ul>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Trainer</span>
+                <p class="cf-card-trainer"><strong>Niko Disziplin</strong><br>Hyrox-Coach · DACH-Race-Spec im Studio · Frankfurt 11.10.2026 als nächstes Saison-Ziel.</p>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Wochenplan · Beispiel</span>
+                <ul class="cf-card-week">
+                  <li><span>Mo</span><strong>Krafttraining</strong> · 18:00 · Felix</li>
+                  <li><span>Mi</span><strong>Mobility</strong> · 17:00 · Eva</li>
+                  <li><span>Sa</span><strong>Hyrox-Klasse</strong> · 11:00 · Niko</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="cf-card" data-ziel="stress">
+            <span class="cf-tag">Empfehlung · Anti-Stress</span>
+            <h3 class="cf-card-title">Kopf-frei-Mix <span class="accent">mit Eva &amp; Niko.</span></h3>
+            <div class="cf-card-grid">
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Programme</span>
+                <ul class="cf-card-list">
+                  <li><strong>Reformer Flow</strong> · 50 min · Eva · Atmung &amp; Tiefenmuskulatur</li>
+                  <li><strong>Recovery-Sauna</strong> · 90 °C · 2× Eukalyptus-Aufgüsse / Wo.</li>
+                </ul>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Trainer</span>
+                <p class="cf-card-trainer"><strong>Eva Plan</strong> für Pilates · <strong>Niko Disziplin</strong> für Krafteinheit zum Druck-Ablassen. Kombi macht den Unterschied.</p>
+              </div>
+              <div class="cf-card-col">
+                <span class="cf-card-eye">Wochenplan · Beispiel</span>
+                <ul class="cf-card-week">
+                  <li><span>Di</span><strong>Reformer Flow</strong> · 19:00 · Eva</li>
+                  <li><span>Do</span><strong>Open Gym + Sauna</strong> · 18:00</li>
+                  <li><span>Sa</span><strong>Mobility + Sauna</strong> · 11:00 · Eva</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Erfahrungs-Hinweis (zeigt sich nur wenn cf-erfahrung gewählt) -->
+          <div class="cf-erfahrung-hint">
+            <span class="cf-card-eye">Hinweis nach Erfahrung</span>
+            <p data-erf="anfaenger">Wir starten mit zwei Form-Schule-Sessions. Du musst noch nichts können — nur bereit sein, einem Plan zu folgen.</p>
+            <p data-erf="wiedereinsteiger">Wiedereinstieg in 6 – 8 Wochen geplant. Erstes Re-Test nach Woche 4, danach Plan-Anpassung.</p>
+            <p data-erf="erfahren">Wir machen einen Plan-Workshop, schreiben dir einen 12-Wochen-Block. Form-Korrektur alle 4 Wochen.</p>
+            <p data-erf="athlet">Periodisierter Wettkampf-Block, wöchentliche Coach-Begleitung, Race-Sim, Peaking-Phase.</p>
+          </div>
+
+          <!-- Zeit-Hinweis (zeigt sich nur wenn cf-zeit gewählt) -->
+          <div class="cf-zeit-hint">
+            <span class="cf-card-eye">Hinweis nach Zeit-Budget</span>
+            <p data-zeit="3-4">Idealfrequenz für sichtbaren Fortschritt in 8 – 12 Wochen.</p>
+            <p data-zeit="1-2">Realistisch und nachhaltig. Plan ist auf 1–2× / Woche kalibriert.</p>
+            <p data-zeit="wend">Wir bauen einen Sa+So-Doppel-Plan, mit Recovery-Mobility-Hausaufgabe für die Woche.</p>
+            <p data-zeit="probe">Erst kommen, gucken, ausprobieren. Probetraining ist 60 min und kostet nichts.</p>
+          </div>
+
+          <div class="cf-cta">
+            <a class="btn btn-primary" href="probetraining.html">
+              Probetraining mit dieser Empfehlung
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn-link" href="#kursfinder" onclick="this.closest('form').reset(); return false;">Quiz zurücksetzen ↻</a>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── Live Stundenplan · Interactive Filter (Round 3) ─── -->
+  <section class="live-schedule" id="stundenplan" aria-labelledby="lsTitle">
+    <div class="container-wide">
+
+      <header class="live-schedule-head">
+        <span class="eyebrow">Stundenplan · aktueller Wochenplan</span>
+        <h2 id="lsTitle">Filter dich<br><span class="accent">durch die Woche.</span></h2>
+        <div class="live-schedule-meta">
+          <span><span class="live-status-dot"></span>Live · 28 Slots aktiv</span>
+          <span>Anfrage per E-Mail mit 1 Klick</span>
+        </div>
+      </header>
+
+      <form class="ls-filter-form" autocomplete="off" aria-label="Stundenplan filtern">
+
+        <fieldset class="ls-filter-group">
+          <legend>Trainer</legend>
+          <div class="ls-filter-options">
+            <input type="radio" name="flt-trainer" id="flt-trainer-alle" value="alle" checked>
+            <label for="flt-trainer-alle">Alle</label>
+            <input type="radio" name="flt-trainer" id="flt-trainer-niko" value="niko">
+            <label for="flt-trainer-niko">Niko</label>
+            <input type="radio" name="flt-trainer" id="flt-trainer-eva" value="eva">
+            <label for="flt-trainer-eva">Eva</label>
+            <input type="radio" name="flt-trainer" id="flt-trainer-felix" value="felix">
+            <label for="flt-trainer-felix">Felix</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ls-filter-group">
+          <legend>Level</legend>
+          <div class="ls-filter-options">
+            <input type="radio" name="flt-tier" id="flt-tier-alle" value="alle" checked>
+            <label for="flt-tier-alle">Alle</label>
+            <input type="radio" name="flt-tier" id="flt-tier-anfaenger" value="anfaenger">
+            <label for="flt-tier-anfaenger">Anfänger</label>
+            <input type="radio" name="flt-tier" id="flt-tier-mittel" value="mittel">
+            <label for="flt-tier-mittel">Mittel</label>
+            <input type="radio" name="flt-tier" id="flt-tier-fortgeschritten" value="fortgeschritten">
+            <label for="flt-tier-fortgeschritten">Fortgeschritten</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="ls-filter-group">
+          <legend>Typ</legend>
+          <div class="ls-filter-options">
+            <input type="radio" name="flt-type" id="flt-type-alle" value="alle" checked>
+            <label for="flt-type-alle">Alle</label>
+            <input type="radio" name="flt-type" id="flt-type-kraft" value="kraft">
+            <label for="flt-type-kraft">Kraft</label>
+            <input type="radio" name="flt-type" id="flt-type-hyrox" value="hyrox">
+            <label for="flt-type-hyrox">Hyrox</label>
+            <input type="radio" name="flt-type" id="flt-type-mobility" value="mobility">
+            <label for="flt-type-mobility">Mobility</label>
+            <input type="radio" name="flt-type" id="flt-type-pilates" value="pilates">
+            <label for="flt-type-pilates">Pilates</label>
+          </div>
+        </fieldset>
+
+        <button type="reset" class="ls-filter-reset">Alle Filter zurücksetzen</button>
+      </form>
+
+      <div class="ls-week" role="list">
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">Mo<span>06.05.</span></div>
+          <a class="ls-slot" data-trainer="niko" data-tier="fortgeschritten" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Power%20Mo%2006.05.%2006%3A30&amp;body=Hallo%20Niko%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20Hyrox%20Power%20am%20Montag%2006.05.%20um%2006%3A30%20Uhr%20anmelden.%0A%0AName%3A%20%0AErfahrung%3A%20%0A%0ADanke%2C">
+            <span class="ls-slot-time">06:30</span>
+            <span class="ls-slot-name">Hyrox Power</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 60 min · Niko</span>
+            <span class="ls-slot-status" data-status="frei">3 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="eva" data-tier="anfaenger" data-type="pilates" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Basics%20Mo%2006.05.%2009%3A00&amp;body=Hallo%20Eva%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20Reformer%20Basics%20am%20Montag%2006.05.%20um%2009%3A00%20Uhr%20anmelden.%0A%0AName%3A%20%0AErfahrung%3A%20%0A%0ADanke%2C">
+            <span class="ls-slot-time">09:00</span>
+            <span class="ls-slot-name">Reformer Basics</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="fast-voll">5 / 6 — fast voll</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="mittel" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Kraft%20Coached%20Mo%2006.05.%2017%3A00&amp;body=Hallo%20Felix%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20Kraft%20Coached%20am%20Montag%2006.05.%20um%2017%3A00%20Uhr%20anmelden.%0A%0AName%3A%20%0AErfahrung%3A%20%0A%0ADanke%2C">
+            <span class="ls-slot-time">17:00</span>
+            <span class="ls-slot-name">Kraft Coached</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 75 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">4 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="niko" data-tier="fortgeschritten" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Strength%20Mo%2006.05.%2019%3A00&amp;body=Hallo%20Niko%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20Hyrox%20Strength%20am%20Montag%2006.05.%20um%2019%3A00%20Uhr%20anmelden.%0A%0AName%3A%20%0AErfahrung%3A%20%0A%0ADanke%2C">
+            <span class="ls-slot-time">19:00</span>
+            <span class="ls-slot-name">Hyrox Strength</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 60 min · Niko</span>
+            <span class="ls-slot-status" data-status="warteliste">Warteliste</span>
+          </a>
+        </article>
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">Di<span>07.05.</span></div>
+          <a class="ls-slot" data-trainer="eva" data-tier="mittel" data-type="pilates" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Flow%20Di%2007.05.%2007%3A00">
+            <span class="ls-slot-time">07:00</span>
+            <span class="ls-slot-name">Reformer Flow</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="frei">2 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="fortgeschritten" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hypertrophie%20A%20Di%2007.05.%2010%3A30">
+            <span class="ls-slot-time">10:30</span>
+            <span class="ls-slot-name">Hypertrophie A</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 75 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">6 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="niko" data-tier="mittel" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Endurance%20Di%2007.05.%2017%3A30">
+            <span class="ls-slot-time">17:30</span>
+            <span class="ls-slot-name">Hyrox Endurance</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 75 min · Niko</span>
+            <span class="ls-slot-status" data-status="fast-voll">fast voll</span>
+          </a>
+          <a class="ls-slot" data-trainer="eva" data-tier="fortgeschritten" data-type="pilates" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Advanced%20Di%2007.05.%2019%3A30">
+            <span class="ls-slot-time">19:30</span>
+            <span class="ls-slot-name">Reformer Advanced</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="frei">3 Plätze frei</span>
+          </a>
+        </article>
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">Mi<span>08.05.</span></div>
+          <a class="ls-slot" data-trainer="niko" data-tier="fortgeschritten" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Run-Mix%20Mi%2008.05.%2006%3A30">
+            <span class="ls-slot-time">06:30</span>
+            <span class="ls-slot-name">Hyrox Run-Mix</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 75 min · Niko</span>
+            <span class="ls-slot-status" data-status="frei">4 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="anfaenger" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Lunch%20Lift%20Mi%2008.05.%2012%3A00">
+            <span class="ls-slot-time">12:00</span>
+            <span class="ls-slot-name">Lunch Lift</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 45 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">8 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="eva" data-tier="anfaenger" data-type="mobility" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20R%C3%BCcken%20Mi%2008.05.%2017%3A00">
+            <span class="ls-slot-time">17:00</span>
+            <span class="ls-slot-name">Reformer Rücken</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="warteliste">Warteliste</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="fortgeschritten" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hypertrophie%20B%20Mi%2008.05.%2019%3A00">
+            <span class="ls-slot-time">19:00</span>
+            <span class="ls-slot-name">Hypertrophie B</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 75 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">5 Plätze frei</span>
+          </a>
+        </article>
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">Do<span>09.05.</span></div>
+          <a class="ls-slot" data-trainer="eva" data-tier="mittel" data-type="pilates" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Flow%20Do%2009.05.%2007%3A00">
+            <span class="ls-slot-time">07:00</span>
+            <span class="ls-slot-name">Reformer Flow</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="frei">3 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="niko" data-tier="anfaenger" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Skills%20Do%2009.05.%2010%3A00">
+            <span class="ls-slot-time">10:00</span>
+            <span class="ls-slot-name">Hyrox Skills</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 60 min · Niko</span>
+            <span class="ls-slot-status" data-status="frei">6 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="mittel" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Kraft%20Coached%20Do%2009.05.%2017%3A30">
+            <span class="ls-slot-time">17:30</span>
+            <span class="ls-slot-name">Kraft Coached</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 75 min · Felix</span>
+            <span class="ls-slot-status" data-status="fast-voll">fast voll</span>
+          </a>
+          <a class="ls-slot" data-trainer="niko" data-tier="fortgeschritten" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Power%20Do%2009.05.%2019%3A30">
+            <span class="ls-slot-time">19:30</span>
+            <span class="ls-slot-name">Hyrox Power</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 60 min · Niko</span>
+            <span class="ls-slot-status" data-status="frei">2 Plätze frei</span>
+          </a>
+        </article>
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">Fr<span>10.05.</span></div>
+          <a class="ls-slot" data-trainer="niko" data-tier="fortgeschritten" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Power%20Fr%2010.05.%2006%3A30">
+            <span class="ls-slot-time">06:30</span>
+            <span class="ls-slot-name">Hyrox Power</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 60 min · Niko</span>
+            <span class="ls-slot-status" data-status="warteliste">Warteliste</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="fortgeschritten" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hypertrophie%20A%20Fr%2010.05.%2010%3A00">
+            <span class="ls-slot-time">10:00</span>
+            <span class="ls-slot-name">Hypertrophie A</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 75 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">4 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="eva" data-tier="anfaenger" data-type="pilates" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Basics%20Fr%2010.05.%2017%3A00">
+            <span class="ls-slot-time">17:00</span>
+            <span class="ls-slot-name">Reformer Basics</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="frei">3 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="mittel" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Open%20Gym%20Fr%2010.05.%2018%3A30">
+            <span class="ls-slot-time">18:30</span>
+            <span class="ls-slot-name">Open Gym + Coach</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 90 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">offen</span>
+          </a>
+        </article>
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">Sa<span>11.05.</span></div>
+          <a class="ls-slot" data-trainer="niko" data-tier="fortgeschritten" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Endurance%20Long%20Sa%2011.05.%2009%3A00">
+            <span class="ls-slot-time">09:00</span>
+            <span class="ls-slot-name">Hyrox Endurance Long</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="fortgeschritten">Fortgeschritten</span> · 90 min · Niko</span>
+            <span class="ls-slot-status" data-status="fast-voll">fast voll</span>
+          </a>
+          <a class="ls-slot" data-trainer="eva" data-tier="mittel" data-type="pilates" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Flow%20Sa%2011.05.%2011%3A00">
+            <span class="ls-slot-time">11:00</span>
+            <span class="ls-slot-name">Reformer Flow</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="frei">2 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="mittel" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Open%20Gym%20Sa%2011.05.%2012%3A30">
+            <span class="ls-slot-time">12:30</span>
+            <span class="ls-slot-name">Open Gym + Coach</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 90 min · Felix</span>
+            <span class="ls-slot-status" data-status="frei">offen</span>
+          </a>
+        </article>
+
+        <article class="ls-day" role="listitem">
+          <div class="ls-day-header">So<span>12.05.</span></div>
+          <a class="ls-slot" data-trainer="eva" data-tier="anfaenger" data-type="mobility" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Reformer%20Recovery%20So%2012.05.%2010%3A00">
+            <span class="ls-slot-time">10:00</span>
+            <span class="ls-slot-name">Reformer Recovery</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 50 min · Eva</span>
+            <span class="ls-slot-status" data-status="frei">5 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="niko" data-tier="anfaenger" data-type="hyrox" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Hyrox%20Skills%20So%2012.05.%2011%3A30">
+            <span class="ls-slot-time">11:30</span>
+            <span class="ls-slot-name">Hyrox Skills</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="anfaenger">Anfänger</span> · 60 min · Niko</span>
+            <span class="ls-slot-status" data-status="frei">7 Plätze frei</span>
+          </a>
+          <a class="ls-slot" data-trainer="felix" data-tier="mittel" data-type="kraft" href="mailto:hallo@thegrind-hachenburg.de?subject=Anfrage%20Open%20Gym%20Self%20So%2012.05.%2013%3A00">
+            <span class="ls-slot-time">13:00</span>
+            <span class="ls-slot-name">Open Gym (Self)</span>
+            <span class="ls-slot-meta"><span class="ls-slot-tier" data-tier="mittel">Mittel</span> · 120 min · ohne Coach</span>
+            <span class="ls-slot-status" data-status="frei">offen</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="hardcut">
+
+  <!-- ─── Programme ─── -->
+  <section class="programme">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Programme im Detail</span>
+          <h2>Drei Wege.<br><span class="accent">Ein Studio.</span></h2>
+        </div>
+      </header>
+
+      <article class="programme-row" id="hyrox">
+        <div class="programme-num">01</div>
+        <div class="programme-content">
+          <h3>Hyrox</h3>
+          <p>Hyrox ist Wettkampf-Functional-Fitness: 8 km laufen unterbrochen von 8 Workouts (Sled Push, Burpee Broad Jumps, Sandbag Lunges...). Wir sind Hyrox-affiliated und trainieren Mitglieder periodisch — Aufbau, Peaks, Wettkampftage.</p>
+          <ul>
+            <li>4–12 Wochen Vorbereitungszyklen vor Wettkämpfen</li>
+            <li>Spezialequipment: Sled, Wall Balls, Sandbags, Ski-Erg, Rower</li>
+            <li>Auch ohne Wettkampfziel: das beste funktionelle Training, das es gibt</li>
+            <li>Coach: Niko Disziplin (Hyrox-Athlet seit 2022, eigene Wettkämpfe in Frankfurt, Berlin, Mailand)</li>
+          </ul>
+          <a class="btn-link" href="trainer.html#niko">Niko kennenlernen →</a>
+        </div>
+      </article>
+
+      <article class="programme-row" id="kraft">
+        <div class="programme-num">02</div>
+        <div class="programme-content">
+          <h3>Krafttraining</h3>
+          <p>Klassisches Hypertrophie- und Kraft-Training mit Coach-Begleitung. Plan, Korrektur, Progression. Nicht "mach was du willst" — sondern "mach was funktioniert". Du bekommst einen Trainingsplan, regelmäßige Form-Korrektur, Re-Tests alle 8 Wochen.</p>
+          <ul>
+            <li>5/3/1, Texas Method, Hypertrophie-Blöcke — wir wählen mit dir gemeinsam</li>
+            <li>Free Weights: Power Racks, Olympic Bars, Dumbbells, Plates bis 25 kg</li>
+            <li>Coached-Sessions oder Open Gym mit Coach-Bereitschaft im Hintergrund</li>
+            <li>Coach: Felix Geduld (B-Trainer-Lizenz Leistungssport)</li>
+          </ul>
+          <a class="btn-link" href="trainer.html#felix">Felix kennenlernen →</a>
+        </div>
+      </article>
+
+      <article class="programme-row" id="pilates">
+        <div class="programme-num">03</div>
+        <div class="programme-content">
+          <h3>Pilates (Reformer)</h3>
+          <p>Reformer-Pilates für Mobilität, Rücken, Körperkontrolle. Kleingruppe, max. 6 Personen, kein Esoterik-Drumherum. Funktioniert nach 3 Sessions, baut sich über 12 Wochen aus. Gut auch für Männer mit Rücken-Themen — Pilates ist nicht "weich".</p>
+          <ul>
+            <li>4 Reformer-Geräte (BASI Systems), max. 6 Plätze pro Session</li>
+            <li>Levels: Basics → Flow → Advanced → Therapeutisch</li>
+            <li>Buchbar als Block (8x) oder Drop-In</li>
+            <li>Coach: Eva Plan (BASI-Pilates zertifiziert + Sportphysiotherapie)</li>
+          </ul>
+          <a class="btn-link" href="trainer.html#eva">Eva kennenlernen →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── Equipment Showcase ─── -->
+  <section class="equipment">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Equipment · 280 m² Studio</span>
+          <h2>Womit du arbeitest.</h2>
+        </div>
+        <span class="muted" style="max-width: 32ch; font-size: var(--fs-small);">Kein Markenfetisch — wir kaufen, was hält. Eleiko, Concept2, BASI: weil sie nicht kaputtgehen.</span>
+      </header>
+      <div class="equipment-grid">
+
+        <article class="equipment-card">
+          <span class="equipment-num">01</span>
+          <h3>Eleiko Power Racks</h3>
+          <p>Drei freistehende Racks aus Schweden. Verstellbare Sicherungen, J-Hooks, integrierte Klimmzugstange, Plate-Storage. Made for life, nicht fürs Schaufenster.</p>
+          <span class="equipment-spec">3 Stück · 700 kg max</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">02</span>
+          <h3>Concept2 Rower &amp; Ski-Erg</h3>
+          <p>4 Rower und 2 Ski-Ergs — der Hyrox-Standard. PM5-Display für Watt, Zeiten, Splits. Wartungsarm, Ketten-Antrieb, ehrliche Werte. Dein Test der Wahrheit.</p>
+          <span class="equipment-spec">4 + 2 · Hyrox-Race-Spec</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">03</span>
+          <h3>BASI Reformer Pilates</h3>
+          <p>Vier Reformer-Geräte aus der BASI-System-Linie. Maximal 6 Plätze pro Session — Eva sieht jede Bewegung. Für Anfänger, Fortgeschrittene, Therapie-Cases.</p>
+          <span class="equipment-spec">4 Reformer · max 6/Slot</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">04</span>
+          <h3>Hyrox-Race-Setup</h3>
+          <p>Sled (Pro Sled HD), 2 Sandbags (10 + 20 kg), 2 Wall Balls (6 + 9 kg), Burpee Broad Jump-Lane mit Markierung. Du trainierst genau das, was im Wettkampf vorkommt.</p>
+          <span class="equipment-spec">Komplett · DACH-Standard</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">05</span>
+          <h3>Olympic Plates &amp; Bars</h3>
+          <p>Olympic Bars (15 + 20 kg), Eleiko Hi-Temp Plates bis 25 kg, Trap-Bar, Safety Squat Bar. Dumbbells von 2 bis 50 kg in 2,5er Schritten. Kein "haben wir nicht da".</p>
+          <span class="equipment-spec">2 – 50 kg lückenlos</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">06</span>
+          <h3>Kettlebells &amp; Bodyweight</h3>
+          <p>Kettlebells 8 – 48 kg, Klimmzugbalken, Dip-Station, Gymnastikringe, Battle Ropes, Plyo-Boxes (50/60/75 cm). Functional ohne Maschinenwald.</p>
+          <span class="equipment-spec">Komplett · 8 – 48 kg</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">07</span>
+          <h3>Lauf- &amp; Konditionsbereich</h3>
+          <p>Indoor 20-Meter-Lauf-Lane (für Hyrox-Sled-Push, Sprint-Sektionen), 2 Air-Bikes (Echo Bike), Curved Self-Powered Treadmill. Kein Plastik-Cardio-Studio.</p>
+          <span class="equipment-spec">20 m Lane + 2 Air-Bikes</span>
+        </article>
+
+        <article class="equipment-card">
+          <span class="equipment-num">08</span>
+          <h3>Recovery-Bereich</h3>
+          <p>Foam-Roller, Lacrosse Balls, Mobility-Bands, Theragun, Sauna (90 °C, finnisch), Stretching-Mats, kalt-warme Wechseldusche. Erholung ist Training.</p>
+          <span class="equipment-spec">Sauna + Mobility</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Hyrox Race Block ─── -->
+  <section class="hyrox-race">
+    <div class="container-wide hyrox-race-grid">
+      <div class="hyrox-race-photo photo photo-cinema">
+        <picture>
+          <img
+            srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop&q=78 800w,
+                    https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&auto=format&fit=crop&q=78 1200w"
+            sizes="(min-width: 900px) 50vw, 100vw"
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&auto=format&fit=crop&q=78"
+            alt="Hyrox-Athlet mit Kettlebell und Sled im Studio"
+            width="1200" height="900"
+            loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="hyrox-race-content">
+        <span class="eyebrow">Hyrox Saison · Herbst 2026</span>
+        <h2>Frankfurt steht im Oktober.<br>Wir bringen dich hin.</h2>
+        <p>Hyrox Frankfurt 11.10.2026 · Wir bauen einen 16-Wochen-Vorbereitungs-Block für angemeldete Wettkämpfer. Periodisierung in vier klare Phasen, mit Race-Simulation in Woche 14 und Taper in den letzten zwei Wochen.</p>
+
+        <div class="hyrox-phases">
+          <div class="hyrox-phase">
+            <div class="hyrox-phase-num">01</div>
+            <div class="hyrox-phase-label">Wo. 1–4</div>
+            <div class="hyrox-phase-name">Volume</div>
+          </div>
+          <div class="hyrox-phase">
+            <div class="hyrox-phase-num">02</div>
+            <div class="hyrox-phase-label">Wo. 5–8</div>
+            <div class="hyrox-phase-name">Intensity</div>
+          </div>
+          <div class="hyrox-phase">
+            <div class="hyrox-phase-num">03</div>
+            <div class="hyrox-phase-label">Wo. 9–14</div>
+            <div class="hyrox-phase-name">Race-Sim</div>
+          </div>
+          <div class="hyrox-phase">
+            <div class="hyrox-phase-num">04</div>
+            <div class="hyrox-phase-label">Wo. 15–16</div>
+            <div class="hyrox-phase-name">Taper</div>
+          </div>
+        </div>
+
+        <p>Aktuell <strong style="color: var(--accent);">14 angemeldete</strong> Mitglieder im Frankfurt-Block. Du kannst noch dazustoßen — Anmeldung ist Voraussetzung, der Plan startet 17.06.2026.</p>
+        <a class="btn btn-primary" href="probetraining.html">Hyrox-Block anfragen
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Recovery Section ─── -->
+  <section class="recovery">
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Recovery · oft unterschätzt</span>
+          <h2>Stärker wirst du<br><span class="accent">in der Pause.</span></h2>
+        </div>
+        <span class="muted" style="max-width: 32ch; font-size: var(--fs-small);">Drei Bereiche, die jeder Mitglied frei nutzen kann — kein Aufpreis, kein Zusatzbuchung.</span>
+      </header>
+
+      <div class="recovery-grid">
+
+        <article class="recovery-card">
+          <div class="recovery-photo recovery-photo-text">
+            <svg class="recovery-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="14" width="64" height="6" fill="currentColor"/>
+              <rect x="8" y="60" width="64" height="6" fill="currentColor"/>
+              <rect x="8" y="28" width="64" height="4" fill="currentColor" opacity="0.5"/>
+              <rect x="8" y="44" width="64" height="4" fill="currentColor" opacity="0.5"/>
+              <path d="M22 76 Q 22 72 26 72 Q 30 72 30 76" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M36 76 Q 36 72 40 72 Q 44 72 44 76" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M50 76 Q 50 72 54 72 Q 58 72 58 76" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <div class="recovery-stat-line"><span class="recovery-stat-num">90</span><span class="recovery-stat-unit">°C</span></div>
+          </div>
+          <div class="recovery-meta">
+            <span class="recovery-tag">Mo – So · alle Öffnungszeiten</span>
+            <h3>Finnische Sauna · 90 °C</h3>
+            <p>Finnische Sauna mit echtem Aufguss-Holz, 90 °C, max. 6 Plätze. 2 × pro Woche Eukalyptus-Aufgüsse durch Eva (Mi 19:00, Sa 11:00). Ohne Aufpreis im Monatsbeitrag drin.</p>
+          </div>
+        </article>
+
+        <article class="recovery-card">
+          <div class="recovery-photo recovery-photo-text">
+            <svg class="recovery-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="36" width="64" height="8" fill="currentColor"/>
+              <rect x="14" y="30" width="6" height="20" fill="currentColor"/>
+              <rect x="60" y="30" width="6" height="20" fill="currentColor"/>
+              <circle cx="40" cy="20" r="3" fill="currentColor"/>
+              <circle cx="28" cy="60" r="3" fill="currentColor"/>
+              <circle cx="52" cy="60" r="3" fill="currentColor"/>
+            </svg>
+            <div class="recovery-stat-line"><span class="recovery-stat-num">60</span><span class="recovery-stat-unit">m²</span></div>
+          </div>
+          <div class="recovery-meta">
+            <span class="recovery-tag">Frei nutzbar · 60 m²</span>
+            <h3>Mobility-Floor</h3>
+            <p>Foam-Roller, Lacrosse Balls, Mini-Bands, Theragun (1 × frei), Mobility-Bänder, Yoga-Matten. Dazu jeden Sonntag 10:00 eine 50-Minuten Recovery-Reformer-Session bei Eva.</p>
+          </div>
+        </article>
+
+        <article class="recovery-card">
+          <div class="recovery-photo recovery-photo-text">
+            <svg class="recovery-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="48" width="68" height="12" fill="currentColor"/>
+              <rect x="18" y="40" width="44" height="8" fill="currentColor" opacity="0.7"/>
+              <path d="M20 32 Q 28 18 36 32" stroke="currentColor" stroke-width="3" fill="none"/>
+              <path d="M44 32 Q 52 18 60 32" stroke="currentColor" stroke-width="3" fill="none"/>
+            </svg>
+            <div class="recovery-stat-line"><span class="recovery-stat-num">60</span><span class="recovery-stat-unit">€ / 50 min</span></div>
+          </div>
+          <div class="recovery-meta">
+            <span class="recovery-tag">Buchung extra · 60 € / Session</span>
+            <h3>Sportmassage · Mi + Sa</h3>
+            <p>Mittwochs &amp; Samstags kommt Mira (Sportphysio aus Hachenburg) für 50-Min-Massagen ins Studio. Mitglieder zahlen 60 € statt 75 €. Online buchbar in der Mitglieder-App.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section class="faq">
+    <div class="container-wide">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2 style="font-size: var(--fs-h1); line-height: 0.95; margin-block: 0.75rem 1rem;">Was uns oft<br><span class="accent">gefragt wird.</span></h2>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Muss ich Krafttraining-Erfahrung haben?</summary>
+          <div class="faq-answer">
+            <p>Nein. Etwa die Hälfte unserer Mitglieder fängt bei uns mit Krafttraining ganz neu an — Lehrer, Pflegekräfte, Selbstständige, ältere Mitglieder. Niko, Felix oder Eva machen mit dir die ersten 4–6 Wochen Form-Schule, danach läuft's eigenständig mit Plan im Hintergrund.</p>
+            <p>Was wir voraussetzen: dass du bereit bist, einen Plan zu folgen. Ohne Plan tun wir nichts.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie laut ist es im Studio?</summary>
+          <div class="faq-answer">
+            <p>Realistisch: leise. Keine Discomusik, keine Mottos auf der Wand. Hintergrund-Spotify auf gemäßigtem Volume, du kannst eigene Kopfhörer tragen, niemand brüllt sich ein. Hyrox-Sessions sind etwas energiegeladener, aber auch dort ist „Laut" eher 65 dB als 95 dB.</p>
+            <p>Wenn du nach Akkord-Bro-Gym mit „Whooo!" und Selfie-Wand suchst — wir sind das nicht.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kann ich kostenlos probieren?</summary>
+          <div class="faq-answer">
+            <p>Ja. Probetraining ist 60 Minuten 1:1 mit einem Trainer — Ziele besprechen, Geräte anschauen, eine Probe-Session machen. Kostet nichts. Buchbar über die <a href="probetraining.html" style="color: var(--accent); border-bottom: 1px solid currentColor;">Probetraining-Seite</a>.</p>
+            <p>Du kannst auch eine Tageskarte (19 €) holen und einfach mal selbst trainieren — ohne Coach. Beides ist unverbindlich.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Welche Vertragslaufzeiten gibt es?</summary>
+          <div class="faq-answer">
+            <p>Drei Modelle: <strong>Tageskarte</strong> (19 €/Tag, keine Bindung), <strong>Monatlich</strong> (89 €/Monat, monatlich kündbar), <strong>Jahresplan</strong> (79 €/Monat × 12 = 948 €/Jahr).</p>
+            <p>Keine Anmeldegebühr, keine 24-Monats-Falle. Mitgliedschaft ist auf 240 Personen limitiert — sobald wir voll sind, gibt's Warteliste.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Bin ich auch als Frau willkommen?</summary>
+          <div class="faq-answer">
+            <p>Selbstverständlich — etwa 45 % unserer Mitglieder sind Frauen. Eva ist Spezialistin für Pilates &amp; Mobilität, Niko trainiert auch viele Frauen im Hyrox-Bereich. Kein Bro-Gym-Vibe, keine getrennten Bereiche — gemeinsame Trainings-Atmosphäre auf Augenhöhe.</p>
+            <p>Wir haben separate Umkleiden mit abschließbaren Schließfächern und einer behindertengerechten Familien-Umkleide.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was ist Hyrox überhaupt?</summary>
+          <div class="faq-answer">
+            <p>Hyrox ist ein internationales Fitness-Race-Format: 8 × 1 km Laufen wechselt sich ab mit 8 funktionalen Workouts (Sled Push, Sled Pull, Burpee Broad Jumps, Rower, Sandbag Lunges, Wall Balls, Farmer's Carry, Ski-Erg). Insgesamt etwa 60–90 Minuten.</p>
+            <p>Kannst du in Frankfurt, Berlin, Hamburg, Köln, Wien laufen. Wir bereiten dich periodisiert vor — auch ohne dass du jemals an einem Wettkampf teilnehmen musst.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie alt sind eure Mitglieder?</summary>
+          <div class="faq-answer">
+            <p>Spannweite ist 21 bis 71. Schwerpunkt zwischen 32 und 55. Mehrere Mitglieder über 60, die seit Jahren regelmäßig kommen. Keine Studenten-Trash-Atmosphäre, kein Renten-Klischee — gemischte Bodies, gemischte Tage, alle willkommen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Habt ihr einen Kinder-Bereich?</summary>
+          <div class="faq-answer">
+            <p>Nein, dafür ist unser Studio zu klein. Aber: Familien-Umkleide ist da, Buggy-Stellplatz im Eingang, und wir kennen die Tagesmütter im Stadtzentrum (5-Minuten-Gehweg). Mehrere Mitglieder mit Kleinkindern lösen das so.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Block ─── -->
+  <section class="cta-block">
+    <div class="container-wide cta-block-inner">
+      <div>
+        <span class="eyebrow muted" style="color: rgba(255,255,255,0.7);">Komm vorbei</span>
+        <h2>Erstes Mal kostet nichts.</h2>
+        <p>60 Minuten, 1:1 mit einem Trainer. Ziele besprechen, Geräte testen, Ja oder Nein sagen.</p>
+      </div>
+      <div>
+        <a class="btn btn-ghost" href="probetraining.html">
+          Probetraining vereinbaren
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div class="footer-col-main">
+        <span class="nav-logo"><strong>THE GRIND</strong></span>
+        <h2>Bewegung,<br>die <span class="accent">hält.</span></h2>
+        <div class="footer-meta">
+          <a href="kurse.html">Kurse</a>
+          <a href="trainer.html">Trainer</a>
+          <a href="probetraining.html">Probetraining</a>
+          <a href="https://instagram.com/thegrind.hachenburg" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h3>Studio</h3>
+        <address>Bahnhofstraße 14<br>57627 Hachenburg</address>
+        <p style="margin-top: 0.75rem;"><a href="tel:+4926623301">+49 2662 33 01</a></p>
+        <p><a href="mailto:hallo@thegrind-hachenburg.de">hallo@thegrind-hachenburg.de</a></p>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 The Grind Boutique-Studio Hachenburg.</span>
+      <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <a href="#agb">AGB</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('navBurger');
+  const menu = document.getElementById('navMenu');
+  const close = document.getElementById('navClose');
+  const open = () => { menu.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); menu.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
+  const shut = () => { menu.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); menu.setAttribute('inert', ''); document.body.style.overflow = ''; };
+  burger?.addEventListener('click', open);
+  close?.addEventListener('click', shut);
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('is-open')) shut(); });
+
+  // Round 4: Cursor-following accent dot
+  const cursorDot = document.getElementById('cursorDot');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (cursorDot && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    window.addEventListener('mousemove', (e) => {
+      cursorDot.style.setProperty('--cx', e.clientX + 'px');
+      cursorDot.style.setProperty('--cy', e.clientY + 'px');
+      if (!cursorDot.classList.contains('is-active')) cursorDot.classList.add('is-active');
+    }, { passive: true });
+    window.addEventListener('mouseleave', () => cursorDot.classList.remove('is-active'));
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1F1813">
+<title>Karte — Forsthaus Brandt</title>
+<meta name="description" content="Speisekarte: Frühstück, Mittag, Abend, Wein. Forsthaus Brandt im Westerwald.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231F1813'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23E07560' text-anchor='middle' font-style='italic' font-weight='500'>F</text></svg>">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://ww-webmanufaktur.de/preview/gastronomie/karte.html">
+<meta property="og:title" content="Karte — Forsthaus Brandt">
+<meta property="og:description" content="Speisekarte: Frühstück, Mittag, Abend, Wein. Forsthaus Brandt im Westerwald.">
+<meta property="og:image" content="https://ww-webmanufaktur.de/preview/_meta/og/gastronomie.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Karte — Forsthaus Brandt">
+<meta name="twitter:description" content="Speisekarte: Frühstück, Mittag, Abend, Wein. Forsthaus Brandt im Westerwald.">
+<meta name="twitter:image" content="https://ww-webmanufaktur.de/preview/_meta/og/gastronomie.jpg">
+<link rel="canonical" href="https://ww-webmanufaktur.de/preview/gastronomie/karte.html">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Zum Inhalt springen</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Forsthaus <span class="accent">Brandt</span></a>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="karte.html" aria-current="page">Karte</a></li>
+        <li><a href="ueber.html">Über uns</a></li>
+        <li><a href="reservierung.html">Reservierung</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="reservierung.html">Tisch buchen</a>
+    <button class="nav-burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navDrawer" id="navBurger"><span></span><span></span></button>
+  </div>
+</header>
+
+<aside class="nav-drawer" id="navDrawer" aria-label="Hauptmenü" inert>
+  <button class="nav-drawer-close" aria-label="Menü schließen" id="navDrawerClose">×</button>
+  <ul>
+    <li><a href="index.html">Start</a></li>
+    <li><a href="karte.html" aria-current="page">Karte</a></li>
+    <li><a href="ueber.html">Über uns</a></li>
+    <li><a href="reservierung.html">Reservierung</a></li>
+  </ul>
+</aside>
+
+<main id="main">
+
+  <!-- Allergen-/Diet-Icons SVG sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="ico-vegan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 19c0-7 6-13 13-13 0 7-6 13-13 13z"/>
+        <path d="M5 19c2-3 4-5 7-7"/>
+      </symbol>
+      <symbol id="ico-veggie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4c-3 4-3 8 0 12 3-4 3-8 0-12z"/>
+        <path d="M12 8v12"/>
+      </symbol>
+      <symbol id="ico-glutenfree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v18"/>
+        <path d="M8 7c1.5 1.5 2.5 3.5 4 4M16 7c-1.5 1.5-2.5 3.5-4 4"/>
+        <path d="M8 12c1.5 1.5 2.5 3.5 4 4M16 12c-1.5 1.5-2.5 3.5-4 4"/>
+        <line x1="4" y1="20" x2="20" y2="4" stroke-width="2"/>
+      </symbol>
+      <symbol id="ico-nuts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="13" rx="6" ry="8"/>
+        <path d="M9 9c1 2 4 2 5 0"/>
+      </symbol>
+      <symbol id="ico-lactose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 4c-3 5-5 8-5 11a5 5 0 0 0 10 0c0-3-2-6-5-11z"/>
+      </symbol>
+      <symbol id="ico-egg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="13" rx="6" ry="8"/>
+      </symbol>
+      <symbol id="ico-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12c4-5 9-5 13 0-4 5-9 5-13 0z"/>
+        <path d="M16 12l5-3v6l-5-3z"/>
+        <circle cx="7" cy="11" r="0.6" fill="currentColor"/>
+      </symbol>
+      <symbol id="ico-celery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 21V8M14 21V8"/>
+        <path d="M8 8c0-3 2-5 4-5s4 2 4 5"/>
+      </symbol>
+      <symbol id="ico-mustard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="2"/>
+        <circle cx="6" cy="8" r="1.5"/>
+        <circle cx="18" cy="8" r="1.5"/>
+        <circle cx="7" cy="16" r="1.5"/>
+        <circle cx="17" cy="16" r="1.5"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <section class="subpage-hero">
+    <div class="container-wide">
+      <span class="eyebrow">Karte · Saisonal</span>
+      <h1 class="subpage-display">Was bei uns <em>gerade läuft.</em></h1>
+      <p class="subpage-lead">Unsere Karte ändert sich mit den Jahreszeiten. Aktuell — Wild aus dem Forst, frische Pasta, regionales Brot. Allergikermenüs auf Anfrage.</p>
+    </div>
+  </section>
+
+  <!-- ─── Sticky Filter-Bar: Diet-Mode + Allergen ─── -->
+  <div class="filter-bar" role="region" aria-label="Karte filtern nach Diät und Allergenen">
+    <div class="container-wide filter-bar-inner">
+      <div class="filter-group">
+        <span class="filter-label">Modus</span>
+        <div class="filter-pills" role="radiogroup" aria-label="Diät-Modus">
+          <input type="radio" name="diet" id="diet-standard" class="filter-input diet-standard" checked>
+          <label for="diet-standard" class="filter-pill">Standard</label>
+
+          <input type="radio" name="diet" id="diet-vegetarisch" class="filter-input diet-vegetarisch">
+          <label for="diet-vegetarisch" class="filter-pill"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</label>
+
+          <input type="radio" name="diet" id="diet-vegan" class="filter-input diet-vegan">
+          <label for="diet-vegan" class="filter-pill"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</label>
+
+          <input type="radio" name="diet" id="diet-glutenfrei" class="filter-input diet-glutenfrei">
+          <label for="diet-glutenfrei" class="filter-pill"><svg aria-hidden="true"><use href="#ico-glutenfree"/></svg>Glutenfrei</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Ohne</span>
+        <div class="filter-pills">
+          <input type="checkbox" id="all-nuesse" class="filter-input allergen-nuesse">
+          <label for="all-nuesse" class="filter-pill"><svg aria-hidden="true"><use href="#ico-nuts"/></svg>Nüsse</label>
+
+          <input type="checkbox" id="all-lactose" class="filter-input allergen-lactose">
+          <label for="all-lactose" class="filter-pill"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</label>
+
+          <input type="checkbox" id="all-eier" class="filter-input allergen-eier">
+          <label for="all-eier" class="filter-pill"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</label>
+
+          <input type="checkbox" id="all-fisch" class="filter-input allergen-fisch">
+          <label for="all-fisch" class="filter-pill"><svg aria-hidden="true"><use href="#ico-fish"/></svg>Fisch</label>
+
+          <input type="checkbox" id="all-sellerie" class="filter-input allergen-sellerie">
+          <label for="all-sellerie" class="filter-pill"><svg aria-hidden="true"><use href="#ico-celery"/></svg>Sellerie</label>
+
+          <input type="checkbox" id="all-senf" class="filter-input allergen-senf">
+          <label for="all-senf" class="filter-pill"><svg aria-hidden="true"><use href="#ico-mustard"/></svg>Senf</label>
+        </div>
+      </div>
+      <button class="filter-reset" type="button" id="filterReset" aria-label="Filter zurücksetzen">Reset</button>
+    </div>
+  </div>
+
+  <section class="tight">
+    <div class="container-wide">
+
+      <p class="filter-result-hint">Gefilterte Ansicht — Gerichte, die nicht passen, sind ausgegraut. Bei Fragen sprechen Sie uns an.</p>
+
+      <div class="karte-tabs" role="tablist" aria-label="Speisekarte nach Tageszeit">
+        <button class="karte-tab is-active" role="tab" id="tab-fruehstueck" aria-controls="panel-fruehstueck" aria-selected="true" tabindex="0" data-tab="fruehstueck">Frühstück</button>
+        <button class="karte-tab" role="tab" id="tab-mittag" aria-controls="panel-mittag" aria-selected="false" tabindex="-1" data-tab="mittag">Mittag</button>
+        <button class="karte-tab" role="tab" id="tab-abend" aria-controls="panel-abend" aria-selected="false" tabindex="-1" data-tab="abend">Abend</button>
+        <button class="karte-tab" role="tab" id="tab-wein" aria-controls="panel-wein" aria-selected="false" tabindex="-1" data-tab="wein">Wein</button>
+      </div>
+
+      <article class="karte-section is-active" id="panel-fruehstueck" role="tabpanel" aria-labelledby="tab-fruehstueck" data-section="fruehstueck">
+        <h2><em>Frühstück</em></h2>
+        <p>Bis 11:30 Uhr. Brot vom Bäcker drei Häuser weiter, Honig vom Imker Klein, Bauernkäse, Eier vom Hof Brauer.</p>
+        <div class="menu-list">
+          <div class="menu-item" data-diet="" data-allergens="lactose eier">
+            <div class="menu-item-name">Brandt-Frühstück <em>für zwei</em></div>
+            <div class="menu-item-price">28 €</div>
+            <div class="menu-item-desc">Brot, Brötchen, Honig, Marmelade, Bauernkäse, Schinken, weiches Ei, Saft, Kaffee oder Tee — für zwei Personen.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span></div>
+          </div>
+          <div class="menu-item" data-diet="" data-allergens="lactose">
+            <div class="menu-item-name">Frühstück <em>vom Forst</em></div>
+            <div class="menu-item-price">19 €</div>
+            <div class="menu-item-desc">Wildschinken, Wildschweinwurst, Bauernkäse, Brot, Butter, Honig — für eine Person.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch" data-allergens="lactose eier">
+            <div class="menu-item-name">Pancakes Anna</div>
+            <div class="menu-item-price">14 €</div>
+            <div class="menu-item-desc">Italian-style mit Ricotta, Heidelbeeren, Ahornsirup. Großmutters Rezept.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch" data-allergens="lactose eier">
+            <div class="menu-item-name">Frische Brioche</div>
+            <div class="menu-item-price">9 €</div>
+            <div class="menu-item-desc">Hausgebacken, mit Butter und Marmelade. Espresso doppio inklusive.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch glutenfrei" data-allergens="eier lactose">
+            <div class="menu-item-name">Eierspeisen</div>
+            <div class="menu-item-price">12 €</div>
+            <div class="menu-item-desc">3-Eier-Omelett, Spiegeleier, Rührei — wahlweise mit Speck, Spinat, Pilzen oder Trüffelöl (+ 4 €).</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-glutenfree"/></svg>Glutenfrei</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Bauernobst</div>
+            <div class="menu-item-price">7 €</div>
+            <div class="menu-item-desc">Saisonale Früchte aus regionalem Anbau, mit Honig (vegan-Option auf Wunsch ohne).</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan-Option</span><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-glutenfree"/></svg>Glutenfrei</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="karte-section" id="panel-mittag" role="tabpanel" aria-labelledby="tab-mittag" hidden data-section="mittag">
+        <h2><em>Mittag</em></h2>
+        <p>Mo–Sa 12:00–14:30. Wechselnder Mittagstisch: zwei warme Gerichte und ein Vegetarisches.</p>
+        <div class="menu-list">
+          <div class="menu-item" data-diet="" data-allergens="eier sellerie">
+            <div class="menu-item-name">Tagliatelle <em>al ragù</em></div>
+            <div class="menu-item-price">16 €</div>
+            <div class="menu-item-desc">Handgerollte Tagliatelle mit Wild-Ragù aus Westerwälder Hirsch. 6 Stunden geschmort.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span><span class="badge"><svg aria-hidden="true"><use href="#ico-celery"/></svg>Sellerie</span></div>
+          </div>
+          <div class="menu-item" data-diet="" data-allergens="eier">
+            <div class="menu-item-name">Saure Brägele</div>
+            <div class="menu-item-price">14 €</div>
+            <div class="menu-item-desc">Westerwälder Klassiker neu interpretiert. Mit Speck und Spiegelei.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-glutenfree"/></svg>Glutenfrei-Option</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch glutenfrei" data-allergens="lactose">
+            <div class="menu-item-name">Risotto <em>ai funghi</em></div>
+            <div class="menu-item-price">15 €</div>
+            <div class="menu-item-desc">Carnaroli-Risotto mit Pfifferlingen aus dem Westerwald-Forst. Vegetarisch.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-glutenfree"/></svg>Glutenfrei</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span></div>
+          </div>
+          <div class="menu-item" data-diet="" data-allergens="eier sellerie">
+            <div class="menu-item-name">2-Gang Mittagsmenü</div>
+            <div class="menu-item-price">24 €</div>
+            <div class="menu-item-desc">Vorspeise + Hauptgang nach Tageskarte. Wechselt täglich. Vegetarische Variante immer verfügbar.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>nach Karte</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch" data-allergens="sellerie">
+            <div class="menu-item-name">Tagessuppe</div>
+            <div class="menu-item-price">8 €</div>
+            <div class="menu-item-desc">Wechselnd, immer hausgemacht. Mit Brot. Vegane Variante auf Anfrage.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-celery"/></svg>Sellerie</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch glutenfrei" data-allergens="nuesse lactose">
+            <div class="menu-item-name">Salat <em>vom Hof</em></div>
+            <div class="menu-item-price">12 €</div>
+            <div class="menu-item-desc">Bunter Salat mit Walnüssen, Westerwald-Apfel und Bauernkäse.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-nuts"/></svg>Nüsse</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="karte-section" id="panel-abend" role="tabpanel" aria-labelledby="tab-abend" hidden data-section="abend">
+        <h2><em>Abend</em></h2>
+        <p>Ab 18:00. Für unser 5-Gang Wild &amp; Pasta Menü bitte 1 Tag vorbestellen.</p>
+        <div class="menu-list">
+          <div class="menu-item" data-diet="" data-allergens="eier senf">
+            <div class="menu-item-name">Tartar vom <em>Reh</em></div>
+            <div class="menu-item-price">22 €</div>
+            <div class="menu-item-desc">Westerwälder Reh, Kapern, Trüffel, Eigelb, Bauernbrot.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span><span class="badge"><svg aria-hidden="true"><use href="#ico-mustard"/></svg>Senf</span></div>
+          </div>
+          <div class="menu-item" data-diet="" data-allergens="lactose sellerie">
+            <div class="menu-item-name">Hirschrücken <em>rosa</em></div>
+            <div class="menu-item-price">38 €</div>
+            <div class="menu-item-desc">Mit Pfifferlingsragout, Bratapfel, Servietten-Knödel.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span><span class="badge"><svg aria-hidden="true"><use href="#ico-celery"/></svg>Sellerie</span></div>
+          </div>
+          <div class="menu-item" data-diet="" data-allergens="eier sellerie">
+            <div class="menu-item-name">Wildschwein <em>al limone</em></div>
+            <div class="menu-item-price">34 €</div>
+            <div class="menu-item-desc">Geschmort in Weißwein und Zitrone, mit handgerollten Strangozzi-Pasta.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span><span class="badge"><svg aria-hidden="true"><use href="#ico-celery"/></svg>Sellerie</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch" data-allergens="eier lactose">
+            <div class="menu-item-name">Pappardelle <em>al tartufo</em></div>
+            <div class="menu-item-price">29 €</div>
+            <div class="menu-item-desc">Handgerollt, mit Westerwald-Trüffel und Butter.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span></div>
+          </div>
+          <div class="menu-item" data-diet="" data-allergens="eier lactose sellerie">
+            <div class="menu-item-name">5-Gang Wild &amp; Pasta</div>
+            <div class="menu-item-price">79 €</div>
+            <div class="menu-item-desc">Auf Vorbestellung. Wechselnde Komposition. Mit Weinbegleitung +35 €. Diät-Anpassung möglich.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>nach Komposition</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch glutenfrei" data-allergens="lactose">
+            <div class="menu-item-name">Vegetarisch <em>aus dem Forst</em></div>
+            <div class="menu-item-price">26 €</div>
+            <div class="menu-item-desc">Pilz-Risotto, geröstete Westerwald-Wurzeln, Kräuteröl.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-glutenfree"/></svg>Glutenfrei</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch glutenfrei" data-allergens="lactose nuesse">
+            <div class="menu-item-name">Käse-Auswahl</div>
+            <div class="menu-item-price">14 €</div>
+            <div class="menu-item-desc">5 Sorten von der Hofkäserei Brauer und aus Italien. Mit Feigen, Honig und Walnüssen.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span><span class="badge"><svg aria-hidden="true"><use href="#ico-nuts"/></svg>Nüsse</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch" data-allergens="lactose eier">
+            <div class="menu-item-name">Tiramisù <em>della Nonna</em></div>
+            <div class="menu-item-price">11 €</div>
+            <div class="menu-item-desc">Großmutter Annas Originalrezept. Mit Mascarpone von Hofmolkerei Schmidt.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-veggie"/></svg>Vegetarisch</span><span class="badge"><svg aria-hidden="true"><use href="#ico-lactose"/></svg>Lactose</span><span class="badge"><svg aria-hidden="true"><use href="#ico-egg"/></svg>Eier</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="karte-section" id="panel-wein" role="tabpanel" aria-labelledby="tab-wein" hidden data-section="wein">
+        <h2><em>Wein</em></h2>
+        <p>Ein kleiner aber sorgfältig gewählter Keller — Schwerpunkt italienische Weine, dazu deutsche Riesling-Klassiker und Westerwald-Sekt.</p>
+        <div class="menu-list">
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Brunello di Montalcino <em>2018</em></div>
+            <div class="menu-item-price">68 €</div>
+            <div class="menu-item-desc">Castello Banfi. Trocken, vollmundig, perfekt zu Wild.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Barolo <em>2017</em></div>
+            <div class="menu-item-price">82 €</div>
+            <div class="menu-item-desc">Vietti. Klassisch, langer Abgang. Glas 16 €.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Riesling Spätlese <em>Kabinett</em></div>
+            <div class="menu-item-price">42 €</div>
+            <div class="menu-item-desc">Weingut Loosen, Mosel. Trocken, mineralisch.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Westerwald-Sekt</div>
+            <div class="menu-item-price">36 €</div>
+            <div class="menu-item-desc">Sektmanufaktur Schloß Vaux, brut. Glas 9 €.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Vermentino di Toscana</div>
+            <div class="menu-item-price">38 €</div>
+            <div class="menu-item-desc">Tenuta Cesa. Weiß, frisch. Glas 8 €.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</span></div>
+          </div>
+          <div class="menu-item" data-diet="vegetarisch vegan glutenfrei" data-allergens="">
+            <div class="menu-item-name">Pinot Nero Alto Adige</div>
+            <div class="menu-item-price">56 €</div>
+            <div class="menu-item-desc">Cantina Tramin. Eleganter Spätburgunder. Glas 12 €.</div>
+            <div class="menu-item-allergens" aria-label="Allergene"><span class="badge is-positive"><svg aria-hidden="true"><use href="#ico-vegan"/></svg>Vegan</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── 5-Gang Wild & Pasta Menü ─── -->
+  <section class="brunch" id="degustation">
+    <div class="container-wide">
+      <div class="brunch-grid">
+        <div class="brunch-photos">
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=78"
+                 alt="Hirschrücken rosa mit Pfifferlingen" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&auto=format&fit=crop&q=78"
+                 alt="Handgerollte Pappardelle mit Trüffel" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=600&auto=format&fit=crop&q=78"
+                 alt="Gedeckter Tisch mit Weinglas im Abendlicht" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop&q=78"
+                 alt="Wildgericht mit Beilagen serviert" width="600" height="600" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="brunch-text">
+          <span class="eyebrow">Degustation · 5 Gänge</span>
+          <h2>Das <em>Wild &amp; Pasta</em> Menü.</h2>
+          <p>Unser Aushängeschild. Fünf Gänge, in denen Wild aus dem Westerwald-Forst und handgerollte Pasta aus Brescia-Mühlen-Mehl zu einer Liebeserklärung werden.</p>
+          <p>Das Menü wechselt alle 6 Wochen mit dem Forstplan und der Saison. Aktuelle Komposition (Mai 2026):</p>
+          <ol style="margin: 1rem 0; padding-left: 1.25rem; list-style: decimal; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong style="color: var(--text-primary); font-family: var(--font-display); font-style: italic;">Tartar vom Reh</strong> — Westerwald, Kapern, Trüffel, Eigelb</li>
+            <li><strong style="color: var(--text-primary); font-family: var(--font-display); font-style: italic;">Bärlauch-Tagliatelle</strong> — handgerollt, mit Bauernbutter</li>
+            <li><strong style="color: var(--text-primary); font-family: var(--font-display); font-style: italic;">Bachforelle</strong> aus Hof Brauer's Teich, mit Wildspargel</li>
+            <li><strong style="color: var(--text-primary); font-family: var(--font-display); font-style: italic;">Hirschrücken rosa</strong> — Pfifferlingsragout, Servietten-Knödel</li>
+            <li><strong style="color: var(--text-primary); font-family: var(--font-display); font-style: italic;">Tiramisù della Nonna</strong> — Großmutter Annas Originalrezept</li>
+          </ol>
+          <div class="brunch-meta">
+            <div class="brunch-meta-cell">
+              <span class="brunch-meta-label">Pro Person</span>
+              <span class="brunch-meta-value"><em>79 €</em></span>
+            </div>
+            <div class="brunch-meta-cell">
+              <span class="brunch-meta-label">Mit Wein-Begleitung</span>
+              <span class="brunch-meta-value">+ <em>35 €</em></span>
+            </div>
+            <div class="brunch-meta-cell">
+              <span class="brunch-meta-label">Vorlauf</span>
+              <span class="brunch-meta-value">24 h</span>
+            </div>
+            <div class="brunch-meta-cell">
+              <span class="brunch-meta-label">Dauer</span>
+              <span class="brunch-meta-value">~ 2,5 h</span>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="reservierung.html" style="margin-top: 1.5rem;">Menü vorbestellen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilz-Cutout Section-Divider -->
+  <div class="ornament-cutout-wrap" role="separator" aria-hidden="true">
+    <svg viewBox="0 0 92 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Steinpilz -->
+      <path d="M16 38 C 16 22 30 12 46 12 C 62 12 76 22 76 38 C 76 44 70 48 60 48 L 32 48 C 22 48 16 44 16 38 Z" fill="rgba(224,117,96,0.12)"/>
+      <path d="M40 48 L 38 72 C 38 76 42 78 46 78 C 50 78 54 76 54 72 L 52 48" fill="rgba(224,117,96,0.06)"/>
+      <path d="M28 32 C 32 28 38 28 42 32 M50 32 C 54 28 60 28 64 32" opacity="0.6"/>
+      <ellipse cx="36" cy="22" rx="2.2" ry="1" opacity="0.5"/>
+      <ellipse cx="56" cy="20" rx="2" ry="1" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- ─── Wein-Pairing Empfehlungen ─── -->
+  <section class="wein-pairing" id="wein-pairing">
+    <span class="wein-glass-floater f-1" aria-hidden="true">
+      <svg viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <!-- glass bowl with wine -->
+        <path d="M14 8 L 66 8 C 66 38 56 56 40 56 C 24 56 14 38 14 8 Z" fill="rgba(168,54,44,0.55)" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M18 14 L 62 14 C 62 36 54 50 40 50 C 26 50 18 36 18 14 Z" fill="rgba(120,28,30,0.85)"/>
+        <ellipse cx="40" cy="14" rx="22" ry="2" fill="rgba(40,8,10,0.6)"/>
+        <!-- stem -->
+        <line x1="40" y1="56" x2="40" y2="124" stroke="currentColor" stroke-width="1.4"/>
+        <!-- foot -->
+        <ellipse cx="40" cy="128" rx="20" ry="3" fill="rgba(31,24,19,0.6)" stroke="currentColor" stroke-width="1.2"/>
+        <!-- highlight -->
+        <path d="M22 18 C 22 28 24 38 30 44" stroke="rgba(255,241,221,0.45)" stroke-width="1.3"/>
+      </svg>
+    </span>
+    <span class="wein-glass-floater f-2" aria-hidden="true">
+      <svg viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path d="M14 8 L 66 8 C 66 38 56 56 40 56 C 24 56 14 38 14 8 Z" fill="rgba(168,54,44,0.45)" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M18 14 L 62 14 C 62 36 54 50 40 50 C 26 50 18 36 18 14 Z" fill="rgba(120,28,30,0.7)"/>
+        <line x1="40" y1="56" x2="40" y2="124" stroke="currentColor" stroke-width="1.4"/>
+        <ellipse cx="40" cy="128" rx="20" ry="3" fill="rgba(31,24,19,0.5)" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+    </span>
+    <div class="container-wide">
+      <header class="section-header">
+        <div>
+          <span class="eyebrow">Wein-Pairing · Tante Marie empfiehlt</span>
+          <h2>Fünf Weine, fünf Gerichte.</h2>
+        </div>
+        <a class="btn-link" href="#wein">Volle Wein-Karte (220 +) →</a>
+      </header>
+      <div class="wein-grid">
+
+        <article class="wein-item">
+          <span class="wein-num">01</span>
+          <div class="wein-name">Brunello di Montalcino <em>2018</em></div>
+          <span class="wein-price">68 €</span>
+          <p class="wein-meta">Castello Banfi · Toskana · Sangiovese 100% · trocken, vollmundig, Leder &amp; Kirsche · Glas 14 €</p>
+          <div class="wein-pairing-tip"><strong>Empfehlung dazu</strong>Hirschrücken rosa mit Pfifferlingsragout. Der Wein hält der dunklen Wildsauce stand, die Säure schneidet das Fett.</div>
+        </article>
+
+        <article class="wein-item">
+          <span class="wein-num">02</span>
+          <div class="wein-name">Pinot Nero Alto Adige <em>Riserva</em></div>
+          <span class="wein-price">56 €</span>
+          <p class="wein-meta">Cantina Tramin · Südtirol · Spätburgunder 100% · elegant, Beere, Waldboden · Glas 12 €</p>
+          <div class="wein-pairing-tip"><strong>Empfehlung dazu</strong>Tartar vom Reh oder Pappardelle al tartufo. Filigrane Wildaromen brauchen filigranen Wein.</div>
+        </article>
+
+        <article class="wein-item">
+          <span class="wein-num">03</span>
+          <div class="wein-name">Riesling <em>Spätlese trocken</em></div>
+          <span class="wein-price">42 €</span>
+          <p class="wein-meta">Weingut Loosen · Mosel · Riesling 100% · mineralisch, Aprikose, Zitrus · Glas 9 €</p>
+          <div class="wein-pairing-tip"><strong>Empfehlung dazu</strong>Bachforelle Müllerin oder Risotto ai funghi. Säure und Mineralität zur Süßwasser-Frische.</div>
+        </article>
+
+        <article class="wein-item">
+          <span class="wein-num">04</span>
+          <div class="wein-name">Vermentino <em>di Toscana</em></div>
+          <span class="wein-price">38 €</span>
+          <p class="wein-meta">Tenuta Cesa · Toskana · Vermentino · weiß, salzig, Birne, Kräuter · Glas 8 €</p>
+          <div class="wein-pairing-tip"><strong>Empfehlung dazu</strong>Bärlauch-Tagliatelle, Pasta-Mittagsteller. Der "italienische Riesling" — vielseitig wie ein Sommerregen.</div>
+        </article>
+
+        <article class="wein-item">
+          <span class="wein-num">05</span>
+          <div class="wein-name">Westerwald-Sekt <em>Schloss Vaux</em></div>
+          <span class="wein-price">36 €</span>
+          <p class="wein-meta">Schloss Vaux · Westerwald · Pinot &amp; Riesling brut · feinperlig, Apfel, Brioche · Glas 9 €</p>
+          <div class="wein-pairing-tip"><strong>Empfehlung dazu</strong>Aperitif zum Brandt-Frühstück oder Tiramisù-Begleitung. Stolz aus 4 km Entfernung.</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Antike-Weinflasche + Kräuter-Bündel · botanic ornament-divider -->
+  <div class="ornament-cutout-wrap" role="separator" aria-hidden="true">
+    <svg viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- antique wine bottle -->
+      <g transform="translate(28 6)">
+        <rect x="14" y="0" width="8" height="14" rx="1" fill="rgba(31,24,19,0.7)" stroke="currentColor"/>
+        <path d="M12 14 L 24 14 L 26 22 C 28 26 30 32 30 40 L 30 76 C 30 80 28 82 24 82 L 12 82 C 8 82 6 80 6 76 L 6 40 C 6 32 8 26 10 22 Z" fill="rgba(168,54,44,0.32)"/>
+        <rect x="6" y="44" width="24" height="20" fill="rgba(255,241,221,0.16)"/>
+        <line x1="6" y1="44" x2="30" y2="44"/>
+        <line x1="6" y1="64" x2="30" y2="64"/>
+        <text x="18" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="6" font-style="italic" fill="currentColor">Riserva</text>
+      </g>
+    </svg>
+    <svg viewBox="0 0 92 80" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- herb bundle (Wacholder + Rosmarin) -->
+      <line x1="46" y1="76" x2="46" y2="32"/>
+      <path d="M38 36 L 46 32 L 54 36 M36 44 L 46 38 L 56 44 M34 52 L 46 44 L 58 52 M32 60 L 46 50 L 60 60"/>
+      <ellipse cx="38" cy="20" rx="2.5" ry="3" fill="rgba(168,54,44,0.4)"/>
+      <ellipse cx="46" cy="14" rx="2.5" ry="3" fill="rgba(168,54,44,0.4)"/>
+      <ellipse cx="54" cy="20" rx="2.5" ry="3" fill="rgba(168,54,44,0.4)"/>
+      <ellipse cx="42" cy="26" rx="2" ry="2.5" fill="rgba(168,54,44,0.3)"/>
+      <ellipse cx="50" cy="26" rx="2" ry="2.5" fill="rgba(168,54,44,0.3)"/>
+      <!-- twine -->
+      <path d="M40 64 Q 46 66 52 64" stroke="rgba(255,241,221,0.6)" stroke-width="1.2"/>
+      <path d="M40 68 Q 46 70 52 68" stroke="rgba(255,241,221,0.5)" stroke-width="1.2"/>
+    </svg>
+  </div>
+
+  <!-- ─── Chef's Tasting-Menü Walkthrough (6 Gänge Wild-Westerwald) ─── -->
+  <section class="tasting" id="chef-tasting" aria-label="Chef's 6-Gang Tasting-Menü Walkthrough">
+    <div class="tasting-intro">
+      <div class="container-narrow">
+        <span class="eyebrow">Chef's Tasting · 6 Gänge · Wild-Westerwald</span>
+        <h2>Sechs Gänge — wie Ben <em>denkt</em>.</h2>
+        <p class="lead">Eine editoriale Reise durch das aktuelle Tasting-Menü. Jeder Gang mit Storytelling und Wein-Pairing-Empfehlung von Tante Marie. Wir bauen das Menü vom kleinsten Bissen zum letzten Löffel — wie ein gut gelesenes Buch.</p>
+        <div class="menu-meta">
+          <span>Pro Person <em>148 €</em></span>
+          <span>Mit Wein-Pairing <em>+ 65 €</em></span>
+          <span>Vorlauf <em>2 Tage</em></span>
+          <span>Dauer <em>~ 3 h</em></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tasting-track">
+
+      <article class="tasting-gang">
+        <div class="tasting-photo">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=900&auto=format&fit=crop&q=78"
+               alt="Wachholder-Schaum mit Räucher-Forelle, Amuse-Bouche" width="900" height="1125" loading="lazy" decoding="async"
+               referrerpolicy="no-referrer">
+          <span class="gang-num">I<small>Amuse-Bouche</small></span>
+        </div>
+        <div class="tasting-text">
+          <span class="gang-eyebrow">Erster Gang · Begrüßung aus dem Forst</span>
+          <h3>Wachholder-Schaum mit <em>Räucher-Forelle</em></h3>
+          <p class="gang-story">Ein flüssiger Lichtblick. Forelle aus Hof Brauer's Quellteich, kalt geräuchert über Wachholderzweigen aus dem Westerwald. Auf einem Schaum aus Wachholderbeeren und Bergkräutern.</p>
+          <p class="gang-story">Wir starten leise — ein Bissen, eine Begrüßung. Der Wachholder erzählt vom Forst hinter dem Haus, die Forelle vom Bach davor.</p>
+          <div class="pairing-card">
+            <span class="pairing-eyebrow">Tante Marie empfiehlt —</span>
+            <span class="pairing-wine">Westerwald-Sekt Schloss Vaux <em>brut</em></span>
+            <span class="pairing-note">Apfel und Brioche-Note treffen den Räucher direkt am Gaumen. Stolz aus 4 km.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tasting-gang is-flipped">
+        <div class="tasting-photo">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&auto=format&fit=crop&q=78"
+               alt="Wild-Carpaccio Reh mit Steinpilz-Vinaigrette" width="900" height="1125" loading="lazy" decoding="async">
+          <span class="gang-num">II<small>Vorspeise</small></span>
+        </div>
+        <div class="tasting-text">
+          <span class="gang-eyebrow">Zweiter Gang · Aus dem Revier</span>
+          <h3>Wild-Carpaccio Reh, <em>Steinpilz-Vinaigrette</em></h3>
+          <p class="gang-story">Hauchdünnes Carpaccio vom jungen Rehbock aus den Revieren um Kroppach. Drei Wochen trocken gereift im Keller von Wildmetzgerei Schmidt-Bauer. Darüber eine Vinaigrette aus konfierten Steinpilzen, Walnussöl und einem Tropfen Aceto Balsamico.</p>
+          <p class="gang-story">Hier kommt das Wild zur Sprache — leise, fast schüchtern. Die Steinpilze setzen den dunklen Waldboden-Akkord.</p>
+          <div class="pairing-card">
+            <span class="pairing-eyebrow">Tante Marie empfiehlt —</span>
+            <span class="pairing-wine">Pinot Nero Alto Adige <em>Riserva</em></span>
+            <span class="pairing-note">Filigrane Wildaromen brauchen einen filigranen Wein. Cantina Tramin liefert genau das.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tasting-gang">
+        <div class="tasting-photo">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=900&auto=format&fit=crop&q=78"
+               alt="Topinambur-Suppe mit Trüffel-Öl" width="900" height="1125" loading="lazy" decoding="async">
+          <span class="gang-num">III<small>Suppe</small></span>
+        </div>
+        <div class="tasting-text">
+          <span class="gang-eyebrow">Dritter Gang · Wurzel und Wald</span>
+          <h3>Topinambur-Crème, <em>Trüffel-Öl</em></h3>
+          <p class="gang-story">Topinambur aus der Erde von Hof Brauer, langsam in Bauernbutter geschmort, mit Geflügelfond aufgegossen, durchpassiert. Darüber ein Spritzer Westerwald-Trüffel-Öl und geröstete Sonnenblumenkerne.</p>
+          <p class="gang-story">Cremig, erdig, mit einer Spur Süße. Der Übergang vom Wild zum Hauptgang — wie ein Atemzug zwischen zwei Sätzen.</p>
+          <div class="pairing-card">
+            <span class="pairing-eyebrow">Tante Marie empfiehlt —</span>
+            <span class="pairing-wine">Vermentino di Toscana <em>Tenuta Cesa</em></span>
+            <span class="pairing-note">Salzig-frisch, Birne und Kräuter. Hält der Erde stand, ohne sie zu übertönen.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tasting-gang is-flipped">
+        <div class="tasting-photo">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=900&auto=format&fit=crop&q=78"
+               alt="Hirschkalb-Rücken mit schwarzer Johannisbeere und Wirsing" width="900" height="1125" loading="lazy" decoding="async">
+          <span class="gang-num">IV<small>Hauptgang</small></span>
+        </div>
+        <div class="tasting-text">
+          <span class="gang-eyebrow">Vierter Gang · Das Herzstück</span>
+          <h3>Hirschkalb-Rücken, <em>Johannisbeere</em>, Wirsing-Crumble</h3>
+          <p class="gang-story">Rosa gebratener Hirschkalb-Rücken, dazu eine Reduktion aus schwarzen Johannisbeeren und Rotwein, ein Crumble aus Wirsing und Pumpernickel, gerösteter Topinambur. Der Rücken kommt direkt aus dem Reservat hinterm Haus.</p>
+          <p class="gang-story">Hier zeigt das Forsthaus seine Faust. Vier Generationen Schürzenwerk auf einem Teller — unaufgeregt, präzise, satt.</p>
+          <div class="pairing-card">
+            <span class="pairing-eyebrow">Tante Marie empfiehlt —</span>
+            <span class="pairing-wine">Brunello di Montalcino <em>Castello Banfi 2018</em></span>
+            <span class="pairing-note">Vollmundig, Leder und Kirsche. Der Wein hält der Sauce stand, die Säure schneidet das Fett.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tasting-gang">
+        <div class="tasting-photo">
+          <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=900&auto=format&fit=crop&q=78"
+               alt="Westerwälder Köhler Käse mit Apfel-Senf-Kompott" width="900" height="1125" loading="lazy" decoding="async">
+          <span class="gang-num">V<small>Käse</small></span>
+        </div>
+        <div class="tasting-text">
+          <span class="gang-eyebrow">Fünfter Gang · Pause vom Süßen</span>
+          <h3>Westerwälder <em>Köhler</em>, Apfel-Senf-Kompott</h3>
+          <p class="gang-story">Der Westerwälder Köhler reift zwölf Monate in der Hofkäserei Brauer — ein Hartkäse mit nussigen Aromen und einer leichten Bitterkeit, die an Bergluft erinnert. Dazu ein Kompott aus Westerwald-Boskoop und Bauern-Senfsaat.</p>
+          <p class="gang-story">Eine Verschnaufpause. Der Käse erzählt vom Hof zwei Kilometer weiter, das Kompott vom letzten Herbst.</p>
+          <div class="pairing-card">
+            <span class="pairing-eyebrow">Tante Marie empfiehlt —</span>
+            <span class="pairing-wine">Riesling Spätlese trocken <em>Loosen Mosel</em></span>
+            <span class="pairing-note">Mineralisch, Aprikose, Zitrus. Säure und Fruchtsüße spielen Pingpong mit dem Senf.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tasting-gang is-flipped">
+        <div class="tasting-photo">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&auto=format&fit=crop&q=78"
+               alt="Honig-Holunder Dessert mit Tonka-Eis und Bienenstich" width="900" height="1125" loading="lazy" decoding="async"
+               referrerpolicy="no-referrer">
+          <span class="gang-num">VI<small>Dessert</small></span>
+        </div>
+        <div class="tasting-text">
+          <span class="gang-eyebrow">Sechster Gang · Letzter Löffel</span>
+          <h3>Honig-Holler, <em>Tonka-Eis</em>, Bienenstich</h3>
+          <p class="gang-story">Holunderblüten aus dem Garten von Anette, in dunklem Wald-Honig vom Imker Klein eingelegt. Dazu hausgemachtes Tonka-Eis und ein Splitter Bienenstich von Bäcker Heinz — drei Häuser weiter.</p>
+          <p class="gang-story">Wir enden, wo wir angefangen haben — beim Honig. Drei Lieferanten in 0,9 Kilometer. Mehr Westerwald geht auf einem Teller nicht.</p>
+          <div class="pairing-card">
+            <span class="pairing-eyebrow">Tante Marie empfiehlt —</span>
+            <span class="pairing-wine">Vin Santo del Chianti <em>2014</em></span>
+            <span class="pairing-note">Mandel, Honig, getrocknete Früchte. Der süße Schlusspunkt — Italien grüßt zurück.</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="tasting-progress" aria-hidden="true">
+      <div class="tasting-progress-inner">
+        <span class="tasting-progress-dot is-active" data-gang="1"></span>
+        <span class="tasting-progress-dot" data-gang="2"></span>
+        <span class="tasting-progress-dot" data-gang="3"></span>
+        <span class="tasting-progress-dot" data-gang="4"></span>
+        <span class="tasting-progress-dot" data-gang="5"></span>
+        <span class="tasting-progress-dot" data-gang="6"></span>
+      </div>
+    </div>
+
+    <div class="tasting-intro" style="border-bottom: none; border-top: 1px solid var(--hairline);">
+      <div class="container-narrow">
+        <span class="eyebrow">Reservierung</span>
+        <h2 style="font-size: clamp(1.5rem, 3vw, 2.25rem);">Sechs Gänge — <em>vorbestellen</em>.</h2>
+        <p class="lead">Bitte zwei Tage Vorlauf. Diät-Anpassungen (vegetarisch, vegan, glutenfrei) jederzeit möglich — sprechen Sie bei Reservierung mit Anette.</p>
+        <a class="btn btn-primary" href="reservierung.html?menu=tasting" style="margin-top: 1.5rem;">Tasting reservieren</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Vegetarier / Allergien ─── -->
+  <section class="diet">
+    <div class="container-wide">
+      <div class="diet-row">
+        <div>
+          <span class="eyebrow">Diät &amp; Allergien</span>
+          <h2>Wir <em>richten ein</em>.</h2>
+          <p style="margin-top: 1.25rem; color: var(--text-secondary); line-height: 1.65; max-width: 32ch;">Wir sind ein Wild- und Pasta-Restaurant — aber wir kochen ehrlich, was Sie brauchen. Bitte bei Reservierung Bescheid sagen, dann bereiten wir vor.</p>
+        </div>
+        <div class="diet-list">
+          <div class="diet-list-item">
+            <span class="diet-tag">V</span>
+            <h3>Vegetarisch</h3>
+            <p>Risotto ai funghi, Pappardelle al tartufo, vegetarisches 4-Gang-Menü auf Vorbestellung. Pilze, Käse, Pasta — italienische Vegetarier-Küche, kein "Beilagen-Teller".</p>
+          </div>
+          <div class="diet-list-item">
+            <span class="diet-tag">VG</span>
+            <h3>Vegan</h3>
+            <p>Auf Vorbestellung 24 h. Wir können ein 4-Gang-Menü ohne tierische Produkte zaubern — Pasta mit Pflanzen-Mehl, Forst-Gemüse, Kräuter-Risotto. Sprechen Sie mit Anette.</p>
+          </div>
+          <div class="diet-list-item">
+            <span class="diet-tag">GF</span>
+            <h3>Glutenfrei</h3>
+            <p>Wir haben glutenfreie Pasta-Alternative aus Reismehl. Risotto, Wild-Hauptgerichte und die meisten Vorspeisen sind ohnehin glutenfrei. Brot leider nur regulär.</p>
+          </div>
+          <div class="diet-list-item">
+            <span class="diet-tag">L</span>
+            <h3>Laktose / Nuss</h3>
+            <p>Großteils anpassbar. Tiramisù enthält Mascarpone, Pancakes Ricotta, Käsebrett klar — bei Allergien einfach Bescheid sagen, wir tauschen.</p>
+          </div>
+          <div class="diet-list-item">
+            <span class="diet-tag">★</span>
+            <h3>Kinder</h3>
+            <p>Halbe Pasta-Portionen 8 €, einfache Spaghetti mit Tomate für die Kleinsten. Kinderhochstühle vorhanden. Spielecke vor der Stube mit Holz-Bauernhof.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reservierung-cta">
+    <div class="container-wide reservierung-cta-inner">
+      <div>
+        <span class="eyebrow muted" style="color: rgba(255,241,221,0.78);">Reservierung</span>
+        <h2>Hunger geweckt?</h2>
+        <p>Tisch reservieren persönlich oder online. 5-Gang-Menü bitte 1 Tag vorbestellen.</p>
+      </div>
+      <div>
+        <a class="btn btn-ghost" href="reservierung.html">Anfrage senden</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <span class="nav-logo">Forsthaus <span class="accent">Brandt</span></span>
+        <p class="footer-tagline">Wo der Westerwald <em>isst.</em></p>
+        <div class="footer-meta-row">
+          <a href="karte.html">Karte</a>
+          <a href="ueber.html">Über uns</a>
+          <a href="reservierung.html">Reservierung</a>
+          <a href="https://instagram.com/forsthaus.brandt" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h2>Forsthaus</h2>
+        <address>Forstweg 12<br>57629 Müschenbach</address>
+        <p style="margin-top: 0.625rem;"><a href="tel:+4926623030">+49 2662 30 30</a></p>
+        <p><a href="mailto:reservierung@forsthaus-brandt.de">reservierung@forsthaus-brandt.de</a></p>
+      </div>
+    </div>
+    <div class="footer-signature" aria-label="Familien-Signatur">
+      <span class="sig-name">Familie Brandt</span>
+      <span class="footer-signature-meta">Familie Brandt · 4 Generationen · seit 1924</span>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Forsthaus Brandt. Familie Brandt.</span>
+      <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<section id="impressum" class="legal-section" style="padding: 2rem; background: #1F1813; color: rgba(245,235,220,0.5); font-size: 0.75rem; line-height: 1.6;">
+  <h3 style="color: rgba(245,235,220,0.7); font-size: 0.875rem; margin-bottom: 1rem;">Impressum</h3>
+  <p>Forsthaus Brandt GbR · Forstweg 12 · 57629 Müschenbach<br>
+  Tel: 026 62 – 30 30 · E-Mail: tisch@forsthaus-brandt.de<br>
+  Inhaber: Ben Brandt · USt-IdNr: DE123456789</p>
+  <p id="datenschutz" style="margin-top: 1.5rem;"><strong style="color: rgba(245,235,220,0.7);">Datenschutz:</strong> Diese Demo-Website verarbeitet keine personenbezogenen Daten. Kontaktformulare senden keine Daten. Alle Inhalte sind Demonstrations-Zwecken vorbehalten.</p>
+</section>
+
+<aside class="page-num" aria-hidden="true"><em>Seite II</em>· Brandt Karte</aside>
+
+<script>
+  // ── Ensure all Unsplash images strip referrer (Chrome ORB resistance) ──
+  document.querySelectorAll('img[src*="images.unsplash.com"], source[srcset*="images.unsplash.com"]').forEach(el => {
+    if (!el.hasAttribute('referrerpolicy')) el.setAttribute('referrerpolicy', 'no-referrer');
+  });
+
+  const burger = document.getElementById('navBurger');
+  const drawer = document.getElementById('navDrawer');
+  const close = document.getElementById('navDrawerClose');
+  const open = () => { drawer.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); drawer.removeAttribute('inert'); document.body.style.overflow = 'hidden'; };
+  const shut = () => { drawer.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); drawer.setAttribute('inert', ''); document.body.style.overflow = ''; };
+  burger?.addEventListener('click', open);
+  close?.addEventListener('click', shut);
+  drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) shut(); });
+
+  // Tab switcher with WAI-ARIA tablist + roving tabindex + arrow-key nav
+  const tabs = Array.from(document.querySelectorAll('.karte-tab'));
+  const sections = document.querySelectorAll('.karte-section');
+  const activate = (tab) => {
+    const target = tab.dataset.tab;
+    tabs.forEach(t => {
+      const active = t === tab;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+      t.setAttribute('tabindex', active ? '0' : '-1');
+    });
+    sections.forEach(s => {
+      const active = s.dataset.section === target;
+      s.classList.toggle('is-active', active);
+      if (active) s.removeAttribute('hidden'); else s.setAttribute('hidden', '');
+    });
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => { activate(tab); tab.focus(); });
+    tab.addEventListener('keydown', (e) => {
+      let nextIdx = -1;
+      if (e.key === 'ArrowRight') nextIdx = (i + 1) % tabs.length;
+      if (e.key === 'ArrowLeft') nextIdx = (i - 1 + tabs.length) % tabs.length;
+      if (e.key === 'Home') nextIdx = 0;
+      if (e.key === 'End') nextIdx = tabs.length - 1;
+      if (nextIdx >= 0) { e.preventDefault(); activate(tabs[nextIdx]); tabs[nextIdx].focus(); }
+    });
+  });
+
+  // Filter Reset — clears all checkboxes + sets diet to "Standard"
+  const resetBtn = document.getElementById('filterReset');
+  resetBtn?.addEventListener('click', () => {
+    document.querySelectorAll('.filter-input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+    const standard = document.getElementById('diet-standard');
+    if (standard) standard.checked = true;
+  });
+
+  // Tasting walkthrough — IntersectionObserver-driven progress dots
+  const tastingGangs = document.querySelectorAll('.tasting-gang');
+  const tastingDots = document.querySelectorAll('.tasting-progress-dot');
+  if (tastingGangs.length && tastingDots.length && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.45) {
+          const idx = Array.from(tastingGangs).indexOf(entry.target);
+          tastingDots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+        }
+      });
+    }, { threshold: [0.45, 0.5, 0.6] });
+    tastingGangs.forEach(g => io.observe(g));
+  }
+</script>
+
+</body>
+</html>

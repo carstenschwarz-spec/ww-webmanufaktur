@@ -7,9 +7,8 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "C:\\Users\\Carsten#\\Projekte\\WW-Werbeagentur\\_deploy"
+publish = "C:\\Users\\Carsten#\\Projekte\\WW-Webmanufaktur\\_deploy"
 publishOrigin = "default"
-base = "C:\\Users\\Carsten#\\Projekte\\WW-Werbeagentur\\_deploy"
 
 [build.environment]
 
