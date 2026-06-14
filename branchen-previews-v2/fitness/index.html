@@ -150,18 +150,18 @@
     <div class="scoreboard-grid container-wide" style="padding-inline: 0; max-width: 100%;">
       <div class="scoreboard-cell">
         <div class="scoreboard-num is-neon" id="scoreMembers">237</div>
-        <div class="scoreboard-label">Mitglieder<br>max. 240</div>
+        <div class="scoreboard-label">Member<br>max. 240</div>
       </div>
       <div class="scoreboard-cell">
-        <div class="scoreboard-num">3</div>
-        <div class="scoreboard-label">Trainer<br>je ein Plan</div>
+        <div class="scoreboard-num">38</div>
+        <div class="scoreboard-label">Kurse<br>pro Woche</div>
       </div>
       <div class="scoreboard-cell">
         <div class="scoreboard-num is-neon">61</div>
         <div class="scoreboard-label">Hyrox-Finisher<br>seit 2022</div>
       </div>
       <div class="scoreboard-cell">
-        <div class="scoreboard-num" id="scoreTonnage" style="font-size:clamp(2rem,5vw,3.5rem);">38.247</div>
+        <div class="scoreboard-num" id="scoreTonnage">38.247</div>
         <div class="scoreboard-label">kg gehoben<br>letzte 7 Tage</div>
       </div>
     </div>
@@ -471,51 +471,54 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       TRAINER STRIP
+       TRAINER STRIP — Monochrome Photos · Neon on Hover
        ═══════════════════════════════════════════════════════ -->
-  <section class="trainer-strip" style="background: var(--bg-secondary); border-top: 2px solid var(--hairline);">
+  <section class="trainer-strip" aria-labelledby="trainerTitle">
     <div class="container-wide">
-      <header class="section-header">
+      <header class="section-header" style="margin-bottom: clamp(2.5rem, 5vw, 4rem);">
         <div>
           <span class="eyebrow">Drei Trainer · drei Methoden</span>
-          <h2>Dein Coach.<br><span class="neon">Kein Zufall.</span></h2>
+          <h2 id="trainerTitle">Dein Coach.<br><span class="neon">Kein Zufall.</span></h2>
         </div>
         <a class="btn-link" href="trainer.html">Alle Profile →</a>
       </header>
       <div class="trainer-cards">
 
         <a class="trainer-card" href="trainer.html#niko">
-          <div class="photo photo-cinema">
+          <div class="photo">
+            <span class="trainer-card-badge">Hyrox · Kraft</span>
             <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=800&auto=format&fit=crop&q=78"
                  alt="Niko — Inhaber und Hyrox-Coach"
                  width="800" height="1000" loading="lazy" decoding="async">
           </div>
           <div class="trainer-card-meta">
-            <h3>Niko</h3>
+            <h3>NIKO</h3>
             <p>Inhaber · Hyrox-Master-Coach DACH · 4× Finisher</p>
           </div>
         </a>
 
         <a class="trainer-card" href="trainer.html#eva">
-          <div class="photo photo-cinema">
+          <div class="photo">
+            <span class="trainer-card-badge">Pilates · Mobility</span>
             <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=800&auto=format&fit=crop&q=78"
                  alt="Eva — Pilates- und Mobilitätstrainerin"
                  width="800" height="1000" loading="lazy" decoding="async">
           </div>
           <div class="trainer-card-meta">
-            <h3>Eva</h3>
+            <h3>EVA</h3>
             <p>BASI-Reformer-Pilates · Sportphysio · Mobility für Lifter</p>
           </div>
         </a>
 
         <a class="trainer-card" href="trainer.html#felix">
-          <div class="photo photo-cinema">
+          <div class="photo">
+            <span class="trainer-card-badge">Kraft · Hypertrophie</span>
             <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&auto=format&fit=crop&q=78"
                  alt="Felix — Krafttrainer und Programm-Designer"
                  width="800" height="1000" loading="lazy" decoding="async">
           </div>
           <div class="trainer-card-meta">
-            <h3>Felix</h3>
+            <h3>FELIX</h3>
             <p>B-Trainer-Lizenz · 5/3/1 &amp; Hypertrophie · Schicht-Plan-Anpassung</p>
           </div>
         </a>
@@ -741,18 +744,21 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       CTA BLOCK — Neon auf Schwarz (letzter Abschnitt)
+       CTA BLOCK — Schwarz · Riesige 30 · Neon-Button
        ═══════════════════════════════════════════════════════ -->
-  <section class="cta-block">
+  <section class="cta-block" aria-labelledby="ctaTitle">
     <div class="container-wide cta-block-inner">
-      <div>
-        <span class="eyebrow" style="color: rgba(10,10,10,0.65);">Komm vorbei</span>
-        <h2>Erstes Mal<br>kostet nichts.</h2>
-        <p>60 Minuten · 1:1 · Hachenburg. Komm rein, sieh dir an ob wir zusammenpassen. Drei freie Plätze diese Woche.</p>
+      <div class="cta-block-counter">
+        <div class="cta-block-num">30</div>
+        <div class="cta-block-unit">Tage</div>
+        <div class="cta-block-sublabel">Bis du deinen ersten Unterschied siehst.</div>
       </div>
       <div>
-        <a class="btn btn-ghost" href="probetraining.html">
-          Probetraining vereinbaren
+        <span class="eyebrow">Probetraining · kostenlos</span>
+        <h2 id="ctaTitle">Erstes Mal<br><span class="neon">kostet nichts.</span></h2>
+        <p>60 Minuten, 1:1 in Hachenburg. Sieh dir an, ob wir zusammenpassen. Drei freie Plätze diese Woche.</p>
+        <a class="btn btn-primary" href="probetraining.html">
+          PROBETRAINING BUCHEN
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -766,8 +772,12 @@
   <div class="container-wide">
     <div class="footer-grid">
       <div class="footer-col-main">
-        <span class="nav-logo"><strong>THE GRIND</strong></span>
-        <h2>Bewegung,<br>die <span class="neon">hält.</span></h2>
+        <div class="footer-studio-name">THE<br><span class="accent">GRIND</span></div>
+        <h2>Hachenburg · Westerwald · seit 2019</h2>
+        <div class="footer-hours-today">
+          <span class="footer-hours-dot" aria-hidden="true"></span>
+          <span>TODAY: <strong id="footerHoursToday">Mo–Fr 06–22 Uhr</strong></span>
+        </div>
         <div class="footer-meta">
           <a href="kurse.html">Kurse</a>
           <a href="trainer.html">Trainer</a>
@@ -776,7 +786,7 @@
         </div>
       </div>
       <div class="footer-contact">
-        <h3>Studio</h3>
+        <h3>Studio-Adresse</h3>
         <address>Bahnhofstraße 14<br>57627 Hachenburg</address>
         <p style="margin-top: 0.75rem;"><a href="tel:+4926623301">+49 2662 33 01</a></p>
         <p><a href="mailto:hallo@thegrind-hachenburg.de">hallo@thegrind-hachenburg.de</a></p>
@@ -850,7 +860,6 @@
         const step = (now) => {
           const elapsed = now - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          // Ease-out cubic
           const eased = 1 - Math.pow(1 - progress, 3);
           current = Math.round(eased * target);
           daysEl.textContent = current;
@@ -862,6 +871,18 @@
         if (entries[0].isIntersecting) animateDays();
       }, { threshold: 0.3 });
       io.observe(daysEl.closest('.days-cta') || daysEl);
+    }
+
+    // ─── Footer Live-Hours (heutiger Tag highlight) ───
+    const footerHours = document.getElementById('footerHoursToday');
+    if (footerHours) {
+      const day = new Date().getDay(); // 0=So, 1=Mo ... 6=Sa
+      const hoursMap = {
+        1: 'Mo 06–22 Uhr', 2: 'Di 06–22 Uhr', 3: 'Mi 06–22 Uhr',
+        4: 'Do 06–22 Uhr', 5: 'Fr 06–22 Uhr',
+        6: 'Sa 08–16 Uhr', 0: 'So 09–14 Uhr'
+      };
+      footerHours.textContent = hoursMap[day] || 'Mo–Fr 06–22 Uhr';
     }
   }
 </script>

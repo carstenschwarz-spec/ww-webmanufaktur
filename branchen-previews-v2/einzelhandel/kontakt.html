@@ -516,10 +516,11 @@ Burgstraße 7<br>
 </div>
 </section>
 
-<section class="form-section" id="besuch">
+<section class="form-section" id="besuch" style="background: var(--color-surface-warm); padding-block: clamp(3.5rem, 6vw, 5rem);">
 <div class="container-wide">
-<span class="eyebrow">Termin-Anfrage</span>
-<h2 style="font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: var(--fs-h1); line-height: 1.1; margin-block: 0.625rem 2rem; max-width: 22ch;">Persönliche <em>Beratung.</em></h2>
+<span class="editorial-label">Termin-Anfrage</span>
+<h2 style="font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: var(--fs-h1); line-height: 1.05; margin-block: 0.625rem 0.75rem; max-width: 22ch; letter-spacing: -0.025em;">Persönliche <em>Beratung.</em></h2>
+<p style="color: var(--text-secondary); font-size: var(--fs-body-lg); line-height: 1.7; max-width: 54ch; margin-bottom: 2rem;">Ich bereite Stücke in Ihrer Größe vor, brühe Tee auf und nehme mir eine Stunde Zeit. Kein Verkaufsdruck — versprochen. <em>— Anna</em></p>
 <form class="form-block" action="#" method="post">
 <div class="form-row"><label for="form-anlass">Anlass</label>
 <select id="form-anlass" name="anlass" required>
@@ -542,15 +543,15 @@ Burgstraße 7<br>
 </div>
 </section>
 
-<section style="background: var(--bg-secondary); border-block: 1px solid var(--hairline); padding-block: clamp(3rem, 5vw, 4rem);">
+<section style="background: var(--color-bg); border-block: 1px solid var(--color-border); padding-block: clamp(3rem, 5vw, 4rem); color: var(--color-text-light);">
 <div class="container-wide">
-<span class="eyebrow">Newsletter</span>
-<h2 style="font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: var(--fs-h1); line-height: 1.1; margin-block: 0.625rem 1rem; max-width: 22ch;">Neue Stücke <em>zuerst sehen.</em></h2>
-<p class="muted" style="max-width: 56ch; margin-bottom: 1.5rem;">5 Mails pro Jahr, max. — wenn Frühling/Herbst-Lieferungen ankommen oder es Sale gibt. Kein Spam, kein Tracking, jederzeit abbestellbar.</p>
+<span class="editorial-label" style="color: var(--color-accent);">Newsletter</span>
+<h2 style="font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: var(--fs-h1); line-height: 1.05; margin-block: 0.625rem 0.75rem; max-width: 22ch; color: var(--color-text-light); letter-spacing: -0.025em;">Neue Stücke <em>zuerst sehen.</em></h2>
+<p style="color: rgba(250,247,244,0.72); max-width: 56ch; margin-bottom: 1.75rem; font-size: var(--fs-body-lg); line-height: 1.7;">5 Mails pro Jahr, max. — wenn Frühling/Herbst-Lieferungen ankommen. Kein Spam, kein Tracking, jederzeit abbestellbar. Stamm-Kundinnen sehen Lieferungen 2 Tage früher.</p>
 <form action="#" method="post" class="newsletter-block" style="display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; max-width: 480px; padding-top: 0; border-top: 0;">
 <label for="news-mail" class="visually-hidden">E-Mail</label>
-<input type="email" id="news-mail" name="email" required placeholder="ihre@mail.de" autocomplete="email">
-<button type="submit" class="btn btn-primary">Abonnieren</button>
+<input type="email" id="news-mail" name="email" required placeholder="ihre@mail.de" autocomplete="email" style="background: rgba(255,255,255,0.08); border-color: rgba(250,247,244,0.3); color: var(--color-text-light);">
+<button type="submit" class="btn btn-accent">Abonnieren</button>
 </form>
 </div>
 </section>
@@ -559,23 +560,33 @@ Burgstraße 7<br>
 
 <footer class="footer">
 <div class="container-wide">
-<div class="footer-grid">
-<div>
-<a class="nav-logo" href="index.html" style="font-size: 1.625rem; color: var(--text-on-dark);"><em>Lieblingsstücke</em><small style="color: rgba(250,250,250,0.55);">Concept Store · Hachenburg</small></a>
-<p class="footer-tagline">Stücke, in die man sich <span class="accent">verliebt</span>.</p>
-</div>
-<div><h3>Laden</h3><address>Burgstraße 7<br>57627 Hachenburg</address><p style="margin-top: 0.625rem;">Mo–Fr · 10–18 Uhr · Sa · 10–17 Uhr</p></div>
-<div><h3>Sortiment</h3><p><a href="sortiment.html#mode">Mode</a><br><a href="sortiment.html#wohnen">Wohnen</a><br><a href="sortiment.html#geschenke">Geschenke</a></p></div>
-<div><h3>Kontakt</h3><p><a href="tel:+4926623090">+49 2662 3090</a><br><a href="mailto:hallo@lieblingsstuecke.de">hallo@lieblingsstuecke.de</a></p></div>
-</div>
-<div class="footer-signature">
-<span class="sig-name">Anna</span>
-<span class="sig-meta"><em>Anna</em> · Hachenburg seit 2019<br>Inhaberin · Lieblingsstücke</span>
-</div>
-<div class="footer-base">
-<span>© 2026 Lieblingsstücke · Anna Müller e.K.</span>
-<span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <a href="#agb">AGB</a></span>
-</div>
+  <div class="footer-centerpiece">
+    <p class="footer-store-name"><em>Lieblingsstücke</em></p>
+    <span class="footer-love-tag">Ausgesucht mit Liebe. Seit 2019.</span>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <h3>Laden</h3>
+      <address>Burgstraße 7<br>57627 Hachenburg</address>
+      <p style="margin-top: 0.625rem;">Mo–Fr · 10–18 Uhr<br>Sa · 10–17 Uhr</p>
+    </div>
+    <div>
+      <h3>Sortiment</h3>
+      <p><a href="sortiment.html#mode">Mode</a><br><a href="sortiment.html#wohnen">Wohnen</a><br><a href="sortiment.html#geschenke">Geschenke &amp; Papeterie</a></p>
+    </div>
+    <div>
+      <h3>Kontakt</h3>
+      <p><a href="tel:+4926623090">+49 2662 3090</a><br><a href="mailto:hallo@lieblingsstuecke.de">hallo@lieblingsstuecke.de</a><br><a href="ueber.html">Über uns</a></p>
+    </div>
+  </div>
+  <div class="footer-signature">
+    <span class="sig-name">Anna</span>
+    <span class="sig-meta">Inhaberin · Lieblingsstücke · Hachenburg</span>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 Lieblingsstücke · Anna Müller e.K.</span>
+    <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <a href="#agb">AGB</a></span>
+  </div>
 </div>
 </footer>
 

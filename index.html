@@ -465,15 +465,29 @@
             --shadow-xl: 0 24px 70px rgba(15,13,11,0.12);
 
             --transition: 0.4s cubic-bezier(0.28, 0.11, 0.32, 1);
+            --transition-smooth: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 
             --primary-glow: rgba(166, 124, 82, 0.15);
             --primary-glow-light: rgba(166, 124, 82, 0.08);
+            --shadow-cognac: 0 8px 28px rgba(166,124,82,0.22), 0 2px 6px rgba(166,124,82,0.12);
+            --shadow-cognac-lg: 0 20px 60px rgba(166,124,82,0.28), 0 8px 20px rgba(166,124,82,0.16);
 
             /* Animation timing */
             --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
             --duration-fast: 0.2s;
             --duration-normal: 0.3s;
             --duration-slow: 0.5s;
+
+            /* Typografie-Skala */
+            --text-xs: 0.72rem;
+            --text-sm: 0.82rem;
+            --text-base: 0.925rem;
+            --text-md: 1.05rem;
+            --text-lg: 1.2rem;
+
+            /* Spacing */
+            --space-section: clamp(80px, 10vw, 140px);
+            --space-section-sm: clamp(48px, 6vw, 80px);
         }
 
         /* ═══════════════════════════════════════════
@@ -525,7 +539,7 @@
         }
         .section-title {
             font-family: var(--font-heading);
-            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
             font-weight: 600;
             color: var(--secondary);
             margin-bottom: 16px;
@@ -761,12 +775,13 @@
         .navbar.scrolled .nav-links a:hover { color: var(--primary); }
 
         .nav-cta {
-            padding: 8px 20px !important;
+            padding: 9px 22px !important;
             background: var(--primary) !important;
             color: var(--white) !important;
             border-radius: 24px !important;
             font-weight: 600 !important;
-            font-size: 0.8rem !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0.02em !important;
             background-size: 200% 100% !important;
             background-image: linear-gradient(105deg, var(--primary) 0%, var(--primary) 40%, #c49a6c 50%, var(--primary) 60%, var(--primary) 100%) !important;
             background-position: 100% 0 !important;
@@ -1038,11 +1053,11 @@
         /* Kicker above headline */
         .hero-kicker {
             font-family: var(--font-body);
-            font-size: 0.72rem;
+            font-size: 0.76rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.22em;
-            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.16em;
+            color: rgba(255,255,255,0.62);
             margin: 0;
             opacity: 0;
         }
@@ -1050,10 +1065,10 @@
         /* Subtitle below headline */
         .hero-subtitle {
             font-family: var(--font-body);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 400;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.6;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.65;
             margin-bottom: 32px;
             max-width: 440px;
             opacity: 0;
@@ -1210,10 +1225,11 @@
            ═══════════════════════════════════════════ */
         .stats-bar {
             background: var(--bg-dark);
-            padding: 56px 0;
+            padding: 72px 0;
             position: relative;
             overflow: hidden;
             color: var(--text-on-dark);
+            border-top: 1px solid rgba(255,255,255,0.04);
         }
         .stats-grid {
             display: grid;
@@ -1247,8 +1263,8 @@
         }
         .stats-num {
             font-family: var(--font-heading);
-            font-size: clamp(3.2rem, 5vw, 4.2rem);
-            font-weight: 800;
+            font-size: clamp(3.8rem, 6vw, 5.2rem);
+            font-weight: 700;
             color: var(--text-on-dark);
             line-height: 1;
             letter-spacing: -0.02em;
@@ -1256,7 +1272,7 @@
         }
         .stats-suffix {
             font-family: var(--font-heading);
-            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-size: clamp(1.9rem, 3vw, 2.8rem);
             font-weight: 700;
             color: var(--primary);
             line-height: 1;
@@ -1833,9 +1849,61 @@
         .branchen-shot.is-active { transform: translateY(0); opacity: 1; z-index: 10; }
         .branchen-shot.is-past { transform: translateY(-10%) scale(0.97); opacity: 0; z-index: 2; }
         .branchen-shot img {
-            width: 100%; height: 100%;
-            object-fit: cover; object-position: top center; display: block;
+            width: 100%; height: auto;
+            display: block;
+            transform: translateY(0);
+            will-change: transform;
         }
+        /* ── Skip / Click-to-advance ── */
+        .branchen-skip {
+            position: absolute; bottom: 28px; right: 28px;
+            display: flex; align-items: center; gap: 8px;
+            background: rgba(15,13,11,0.78); color: #fff;
+            border: 1px solid rgba(255,255,255,0.14);
+            padding: 9px 18px 9px 16px; border-radius: 40px;
+            font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+            cursor: pointer; backdrop-filter: blur(10px);
+            opacity: 0; transform: translateY(8px);
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.2s;
+            z-index: 40; white-space: nowrap; font-family: var(--font-body, Inter, sans-serif);
+        }
+        .branchen-skip.is-visible { opacity: 1; transform: translateY(0); }
+        .branchen-skip:hover { background: rgba(166,124,82,0.9); border-color: transparent; }
+        .branchen-skip svg { width: 14px; height: 14px; flex-shrink: 0; }
+        /* Progress bar inside skip button */
+        .branchen-skip-bar {
+            width: 36px; height: 2px; background: rgba(255,255,255,0.2);
+            border-radius: 2px; overflow: hidden;
+        }
+        .branchen-skip-fill {
+            height: 100%; background: #A67C52; border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        /* Click-advance hint on stack */
+        .branchen-stack { cursor: pointer; }
+        .branchen-stack::before {
+            content: '';
+            position: absolute; inset: 0; z-index: 25;
+            border-radius: inherit; pointer-events: none;
+            box-shadow: inset 0 0 0 0 rgba(166,124,82,0);
+            transition: box-shadow 0.2s;
+        }
+        .branchen-stack:active::before {
+            box-shadow: inset 0 0 0 3px rgba(166,124,82,0.6);
+        }
+        /* Cursor hint on active shot */
+        .branchen-shot.is-active { cursor: ns-resize; }
+        .branchen-shot.is-active::before {
+            content: 'Hover · Seite durchscrollen';
+            position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+            background: rgba(15,13,11,0.72); color: #fff;
+            font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+            padding: 5px 12px; border-radius: 20px; white-space: nowrap;
+            z-index: 30; opacity: 0; transition: opacity 0.3s;
+            backdrop-filter: blur(4px); pointer-events: none;
+        }
+        .branchen-shot.is-active:not(:hover)::before { opacity: 1; animation: hint-fade 2s ease 1s forwards; }
+        @keyframes hint-fade { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
 
         /* ── Text panel (below stack) — auto-sized to longest content ── */
         .branchen-text {
@@ -3765,10 +3833,15 @@
             cursor: pointer;
             text-decoration: none;
             color: inherit;
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.25),
+                0 1px 3px rgba(0,0,0,0.15);
         }
         .leistung-card.leistung-active:hover {
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.10),
-                        0 8px 24px rgba(0, 0, 0, 0.06);
+            box-shadow:
+                0 28px 72px rgba(0,0,0,0.35),
+                0 8px 24px rgba(0,0,0,0.20),
+                0 0 0 1px rgba(166,124,82,0.10);
         }
 
         /* ── Glass inner border ── */
@@ -4748,8 +4821,8 @@
         .scanner-card-normal { z-index: 2; }
         .scanner-card-normal img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: brightness(1.1) contrast(1.1); }
         .scanner-card-ascii { z-index: 1; }
-        .scanner-card-ascii pre { position: absolute; inset: 0; color: rgba(220,210,255,0.6); font-family: monospace; font-size: 11px; line-height: 13px; overflow: hidden; white-space: pre; margin: 0; padding: 0; mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.2) 100%); -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.2) 100%); }
-        .scanner-line-glow { position: absolute; left: 50%; top: 0; width: 2px; height: 100%; transform: translateX(-50%); background: linear-gradient(to bottom, transparent 5%, #8b5cf6 30%, #a78bfa 50%, #8b5cf6 70%, transparent 95%); z-index: 20; pointer-events: none; opacity: 0.4; transition: opacity 0.3s ease; box-shadow: 0 0 10px #a78bfa, 0 0 20px #a78bfa, 0 0 30px #8b5cf6, 0 0 50px #6366f1; }
+        .scanner-card-ascii pre { position: absolute; inset: 0; color: rgba(201,168,124,0.5); font-family: monospace; font-size: 11px; line-height: 13px; overflow: hidden; white-space: pre; margin: 0; padding: 0; mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.2) 100%); -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.2) 100%); }
+        .scanner-line-glow { position: absolute; left: 50%; top: 0; width: 2px; height: 100%; transform: translateX(-50%); background: linear-gradient(to bottom, transparent 5%, rgba(166,124,82,0.8) 30%, #C9A87C 50%, rgba(166,124,82,0.8) 70%, transparent 95%); z-index: 20; pointer-events: none; opacity: 0.4; transition: opacity 0.3s ease; box-shadow: 0 0 10px rgba(166,124,82,0.6), 0 0 20px rgba(166,124,82,0.4), 0 0 40px rgba(166,124,82,0.2); }
         .scanner-line-glow.active { opacity: 1; }
         .scanner-particles-canvas { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
 
@@ -6012,6 +6085,13 @@
                     </div>
 
                 </div>
+
+                <!-- Skip button — erscheint nach erster Branche, scrollt aus der Sektion -->
+                <button class="branchen-skip" id="branchenSkip" aria-label="Branchen-Sektion überspringen">
+                    <div class="branchen-skip-bar"><div class="branchen-skip-fill" id="branchenSkipFill" style="width:10%"></div></div>
+                    <span id="branchenSkipLabel">Weiter</span>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+                </button>
 
                 <!-- Progress-Dots (subtle, bottom-center) -->
                 <div class="branchen-dots" id="branchenDots" role="tablist" aria-label="Branchen-Auswahl">
@@ -9265,13 +9345,75 @@
         const phoneVideos = document.querySelectorAll('#bmPhoneScreen video');
         const shots = stack ? stack.querySelectorAll('.branchen-shot') : [];
         const texts = textPanel ? textPanel.querySelectorAll('.branchen-text-item') : [];
+        const skipBtn = document.getElementById('branchenSkip');
+        const skipFill = document.getElementById('branchenSkipFill');
+        const skipLabel = document.getElementById('branchenSkipLabel');
         const TOTAL = 10;
         let currentIdx = 0;
         let ticking = false;
 
+        // ── Skip button: scroll past entire track ──
+        function scrollPastSection() {
+            const rect = track.getBoundingClientRect();
+            const target = window.scrollY + rect.bottom + 1;
+            window.scrollTo({ top: target, behavior: 'smooth' });
+        }
+        if (skipBtn) skipBtn.addEventListener('click', scrollPastSection);
+
+        // ── Click on stack → advance to next branche (or exit at end) ──
+        if (stack) stack.addEventListener('click', (e) => {
+            // Don't fire if user was hovering to scroll the image
+            if (e.target.tagName === 'IMG') return;
+            if (currentIdx >= TOTAL - 1) { scrollPastSection(); return; }
+            const rect = track.getBoundingClientRect();
+            const total = rect.height - window.innerHeight;
+            const targetT = (currentIdx + 1 + 0.1) / TOTAL;
+            const targetY = window.scrollY + rect.top + targetT * total;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+        });
+
+        // Reset scroll on a shot's img instantly
+        function resetShotScroll(shot) {
+            const img = shot && shot.querySelector('img');
+            if (!img) return;
+            img.style.transition = 'none';
+            img.style.transform = 'translateY(0)';
+        }
+
+        // Attach hover-scroll to a shot element
+        function attachHoverScroll(shot) {
+            if (shot._hoverBound) return;
+            shot._hoverBound = true;
+            shot.addEventListener('mouseenter', () => {
+                if (!shot.classList.contains('is-active')) return;
+                const img = shot.querySelector('img');
+                if (!img) return;
+                const containerH = shot.offsetHeight;
+                const naturalRatio = img.naturalWidth > 0 ? img.offsetWidth / img.naturalWidth : 1;
+                const actualImgH = img.naturalHeight * naturalRatio;
+                const dist = Math.max(0, actualImgH - containerH);
+                if (dist < 20) return;
+                const secs = Math.max(5, dist / 90); // ~90px/s — slow, cinematic
+                img.style.transition = `transform ${secs}s linear`;
+                img.style.transform = `translateY(-${dist}px)`;
+            });
+            shot.addEventListener('mouseleave', () => {
+                const img = shot.querySelector('img');
+                if (!img) return;
+                img.style.transition = 'transform 1s ease-out';
+                img.style.transform = 'translateY(0)';
+            });
+        }
+
+        // Attach to all shots immediately
+        shots.forEach(attachHoverScroll);
+
         function setActiveIdx(idx) {
             idx = Math.max(0, Math.min(TOTAL - 1, idx));
             if (idx === currentIdx) return;
+            // Reset scroll on outgoing shot
+            const outgoing = shots[currentIdx];
+            if (outgoing) resetShotScroll(outgoing);
             currentIdx = idx;
             shots.forEach((el, i) => {
                 el.classList.remove('is-active', 'is-past');
@@ -9280,6 +9422,13 @@
             });
             texts.forEach((el, i) => el.classList.toggle('is-active', i === idx));
             dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+            // Update skip button
+            if (skipBtn) {
+                skipBtn.classList.toggle('is-visible', idx >= 1);
+                const pct = Math.round(((idx + 1) / TOTAL) * 100);
+                if (skipFill) skipFill.style.width = pct + '%';
+                if (skipLabel) skipLabel.textContent = idx >= TOTAL - 1 ? 'Weiter scrollen' : 'Überspringen';
+            }
             if (laptopScreen) {
                 laptopScreen.classList.remove('brushstroke');
                 void laptopScreen.offsetWidth;

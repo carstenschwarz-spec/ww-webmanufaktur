@@ -643,8 +643,12 @@
   <div class="container-wide">
     <div class="footer-grid">
       <div class="footer-col-main">
-        <span class="nav-logo"><strong>THE GRIND</strong></span>
-        <h2>Bewegung,<br>die <span class="accent">hält.</span></h2>
+        <div class="footer-studio-name">THE<br><span class="accent">GRIND</span></div>
+        <h2>Hachenburg · Westerwald · seit 2019</h2>
+        <div class="footer-hours-today">
+          <span class="footer-hours-dot" aria-hidden="true"></span>
+          <span>TODAY: <strong id="footerHoursToday">Mo–Fr 06–22 Uhr</strong></span>
+        </div>
         <div class="footer-meta">
           <a href="kurse.html">Kurse</a>
           <a href="trainer.html">Trainer</a>
@@ -653,7 +657,7 @@
         </div>
       </div>
       <div class="footer-contact">
-        <h3>Studio</h3>
+        <h3>Studio-Adresse</h3>
         <address>Bahnhofstraße 14<br>57627 Hachenburg</address>
         <p style="margin-top: 0.75rem;"><a href="tel:+4926623301">+49 2662 33 01</a></p>
         <p><a href="mailto:hallo@thegrind-hachenburg.de">hallo@thegrind-hachenburg.de</a></p>
@@ -712,16 +716,12 @@
     document.querySelector('.pt-flow-shell')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
-  // Round 4: Cursor-following accent dot
-  const cursorDot = document.getElementById('cursorDot');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (cursorDot && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    window.addEventListener('mousemove', (ev) => {
-      cursorDot.style.setProperty('--cx', ev.clientX + 'px');
-      cursorDot.style.setProperty('--cy', ev.clientY + 'px');
-      if (!cursorDot.classList.contains('is-active')) cursorDot.classList.add('is-active');
-    }, { passive: true });
-    window.addEventListener('mouseleave', () => cursorDot.classList.remove('is-active'));
+  // Footer live hours
+  const footerHours = document.getElementById('footerHoursToday');
+  if (footerHours) {
+    const day = new Date().getDay();
+    const hoursMap = { 1:'Mo 06–22 Uhr',2:'Di 06–22 Uhr',3:'Mi 06–22 Uhr',4:'Do 06–22 Uhr',5:'Fr 06–22 Uhr',6:'Sa 08–16 Uhr',0:'So 09–14 Uhr' };
+    footerHours.textContent = hoursMap[day] || 'Mo–Fr 06–22 Uhr';
   }
 </script>
 

@@ -322,8 +322,8 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       TESTIMONIALS — Riesige Anführungszeichen, kein Avatar,
-       kein Karten-Border. Nur Text.
+       TESTIMONIALS — Alternierend links/rechts. Kein Grid, kein Avatar.
+       Riesige Anführungszeichen. Zitat groß, Name sehr klein.
        ═══════════════════════════════════════════════════════════ -->
   <section class="zitate" aria-labelledby="zitate-h">
     <div class="container-wide">
@@ -333,23 +333,26 @@
       </div>
       <div class="zitate-grid">
 
+        <!-- Zitat 1 — links -->
         <article class="zitat-block">
           <p class="zitat-text">
-            „Bastian sagt mir seit 2019, dass meine Wunschfrisur nicht zu meiner Stirn passt. Recht hat er. Und jeder Schnitt seitdem ist besser als mein Wunsch es gewesen wäre."
+            Bastian sagt mir seit 2019, dass meine Wunschfrisur nicht zu meiner Stirn passt. Recht hat er. Jeder Schnitt seitdem ist besser als mein Wunsch es gewesen wäre.
           </p>
           <span class="zitat-autor">Sabine M. · Westerburg · seit 2019</span>
         </article>
 
+        <!-- Zitat 2 — rechts -->
         <article class="zitat-block">
           <p class="zitat-text">
-            „Mira hat die Balayage gerettet, die ich im Ibiza-Urlaub verbockt habe. Drei Stunden, kein Aufseufzen, keine Zusatzkosten. Seitdem gehe ich nirgendwo anders hin."
+            Mira hat die Balayage gerettet, die ich im Ibiza-Urlaub verbockt habe. Drei Stunden, kein Aufseufzen, keine Zusatzkosten. Seitdem gehe ich nirgendwo anders hin.
           </p>
           <span class="zitat-autor">Lena K. · Hachenburg · Balayage-Korrektur</span>
         </article>
 
+        <!-- Zitat 3 — links -->
         <article class="zitat-block">
           <p class="zitat-text">
-            „Royal Shave bei Henrik — 45 Minuten Stille, Heißtuch, altes Solinger Messer. Ich gehe jetzt jeden zweiten Samstag. Nicht weil ich muss. Weil ich will."
+            45 Minuten Stille, Heißtuch, altes Solinger Messer. Ich gehe jetzt jeden zweiten Samstag zu Henrik. Nicht weil ich muss. Weil ich will.
           </p>
           <span class="zitat-autor">Tobias R. · Montabaur · Stammkunde seit 2023</span>
         </article>
@@ -359,37 +362,70 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════
-       SO LÄUFT'S — 4 Schritte, Blush-Hintergrund
+       DAS ATELIER — Neue Sektion, dunkel, editorial split
+       Atmosphärischer Text links, großes Foto rechts.
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="atelier" aria-labelledby="atelier-h">
+    <div class="container-wide">
+      <div class="atelier-grid">
+
+        <div class="atelier-copy">
+          <span class="eyebrow">Das Atelier</span>
+          <h2 id="atelier-h">Wir arbeiten<br>nicht schnell.<br>Wir arbeiten<br>richtig.</h2>
+          <p>Bergfeld ist kein Friseursalon, in dem 14 Stühle gleichzeitig besetzt sind und die Schere klingt wie ein Taktgeber. Wir sind zu viert. Vier Stühle. Vier Menschen, die wissen, was sie tun — und es nicht in 25 Minuten erledigen müssen.</p>
+          <blockquote class="atelier-keyzitat">
+            „Seit 1962 in der Hauptstraße 12. Drei Generationen Schere. Kein einziges Akkord-System."
+          </blockquote>
+          <p>Was bleibt, wenn der Spiegel weggedreht ist: ein Haar, das fällt wie es soll. Eine Farbe, die vier Wochen später noch genauso aussieht. Und das Gefühl, dass jemand wirklich hingeschaut hat.</p>
+        </div>
+
+        <div class="atelier-photo photo photo-grain">
+          <img
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&auto=format&fit=crop&q=85"
+            srcset="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&auto=format&fit=crop&q=85 800w,
+                    https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&auto=format&fit=crop&q=85 1200w"
+            sizes="(min-width: 900px) 50vw, 100vw"
+            alt="Hände beim präzisen Haarschneiden — Friseur Bergfeld Atelier"
+            width="1200" height="1600"
+            loading="lazy" decoding="async">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SO LÄUFT'S — 4 Schritte, Blush-Hintergrund — Editorial Flow
        ═══════════════════════════════════════════════════════════ -->
   <section class="process-steps" aria-labelledby="ablauf-h">
     <div class="container-wide">
       <header class="section-header">
         <div>
-          <span class="eyebrow">Vom Anruf bis zum Spiegel</span>
-          <h2 id="ablauf-h">Vier Schritte.<br>Kein Akkord.</h2>
+          <span class="eyebrow">Vom ersten Wort bis zum Spiegel</span>
+          <h2 id="ablauf-h">Vier Momente.<br>Kein Akkord.</h2>
         </div>
-        <a class="btn-link" href="#kontakt">Jetzt Termin sichern →</a>
+        <a class="btn-link" href="#kontakt">Termin anfragen →</a>
       </header>
       <div class="process-steps-grid">
         <article class="process-step">
           <div class="step-num">01</div>
-          <h3>Termin anfragen</h3>
-          <p>Telefon, WhatsApp oder online. Wir antworten innerhalb von 24 Stunden. Sagen Sie, was Sie sich vorstellen — oder kommen Sie blank.</p>
+          <h3>Anfragen</h3>
+          <p>Telefon, WhatsApp oder das Formular. Wir antworten innerhalb von 24 Stunden. Sagen Sie, was Sie sich vorstellen — oder kommen Sie blank.</p>
         </article>
         <article class="process-step">
           <div class="step-num">02</div>
-          <h3>Beratung</h3>
-          <p>Erst Gespräch, dann Schere. Wir schauen Haar, Gesichtsform, Alltag, Pflege-Routine. Wenn etwas nicht passt, sagen wir's — auch wenn's Ihr Wunsch war.</p>
+          <h3>Erst das Gespräch</h3>
+          <p>Vor der Schere kommt das Hinschauen. Haar, Gesichtsform, Alltag. Wenn etwas nicht geht, sagen wir's — auch wenn's Ihr Wunsch war.</p>
         </article>
         <article class="process-step">
           <div class="step-num">03</div>
-          <h3>Schnitt &amp; Color</h3>
-          <p>60 Minuten Schnitt. 90–150 Minuten für Color. Inklusive Wäsche, Pflege, Kopfmassage. Ohne Hetze — auch wenn's länger dauert als geplant.</p>
+          <h3>Schnitt oder Color</h3>
+          <p>60 Minuten Mindestzeit für Damenschnitt. 90–150 für Color. Inklusive Wäsche, Kopfmassage. Ohne Hetze, auch wenn es länger dauert.</p>
         </article>
         <article class="process-step">
           <div class="step-num">04</div>
-          <h3>Pflege-Plan</h3>
-          <p>Beim Verabschieden: zwei Sätze. Wie waschen, wie föhnen, wann wiederkommen. Keine Verkaufs-Show — nur das, was wirklich hilft.</p>
+          <h3>Zwei Sätze mit nach Hause</h3>
+          <p>Wie waschen. Wie föhnen. Wann wiederkommen. Keine Produktempfehlung, die auf Provision zählt — nur das, was wirklich hilft.</p>
         </article>
       </div>
     </div>
@@ -693,31 +729,33 @@
     </div>
   </section>
 
-  <!-- ─── Mini-Timeline ─── -->
+  <!-- ─── Chronik — Editorial Timeline ─── -->
   <section class="timeline" aria-labelledby="timeline-h">
     <div class="container-wide">
-      <span class="eyebrow">Drei Generationen</span>
-      <h2 id="timeline-h" style="font-size: var(--fs-h2); line-height: 1.05; margin-block: 0.5rem 0; max-width: 24ch;">Seit 1962 in der<br>Hauptstraße 12.</h2>
+      <div class="timeline-head">
+        <span class="eyebrow">Drei Generationen</span>
+        <h2 id="timeline-h">Seit 1962<br>in der Hauptstraße 12.</h2>
+      </div>
       <ol class="timeline-track">
         <li class="timeline-step">
-          <div class="timeline-year">1962</div>
+          <span class="timeline-year">1962</span>
           <h3>Karl-Heinz Bergfeld</h3>
-          <p>Friseurmeister, Salon-Gründung. Drei Stühle, ein Wartebänkchen.</p>
+          <p>Friseurmeister. Salon-Gründung. Drei Stühle, ein Wartebänkchen, ein Westerburg.</p>
         </li>
         <li class="timeline-step">
-          <div class="timeline-year">1987</div>
+          <span class="timeline-year">1987</span>
           <h3>Werner übernimmt</h3>
-          <p>Color-Abteilung kommt dazu. Erste Damen-Color-Termine in Westerburg.</p>
+          <p>Color-Abteilung kommt dazu. Erste Damen-Balayage im Westerwald.</p>
         </li>
         <li class="timeline-step">
-          <div class="timeline-year">2009</div>
-          <h3>Bastian, dritte Generation</h3>
-          <p>Salon-Renovierung. Calligraphy Cut. Vinylplattenspieler statt Radio.</p>
+          <span class="timeline-year">2009</span>
+          <h3>Bastian — III. Generation</h3>
+          <p>Calligraphy Cut. Olaplex. Vinylplattenspieler statt Radio. Vier Stühle statt drei.</p>
         </li>
         <li class="timeline-step">
-          <div class="timeline-year">Heute</div>
+          <span class="timeline-year">Heute</span>
           <h3>Vier Hände, ein Atelier</h3>
-          <p>Bastian, Mira, Henrik, Anna. 60 Termine pro Woche, kein Akkord.</p>
+          <p>Bastian, Mira, Henrik, Anna. Sechzig Termine die Woche. Kein einziger in Eile.</p>
         </li>
       </ol>
     </div>
@@ -728,8 +766,8 @@
     <div class="container-wide kontakt-strip-inner">
       <div class="kontakt-block">
         <span class="eyebrow">Salon</span>
+        <span class="kontakt-salon-name">Friseur Bergfeld</span>
         <address>
-          Friseur Bergfeld<br>
           Hauptstraße 12<br>
           56457 Westerburg<br>
           <a href="https://maps.google.com/?q=Hauptstraße+12+Westerburg" target="_blank" rel="noopener">Auf Google Maps öffnen →</a>
@@ -738,13 +776,13 @@
       <div class="kontakt-block">
         <span class="eyebrow">Öffnungszeiten</span>
         <p>
-          Di–Fr · 09:00 – 18:30<br>
+          Di – Fr · 09:00 – 18:30<br>
           Sa · 08:30 – 14:00<br>
-          Mo &amp; So · geschlossen
+          Mo und So · geschlossen
         </p>
       </div>
       <div class="kontakt-block">
-        <span class="eyebrow">Termin</span>
+        <span class="eyebrow">Termin anfragen</span>
         <p>
           <a href="tel:+4926635553120">+49 2663 555 31 20</a><br>
           <a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a>
@@ -758,31 +796,41 @@
 
 </main>
 
-<!-- ─── Footer ─── -->
+<!-- ─── Footer — Minimal zentriert ─── -->
 <footer class="footer">
   <div class="container-wide">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <span class="nav-logo">Friseur <strong>Bergfeld</strong></span>
-        <p class="footer-tagline">Boutique-Salon im Westerwald. Drei Generationen Schere.</p>
-        <div class="footer-meta-row">
-          <a href="leistungen.html">Leistungen</a>
-          <a href="team.html">Team</a>
-          <a href="galerie.html">Galerie</a>
-          <a href="https://instagram.com/friseur.bergfeld" target="_blank" rel="noopener">Instagram</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h3>Salon</h3>
-        <address>Hauptstraße 12<br>56457 Westerburg</address>
-        <p><a href="tel:+4926635553120">+49 2663 555 31 20</a></p>
-        <p><a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a></p>
-      </div>
+
+    <!-- Wordmark -->
+    <span class="footer-wordmark">Friseur <strong>Bergfeld</strong></span>
+    <span class="footer-sub">Boutique-Salon · Westerburg · Westerwald · seit 1962</span>
+
+    <hr class="footer-hairline">
+
+    <!-- Adresse + Kontakt in einer ruhigen Zeile -->
+    <address class="footer-details">
+      Hauptstraße 12 · 56457 Westerburg<br>
+      <a href="tel:+4926635553120">+49 2663 555 31 20</a> ·
+      <a href="mailto:hallo@friseur-bergfeld.de">hallo@friseur-bergfeld.de</a><br>
+      Di – Fr 09:00 – 18:30 · Sa 08:30 – 14:00
+    </address>
+
+    <!-- Social — reine Text-Links, keine Icons -->
+    <nav class="footer-social" aria-label="Social-Links">
+      <a href="leistungen.html">Leistungen</a>
+      <a href="team.html">Team</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="https://instagram.com/friseur.bergfeld" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+
+    <!-- Legal -->
+    <div class="footer-legal">
+      <span>© 2026 Friseur Bergfeld</span>
+      &ensp;·&ensp;
+      <a href="#" onclick="openLegal('impressum');return false;">Impressum</a>
+      &ensp;·&ensp;
+      <a href="#" onclick="openLegal('datenschutz');return false;">Datenschutz</a>
     </div>
-    <div class="footer-base">
-      <span>© 2026 Friseur Bergfeld.</span>
-      <span><a href="#" onclick="openLegal('impressum');return false;">Impressum</a> · <a href="#" onclick="openLegal('datenschutz');return false;">Datenschutz</a></span>
-    </div>
+
   </div>
 </footer>
 

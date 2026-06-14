@@ -142,16 +142,37 @@
   .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease-out); }
   .photo:hover img { transform: scale(1.03); }
 
-  /* Footer */
-  .footer { background: var(--color-bg); color: var(--color-text-light); padding: clamp(3rem, 5vw, 4rem) 0 1.5rem; }
-  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--color-border); }
-  @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 3rem; align-items: start; } }
-  .footer h3 { font-family: var(--font-body); font-size: var(--fs-tag); text-transform: uppercase; letter-spacing: 0.22em; color: rgba(250,247,244,0.5); margin-bottom: 0.875rem; font-weight: 600; }
-  .footer-tagline { font-family: var(--font-display); font-style: italic; font-size: clamp(1.5rem, 2.4vw, 2rem); margin-top: 0.75rem; max-width: 22ch; line-height: 1.2; font-weight: 400; }
-  .footer-tagline .accent { color: var(--color-accent); }
-  .footer p, .footer address { font-style: normal; line-height: 1.7; color: rgba(250,247,244,0.72); font-size: var(--fs-small); }
+  /* Footer — cream editorial, centered store-name */
+  .footer {
+    background: var(--color-surface-warm);
+    color: var(--color-text);
+    padding: clamp(4rem, 7vw, 6rem) 0 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .footer-centerpiece {
+    text-align: center;
+    padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  }
+  .footer-store-name {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.0;
+    color: var(--color-text); letter-spacing: -0.03em;
+  }
+  .footer-store-name em { color: var(--color-accent); }
+  .footer-love-tag {
+    display: block; margin-top: 0.75rem;
+    font-family: var(--font-body); font-size: var(--fs-tag);
+    text-transform: uppercase; letter-spacing: 0.32em;
+    color: var(--color-accent); font-weight: 600;
+  }
+  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 600px) { .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; align-items: start; } }
+  .footer h3 { font-family: var(--font-body); font-size: var(--fs-tag); text-transform: uppercase; letter-spacing: 0.22em; color: var(--text-muted); margin-bottom: 0.875rem; font-weight: 600; }
+  .footer p, .footer address { font-style: normal; line-height: 1.75; color: var(--text-secondary); font-size: var(--fs-small); }
   .footer a:hover { color: var(--color-accent); }
-  .footer-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; font-size: var(--fs-small); color: rgba(250,247,244,0.45); }
+  .footer-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid var(--color-border); font-size: var(--fs-small); color: var(--text-muted); }
 }
 
 @layer utilities {
@@ -786,6 +807,196 @@
   .timeline-year { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; font-weight: 500; color: var(--color-accent); line-height: 1; }
   .timeline-item h3 { font-family: var(--font-display); font-style: italic; font-size: 1.25rem; font-weight: 500; margin: 0.375rem 0 0.375rem; }
   .timeline-item p { color: var(--text-secondary); font-size: var(--fs-small); line-height: 1.65; max-width: 60ch; }
+
+  /* ============================================================ */
+  /* TESTIMONIALS — Editorial, kein Avatar, kein Stern-Grid       */
+  /* ============================================================ */
+  .testimonials-section {
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+  .testimonials-section.on-cream { background: var(--color-surface-warm); }
+  .testimonials-section.on-dark { background: var(--color-bg); color: var(--color-text-light); }
+  .testimonials-stack {
+    display: grid; gap: 0;
+    max-width: 860px; margin: 0 auto;
+  }
+  .testimonial-block {
+    padding: clamp(2rem, 4vw, 3rem) 0;
+    border-bottom: 1px solid var(--color-border);
+    display: grid; gap: 1rem;
+    position: relative;
+  }
+  .testimonial-block:first-child { border-top: 1px solid var(--color-border); }
+  .testimonial-block.on-dark-bg { border-color: rgba(250,247,244,0.12); }
+  .testimonial-block.on-dark-bg:first-child { border-top-color: rgba(250,247,244,0.12); }
+  .testimonial-quote-mark {
+    font-family: var(--font-display); font-style: italic;
+    font-size: clamp(3.5rem, 6vw, 5rem); line-height: 0.6;
+    color: var(--color-accent); opacity: 0.55;
+    line-height: 1; margin-bottom: -0.5rem;
+    display: block;
+  }
+  .testimonial-text {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    line-height: 1.4; color: var(--color-text);
+    max-width: 44ch;
+  }
+  .testimonials-section.on-dark .testimonial-text { color: var(--color-text-light); }
+  .testimonial-text em { color: var(--color-accent); font-style: italic; }
+  .testimonial-attrib {
+    font-family: var(--font-body); font-size: 0.6875rem;
+    text-transform: uppercase; letter-spacing: 0.24em;
+    color: var(--text-muted); font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .testimonials-section.on-dark .testimonial-attrib { color: rgba(250,247,244,0.45); }
+  .testimonial-attrib em {
+    font-family: var(--font-display); font-style: italic;
+    color: var(--color-accent); text-transform: none; letter-spacing: 0;
+    font-size: 0.875rem; font-weight: 500;
+  }
+
+  /* ============================================================ */
+  /* STORE VISIT — warm editorial, not a standard contact section */
+  /* ============================================================ */
+  .store-visit-section {
+    padding-block: 0;
+    background: var(--color-surface);
+  }
+  .store-visit-grid {
+    display: grid; grid-template-columns: 1fr; min-height: 540px;
+  }
+  @media (min-width: 900px) {
+    .store-visit-grid { grid-template-columns: 55% 45%; }
+  }
+  .store-visit-image {
+    position: relative; overflow: hidden;
+    min-height: 340px; background: var(--color-surface-warm);
+  }
+  .store-visit-image img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 10s ease-out;
+  }
+  .store-visit-section:hover .store-visit-image img { transform: scale(1.04); }
+  .store-visit-content {
+    background: var(--color-surface-warm);
+    padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+    display: flex; flex-direction: column; justify-content: center; gap: 1.75rem;
+  }
+  .store-visit-tagline {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+    line-height: 1.1; color: var(--color-text);
+    max-width: 24ch;
+  }
+  .store-visit-tagline em { color: var(--color-accent); }
+  .store-visit-note {
+    font-size: var(--fs-body); color: var(--text-secondary);
+    line-height: 1.75; max-width: 44ch; font-style: italic;
+  }
+  .store-hours-table {
+    width: 100%; border-collapse: collapse;
+    margin: 0.25rem 0;
+  }
+  .store-hours-table tr {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .store-hours-table tr:last-child { border-bottom: none; }
+  .store-hours-table td {
+    padding: 0.625rem 0;
+    font-size: var(--fs-small); color: var(--text-secondary);
+    vertical-align: baseline;
+  }
+  .store-hours-table td:first-child {
+    font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--text-muted); font-weight: 600; padding-right: 1.5rem;
+    white-space: nowrap;
+  }
+  .store-hours-table td .hours-italic {
+    font-family: var(--font-display); font-style: italic; font-size: 1rem;
+    color: var(--color-text);
+  }
+  .store-visit-address {
+    font-size: var(--fs-small); color: var(--text-secondary);
+    line-height: 1.65;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.25rem;
+  }
+  .store-visit-address strong {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 1.0625rem; color: var(--color-text);
+    display: block; margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+
+  /* ============================================================ */
+  /* INSTAGRAM — Editorially reframed, not generic grid           */
+  /* ============================================================ */
+  .ig-section {
+    padding-block: clamp(3.5rem, 6vw, 5rem);
+    background: var(--color-bg);
+  }
+  .ig-section-header {
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    align-items: flex-end; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .ig-section-header .ig-handle {
+    font-family: var(--font-body); font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.28em; font-weight: 600;
+    color: var(--color-accent); display: block; margin-bottom: 0.375rem;
+  }
+  .ig-section-header h2 {
+    font-family: var(--font-display); font-style: italic; font-weight: 400;
+    font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+    color: var(--color-text-light); line-height: 1.0;
+  }
+  .ig-section-header h2 em { color: var(--color-accent); }
+  .ig-editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    gap: 4px;
+  }
+  .ig-editorial-cell {
+    overflow: hidden; background: var(--color-surface-warm);
+    aspect-ratio: 1/1; position: relative;
+  }
+  /* Feature the 1st image larger */
+  .ig-editorial-cell:nth-child(1) {
+    grid-column: 1 / 3; grid-row: 1 / 3; aspect-ratio: 1/1;
+  }
+  .ig-editorial-cell:nth-child(2) { grid-column: 3; grid-row: 1; }
+  .ig-editorial-cell:nth-child(3) { grid-column: 4; grid-row: 1; }
+  .ig-editorial-cell:nth-child(4) { grid-column: 5; grid-row: 1; }
+  .ig-editorial-cell:nth-child(5) { grid-column: 6; grid-row: 1; }
+  .ig-editorial-cell:nth-child(6) { grid-column: 3 / 5; grid-row: 2; aspect-ratio: 2/1; }
+  .ig-editorial-cell:nth-child(7) { grid-column: 5 / 7; grid-row: 2; aspect-ratio: 2/1; }
+  .ig-editorial-cell img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s var(--ease-out);
+    display: block;
+  }
+  .ig-editorial-cell:hover img { transform: scale(1.06); }
+  .ig-editorial-caption {
+    position: absolute; inset: 0;
+    display: flex; align-items: flex-end;
+    padding: 0.625rem 0.75rem;
+    background: linear-gradient(to top, rgba(26,18,12,0.72) 0%, transparent 50%);
+    opacity: 0; transition: opacity 0.3s ease;
+    font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--color-text-light); font-weight: 600;
+  }
+  .ig-editorial-cell:hover .ig-editorial-caption { opacity: 1; }
+  @media (max-width: 700px) {
+    .ig-editorial-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .ig-editorial-cell:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
+    .ig-editorial-cell:nth-child(6) { grid-column: 1 / 3; }
+    .ig-editorial-cell:nth-child(7) { grid-column: 3 / 4; }
+  }
 
   /* ============================================================ */
   /* ROUND 1 ENHANCEMENTS — Boutique Liveliness                   */
@@ -2072,11 +2283,11 @@
     transform: rotate(45deg);
   }
 
-  /* Footer-Signatur (Anna · Hachenburg seit 2019) */
+  /* Footer-Signatur — cream footer context */
   .footer-signature {
     display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap;
     padding-top: 1.25rem; margin-top: 1rem;
-    border-top: 1px solid rgba(250,250,250,0.18);
+    border-top: 1px solid var(--color-border);
   }
   .footer-signature .sig-name {
     font-family: var(--font-display); font-style: italic;
@@ -2085,7 +2296,7 @@
   }
   .footer-signature .sig-meta {
     font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.22em;
-    color: rgba(250,250,250,0.55); font-weight: 600; line-height: 1.5;
+    color: var(--text-muted); font-weight: 600; line-height: 1.5;
   }
   .footer-signature .sig-meta em {
     font-family: var(--font-display); font-style: italic; color: var(--color-accent);

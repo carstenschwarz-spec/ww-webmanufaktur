@@ -112,7 +112,7 @@
     letter-spacing: var(--letter-tight);  /* -0.05em — eng = editoriales Magazin */
   }
 
-  p { line-height: 1.6; }
+  p { line-height: 1.8; }
 
   ::selection { background: var(--accent); color: var(--color-bg); }
 
@@ -381,12 +381,93 @@
   }
   .nav-overlay.is-open { opacity: 1; pointer-events: auto; }
 
-  /* Footer — Editorial asymmetric (2-col + base bar) */
+  /* Footer — MINIMAL ZENTRIERT (redesigned)
+     Salon-Name riesig in Cormorant Italic, zentriert.
+     Darunter: Adresse + Zeiten in einer sehr feinen Zeile.
+     Social: reine Text-Links, keine Icons.
+     Kein 2-Spalten-Grid. Alles zentriert, alles ruhig. */
   .footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--hairline);
-    padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+    padding: clamp(5rem, 10vw, 8rem) 0 clamp(2rem, 4vw, 3rem);
+    text-align: center;
   }
+  .footer-wordmark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(3rem, 9vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  }
+  .footer-wordmark strong {
+    font-weight: 400;
+    color: var(--accent);
+    font-style: normal;
+  }
+  .footer-sub {
+    font-size: var(--fs-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .footer-hairline {
+    height: 1px;
+    background: var(--hairline);
+    border: 0;
+    margin-inline: auto;
+    max-width: 480px;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .footer-details {
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    font-style: normal;
+  }
+  .footer-details a {
+    color: var(--text-secondary);
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .footer-details a:hover { color: var(--accent); }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    flex-wrap: wrap;
+  }
+  .footer-social a {
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color var(--dur-fast) var(--ease-out);
+    padding-block: 0.5rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .footer-social a:hover { color: var(--accent); }
+  .footer-legal {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--hairline);
+    padding-top: 1.5rem;
+    opacity: 0.65;
+  }
+  .footer-legal a {
+    color: inherit;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .footer-legal a:hover { color: var(--accent); opacity: 1; }
+
+  /* Legacy .footer-grid — hide, replaced by new footer structure */
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -475,22 +556,150 @@
     background-position: 0 0, 1px 2px;
   }
 
-  /* Anchor: Kontakt-Strip (used on multiple pages) */
+  /* ─── DAS ATELIER — Neue Sektion (dunkel, editorial split) ─── */
+  /* Atmosphärischer Text links, großes Foto rechts.
+     Dunkler Hintergrund. Key-Zitat in Accent-Color. */
+  .atelier {
+    background: var(--color-bg);
+    color: var(--text-primary);
+    padding-block: clamp(6rem, 12vw, 10rem);
+    border-block: 1px solid rgba(184,144,106,0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  /* Subtle warm glow top-left */
+  .atelier::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 50%;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(184,144,106,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .atelier-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  @media (min-width: 900px) {
+    .atelier-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(4rem, 8vw, 7rem);
+    }
+  }
+  .atelier-copy {
+    max-width: 54ch;
+  }
+  .atelier-copy .eyebrow {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+  }
+  .atelier-copy h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .atelier-copy p {
+    color: rgba(245,237,232,0.72);
+    line-height: 1.8;
+    font-size: var(--fs-body-lg);
+    margin-bottom: 1.25rem;
+  }
+  .atelier-keyzitat {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+    line-height: 1.35;
+    color: var(--color-accent);
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 2px solid var(--color-accent);
+    margin-block: 2rem;
+    max-width: 46ch;
+  }
+  .atelier-photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+  }
+  @media (min-width: 900px) {
+    .atelier-photo {
+      aspect-ratio: auto;
+      min-height: 520px;
+    }
+  }
+  .atelier-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    filter: grayscale(0.2) contrast(1.06);
+    transition: transform 1.4s var(--ease-out);
+  }
+  .atelier-photo:hover img {
+    transform: scale(1.03);
+  }
+  /* Subtle gradient fade on bottom edge */
+  .atelier-photo::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(28,20,16,0.5), transparent);
+    pointer-events: none;
+  }
+
+  /* ─── Kontakt-Strip — aufgewertet mit Friseur-DNA ─── */
   .kontakt-strip {
     background: var(--bg-secondary);
     border-block: 1px solid var(--hairline);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Warm glow behind CTA block */
+  .kontakt-strip::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    background: radial-gradient(ellipse at right center, rgba(184,144,106,0.06) 0%, transparent 70%);
+    pointer-events: none;
   }
   .kontakt-strip-inner {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.75rem;
-    padding-block: clamp(2.5rem, 5vw, 4rem);
+    padding-block: clamp(3rem, 6vw, 5rem);
+    position: relative;
+    z-index: 1;
   }
   .kontakt-block .eyebrow { margin-bottom: 0.5rem; }
-  .kontakt-block p, .kontakt-block address { font-style: normal; color: var(--text-secondary); line-height: 1.7; font-size: var(--fs-body); }
+  .kontakt-block p, .kontakt-block address { font-style: normal; color: var(--text-secondary); line-height: 1.8; font-size: var(--fs-body); }
   .kontakt-block a:not(.btn) { color: var(--text-primary); transition: color var(--dur-fast); }
   .kontakt-block a:not(.btn):hover { color: var(--accent); }
-  .kontakt-block .kontakt-cta { margin-top: 1rem; }
+  .kontakt-block .kontakt-cta { margin-top: 1.25rem; }
+  /* Salon-Name im Kontakt-Strip als typografisches Zeichen */
+  .kontakt-salon-name {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 0.875rem;
+  }
 }
 
 /* ─── Utilities Layer ─── */
@@ -736,6 +945,8 @@
   }
   .speisekarte-kopf h2 {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
     color: var(--text-primary);
   }
@@ -840,6 +1051,8 @@
   }
   .team-magazine-kopf h2 {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
     color: var(--color-text);
   }
@@ -864,19 +1077,28 @@
   }
   .team-magazine-link:hover { opacity: 0.7; }
 
-  /* Layout: 1 große Karte links + 3 kleinere rechts */
+  /* Layout: Bastian groß links (span 2 rows), 3 kleinere rechts.
+     Anna bekommt volle 2-Spalten-Breite unten auf Desktop. */
   .team-mag-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   @media (min-width: 900px) {
     .team-mag-grid {
-      grid-template-columns: 1.5fr 0.75fr 0.75fr;
-      grid-template-rows: auto auto;
+      grid-template-columns: 1.6fr 0.7fr 0.7fr;
+      grid-template-rows: 1fr auto;
+      gap: 1rem;
     }
     .team-mag-primary {
       grid-row: span 2;
+    }
+    /* Anna (3rd direct child — the standalone card): wider, landscape aspect */
+    .team-mag-grid > article.team-mag-card {
+      grid-column: span 2;
+    }
+    .team-mag-grid > article.team-mag-card .team-mag-photo-wrap {
+      aspect-ratio: 16 / 7;
     }
   }
 
@@ -971,8 +1193,9 @@
   }
 
   /* ═══════════════════════════════════════════════════════
-     TESTIMONIALS — Kein Avatar, kein Karten-Border
-     Riesige Anführungszeichen, Zitat groß, Name klein.
+     TESTIMONIALS — ALTERNATING ROWS. Kein Karten-Grid.
+     Zitat 1: links bündig. Zitat 2: rechts bündig. Etc.
+     Riesiges Anführungszeichen in Accent, kein Avatar, kein Border.
      ═══════════════════════════════════════════════════════ */
   .zitate {
     padding-block: clamp(5rem, 10vw, 8rem);
@@ -982,7 +1205,7 @@
   .zitate-kopf {
     display: grid;
     gap: 0.5rem;
-    margin-bottom: clamp(3rem, 6vw, 5rem);
+    margin-bottom: clamp(4rem, 8vw, 6rem);
   }
   .zitate-kopf .karte-label {
     font-size: var(--fs-eyebrow);
@@ -995,54 +1218,89 @@
   }
   .zitate-kopf h2 {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
     max-width: 20ch;
   }
 
+  /* Stack vertically, alternating left/right alignment */
   .zitate-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: clamp(3rem, 6vw, 5rem);
-  }
-  @media (min-width: 768px) {
-    .zitate-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    gap: 0;
   }
 
   .zitat-block {
     position: relative;
-    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid rgba(184,144,106,0.12);
+    max-width: 68ch;
   }
+  .zitat-block:last-child {
+    border-bottom: 1px solid rgba(184,144,106,0.12);
+  }
+  /* Even items: push right on desktop */
+  @media (min-width: 768px) {
+    .zitat-block:nth-child(even) {
+      margin-inline-start: auto;
+      text-align: right;
+    }
+    .zitat-block:nth-child(even)::before {
+      left: auto;
+      right: -0.25rem;
+    }
+    .zitat-block:nth-child(even) .zitat-autor {
+      justify-content: flex-end;
+    }
+  }
+
   /* Riesige Anführungszeichen als Pseudo-Element */
   .zitat-block::before {
     content: "\201C";
     font-family: var(--font-display);
     font-style: italic;
-    font-size: clamp(5rem, 10vw, 8rem);
-    line-height: 0.8;
+    font-size: clamp(6rem, 12vw, 9rem);
+    line-height: 0.75;
     color: var(--color-accent);
-    opacity: 0.22;
+    opacity: 0.18;
     position: absolute;
-    top: 0;
+    top: 1.5rem;
     left: -0.25rem;
     pointer-events: none;
+    letter-spacing: -0.05em;
   }
   .zitat-text {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
-    line-height: 1.45;
+    font-size: clamp(1.375rem, 2.8vw, 2.125rem);
+    line-height: 1.4;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     position: relative;
     z-index: 1;
+    padding-top: 1.5rem;
   }
   .zitat-autor {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
     font-family: var(--font-body);
     font-size: var(--fs-eyebrow);
     text-transform: uppercase;
     letter-spacing: var(--letter-wide);
     color: var(--color-text-muted);
     font-weight: 500;
+  }
+  /* Decorative dash before author */
+  .zitat-autor::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--color-accent);
+    opacity: 0.5;
+    flex-shrink: 0;
   }
 
   /* ═══════════════════════════════════════════════════════
@@ -1095,6 +1353,8 @@
   }
   .section-header h2 {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
   }
 
@@ -1355,8 +1615,10 @@
   }
   .service-group-header h2 {
     font-size: var(--fs-h1);
+    font-style: italic;
     line-height: 1.0;
     margin-bottom: 0.75rem;
+    letter-spacing: -0.03em;
   }
   .service-list {
     display: grid;
@@ -1419,6 +1681,8 @@
   .faq { padding-block: clamp(4rem, 8vw, 7rem); }
   .faq-heading {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
     margin-block: 0.5rem 2.5rem;
   }
@@ -1515,6 +1779,8 @@
   .werte { padding-block: clamp(4rem, 8vw, 7rem); background: var(--bg-secondary); border-block: 1px solid var(--hairline); }
   .werte-heading {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
     margin-block: 0.5rem 2.5rem;
     max-width: 18ch;
@@ -1537,6 +1803,8 @@
   .vn-section { padding-block: clamp(3rem, 6vw, 5rem); }
   .vn-section-heading {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     line-height: 1.0;
     margin-block: 0.5rem 3rem;
   }
@@ -1740,9 +2008,11 @@
     border-left: 2px solid var(--accent-warm, var(--accent));
   }
 
-  /* ─── Process-Step Numbered — NEUE FARBWELT ─── */
+  /* ─── Process-Steps — EDITORIAL FLOW (redesigned) ─── */
+  /* Kein Generic How-It-Works Grid. Stattdessen: nummerierte Editorial-Reihe
+     mit großer Ordinalzahl, Titel italic, Text luftig. Verbindungslinie auf Desktop. */
   .process-steps {
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(5rem, 10vw, 8rem);
     background: var(--color-surface);
     color: var(--color-text);
     border-block: 1px solid var(--color-border);
@@ -1750,40 +2020,87 @@
   .process-steps .eyebrow { color: var(--color-accent); }
   .process-steps .section-header h2 { color: var(--color-text); }
   .process-steps .btn-link { color: var(--color-accent); }
-  .process-step { border-top-color: var(--color-border); }
-  .process-step h3 { color: var(--color-text); }
-  .process-step p { color: var(--color-text-muted); }
-  .process-step .step-num { color: var(--color-accent); }
+
+  /* Connecting line across all 4 steps on desktop */
   .process-steps-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: clamp(2.5rem, 5vw, 3.5rem);
-  }
-  @media (min-width: 700px) { .process-steps-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1000px) { .process-steps-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
-  .process-step {
-    border-top: 1px solid var(--hairline);
-    padding-top: 1.5rem;
+    gap: 0;
+    margin-top: clamp(3rem, 6vw, 5rem);
     position: relative;
   }
+  @media (min-width: 800px) {
+    .process-steps-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 2rem;
+    }
+    /* Horizontal rule through the ordinal numbers */
+    .process-steps-grid::before {
+      content: "";
+      position: absolute;
+      top: 1.625rem; /* aligned with center of ordinal number */
+      left: calc(var(--gutter, 1.5rem) * 0.5);
+      right: calc(var(--gutter, 1.5rem) * 0.5);
+      height: 1px;
+      background: var(--color-border);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  .process-step {
+    position: relative;
+    padding: 0 0 clamp(2.5rem, 5vw, 3.5rem) 0;
+    z-index: 1;
+  }
+  /* Mobile: horizontal separator between steps */
+  .process-step + .process-step {
+    border-top: 1px solid var(--color-border);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  @media (min-width: 800px) {
+    .process-step + .process-step {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+
+  /* Ordinal: very large italic, barely opaque — editorial signature */
   .process-step .step-num {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: 1;
-    color: var(--accent);
+    font-style: italic;
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--color-accent);
+    opacity: 0.55;
+    display: block;
+    margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+    /* White halo so connecting line doesn't bleed through the number */
+    background: var(--color-surface);
+    width: max-content;
+    padding-right: 0.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .process-step h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.375rem, 2.2vw, 1.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
     margin-bottom: 0.75rem;
   }
-  .process-step h3 {
-    font-size: var(--fs-h3);
-    font-family: var(--font-display);
-    margin-bottom: 0.625rem;
-    color: var(--text-primary);
-  }
+
   .process-step p {
-    color: var(--text-secondary);
-    line-height: 1.6;
+    color: var(--color-text-muted);
+    line-height: 1.75;
     font-size: var(--fs-body);
+    max-width: 32ch;
   }
 
   /* ─── Pflege-Produkte (Shop-Teaser) ─── */
@@ -2415,7 +2732,7 @@
   .sv-zahl {
     display: block;
     font-family: var(--font-display);
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
     line-height: 1;
     letter-spacing: var(--letter-tight);
     font-style: italic;
@@ -2600,64 +2917,108 @@
     outline-offset: -2px;
   }
 
-  /* ─── Since-1962 Mini Timeline ─── */
+  /* ─── Since-1962 Timeline — EDITORIAL UPGRADE ─── */
+  /* Dunkler Hintergrund, Jahr sehr groß in Accent, Text klein darunter.
+     Fühlt sich an wie eine Chronik, nicht wie ein Feature-Grid. */
   .timeline {
-    padding-block: clamp(3rem, 5vw, 4rem);
-    border-top: 1px solid var(--hairline);
-    border-bottom: 1px solid var(--hairline);
+    padding-block: clamp(5rem, 10vw, 8rem);
+    background: var(--color-bg);
+    color: var(--text-primary);
+    border-block: 1px solid rgba(184,144,106,0.1);
   }
+  .timeline-head {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+    max-width: 52ch;
+  }
+  .timeline-head .eyebrow { color: var(--color-accent); }
+  .timeline-head h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--fs-h1);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-top: 0.5rem;
+  }
+
   .timeline-track {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1.5rem;
-    margin-top: clamp(2rem, 4vw, 3rem);
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
     position: relative;
   }
   @media (min-width: 700px) {
     .timeline-track { grid-template-columns: repeat(4, 1fr); }
   }
+  /* Connecting hairline above all steps */
   .timeline-track::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 1.875rem; /* center of the year number baseline */
     left: 0; right: 0;
     height: 1px;
-    background: var(--hairline);
+    background: rgba(184,144,106,0.2);
+    z-index: 0;
   }
+
   .timeline-step {
-    padding-top: 1.5rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem) 0;
+    border-left: 1px solid rgba(184,144,106,0.15);
     position: relative;
+    z-index: 1;
   }
+  .timeline-step:first-child { border-left: 0; padding-left: 0; }
+  @media (max-width: 699px) {
+    .timeline-step:nth-child(3) { border-left: 0; padding-left: 0; }
+  }
+
+  /* Dot on timeline */
   .timeline-step::before {
     content: "";
     position: absolute;
-    top: -4.5px; left: 0;
-    width: 8px; height: 8px;
+    top: 1.625rem;
+    left: -5px;
+    width: 9px; height: 9px;
     border-radius: 50%;
     background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(184,144,106,0.18);
+    z-index: 2;
   }
+  .timeline-step:first-child::before { left: 0; }
+
   .timeline-year {
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 2.4vw, 2rem);
-    color: var(--text-primary);
-    line-height: 1;
-    margin-bottom: 0.625rem;
+    font-style: italic;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    color: var(--accent);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    display: block;
+    padding-left: clamp(0.75rem, 2vw, 1.25rem);
   }
+  .timeline-step:first-child .timeline-year { padding-left: 0; }
+
   .timeline-step h3 {
     font-family: var(--font-body);
-    font-size: var(--fs-body);
-    font-weight: 500;
+    font-size: var(--fs-small);
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.375rem;
-    letter-spacing: 0;
+    letter-spacing: 0.01em;
     line-height: 1.3;
+    text-transform: uppercase;
+    padding-left: clamp(0.75rem, 2vw, 1.25rem);
   }
+  .timeline-step:first-child h3 { padding-left: 0; }
+
   .timeline-step p {
     color: var(--text-secondary);
     font-size: var(--fs-small);
-    line-height: 1.55;
+    line-height: 1.65;
     max-width: 22ch;
+    padding-left: clamp(0.75rem, 2vw, 1.25rem);
   }
+  .timeline-step:first-child p { padding-left: 0; }
 
   /* ─── Inline micro-quote (sprinkled inside leistungen cards) ─── */
   .micro-quote {
@@ -3693,6 +4054,8 @@
   }
   .pflege-wissen-head h2 {
     font-size: var(--fs-h1);
+    font-style: italic;
+    letter-spacing: -0.03em;
     margin-block: 0.5rem 0.875rem;
   }
 
