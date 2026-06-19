@@ -503,7 +503,7 @@
             background: var(--white);
             line-height: 1.47;
             font-weight: 400;
-            overflow-x: clip; /* clip statt hidden: kein scroll-container → iOS sticky funktioniert */
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             /* iOS bottom safe area (home indicator) */
@@ -1894,33 +1894,18 @@
         .branchen-stack:active::before {
             box-shadow: inset 0 0 0 3px rgba(166,124,82,0.6);
         }
-        /* Cursor hint on active shot — desktop only */
-        @media (hover: hover) {
-            .branchen-shot.is-active { cursor: ns-resize; }
-            .branchen-shot.is-active::before {
-                content: 'Hover · Seite durchscrollen';
-                position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-                background: rgba(15,13,11,0.72); color: #fff;
-                font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
-                padding: 5px 12px; border-radius: 20px; white-space: nowrap;
-                z-index: 30; opacity: 0; transition: opacity 0.3s;
-                backdrop-filter: blur(4px); pointer-events: none;
-            }
-            .branchen-shot.is-active:not(:hover)::before { opacity: 1; animation: hint-fade 2s ease 1s forwards; }
+        /* Cursor hint on active shot */
+        .branchen-shot.is-active { cursor: ns-resize; }
+        .branchen-shot.is-active::before {
+            content: 'Hover · Seite durchscrollen';
+            position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+            background: rgba(15,13,11,0.72); color: #fff;
+            font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+            padding: 5px 12px; border-radius: 20px; white-space: nowrap;
+            z-index: 30; opacity: 0; transition: opacity 0.3s;
+            backdrop-filter: blur(4px); pointer-events: none;
         }
-        /* Touch: tap-to-advance hint */
-        @media (hover: none) {
-            .branchen-shot.is-active::before {
-                content: 'Tippen · Nächste Branche';
-                position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-                background: rgba(15,13,11,0.72); color: #fff;
-                font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-                padding: 5px 12px; border-radius: 20px; white-space: nowrap;
-                z-index: 30; opacity: 0; transition: opacity 0.3s;
-                backdrop-filter: blur(4px); pointer-events: none;
-                animation: hint-fade 2s ease 0.5s forwards;
-            }
-        }
+        .branchen-shot.is-active:not(:hover)::before { opacity: 1; animation: hint-fade 2s ease 1s forwards; }
         @keyframes hint-fade { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
 
         /* ── Text panel (below stack) — auto-sized to longest content ── */
@@ -2140,8 +2125,7 @@
         }
         .branchen-dot {
             width: 8px; height: 8px; border-radius: 50%;
-            background: rgba(15,13,11,0.18); border: 0;
-            padding: 18px; margin: -18px; box-sizing: content-box; /* 44px tap target */
+            background: rgba(15,13,11,0.18); border: 0; padding: 0;
             cursor: pointer; transition: background 240ms, transform 240ms;
         }
         .branchen-dot.is-active { background: var(--primary); transform: scale(1.4); }
@@ -2154,7 +2138,7 @@
                 grid-template-columns: 1fr;
                 gap: 28px;
                 height: auto;
-                /* max-height entfernt — hat Inhalte auf kleinen Phones geclipt */
+                max-height: 90vh;
             }
             .branchen-left {
                 flex-direction: row;
@@ -2170,7 +2154,6 @@
             .branchen-mockup { max-width: 90%; margin: 0 auto; }
         }
         @media (max-width: 540px) {
-            .branchen-mockup { display: none; } /* kein Platz auf kleinen Phones */
             .branchen-left { flex-direction: column; gap: 16px; }
             .branchen-stack { flex: none; max-width: 60%; }
             .branchen-text-title { font-size: 1.35rem; }
@@ -5167,7 +5150,7 @@
         .cookie-banner-text a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
         .cookie-banner-actions { display: flex; gap: 8px; flex-shrink: 0; }
         .cookie-btn {
-            padding: 12px 18px; border-radius: var(--radius-md); border: none; cursor: pointer;
+            padding: 9px 18px; border-radius: var(--radius-md); border: none; cursor: pointer;
             font-size: 0.78rem; font-weight: 600; font-family: inherit;
             transition: all 0.2s ease;
         }
@@ -5945,28 +5928,28 @@
                             <img src="branchen-previews-v2/_meta/gallery/arzt-full.jpg" alt="Ärzte & Praxen · ganze Landing-Page" loading="eager" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="2" data-branche="handwerk">
-                            <img src="branchen-previews-v2/_meta/gallery/handwerk-full.jpg" alt="Handwerk & Bau · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/handwerk-full.jpg" alt="Handwerk & Bau · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="3" data-branche="gastronomie">
-                            <img src="branchen-previews-v2/_meta/gallery/gastronomie-full.jpg" alt="Gastronomie · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/gastronomie-full.jpg" alt="Gastronomie · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="4" data-branche="fitness">
-                            <img src="branchen-previews-v2/_meta/gallery/fitness-full.jpg" alt="Fitness & Sport · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/fitness-full.jpg" alt="Fitness & Sport · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="5" data-branche="einzelhandel">
-                            <img src="branchen-previews-v2/_meta/gallery/einzelhandel-full.jpg" alt="Einzelhandel · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/einzelhandel-full.jpg" alt="Einzelhandel · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="6" data-branche="hotel">
-                            <img src="branchen-previews-v2/_meta/gallery/hotel-full.jpg" alt="Hotels & Pensionen · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/hotel-full.jpg" alt="Hotels & Pensionen · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="7" data-branche="zahnarzt">
-                            <img src="branchen-previews-v2/_meta/gallery/zahnarzt-full.jpg" alt="Zahnarzt & Kosmetik · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/zahnarzt-full.jpg" alt="Zahnarzt & Kosmetik · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="8" data-branche="beratung">
-                            <img src="branchen-previews-v2/_meta/gallery/beratung-full.jpg" alt="Beratung & Coaching · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/beratung-full.jpg" alt="Beratung & Coaching · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         <article class="branchen-shot" data-i="9" data-branche="immobilien">
-                            <img src="branchen-previews-v2/_meta/gallery/immobilien-full.jpg" alt="Immobilien & Makler · ganze Landing-Page" loading="eager" decoding="async">
+                            <img src="branchen-previews-v2/_meta/gallery/immobilien-full.jpg" alt="Immobilien & Makler · ganze Landing-Page" loading="lazy" decoding="async">
                         </article>
                         </div>
                         <div class="branchen-text" id="branchenText">
